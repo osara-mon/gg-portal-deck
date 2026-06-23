@@ -1,0 +1,2221 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>事業提案 提案編（16枚） — 就労継続支援B型 口コミポータル</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Zen+Kaku+Gothic+New:wght@500;700&family=Noto+Sans+JP:wght@400;500;700&family=Geist+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+/* tokens.css */
+/* Hallmark · tokens.css · route: custom (bespoke) · 就労継続支援B型 口コミポータル 課金モデル意思決定資料
+ * paper: oklch(97% 0.006 85) · accent: oklch(52% 0.095 178) (welfare-teal)
+ * display: Zen Kaku Gothic New · body: Noto Sans JP · outlier: Geist Mono
+ * axes: light / geometric-sans / chromatic-other (teal ~178°)
+ * NOTE: design language inherited from sibling proposal-slides (welfare-teal system) by brief.
+ *       Full-revision build: 3-chapter flow (分析→提案→決定) + 章扉/目次/図解/SWOT cards.
+ */
+:root {
+  /* ---- paper / surfaces (warm-tinted, light) ---- */
+  --color-paper:    oklch(97%  0.006 85);   /* base */
+  --color-paper-2:  oklch(94.5% 0.008 85);  /* one step */
+  --color-paper-3:  oklch(91.5% 0.010 85);  /* panels */
+
+  /* ---- dark surface (for contrast / divider slides) ---- */
+  --color-deep:     oklch(24%  0.022 195);  /* deep teal-ink */
+  --color-deep-2:   oklch(29%  0.024 195);
+  --color-deep-3:   oklch(34%  0.026 195);
+
+  /* ---- ink ---- */
+  --color-ink:      oklch(24%  0.018 200);
+  --color-ink-2:    oklch(40%  0.016 200);
+  --color-muted:    oklch(52%  0.012 200);
+
+  /* ---- rules ---- */
+  --color-rule:     oklch(82%  0.010 90);
+  --color-rule-2:   oklch(88%  0.008 90);
+  --color-rule-dk:  oklch(40%  0.018 195);
+
+  /* ---- accent: welfare-teal (calm, trustworthy, not flashy) ---- */
+  --color-accent:     oklch(52%  0.095 178);
+  --color-accent-dk:  oklch(46%  0.100 178);
+  --color-accent-ink: oklch(98%  0.008 178);  /* text on accent fill */
+  --color-accent-soft: oklch(93%  0.024 178); /* soft tint wash */
+
+  /* ---- secondary signal: warm clay (used sparingly for保守/注記 contrast) ---- */
+  --color-clay:     oklch(58%  0.105 48);
+  --color-clay-soft: oklch(93% 0.028 48);
+
+  /* ---- tertiary signal: muted gold (for "提案" chapter / highlights) ---- */
+  --color-gold:      oklch(62%  0.090 78);
+  --color-gold-soft: oklch(93%  0.030 78);
+
+  --color-focus:    oklch(56%  0.16 178);
+
+  /* ---- type ---- */
+  --font-display: "Zen Kaku Gothic New", "Noto Sans JP", system-ui, sans-serif;
+  --font-body:    "Noto Sans JP", system-ui, sans-serif;
+  --font-num:     "Geist Mono", ui-monospace, monospace;
+
+  /* ---- scale (major third 1.25) ---- */
+  --text-xs:   0.72rem;
+  --text-sm:   0.82rem;
+  --text-base: 1rem;
+  --text-md:   1.2rem;
+  --text-lg:   1.5rem;
+  --text-xl:   1.95rem;
+  --text-2xl:  2.45rem;
+  --text-3xl:  3.05rem;
+  --text-4xl:  3.9rem;
+  --text-display: clamp(2.6rem, 4.2vw + 1rem, 4.6rem);
+
+  /* ---- spacing (4pt) ---- */
+  --space-3xs: 0.25rem;
+  --space-2xs: 0.5rem;
+  --space-xs:  0.75rem;
+  --space-sm:  1rem;
+  --space-md:  1.5rem;
+  --space-lg:  2.25rem;
+  --space-xl:  3rem;
+  --space-2xl: 4rem;
+  --space-3xl: 5.5rem;
+
+  --radius-sm: 6px;
+  --radius-md: 10px;
+  --radius-lg: 16px;
+
+  --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
+  --ease-in:  cubic-bezier(0.4, 0, 1, 1);
+  --ease-in-out: cubic-bezier(0.65, 0, 0.35, 1);
+  --dur-fast: 160ms;
+  --dur-mid:  340ms;
+}
+
+</style>
+<style>
+/* deck.css */
+/* Hallmark · pre-emit critique: P5 H5 E5 S5 R5 V5
+ * route: custom (bespoke) · structure: ~30-slide horizontal web deck — 課金モデル意思決定資料（全面改訂）
+ * Flow: 章0 イントロ → 章1 分析 → 章2 提案 → 章3 決定 → 参考(巻末).
+ * Design language inherited from sibling proposal-slides (welfare-teal). Variety lives per-slide:
+ *   章扉(divider) · 目次(TOC flow) · 図解(give-to-get flywheel SVG) · SWOT 4象限カード · flow-stepper.
+ * paper: oklch(97% 0.006 85) · accent: oklch(52% 0.095 178) welfare-teal
+ * display: Zen Kaku Gothic New · body: Noto Sans JP · num: Geist Mono
+ * axes: light / geometric-sans / chromatic-other (teal ~178°) · studied: no · context: explicit
+ * gates: all-pass · contrast: pass (40-41) · mobile: pass (34,49,50-57) · honest: pass (46) · tokens: pass (48)
+ */
+
+*, *::before, *::after { box-sizing: border-box; }
+html, body { overflow-x: clip; }
+
+html {
+  font-family: var(--font-body);
+  color: var(--color-ink);
+  background: var(--color-ink); /* letterbox around slide */
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+body { margin: 0; font-size: var(--text-base); }
+
+/* ============ DECK FRAME ============ */
+.deck { position: fixed; inset: 0; display: grid; place-items: center; padding: clamp(8px, 2vw, 28px); }
+
+.slide {
+  position: absolute;
+  width: min(100%, 1280px);
+  aspect-ratio: 16 / 9;
+  max-height: calc(100vh - 56px);
+  background: var(--color-paper);
+  color: var(--color-ink);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  box-shadow: 0 24px 60px -24px oklch(20% 0.03 200 / 0.55);
+  opacity: 0; visibility: hidden;
+  transform: translateY(14px) scale(0.992);
+  transition: opacity var(--dur-mid) var(--ease-out),
+              transform var(--dur-mid) var(--ease-out),
+              visibility 0s linear var(--dur-mid);
+}
+.slide.is-active {
+  opacity: 1; visibility: visible; transform: none;
+  transition: opacity var(--dur-mid) var(--ease-out),
+              transform var(--dur-mid) var(--ease-out), visibility 0s;
+}
+
+.pad {
+  position: absolute; inset: 0;
+  padding: clamp(20px, 3.2vw, 52px) clamp(24px, 3.8vw, 64px);
+  display: flex; flex-direction: column;
+}
+
+.kick {
+  font-family: var(--font-num); font-size: var(--text-sm);
+  letter-spacing: 0.12em; text-transform: uppercase;
+  color: var(--color-accent); font-feature-settings: "tnum";
+  margin: 0 0 var(--space-2xs);
+}
+.kick--muted { color: var(--color-muted); }
+
+h1, h2, h3 {
+  font-family: var(--font-display); font-style: normal; font-weight: 700;
+  line-height: 1.18; letter-spacing: -0.01em;
+  overflow-wrap: anywhere; min-width: 0; margin: 0;
+}
+.title { font-size: clamp(1.4rem, 2.3vw + 0.4rem, 2.35rem); color: var(--color-ink); }
+.title em { font-style: normal; color: var(--color-accent); }
+.lede { font-size: clamp(0.92rem, 0.5vw + 0.78rem, 1.12rem); color: var(--color-ink-2); max-width: 64ch; margin: var(--space-sm) 0 0; }
+
+.num { font-family: var(--font-num); font-feature-settings: "tnum"; letter-spacing: -0.02em; }
+
+/* ============ PROGRESS + NAV ============ */
+.hud {
+  position: fixed; left: 0; right: 0; bottom: 0; height: 36px;
+  display: flex; align-items: center; justify-content: space-between;
+  gap: var(--space-md); padding: 0 clamp(14px, 3vw, 34px);
+  color: oklch(70% 0.01 200); font-family: var(--font-num);
+  font-size: var(--text-xs); letter-spacing: 0.04em; z-index: 50; pointer-events: none;
+}
+.hud__brand { color: oklch(80% 0.02 178); }
+.hud__count { font-feature-settings: "tnum"; }
+.hud__bar { position: fixed; left: 0; top: 0; height: 3px; background: var(--color-accent); width: 0; transition: width var(--dur-mid) var(--ease-out); z-index: 51; }
+.navbtns { pointer-events: auto; display: flex; gap: 6px; }
+.navbtns button {
+  font-family: var(--font-num); font-size: var(--text-xs);
+  color: oklch(75% 0.01 200); background: oklch(32% 0.02 200);
+  border: 1px solid oklch(42% 0.02 200); border-radius: var(--radius-sm);
+  height: 24px; min-width: 28px; padding: 0 8px; cursor: pointer;
+  transition: background var(--dur-fast) var(--ease-out), color var(--dur-fast) var(--ease-out);
+}
+.navbtns button:hover { background: oklch(40% 0.03 200); color: oklch(92% 0.01 200); }
+.navbtns button:focus-visible { outline: 2px solid var(--color-focus); outline-offset: 2px; }
+.navbtns button:active { transform: translateY(1px); }
+.navbtns button:disabled { opacity: 0.4; cursor: not-allowed; }
+
+/* ============ shared atoms ============ */
+.tag {
+  display: inline-flex; align-items: center; gap: 6px;
+  font-size: var(--text-xs); font-family: var(--font-num);
+  letter-spacing: 0.04em; color: var(--color-accent-dk);
+  background: var(--color-accent-soft); border-radius: 999px;
+  padding: 4px 11px; line-height: 1;
+}
+.tag--clay { color: var(--color-clay); background: var(--color-clay-soft); }
+.tag--muted { color: var(--color-muted); background: var(--color-paper-3); }
+
+.src { font-size: var(--text-xs); color: var(--color-muted); line-height: 1.4; }
+.src::before { content: "出典 "; color: var(--color-accent-dk); font-family: var(--font-num); }
+.unconf { color: var(--color-clay); font-size: var(--text-xs); }
+
+.flex-fill { flex: 1; min-height: 0; }
+.row { display: flex; gap: var(--space-md); }
+.between { justify-content: space-between; align-items: flex-end; }
+.shead { margin-bottom: var(--space-md); }
+
+/* ============ FLOW STEPPER (いま 分析/提案/決定 のどこか) ============ */
+.flowbar {
+  display: flex; align-items: center; gap: 6px; flex-wrap: wrap;
+  margin-bottom: var(--space-sm);
+}
+.flowbar__step {
+  display: inline-flex; align-items: center; gap: 6px;
+  font-family: var(--font-num); font-size: 0.66rem; letter-spacing: 0.04em;
+  color: var(--color-muted); background: var(--color-paper-3);
+  border: 1px solid var(--color-rule); border-radius: 999px;
+  padding: 3px 10px; line-height: 1.2;
+}
+.flowbar__step b { font-weight: 600; }
+.flowbar__step.is-now {
+  color: var(--color-accent-ink); background: var(--color-accent);
+  border-color: var(--color-accent);
+}
+.flowbar__sep { color: var(--color-rule); font-family: var(--font-num); font-size: 0.7rem; }
+.flowbar__sub { margin-left: auto; font-family: var(--font-num); font-size: 0.66rem; color: var(--color-muted); letter-spacing: 0.04em; }
+
+/* ============ COVER (slide 1) ============ */
+.cover { background: var(--color-deep); color: var(--color-paper); }
+.cover .pad { justify-content: space-between; }
+.cover__mark { display: flex; align-items: center; gap: 10px; font-family: var(--font-num); font-size: var(--text-sm); letter-spacing: 0.14em; text-transform: uppercase; color: oklch(80% 0.03 178); }
+.cover__dot { width: 9px; height: 9px; border-radius: 2px; background: var(--color-accent); }
+.cover__title { font-family: var(--font-display); font-weight: 700; font-size: clamp(2rem, 4.2vw + 0.5rem, 4.2rem); line-height: 1.1; letter-spacing: -0.015em; color: var(--color-paper); }
+.cover__title .em2 { color: var(--color-accent); }
+.cover__sub { font-size: clamp(1rem, 0.6vw + 0.8rem, 1.28rem); color: oklch(82% 0.012 200); margin-top: var(--space-md); max-width: 56ch; }
+.cover__flow { display: flex; gap: 10px; flex-wrap: wrap; margin-top: var(--space-md); }
+.cover__flow span {
+  font-family: var(--font-num); font-size: var(--text-sm); letter-spacing: 0.04em;
+  color: oklch(86% 0.012 200); background: var(--color-deep-2);
+  border: 1px solid var(--color-rule-dk); border-radius: 999px; padding: 5px 14px;
+}
+.cover__flow span em { font-style: normal; color: var(--color-accent); }
+.cover__flow .arrow { background: none; border: none; color: var(--color-accent); padding: 5px 2px; }
+.cover__meta { display: flex; flex-wrap: wrap; gap: var(--space-lg); border-top: 1px solid var(--color-rule-dk); padding-top: var(--space-md); }
+.cover__meta div { display: flex; flex-direction: column; gap: 2px; }
+.cover__meta dt { font-size: var(--text-xs); color: oklch(64% 0.02 200); font-family: var(--font-num); letter-spacing: 0.06em; }
+.cover__meta dd { margin: 0; font-size: var(--text-md); color: var(--color-paper); font-weight: 600; }
+
+/* ============ 目次 / TOC (flow map) ============ */
+.toc { display: grid; grid-template-columns: repeat(3, minmax(0,1fr)); gap: var(--space-md); flex: 1; min-height: 0; align-content: center; }
+.toccol {
+  display: flex; flex-direction: column; gap: var(--space-2xs);
+  border: 1px solid var(--color-rule); border-top: 4px solid var(--color-accent);
+  border-radius: var(--radius-md); background: var(--color-paper-2); padding: var(--space-md);
+}
+.toccol--propose { border-top-color: var(--color-gold); }
+.toccol--decide { border-top-color: var(--color-clay); }
+.toccol__stage { font-family: var(--font-num); font-size: var(--text-xs); letter-spacing: 0.08em; color: var(--color-muted); }
+.toccol__h { font-family: var(--font-display); font-weight: 700; font-size: var(--text-lg); color: var(--color-accent-dk); }
+.toccol--propose .toccol__h { color: var(--color-gold); }
+.toccol--decide .toccol__h { color: var(--color-clay); }
+.toccol__desc { font-size: var(--text-sm); color: var(--color-ink-2); margin: 0 0 var(--space-2xs); }
+.toclist { list-style: none; margin: auto 0 0; padding: var(--space-2xs) 0 0; border-top: 1px dashed var(--color-rule); display: flex; flex-direction: column; gap: 5px; }
+.toclist li { position: relative; padding-left: 22px; font-size: var(--text-sm); color: var(--color-ink-2); line-height: 1.4; }
+.toclist li .n { position: absolute; left: 0; top: 0.05em; font-family: var(--font-num); font-size: 0.7rem; font-weight: 600; color: var(--color-accent); }
+.toccol--propose .toclist li .n { color: var(--color-gold); }
+.toccol--decide .toclist li .n { color: var(--color-clay); }
+
+/* ============ 章扉 / SECTION DIVIDER ============ */
+.divider { background: var(--color-deep); color: var(--color-paper); }
+.divider .pad { justify-content: center; gap: var(--space-md); }
+.divider__chap { font-family: var(--font-num); font-size: var(--text-sm); letter-spacing: 0.2em; text-transform: uppercase; color: var(--color-accent); }
+.divider__num { font-family: var(--font-num); font-feature-settings: "tnum"; font-weight: 600; font-size: clamp(3rem, 9vw, 7rem); line-height: 0.9; color: var(--color-deep-3); letter-spacing: -0.03em; }
+.divider__h { font-family: var(--font-display); font-weight: 700; font-size: clamp(2.4rem, 5vw + 0.5rem, 4.4rem); line-height: 1.05; color: var(--color-paper); letter-spacing: -0.015em; }
+.divider__h em { font-style: normal; color: var(--color-accent); }
+.divider__sub { font-size: clamp(0.95rem, 0.6vw + 0.78rem, 1.18rem); color: oklch(82% 0.012 200); max-width: 52ch; }
+.divider__flow { display: flex; gap: 8px; flex-wrap: wrap; margin-top: var(--space-sm); }
+.divider__flow span {
+  font-family: var(--font-num); font-size: var(--text-sm); letter-spacing: 0.04em;
+  color: oklch(64% 0.02 200); background: var(--color-deep-2);
+  border: 1px solid var(--color-rule-dk); border-radius: 999px; padding: 5px 14px;
+}
+.divider__flow span.is-now { color: var(--color-accent-ink); background: var(--color-accent); border-color: var(--color-accent); }
+.divider__flow .arrow { background: none; border: none; color: var(--color-rule-dk); padding: 5px 2px; }
+
+/* ============ STAT / NUMBER blocks ============ */
+.statbig { font-family: var(--font-num); font-feature-settings: "tnum"; font-weight: 600; letter-spacing: -0.03em; line-height: 0.95; color: var(--color-ink); }
+.statbig--xl { font-size: clamp(2.6rem, 5.4vw, 4.6rem); }
+.statbig--lg { font-size: clamp(2rem, 3.6vw, 3rem); }
+.statbig em { font-style: normal; color: var(--color-accent); }
+.statgrid { display: grid; gap: var(--space-md); }
+.statcard { background: var(--color-paper-2); border: 1px solid var(--color-rule); border-radius: var(--radius-md); padding: var(--space-md); display: flex; flex-direction: column; gap: 4px; }
+.statcard .statbig--lg { color: var(--color-accent-dk); }
+.statcard--clay .statbig--lg { color: var(--color-clay); }
+.statcard__cap { font-size: var(--text-sm); color: var(--color-ink-2); }
+.statcard__note { font-size: var(--text-xs); color: var(--color-muted); }
+
+/* metric chips inline */
+.mchips { display: flex; flex-wrap: wrap; gap: var(--space-2xs); }
+.mchip { border: 1px solid var(--color-rule); border-radius: var(--radius-md); background: var(--color-paper-2); padding: 6px 12px; display: flex; flex-direction: column; gap: 1px; }
+.mchip b { font-family: var(--font-num); font-feature-settings: "tnum"; font-weight: 600; font-size: var(--text-md); color: var(--color-accent-dk); letter-spacing: -0.02em; }
+.mchip span { font-size: var(--text-xs); color: var(--color-muted); }
+
+/* ============ split / two-up ============ */
+.split { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 0.92fr); gap: clamp(20px, 3vw, 44px); flex: 1; min-height: 0; align-items: stretch; }
+.split--even { grid-template-columns: minmax(0,1fr) minmax(0,1fr); }
+.panel { background: var(--color-paper-2); border: 1px solid var(--color-rule); border-radius: var(--radius-md); padding: var(--space-md); }
+.panel--accent { background: var(--color-accent-soft); border-color: oklch(80% 0.04 178); }
+.panel--deep { background: var(--color-deep); color: var(--color-paper); border-color: var(--color-rule-dk); }
+.panel--deep .panel__h { color: var(--color-accent); }
+.panel--deep p, .panel--deep li { color: oklch(86% 0.012 200); }
+.panel--gold { background: var(--color-gold-soft); border-color: oklch(82% 0.05 78); }
+.panel--gold .panel__h { color: var(--color-gold); }
+.panel__h { font-family: var(--font-display); font-weight: 700; font-size: var(--text-md); margin: 0 0 var(--space-2xs); }
+.panel__h--sm { font-size: var(--text-base); }
+
+.blist { list-style: none; margin: var(--space-xs) 0 0; padding: 0; display: flex; flex-direction: column; gap: var(--space-2xs); }
+.blist li { position: relative; padding-left: 20px; font-size: var(--text-sm); color: var(--color-ink-2); line-height: 1.5; }
+.blist li::before { content: ""; position: absolute; left: 2px; top: 0.55em; width: 7px; height: 7px; border-radius: 2px; background: var(--color-accent); }
+.blist--clay li::before { background: var(--color-clay); }
+.blist--gold li::before { background: var(--color-gold); }
+
+/* ============ tables ============ */
+.tblwrap { flex: 1; min-height: 0; overflow: auto; border: 1px solid var(--color-rule); border-radius: var(--radius-md); }
+.tbl { width: 100%; border-collapse: collapse; font-size: var(--text-sm); }
+.tbl caption { text-align: left; font-size: var(--text-xs); color: var(--color-muted); margin-bottom: 6px; }
+.tbl th, .tbl td { text-align: left; padding: 8px 11px; border-bottom: 1px solid var(--color-rule); vertical-align: top; }
+.tbl thead th { position: sticky; top: 0; background: var(--color-paper-3); z-index: 1; font-family: var(--font-num); font-size: 0.68rem; letter-spacing: 0.03em; text-transform: uppercase; color: var(--color-ink-2); font-weight: 600; border-bottom: 1.5px solid var(--color-ink-2); }
+.tbl tbody tr:last-child td { border-bottom: none; }
+.tbl tbody tr:nth-child(even) td { background: oklch(95.6% 0.006 85); }
+.tbl .price { font-family: var(--font-num); font-feature-settings: "tnum"; font-weight: 600; color: var(--color-ink); white-space: nowrap; }
+.tbl .rowname { font-weight: 700; font-family: var(--font-display); color: var(--color-ink); white-space: nowrap; }
+.tbl .pos { color: var(--color-accent-dk); }
+.tbl .neg { color: var(--color-clay); }
+.tbl tr.is-hl td { background: var(--color-accent-soft) !important; }
+.tbl tr.is-hl .rowname { color: var(--color-accent-dk); }
+.tbl .fit { font-family: var(--font-num); font-weight: 600; text-align: center; }
+.tbl .fit-a { color: var(--color-accent-dk); }       /* ◎ */
+.tbl .fit-b { color: var(--color-accent); }          /* ○ */
+.tbl .fit-c { color: var(--color-clay); }            /* △ */
+.tbl .fit-x { color: var(--color-muted); }           /* ✕ */
+.tbl--dense th, .tbl--dense td { padding: 6px 9px; font-size: 0.78rem; line-height: 1.42; }
+.tbl small { color: var(--color-muted); }
+.tbl .wall { color: var(--color-clay); font-weight: 600; }
+.tbl .free { color: var(--color-accent-dk); font-weight: 600; }
+.tbl .colwall { background: var(--color-clay-soft) !important; }
+
+/* ============ archetype matrix (章1 早見表) ============ */
+.amat { display: grid; grid-template-columns: repeat(3, minmax(0,1fr)); gap: var(--space-2xs); flex: 1; min-height: 0; align-content: center; }
+.acard { border: 1px solid var(--color-rule); border-radius: var(--radius-md); background: var(--color-paper-2); padding: var(--space-sm) var(--space-xs); display: flex; flex-direction: column; gap: 3px; }
+.acard__top { display: flex; align-items: baseline; justify-content: space-between; gap: 8px; }
+.acard__n { font-family: var(--font-num); font-feature-settings: "tnum"; font-size: var(--text-md); font-weight: 600; color: var(--color-accent); line-height: 1; }
+.acard__fit { font-family: var(--font-num); font-weight: 700; font-size: 1.05rem; }
+.acard__h { font-family: var(--font-display); font-weight: 700; font-size: 0.92rem; line-height: 1.2; }
+.acard__eg { font-size: 0.72rem; color: var(--color-ink-2); line-height: 1.35; }
+.acard__price { font-family: var(--font-num); font-size: 0.72rem; color: var(--color-muted); }
+.acard--hi { border-color: var(--color-accent); background: var(--color-accent-soft); }
+.fit-a { color: var(--color-accent-dk); } .fit-b { color: var(--color-accent); } .fit-c { color: var(--color-clay); } .fit-x { color: var(--color-muted); }
+
+/* ============ model-type cards (課金モデル別6類型) ============ */
+.mtypes { display: grid; grid-template-columns: repeat(3, minmax(0,1fr)); gap: var(--space-2xs); flex: 1; min-height: 0; align-content: center; }
+.mtype { border: 1px solid var(--color-rule); border-left: 4px solid var(--color-accent); border-radius: var(--radius-md); background: var(--color-paper-2); padding: var(--space-sm); display: flex; flex-direction: column; gap: 4px; }
+.mtype--hi { border-left-color: var(--color-accent); background: var(--color-accent-soft); }
+.mtype--free { border-left-color: var(--color-muted); }
+.mtype__n { font-family: var(--font-num); font-size: var(--text-xs); color: var(--color-muted); }
+.mtype__h { font-family: var(--font-display); font-weight: 700; font-size: 0.95rem; line-height: 1.2; }
+.mtype__who { font-size: 0.72rem; color: var(--color-accent-dk); font-family: var(--font-num); }
+.mtype__price { font-family: var(--font-num); font-size: 0.74rem; color: var(--color-ink-2); }
+.mtype__note { font-size: 0.72rem; color: var(--color-muted); line-height: 1.35; margin-top: auto; padding-top: 5px; border-top: 1px dashed var(--color-rule); }
+
+/* ============ COMPANY SLIDE layout ============ */
+.co { display: grid; grid-template-columns: minmax(0, 1.15fr) minmax(0, 1fr); gap: var(--space-md); flex: 1; min-height: 0; }
+.co__col { display: flex; flex-direction: column; gap: var(--space-2xs); min-height: 0; }
+.co__pos { border-left: 4px solid var(--color-accent); background: var(--color-accent-soft); border-radius: var(--radius-sm); padding: var(--space-xs) var(--space-sm); font-size: var(--text-sm); color: var(--color-ink-2); line-height: 1.45; }
+.co__pos b { color: var(--color-accent-dk); }
+.cobox { border: 1px solid var(--color-rule); border-radius: var(--radius-md); background: var(--color-paper-2); padding: var(--space-xs) var(--space-sm); }
+.cobox__lbl { font-family: var(--font-num); font-size: 0.66rem; letter-spacing: 0.06em; text-transform: uppercase; color: var(--color-muted); margin-bottom: 4px; }
+.cofeat { display: grid; grid-template-columns: 1fr 1fr; gap: var(--space-2xs); }
+.cofeat__side { font-size: 0.74rem; line-height: 1.4; color: var(--color-ink-2); }
+.cofeat__side b { display: block; font-family: var(--font-num); font-size: 0.64rem; letter-spacing: 0.04em; color: var(--color-accent-dk); text-transform: uppercase; margin-bottom: 2px; }
+.cofeat__side.is-biz b { color: var(--color-gold); }
+.copay { font-size: var(--text-sm); color: var(--color-ink-2); line-height: 1.45; }
+.copay .price { font-family: var(--font-num); font-weight: 600; color: var(--color-ink); }
+.coimpl { border: 1px solid var(--color-rule); border-left: 4px solid var(--color-accent); background: var(--color-paper); color: var(--color-ink); border-radius: var(--radius-md); padding: var(--space-xs) var(--space-sm); margin-top: auto; }
+.coimpl__lbl { font-family: var(--font-num); font-size: 0.66rem; letter-spacing: 0.08em; text-transform: uppercase; color: var(--color-accent-dk); margin-bottom: 3px; font-weight: 600; }
+.coimpl p { margin: 0; font-size: var(--text-sm); color: var(--color-ink); line-height: 1.45; }
+.coimpl em { font-style: normal; font-weight: 600; color: var(--color-accent-dk); }
+
+/* ============ SWOT 4-quadrant cards ============ */
+.swot { display: grid; grid-template-columns: 1fr 1fr; grid-template-rows: 1fr 1fr; gap: var(--space-2xs); }
+.swotq { border: 1px solid var(--color-rule); border-radius: var(--radius-md); padding: var(--space-2xs) var(--space-xs); display: flex; flex-direction: column; gap: 2px; min-height: 0; }
+.swotq__h { font-family: var(--font-num); font-size: 0.62rem; letter-spacing: 0.06em; text-transform: uppercase; display: flex; align-items: center; gap: 5px; }
+.swotq__h b { font-family: var(--font-display); font-size: 0.78rem; }
+.swotq p { margin: 0; font-size: 0.7rem; line-height: 1.35; color: var(--color-ink-2); }
+.swotq.s  { background: var(--color-accent-soft); border-color: oklch(82% 0.04 178); }
+.swotq.s  .swotq__h { color: var(--color-accent-dk); }
+.swotq.w  { background: var(--color-clay-soft); border-color: oklch(82% 0.05 48); }
+.swotq.w  .swotq__h { color: var(--color-clay); }
+.swotq.o  { background: var(--color-paper-2); }
+.swotq.o  .swotq__h { color: var(--color-accent-dk); }
+.swotq.t  { background: var(--color-paper-3); }
+.swotq.t  .swotq__h { color: var(--color-muted); }
+
+/* ============ GIVE-TO-GET FLYWHEEL (figure / SVG) ============ */
+.flywrap { display: grid; grid-template-columns: minmax(0, 1.05fr) minmax(0, 1fr); gap: var(--space-md); flex: 1; min-height: 0; align-items: center; }
+.fly { width: 100%; height: auto; max-height: 100%; display: block; }
+.fly .node { fill: var(--color-paper-2); stroke: var(--color-accent); stroke-width: 1.5; }
+.fly .node-hi { fill: var(--color-accent-soft); stroke: var(--color-accent); stroke-width: 2; }
+.fly .ntext { fill: var(--color-ink); font-family: var(--font-display); font-weight: 700; font-size: 13px; }
+.fly .nsub { fill: var(--color-muted); font-family: var(--font-num); font-size: 9.5px; }
+.fly .arc { fill: none; stroke: var(--color-accent); stroke-width: 2; marker-end: url(#flyarrow); }
+.fly .hub { fill: var(--color-accent); }
+.fly .hubt { fill: var(--color-accent-ink); font-family: var(--font-display); font-weight: 700; font-size: 12px; }
+.flynote { display: flex; flex-direction: column; gap: var(--space-2xs); }
+
+/* ============ WALL FIGURE (レビュー閲覧の壁) ============ */
+.wallfig { display: grid; grid-template-columns: minmax(0,0.85fr) minmax(0,1fr); gap: var(--space-md); flex: 1; min-height: 0; align-items: stretch; }
+.wallvis { border: 1px solid var(--color-rule); border-radius: var(--radius-md); background: var(--color-paper-2); padding: var(--space-sm); display: flex; flex-direction: column; gap: var(--space-2xs); }
+.wallvis__cap { font-family: var(--font-num); font-size: 0.66rem; letter-spacing: 0.04em; color: var(--color-muted); text-transform: uppercase; }
+.wallpeek { border: 1px dashed var(--color-rule); border-radius: var(--radius-sm); padding: var(--space-xs); font-size: 0.78rem; color: var(--color-ink-2); position: relative; overflow: hidden; }
+.wallpeek .clear { color: var(--color-ink); }
+.wallpeek .blur { filter: blur(3px); opacity: 0.55; user-select: none; }
+.wallpeek::after { content: "ここから先は壁"; position: absolute; right: 8px; bottom: 6px; font-family: var(--font-num); font-size: 0.62rem; color: var(--color-clay); background: var(--color-clay-soft); border-radius: 999px; padding: 2px 8px; }
+.walltriggers { display: flex; flex-direction: column; gap: var(--space-2xs); }
+.wtrig { display: grid; grid-template-columns: auto 1fr auto; gap: 10px; align-items: center; border: 1px solid var(--color-rule); border-left: 4px solid var(--color-accent); border-radius: var(--radius-md); background: var(--color-paper-2); padding: var(--space-xs) var(--space-sm); }
+.wtrig__n { font-family: var(--font-num); font-weight: 700; color: var(--color-accent); font-size: var(--text-md); }
+.wtrig__b { font-size: var(--text-sm); color: var(--color-ink); font-weight: 600; }
+.wtrig__b span { display: block; font-weight: 400; font-size: 0.74rem; color: var(--color-muted); }
+.wtrig__p { font-family: var(--font-num); font-weight: 600; font-size: var(--text-sm); color: var(--color-accent-dk); white-space: nowrap; text-align: right; }
+
+/* ============ pricing tiers (章2 推奨モデル) ============ */
+.tiers { display: grid; grid-template-columns: repeat(6, minmax(0,1fr)); gap: var(--space-2xs); flex: 1; min-height: 0; align-content: center; }
+.tier { border: 1px solid var(--color-rule); border-radius: var(--radius-md); background: var(--color-paper-2); padding: var(--space-sm) var(--space-xs); display: flex; flex-direction: column; gap: 5px; }
+.tier--hero { border: 1.5px solid var(--color-accent); background: var(--color-accent-soft); box-shadow: 0 10px 28px -16px oklch(52% 0.1 178 / 0.6); }
+.tier--future { border-style: dashed; opacity: 0.92; }
+.tier__badge { align-self: flex-start; font-family: var(--font-num); font-size: 0.6rem; letter-spacing: 0.06em; text-transform: uppercase; color: var(--color-accent-ink); background: var(--color-accent); border-radius: 999px; padding: 2px 8px; }
+.tier__lvl { font-family: var(--font-num); font-size: var(--text-xs); color: var(--color-accent-dk); font-weight: 600; }
+.tier__name { font-family: var(--font-display); font-weight: 700; font-size: 0.95rem; line-height: 1.2; }
+.tier__price { font-family: var(--font-num); font-feature-settings: "tnum"; font-weight: 600; font-size: 1.18rem; color: var(--color-ink); letter-spacing: -0.02em; line-height: 1.1; }
+.tier__price small { font-size: 0.7rem; color: var(--color-muted); font-weight: 400; display: block; }
+.tier__bench { font-size: 0.68rem; color: var(--color-muted); line-height: 1.4; margin-top: auto; padding-top: 6px; border-top: 1px dashed var(--color-rule); }
+
+/* ============ premise/probcard (reused for generic 3-up cards) ============ */
+.probgrid { display: grid; grid-template-columns: repeat(3, minmax(0,1fr)); gap: var(--space-md); align-content: center; }
+.probcard { border: 1px solid var(--color-rule); border-left: 4px solid var(--color-accent); border-radius: var(--radius-md); background: var(--color-paper-2); padding: var(--space-md); display: flex; flex-direction: column; gap: var(--space-2xs); }
+.probcard--clay { border-left-color: var(--color-clay); }
+.probcard--gold { border-left-color: var(--color-gold); }
+.probcard__who { font-family: var(--font-num); font-size: var(--text-xs); letter-spacing: 0.06em; color: var(--color-muted); }
+.probcard__h { font-family: var(--font-display); font-weight: 700; font-size: var(--text-md); }
+.probcard p { margin: 0; font-size: var(--text-sm); color: var(--color-ink-2); }
+
+/* ============ DECISION-POINT slides ============ */
+.dec { display: grid; grid-template-columns: minmax(0, 1.06fr) minmax(0, 1fr); gap: var(--space-md); flex: 1; min-height: 0; }
+.dec__col { display: flex; flex-direction: column; gap: var(--space-2xs); min-height: 0; }
+.deccard { border: 1px solid var(--color-rule); border-radius: var(--radius-md); background: var(--color-paper-2); padding: var(--space-xs) var(--space-sm); }
+.deccard__lbl { font-family: var(--font-num); font-size: 0.68rem; letter-spacing: 0.06em; text-transform: uppercase; color: var(--color-muted); margin-bottom: 3px; }
+.deccard__body { font-size: var(--text-sm); color: var(--color-ink-2); line-height: 1.45; }
+.deccard__body strong { color: var(--color-ink); font-weight: 700; }
+.opt { display: grid; grid-template-columns: 64px 1fr; gap: 10px; align-items: start; border: 1px solid var(--color-rule); border-radius: var(--radius-md); background: var(--color-paper-2); padding: var(--space-xs) var(--space-sm); }
+.opt--pick { border: 1.5px solid var(--color-accent); background: var(--color-accent-soft); }
+.opt__tag { font-family: var(--font-num); font-weight: 700; font-size: 0.78rem; color: var(--color-accent-dk); padding-top: 2px; }
+.opt__tag span { display: block; font-size: 0.62rem; font-weight: 400; color: var(--color-muted); letter-spacing: 0.04em; }
+.opt__txt { font-size: 0.82rem; color: var(--color-ink-2); line-height: 1.42; }
+.opt__txt b { color: var(--color-ink); }
+.opt__txt .others { display: block; margin-top: 3px; font-size: 0.74rem; color: var(--color-muted); }
+.opt__txt .others em { font-style: normal; color: var(--color-accent-dk); font-family: var(--font-num); }
+.sfrow { display: grid; grid-template-columns: 1fr 1fr; gap: var(--space-2xs); }
+.sf { border-radius: var(--radius-md); padding: var(--space-xs) var(--space-sm); border: 1px solid var(--color-rule); }
+.sf--good { border-left: 4px solid var(--color-accent); background: var(--color-accent-soft); }
+.sf--bad { border-left: 4px solid var(--color-clay); background: var(--color-clay-soft); }
+.sf__lbl { font-family: var(--font-num); font-size: 0.66rem; letter-spacing: 0.06em; text-transform: uppercase; margin-bottom: 2px; }
+.sf--good .sf__lbl { color: var(--color-accent-dk); }
+.sf--bad .sf__lbl { color: var(--color-clay); }
+.sf p { margin: 0; font-size: 0.78rem; color: var(--color-ink-2); line-height: 1.4; }
+.verdict { border: 1.5px solid var(--color-accent); background: var(--color-deep); color: var(--color-paper); border-radius: var(--radius-md); padding: var(--space-sm) var(--space-md); display: flex; flex-direction: column; gap: 4px; }
+.verdict__lbl { font-family: var(--font-num); font-size: 0.72rem; letter-spacing: 0.1em; text-transform: uppercase; color: var(--color-accent); }
+.verdict__txt { font-family: var(--font-display); font-weight: 700; font-size: 1.02rem; line-height: 1.3; color: var(--color-paper); }
+.verdict__txt em { font-style: normal; color: var(--color-accent); }
+
+/* ============ summary verdict table ============ */
+.sumtbl { width: 100%; border-collapse: collapse; font-size: var(--text-sm); }
+.sumtbl th, .sumtbl td { text-align: left; padding: 9px 12px; border-bottom: 1px solid var(--color-rule); vertical-align: top; }
+.sumtbl thead th { font-family: var(--font-num); font-size: 0.68rem; letter-spacing: 0.04em; text-transform: uppercase; color: var(--color-ink-2); font-weight: 600; border-bottom: 1.5px solid var(--color-ink-2); }
+.sumtbl tbody tr:last-child td { border-bottom: none; }
+.sumtbl .q { font-weight: 700; font-family: var(--font-display); color: var(--color-ink); width: 26%; }
+.sumtbl .rec { color: var(--color-accent-dk); font-weight: 600; }
+.sumtbl .pick { font-family: var(--font-num); font-weight: 700; color: var(--color-accent-dk); white-space: nowrap; }
+
+/* note strip */
+.notestrip { margin-top: var(--space-md); border: 1px solid var(--color-rule); border-left: 4px solid var(--color-clay); background: var(--color-paper); border-radius: var(--radius-md); padding: var(--space-sm) var(--space-md); font-size: var(--text-sm); color: var(--color-ink); }
+.notestrip strong { color: oklch(48% 0.105 48); font-weight: 700; }
+.notestrip--accent { border-left-color: var(--color-accent); background: var(--color-paper); }
+.notestrip--accent strong { color: var(--color-accent-dk); font-weight: 700; }
+.notestrip--tight { margin-top: var(--space-sm); padding: var(--space-xs) var(--space-md); }
+
+/* generic two-col / three-col */
+.duo { display: grid; grid-template-columns: repeat(2, minmax(0,1fr)); gap: var(--space-md); flex: 1; min-height: 0; align-content: center; }
+.trio { display: grid; grid-template-columns: repeat(3, minmax(0,1fr)); gap: var(--space-md); flex: 1; min-height: 0; align-content: center; }
+
+/* ============ closing ============ */
+.close { background: var(--color-deep); color: var(--color-paper); }
+.close .pad { justify-content: center; }
+.close__big { font-family: var(--font-display); font-weight: 700; font-size: clamp(1.7rem, 3.2vw + 0.4rem, 3rem); line-height: 1.18; letter-spacing: -0.015em; color: var(--color-paper); max-width: 30ch; }
+.close__big em { font-style: normal; color: var(--color-accent); }
+
+/* ============ reduced motion ============ */
+@media (prefers-reduced-motion: reduce) {
+  .slide { transition: opacity 140ms linear, visibility 0s; transform: none; }
+  .slide.is-active { transform: none; }
+  .hud__bar { transition: none; }
+}
+
+/* ============ COMPANY CARD (browser-thumbnail style, slide bottom-right) ============ */
+/* Sits inside .co__col below the hint. .coimpl has margin-top:auto, so the hint is
+   pushed to the bottom block and the card follows directly beneath it. */
+.cocard {
+  border: 1px solid var(--color-rule);
+  border-radius: var(--radius-md);
+  background: var(--color-paper-2);
+  padding: var(--space-2xs);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2xs);
+  flex: 0 0 auto;
+}
+.cocard__shot {
+  display: block;
+  position: relative;
+  border-radius: var(--radius-sm);
+  overflow: hidden;
+  border: 1px solid var(--color-rule);
+  box-shadow: 0 6px 16px -10px oklch(24% 0.03 200 / 0.5);
+  text-decoration: none;
+  min-height: 44px;
+  background: var(--color-paper-3);
+}
+.cocard__shot img {
+  display: block;
+  width: 100%;
+  height: 92px;
+  object-fit: cover;
+  object-position: top center;
+}
+.cocard__ph {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 4px;
+  height: 92px;
+  background: linear-gradient(135deg, var(--color-deep) 0%, var(--color-accent-dk) 120%);
+  color: var(--color-paper);
+  text-align: center;
+  padding: var(--space-2xs);
+}
+.cocard__ph-name { font-family: var(--font-display); font-weight: 700; font-size: 0.92rem; color: var(--color-paper); line-height: 1.15; }
+.cocard__ph-url  { font-family: var(--font-num); font-size: 0.66rem; color: var(--color-accent-soft); letter-spacing: 0.02em; }
+.cocard__ph-note { font-size: 0.6rem; color: oklch(82% 0.012 200); margin-top: 2px; }
+.cocard__urlrow {
+  display: flex; align-items: center; gap: 5px;
+  font-family: var(--font-num); font-size: 0.66rem;
+  color: var(--color-accent-dk); text-decoration: none;
+  padding: 2px 2px 0; min-height: 22px;
+  overflow-wrap: anywhere;
+}
+.cocard__urlrow::before { content: "\2197"; font-size: 0.62rem; color: var(--color-muted); }
+.cocard__urlrow:hover { text-decoration: underline; }
+.cocard__stats { display: grid; grid-template-columns: 1fr 1fr; gap: 4px; }
+.costat {
+  border: 1px solid var(--color-rule-2);
+  border-radius: var(--radius-sm);
+  background: var(--color-paper);
+  padding: 4px 6px;
+  min-width: 0;
+}
+.costat__lbl { font-family: var(--font-num); font-size: 0.56rem; letter-spacing: 0.03em; text-transform: uppercase; color: var(--color-muted); display: block; margin-bottom: 1px; }
+.costat__val { font-size: 0.66rem; line-height: 1.3; color: var(--color-ink); font-weight: 500; overflow-wrap: anywhere; }
+.costat__val .pred { font-size: 0.56rem; color: var(--color-muted); font-weight: 400; }
+
+
+/* ============ responsive ============ */
+/* global guard: nothing should produce a horizontal scrollbar */
+.slide, .pad, .co, .co__col { max-width: 100%; }
+img { max-width: 100%; }
+
+@media (max-width: 60rem) {
+  .tiers { grid-template-columns: repeat(3, minmax(0,1fr)); }
+  .amat, .mtypes { grid-template-columns: repeat(2, minmax(0,1fr)); }
+  .flywrap, .wallfig { grid-template-columns: 1fr; }
+}
+@media (max-width: 48rem) {
+  /* each slide grows to its content and scrolls vertically so nothing is clipped */
+  .deck { display: block; position: static; padding: 8px 8px 72px; min-height: 100dvh; }
+  .slide { aspect-ratio: auto; height: auto; min-height: calc(100dvh - 64px); max-height: none; width: 100%; border-radius: 10px; position: relative; display: none; }
+  .slide.is-active { display: block; }
+  .pad { position: relative; inset: auto; overflow-y: visible; padding: 20px 18px; }
+
+  .split, .split--even, .duo, .trio, .probgrid, .dec, .co, .toc { grid-template-columns: 1fr; }
+  .amat, .mtypes { grid-template-columns: 1fr; }
+  .tiers { grid-template-columns: 1fr 1fr; }
+  .statgrid { grid-template-columns: 1fr !important; }
+  .sfrow, .cofeat { grid-template-columns: 1fr; }
+  .swot { grid-template-columns: 1fr; grid-template-rows: auto; }
+  .opt { grid-template-columns: 52px 1fr; }
+  .cover__title { font-size: clamp(1.7rem, 8vw, 2.5rem); }
+  .hud__brand { display: none; }
+  .sumtbl .q { width: auto; }
+  .flowbar__sub { margin-left: 0; flex-basis: 100%; }
+
+  /* readable minimum body size on phones */
+  body { font-size: 15px; }
+  .swotq p { font-size: 0.82rem; line-height: 1.45; }
+  .coimpl p { font-size: 0.86rem; }
+  .costat__val { font-size: 0.78rem; }
+  .costat__lbl { font-size: 0.62rem; }
+  .cocard__urlrow { font-size: 0.78rem; min-height: 30px; }
+  .cocard__ph-url { font-size: 0.74rem; }
+
+  /* company card: full width below the SWOT, bigger thumbnail + tap targets */
+  .co__col { margin-top: var(--space-2xs); }
+  .coimpl { margin-top: var(--space-2xs); }
+  .cocard__shot img, .cocard__ph { height: 150px; }
+
+  /* tables: horizontal scroll so cells never crush */
+  .tblwrap { -webkit-overflow-scrolling: touch; overflow-x: auto; }
+  .tbl { min-width: 560px; }
+
+  /* HUD pinned to bottom so swipe + buttons work while scrolling a tall slide */
+  .hud { position: fixed; left: 0; right: 0; bottom: 0; }
+}
+@media (max-width: 30rem) {
+  .tiers { grid-template-columns: 1fr; }
+  .probgrid { grid-template-columns: 1fr; }
+  body { font-size: 14px; }
+}
+
+/* invisible edge-tap zones for slide nav on touch devices */
+.edgenav {
+  position: fixed; top: 0; bottom: 64px; width: 13vw; max-width: 86px;
+  z-index: 5; background: transparent; border: 0; padding: 0; margin: 0;
+  -webkit-tap-highlight-color: transparent; cursor: pointer;
+  display: none;
+}
+.edgenav--l { left: 0; }
+.edgenav--r { right: 0; }
+@media (hover: none) and (pointer: coarse) {
+  .edgenav { display: block; }
+}
+
+</style>
+<style>
+/* profile.css */
+/* Hallmark · pre-emit critique: P5 H5 E5 S5 R4 V5
+ * profile.css · supplementary components for the 転職会議 5-slide deep-profile (構成案サンプル)
+ * route: custom (inherited welfare-teal) · macrostructure: Narrative Workflow (① 概要 → ⑤ 課金)
+ * Per-slide composition varies: split / persona+stepper / vertical-timeline / flywheel+rank-table / pricing+donut+SWOT.
+ * paper oklch(97% 0.006 85) · accent oklch(52% 0.095 178) welfare-teal · display Zen Kaku Gothic New · body Noto Sans JP · num Geist Mono
+ * axes: light / geometric-sans / chromatic-other (teal ~178) · studied: no · context: explicit (internal draft, unpublished)
+ * gates: contrast pass(40-41) · mobile pass(34,49,50-57) · honest pass(46 — 【予想】 labelled, no fabricated stats) · tokens pass(48)
+ * All component colours/fonts reference tokens.css by name. No inline raw values except SVG-only fills already used in deck.css.
+ */
+
+/* ============ ①概要 split: feature-by-side ============ */
+.ov { display: grid; grid-template-columns: minmax(0, 1.25fr) minmax(0, 0.9fr); gap: clamp(20px, 3vw, 44px); flex: 1; min-height: 0; align-items: stretch; }
+.ov__main { display: flex; flex-direction: column; gap: var(--space-sm); min-height: 0; }
+.ov__lede { font-size: clamp(0.92rem, 0.5vw + 0.78rem, 1.1rem); color: var(--color-ink-2); line-height: 1.55; margin: 0; max-width: 60ch; }
+.ov__lede b { color: var(--color-accent-dk); }
+.featduo { display: grid; grid-template-columns: 1fr 1fr; gap: var(--space-2xs); }
+.featcol { border: 1px solid var(--color-rule); border-radius: var(--radius-md); background: var(--color-paper-2); padding: var(--space-sm); display: flex; flex-direction: column; gap: var(--space-2xs); }
+.featcol--biz { border-top: 4px solid var(--color-gold); }
+.featcol--user { border-top: 4px solid var(--color-accent); }
+.featcol__lbl { font-family: var(--font-num); font-size: 0.66rem; letter-spacing: 0.06em; text-transform: uppercase; color: var(--color-accent-dk); }
+.featcol--biz .featcol__lbl { color: var(--color-gold); }
+.featcol__h { font-family: var(--font-display); font-weight: 700; font-size: 0.96rem; line-height: 1.2; margin: 0; }
+
+/* ============ stat row (規模) ============ */
+.scale { display: grid; grid-template-columns: repeat(4, minmax(0,1fr)); gap: var(--space-2xs); }
+.scalecard { border: 1px solid var(--color-rule); border-radius: var(--radius-md); background: var(--color-paper-2); padding: var(--space-xs) var(--space-sm); display: flex; flex-direction: column; gap: 2px; }
+.scalecard b { font-family: var(--font-num); font-feature-settings: "tnum"; font-weight: 600; font-size: 1.4rem; color: var(--color-accent-dk); letter-spacing: -0.02em; line-height: 1.05; }
+.scalecard span { font-size: 0.72rem; color: var(--color-muted); line-height: 1.3; }
+.scalecard small { display: block; font-size: 0.6rem; color: var(--color-muted); }
+
+/* ============ ②persona cards ============ */
+.personas { display: grid; grid-template-columns: repeat(3, minmax(0,1fr)); gap: var(--space-2xs); }
+.persona { border: 1px solid var(--color-rule); border-radius: var(--radius-md); background: var(--color-paper-2); padding: var(--space-sm); display: flex; flex-direction: column; gap: 5px; border-top: 4px solid var(--color-accent); }
+.persona--p2 { border-top-color: var(--color-clay); }
+.persona--p3 { border-top-color: var(--color-gold); }
+.persona__tag { font-family: var(--font-num); font-size: 0.64rem; letter-spacing: 0.06em; text-transform: uppercase; color: var(--color-accent-dk); }
+.persona--p2 .persona__tag { color: var(--color-clay); }
+.persona--p3 .persona__tag { color: var(--color-gold); }
+.persona__h { font-family: var(--font-display); font-weight: 700; font-size: 1rem; line-height: 1.2; margin: 0; }
+.persona__row { font-size: 0.74rem; line-height: 1.42; color: var(--color-ink-2); }
+.persona__row b { display: inline-block; font-family: var(--font-num); font-size: 0.6rem; letter-spacing: 0.04em; color: var(--color-muted); text-transform: uppercase; margin-right: 4px; }
+
+/* ============ ②journey stepper (横→縦) ============ */
+.journey { display: flex; flex-wrap: wrap; align-items: stretch; gap: 6px; margin-top: var(--space-sm); }
+.jstep { flex: 1 1 0; min-width: 120px; border: 1px solid var(--color-rule); border-radius: var(--radius-md); background: var(--color-paper); padding: var(--space-xs) var(--space-sm); display: flex; flex-direction: column; gap: 2px; }
+.jstep--wall { border-color: var(--color-clay); background: var(--color-clay-soft); }
+.jstep--act { border: 1.5px solid var(--color-accent); background: var(--color-accent-soft); }
+.jstep__n { font-family: var(--font-num); font-weight: 700; font-size: 0.7rem; color: var(--color-accent); }
+.jstep--wall .jstep__n { color: var(--color-clay); }
+.jstep__h { font-family: var(--font-display); font-weight: 700; font-size: 0.86rem; line-height: 1.2; }
+.jstep__d { font-size: 0.68rem; color: var(--color-muted); line-height: 1.32; }
+.jarrow { align-self: center; color: var(--color-accent); font-family: var(--font-num); font-size: 0.9rem; }
+
+/* ============ ③ vertical timeline (年表) ============ */
+.timeline { position: relative; flex: 1; min-height: 0; display: grid; grid-template-columns: repeat(2, minmax(0,1fr)); gap: var(--space-2xs) var(--space-xl); align-content: start; padding-left: 2px; }
+.tlitem { position: relative; border: 1px solid var(--color-rule); border-left: 4px solid var(--color-accent); border-radius: var(--radius-md); background: var(--color-paper-2); padding: var(--space-xs) var(--space-sm); display: flex; flex-direction: column; gap: 2px; }
+.tlitem--hi { border-left-color: var(--color-clay); background: var(--color-accent-soft); border-color: oklch(82% 0.04 178); }
+.tlitem__yr { font-family: var(--font-num); font-feature-settings: "tnum"; font-weight: 600; font-size: 0.86rem; color: var(--color-accent-dk); letter-spacing: 0.02em; }
+.tlitem--hi .tlitem__yr { color: var(--color-clay); }
+.tlitem__t { font-size: 0.8rem; color: var(--color-ink); line-height: 1.4; }
+.tlitem__t b { color: var(--color-accent-dk); font-weight: 700; }
+
+/* ============ ④ channel cards + rank table ============ */
+.seowrap { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 0.92fr); gap: var(--space-md); flex: 1; min-height: 0; align-items: start; }
+.chcards { display: flex; flex-direction: column; gap: var(--space-2xs); }
+.chcard { border: 1px solid var(--color-rule); border-left: 4px solid var(--color-accent); border-radius: var(--radius-md); background: var(--color-paper-2); padding: var(--space-xs) var(--space-sm); }
+.chcard--sub { border-left-color: var(--color-muted); }
+.chcard__h { font-family: var(--font-display); font-weight: 700; font-size: 0.9rem; line-height: 1.2; margin: 0 0 2px; }
+.chcard__d { font-size: 0.74rem; color: var(--color-ink-2); line-height: 1.4; margin: 0; }
+
+/* rank table */
+.ranktbl { width: 100%; border-collapse: collapse; font-size: var(--text-sm); border: 1px solid var(--color-rule); border-radius: var(--radius-md); overflow: hidden; }
+.ranktbl caption { caption-side: bottom; text-align: left; font-size: var(--text-xs); color: var(--color-muted); margin-top: 6px; line-height: 1.4; }
+.ranktbl th, .ranktbl td { text-align: left; padding: 8px 12px; border-bottom: 1px solid var(--color-rule); }
+.ranktbl thead th { background: var(--color-deep); color: var(--color-paper); font-family: var(--font-num); font-size: 0.66rem; letter-spacing: 0.04em; text-transform: uppercase; font-weight: 600; }
+.ranktbl tbody tr:last-child td { border-bottom: none; }
+.ranktbl tbody tr:nth-child(even) td { background: oklch(95.6% 0.006 85); }
+.ranktbl .kw { font-weight: 600; color: var(--color-ink); }
+.ranktbl .kw small { display: block; font-weight: 400; font-size: 0.64rem; color: var(--color-muted); }
+.rankbadge { display: inline-flex; align-items: center; justify-content: center; min-width: 34px; height: 26px; padding: 0 8px; border-radius: 999px; font-family: var(--font-num); font-feature-settings: "tnum"; font-weight: 700; font-size: 0.82rem; }
+.rankbadge--1 { background: var(--color-accent); color: var(--color-accent-ink); }
+.rankbadge--3 { background: var(--color-accent-soft); color: var(--color-accent-dk); border: 1px solid var(--color-accent); }
+
+/* ============ ⑤ donut chart (pure CSS conic-gradient) ============ */
+.revwrap { display: grid; grid-template-columns: minmax(0, 0.85fr) minmax(0, 1fr); gap: var(--space-md); align-items: center; }
+.donutfig { display: flex; flex-direction: column; align-items: center; gap: var(--space-2xs); }
+.donut {
+  width: clamp(150px, 20vw, 196px); aspect-ratio: 1; border-radius: 50%;
+  background:
+    conic-gradient(
+      var(--color-accent)      0%      65%,   /* 企業掲載・BUSINESS 65 */
+      var(--color-gold)        65%     85%,   /* 口コミパス 20 */
+      var(--color-clay)        85%     95%,   /* スカウト送客 10 */
+      var(--color-muted)       95%    100%    /* MIRROR 5 */
+    );
+  position: relative; flex: 0 0 auto;
+  -webkit-mask: radial-gradient(circle, transparent 52%, #000 53%);
+          mask: radial-gradient(circle, transparent 52%, #000 53%);
+}
+.donut__hole { position: absolute; inset: 0; display: grid; place-items: center; text-align: center; }
+.donut__hole b { font-family: var(--font-num); font-feature-settings: "tnum"; font-weight: 600; font-size: 1.15rem; color: var(--color-ink); letter-spacing: -0.02em; }
+.donut__hole span { font-size: 0.6rem; color: var(--color-muted); }
+.donutcap { font-size: 0.66rem; color: var(--color-clay); font-family: var(--font-num); }
+.revlegend { display: flex; flex-direction: column; gap: var(--space-2xs); }
+.leg { display: grid; grid-template-columns: 14px 1fr auto; gap: 10px; align-items: center; border-bottom: 1px dashed var(--color-rule); padding-bottom: var(--space-2xs); }
+.leg:last-child { border-bottom: none; }
+.leg__sw { width: 14px; height: 14px; border-radius: 3px; }
+.leg__sw--a { background: var(--color-accent); }
+.leg__sw--g { background: var(--color-gold); }
+.leg__sw--c { background: var(--color-clay); }
+.leg__sw--m { background: var(--color-muted); }
+.leg__t { font-size: 0.8rem; color: var(--color-ink); line-height: 1.3; }
+.leg__t small { display: block; font-size: 0.66rem; color: var(--color-muted); }
+.leg__v { font-family: var(--font-num); font-feature-settings: "tnum"; font-weight: 600; font-size: 1rem; color: var(--color-accent-dk); }
+
+/* ⑤ lower band: SWOT + implication side by side */
+.revbottom { display: grid; grid-template-columns: minmax(0, 1.1fr) minmax(0, 1fr); gap: var(--space-md); margin-top: var(--space-sm); }
+
+/* ============ responsive (extends deck.css) ============ */
+@media (max-width: 60rem) {
+  .ov, .seowrap, .revwrap, .revbottom { grid-template-columns: 1fr; }
+  .personas { grid-template-columns: 1fr; }
+  .scale { grid-template-columns: repeat(2, minmax(0,1fr)); }
+  .timeline { grid-template-columns: 1fr; }
+}
+@media (max-width: 48rem) {
+  .featduo, .scale { grid-template-columns: 1fr; }
+  .journey { flex-direction: column; }
+  .jstep { min-width: 0; }
+  .jarrow { transform: rotate(90deg); }
+  .donut { width: clamp(160px, 60vw, 210px); }
+  .leg { grid-template-columns: 14px 1fr auto; }
+  /* readable minimums on phones */
+  .persona__row, .chcard__d, .tlitem__t { font-size: 0.85rem; line-height: 1.5; }
+  .ov__lede { font-size: 0.95rem; }
+  .ranktbl th, .ranktbl td { padding: 10px 12px; }
+}
+
+/* ===================================================================== */
+/* company-analysis EXTENSION — 13社 企業分析編デッキ                      */
+/* inherits welfare-teal tokens. donut/bar/index components added so each  */
+/* company can carry its own % split without per-slide raw colours.        */
+/* (conic-gradient stops are inline per donut, referencing token vars.)    */
+/* ===================================================================== */
+
+/* flexible donut: each .donut carries its own conic-gradient inline via style,
+   built ONLY from token color vars (var(--color-accent) etc). */
+.donut--flex { background: var(--conic, conic-gradient(var(--color-accent) 0 100%)); }
+
+/* horizontal-bar revenue chart (pure CSS, no lib) */
+.hbars { display: flex; flex-direction: column; gap: var(--space-2xs); width: 100%; }
+.hbar { display: grid; grid-template-columns: minmax(96px, 0.9fr) 1fr auto; gap: 10px; align-items: center; }
+.hbar__lbl { font-size: 0.76rem; color: var(--color-ink); line-height: 1.25; }
+.hbar__lbl small { display: block; font-size: 0.62rem; color: var(--color-muted); }
+.hbar__track { height: 16px; background: var(--color-paper-3); border-radius: 999px; overflow: hidden; border: 1px solid var(--color-rule-2); }
+.hbar__fill { height: 100%; border-radius: 999px; }
+.hbar__fill--a { background: var(--color-accent); }
+.hbar__fill--g { background: var(--color-gold); }
+.hbar__fill--c { background: var(--color-clay); }
+.hbar__fill--m { background: var(--color-muted); }
+.hbar__v { font-family: var(--font-num); font-feature-settings: "tnum"; font-weight: 600; font-size: 0.86rem; color: var(--color-accent-dk); white-space: nowrap; }
+
+/* 目次：13社インデックス grid */
+.coindex { display: grid; grid-template-columns: repeat(4, minmax(0,1fr)); gap: var(--space-2xs); flex: 1; min-height: 0; align-content: start; }
+.coidx {
+  border: 1px solid var(--color-rule); border-radius: var(--radius-md);
+  background: var(--color-paper-2); padding: var(--space-xs) var(--space-sm);
+  display: flex; flex-direction: column; gap: 2px; border-left: 4px solid var(--color-accent);
+}
+.coidx--5 { border-left-color: var(--color-clay); }
+.coidx__top { display: flex; align-items: baseline; justify-content: space-between; gap: 6px; }
+.coidx__n { font-family: var(--font-num); font-size: 0.66rem; color: var(--color-muted); }
+.coidx__pages { font-family: var(--font-num); font-size: 0.62rem; font-weight: 600; color: var(--color-accent-dk); background: var(--color-accent-soft); border-radius: 999px; padding: 1px 7px; }
+.coidx--5 .coidx__pages { color: var(--color-clay); background: var(--color-clay-soft); }
+.coidx__h { font-family: var(--font-display); font-weight: 700; font-size: 0.9rem; line-height: 1.2; }
+.coidx__d { font-size: 0.66rem; color: var(--color-muted); line-height: 1.3; }
+
+/* compressed 3-slide flow: reuse .flowbar but allow 3 steps cleanly (no extra css needed) */
+
+/* keep persona cards comfortable when 2-up (5-page companies use 3, 3-page use 2) */
+.personas--2 { grid-template-columns: repeat(2, minmax(0,1fr)); }
+
+/* a tidy two-column wrapper for the compressed ②沿革&獲得 slide */
+.cmpcols { display: grid; grid-template-columns: minmax(0,1fr) minmax(0,1fr); gap: var(--space-md); flex: 1; min-height: 0; align-items: start; }
+
+@media (max-width: 60rem) {
+  .coindex { grid-template-columns: repeat(2, minmax(0,1fr)); }
+  .cmpcols { grid-template-columns: 1fr; }
+  .hbar { grid-template-columns: minmax(84px, 0.9fr) 1fr auto; }
+}
+@media (max-width: 48rem) {
+  .coindex { grid-template-columns: 1fr; }
+  .personas--2 { grid-template-columns: 1fr; }
+  .donut--flex { width: clamp(160px, 60vw, 210px); }
+  .hbar__lbl { font-size: 0.85rem; }
+  .hbar__lbl small { font-size: 0.7rem; }
+}
+
+/* ===================================================================== */
+/* STRATEGIC DISCOVERY slide (新規・表紙/目次直後)                          */
+/* 王者不在の空白市場を対比で示す。welfare-teal 継承・トークンのみ参照。     */
+/* ===================================================================== */
+.disc { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1.02fr); gap: var(--space-md); flex: 1; min-height: 0; align-items: stretch; }
+.disc__lead {
+  border: 1.5px solid var(--color-accent); border-left: 6px solid var(--color-accent);
+  background: var(--color-deep); color: var(--color-paper);
+  border-radius: var(--radius-md); padding: var(--space-md);
+  display: flex; flex-direction: column; gap: var(--space-2xs); min-height: 0;
+}
+.disc__lbl { font-family: var(--font-num); font-size: 0.7rem; letter-spacing: 0.1em; text-transform: uppercase; color: var(--color-accent); }
+.disc__quote { font-family: var(--font-display); font-weight: 700; font-size: clamp(1rem, 1.05vw + 0.78rem, 1.42rem); line-height: 1.5; color: var(--color-paper); margin: 0; letter-spacing: -0.005em; }
+.disc__quote em { font-style: normal; color: var(--color-accent); }
+.disc__quote .big { color: var(--color-accent); font-family: var(--font-num); font-feature-settings: "tnum"; }
+.disc__cite { margin-top: auto; font-family: var(--font-num); font-size: 0.66rem; color: oklch(78% 0.02 200); letter-spacing: 0.02em; }
+
+.disc__cmp { display: grid; grid-template-rows: auto 1fr 1fr; gap: var(--space-2xs); min-height: 0; }
+.disc__cmphd { font-family: var(--font-num); font-size: 0.68rem; letter-spacing: 0.06em; text-transform: uppercase; color: var(--color-muted); }
+.vsrow { border: 1px solid var(--color-rule); border-radius: var(--radius-md); background: var(--color-paper-2); padding: var(--space-xs) var(--space-sm); display: flex; flex-direction: column; gap: var(--space-2xs); }
+.vsrow--king { border-left: 5px solid var(--color-accent); }
+.vsrow--gap  { border-left: 5px solid var(--color-clay); background: var(--color-clay-soft); }
+.vsrow__top { display: flex; align-items: baseline; justify-content: space-between; gap: 8px; flex-wrap: wrap; }
+.vsrow__co { font-family: var(--font-display); font-weight: 700; font-size: 0.95rem; line-height: 1.2; }
+.vsrow__verdict { font-family: var(--font-num); font-size: 0.66rem; font-weight: 700; letter-spacing: 0.03em; padding: 2px 9px; border-radius: 999px; }
+.vsrow--king .vsrow__verdict { color: var(--color-accent-ink); background: var(--color-accent); }
+.vsrow--gap  .vsrow__verdict { color: var(--color-paper); background: var(--color-clay); }
+.kwbars { display: flex; flex-direction: column; gap: 5px; }
+.kwbar { display: grid; grid-template-columns: minmax(96px, 0.85fr) 1fr auto; gap: 8px; align-items: center; }
+.kwbar__lbl { font-size: 0.72rem; color: var(--color-ink); line-height: 1.2; }
+.kwbar__lbl small { display: block; font-family: var(--font-num); font-size: 0.6rem; color: var(--color-muted); }
+.kwbar__track { height: 14px; background: var(--color-paper-3); border-radius: 999px; overflow: hidden; border: 1px solid var(--color-rule-2); position: relative; }
+.kwbar__fill { height: 100%; border-radius: 999px; }
+.kwbar__fill--king { background: var(--color-accent); }
+.kwbar__fill--gap  { background: var(--color-clay); }
+.kwbar__rank { font-family: var(--font-num); font-feature-settings: "tnum"; font-weight: 700; font-size: 0.78rem; white-space: nowrap; min-width: 42px; text-align: right; }
+.kwbar__rank--1  { color: var(--color-accent-dk); }
+.kwbar__rank--lo { color: var(--color-clay); }
+
+/* ===================================================================== */
+/* ④ 獲得キーワード実データ mini-table (各社④に追記)                       */
+/* ===================================================================== */
+.kwtbl { width: 100%; border-collapse: collapse; font-size: 0.76rem; border: 1px solid var(--color-rule); border-radius: var(--radius-md); overflow: hidden; }
+.kwtbl caption { caption-side: bottom; text-align: left; font-size: var(--text-xs); color: var(--color-muted); margin-top: 6px; line-height: 1.4; }
+.kwtbl th, .kwtbl td { text-align: left; padding: 5px 9px; border-bottom: 1px solid var(--color-rule); }
+.kwtbl thead th { background: var(--color-deep); color: var(--color-paper); font-family: var(--font-num); font-size: 0.62rem; letter-spacing: 0.03em; text-transform: uppercase; font-weight: 600; }
+.kwtbl tbody tr:last-child td { border-bottom: none; }
+.kwtbl tbody tr:nth-child(even) td { background: oklch(95.6% 0.006 85); }
+.kwtbl .kwk { font-weight: 600; color: var(--color-ink); }
+.kwtbl .kwv { font-family: var(--font-num); font-feature-settings: "tnum"; color: var(--color-ink-2); text-align: right; white-space: nowrap; }
+.kwtbl .kwr { font-family: var(--font-num); font-feature-settings: "tnum"; font-weight: 700; text-align: right; white-space: nowrap; }
+.kwtbl .kwr--1 { color: var(--color-accent-dk); }
+.kwtbl .kwr--lo { color: var(--color-clay); }
+.kwtbl tr.is-hl td { background: var(--color-accent-soft) !important; }
+
+/* ===================================================================== */
+/* ⑤ 機能：有料/無料 mini-table (各社⑤に追記)                             */
+/* ===================================================================== */
+.featmini { margin-top: var(--space-2xs); border: 1px solid var(--color-rule); border-radius: var(--radius-md); overflow: hidden; }
+.featmini__cap { font-family: var(--font-num); font-size: 0.62rem; letter-spacing: 0.05em; text-transform: uppercase; color: var(--color-muted); padding: 5px 9px 0; }
+.fmtbl { width: 100%; border-collapse: collapse; font-size: 0.72rem; }
+.fmtbl th, .fmtbl td { text-align: left; padding: 4px 9px; border-bottom: 1px solid var(--color-rule); line-height: 1.3; }
+.fmtbl tbody tr:last-child td { border-bottom: none; }
+.fmtbl tbody tr:nth-child(even) td { background: oklch(95.6% 0.006 85); }
+.fmtbl .fmf { font-weight: 600; color: var(--color-ink); }
+.fmtbl .fmv { font-family: var(--font-num); font-weight: 700; text-align: right; white-space: nowrap; font-size: 0.7rem; }
+.fmv--free { color: var(--color-accent-dk); }
+.fmv--paid { color: var(--color-clay); }
+.fmv--none { color: var(--color-muted); }
+.fmv--unk  { color: var(--color-muted); font-weight: 400; }
+
+@media (max-width: 60rem) {
+  .disc { grid-template-columns: 1fr; }
+}
+@media (max-width: 48rem) {
+  .kwbar { grid-template-columns: minmax(84px, 0.9fr) 1fr auto; }
+  .kwtbl th, .kwtbl td { padding: 7px 9px; font-size: 0.82rem; }
+  .fmtbl th, .fmtbl td { padding: 6px 9px; font-size: 0.82rem; }
+  .disc__quote { font-size: 1.05rem; line-height: 1.55; }
+}
+
+/* ===================================================================== */
+/* 機能一覧 統合早見表 (全13社 × 主要機能) — 新規スライド               */
+/* welfare-teal 継承。セル色: 無料=teal / 有料=clay / なし・未確認=muted  */
+/* 横に広いので .tblwrap で横スクロール可（モバイルで文字が潰れない）     */
+/* ===================================================================== */
+.ovmx { width: 100%; border-collapse: collapse; font-size: 0.72rem; min-width: 880px; }
+.ovmx caption { caption-side: bottom; text-align: left; font-size: var(--text-xs); color: var(--color-muted); margin-top: 8px; line-height: 1.45; padding: 0 4px; }
+.ovmx th, .ovmx td { padding: 6px 8px; border-bottom: 1px solid var(--color-rule); border-right: 1px solid var(--color-rule-2); text-align: center; line-height: 1.25; white-space: nowrap; vertical-align: middle; }
+.ovmx td:last-child, .ovmx th:last-child { border-right: none; }
+.ovmx thead th { position: sticky; top: 0; z-index: 2; background: var(--color-deep); color: var(--color-paper); font-family: var(--font-num); font-size: 0.6rem; letter-spacing: 0.02em; text-transform: uppercase; font-weight: 600; border-right-color: var(--color-deep-3); }
+.ovmx thead th:first-child { z-index: 3; }
+.ovmx tbody tr:last-child td { border-bottom: none; }
+.ovmx .ovco { position: sticky; left: 0; z-index: 1; text-align: left; font-family: var(--font-display); font-weight: 700; font-size: 0.78rem; color: var(--color-ink); background: var(--color-paper-2); border-right: 1.5px solid var(--color-rule); white-space: nowrap; }
+.ovmx tbody tr:nth-child(even) .ovco { background: oklch(93% 0.007 85); }
+.ovmx .ref .ovco { color: var(--color-muted); font-weight: 500; }
+.ovmx .cell { font-family: var(--font-num); font-weight: 600; font-size: 0.66rem; }
+.ovmx .cell small { display: block; font-size: 0.56rem; font-weight: 400; color: var(--color-muted); letter-spacing: 0; margin-top: 1px; }
+.ovmx .c-free { color: var(--color-accent-dk); background: var(--color-accent-soft); }
+.ovmx .c-paid { color: oklch(46% 0.105 48); background: var(--color-clay-soft); }
+.ovmx .c-part { color: var(--color-gold); background: var(--color-gold-soft); }
+.ovmx .c-none { color: var(--color-muted); background: var(--color-paper-3); }
+.ovmx .c-na   { color: var(--color-muted); background: transparent; font-weight: 400; }
+.ovlegend { display: flex; flex-wrap: wrap; gap: var(--space-2xs) var(--space-md); align-items: center; margin: 0 0 var(--space-2xs); }
+.ovlegend__i { display: inline-flex; align-items: center; gap: 6px; font-size: 0.7rem; color: var(--color-ink-2); font-family: var(--font-num); }
+.ovlegend__sw { width: 22px; height: 13px; border-radius: 4px; border: 1px solid var(--color-rule-2); display: inline-block; }
+.ovlegend__sw--free { background: var(--color-accent-soft); border-color: var(--color-accent); }
+.ovlegend__sw--paid { background: var(--color-clay-soft); border-color: var(--color-clay); }
+.ovlegend__sw--part { background: var(--color-gold-soft); border-color: var(--color-gold); }
+.ovlegend__sw--none { background: var(--color-paper-3); }
+/* 読み筋 5点 */
+.ovreads { display: grid; grid-template-columns: repeat(5, minmax(0,1fr)); gap: var(--space-2xs); margin-top: var(--space-sm); }
+.ovread { border: 1px solid var(--color-rule); border-top: 4px solid var(--color-accent); border-radius: var(--radius-md); background: var(--color-paper-2); padding: var(--space-xs) var(--space-sm); display: flex; flex-direction: column; gap: 4px; }
+.ovread__n { font-family: var(--font-num); font-size: 0.62rem; font-weight: 700; color: var(--color-accent-dk); letter-spacing: 0.04em; }
+.ovread__t { font-size: 0.74rem; color: var(--color-ink); line-height: 1.42; margin: 0; }
+.ovread__t strong { color: var(--color-accent-dk); font-weight: 700; }
+.ovread em { font-style: normal; color: var(--color-clay); font-weight: 700; }
+
+@media (max-width: 60rem) { .ovreads { grid-template-columns: repeat(2, minmax(0,1fr)); } }
+@media (max-width: 48rem) {
+  .ovreads { grid-template-columns: 1fr; }
+  .ovmx { font-size: 0.74rem; }
+  .ovmx th, .ovmx td { padding: 7px 8px; }
+  .ovread__t { font-size: 0.85rem; }
+}
+
+/* ===================================================================== */
+/* 各社 機能一覧スライド（無料／有料）— 左=無料 / 右=有料プラン           */
+/* welfare-teal 継承。各社⑤の後に1枚挿入。                               */
+/* ===================================================================== */
+.fnx { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1.12fr); gap: var(--space-md); flex: 1; min-height: 0; align-items: stretch; }
+.fncol { display: flex; flex-direction: column; gap: var(--space-2xs); min-height: 0; }
+.fnpanel { border: 1px solid var(--color-rule); border-radius: var(--radius-md); background: var(--color-paper-2); padding: var(--space-sm) var(--space-md); display: flex; flex-direction: column; gap: var(--space-2xs); }
+.fnpanel--free { border-top: 4px solid var(--color-accent); }
+.fnpanel--paid { border-top: 4px solid var(--color-clay); }
+.fnpanel__lbl { font-family: var(--font-num); font-size: 0.66rem; letter-spacing: 0.06em; text-transform: uppercase; font-weight: 600; }
+.fnpanel--free .fnpanel__lbl { color: var(--color-accent-dk); }
+.fnpanel--paid .fnpanel__lbl { color: var(--color-clay); }
+.fnpanel__h { font-family: var(--font-display); font-weight: 700; font-size: 1.02rem; line-height: 1.2; margin: 0 0 2px; }
+.fngrp { display: flex; flex-direction: column; gap: 3px; }
+.fngrp__cap { font-family: var(--font-num); font-size: 0.6rem; letter-spacing: 0.05em; text-transform: uppercase; color: var(--color-muted); margin-top: 4px; }
+/* 価格行：3機能の有料/無料を明示する key rows */
+.fnkeys { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 2px; }
+.fnkey { font-family: var(--font-num); font-size: 0.62rem; font-weight: 700; padding: 2px 9px; border-radius: 999px; letter-spacing: 0.01em; border: 1px solid transparent; white-space: nowrap; }
+.fnkey small { font-weight: 400; opacity: 0.8; }
+.fnkey--free { color: var(--color-accent-dk); background: var(--color-accent-soft); border-color: var(--color-accent); }
+.fnkey--paid { color: oklch(46% 0.105 48); background: var(--color-clay-soft); border-color: var(--color-clay); }
+.fnkey--none { color: var(--color-muted); background: var(--color-paper-3); border-color: var(--color-rule-2); }
+/* 有料プラン カード */
+.fnplan { border: 1px solid var(--color-rule); border-left: 4px solid var(--color-clay); border-radius: var(--radius-sm); background: var(--color-paper); padding: var(--space-2xs) var(--space-sm); }
+.fnplan__top { display: flex; align-items: baseline; justify-content: space-between; gap: 8px; flex-wrap: wrap; }
+.fnplan__name { font-family: var(--font-display); font-weight: 700; font-size: 0.86rem; color: var(--color-ink); }
+.fnplan__price { font-family: var(--font-num); font-feature-settings: "tnum"; font-weight: 700; font-size: 0.82rem; color: var(--color-clay); white-space: nowrap; }
+.fnplan__price.is-unk { color: var(--color-muted); font-weight: 500; }
+.fnplan__d { font-size: 0.74rem; color: var(--color-ink-2); line-height: 1.42; margin: 3px 0 0; }
+.fnplan--free { border-left-color: var(--color-accent); }
+.fnplan--free .fnplan__price { color: var(--color-accent-dk); }
+.fnplans { display: flex; flex-direction: column; gap: 6px; }
+.fnhint { border: 1px solid var(--color-rule); border-left: 4px solid var(--color-accent); background: var(--color-paper); border-radius: var(--radius-md); padding: var(--space-2xs) var(--space-md); margin-top: var(--space-2xs); }
+.fnhint__lbl { font-family: var(--font-num); font-size: 0.62rem; letter-spacing: 0.06em; text-transform: uppercase; color: var(--color-accent-dk); font-weight: 600; margin-bottom: 2px; }
+.fnhint p { margin: 0; font-size: 0.78rem; color: var(--color-ink); line-height: 1.45; }
+.fnhint em { font-style: normal; font-weight: 700; color: var(--color-accent-dk); }
+.unconf { color: var(--color-muted); }
+
+@media (max-width: 60rem) {
+  .fnx { grid-template-columns: 1fr; }
+}
+@media (max-width: 48rem) {
+  .fnpanel__h { font-size: 1.05rem; }
+  .blist li { font-size: 0.88rem; }
+  .fnplan__d { font-size: 0.85rem; }
+  .fnhint p { font-size: 0.88rem; }
+  .fnkey { font-size: 0.72rem; padding: 3px 10px; }
+}
+
+</style>
+<style>
+/* proposal.css */
+/* Hallmark · pre-emit critique: P5 H5 E5 S5 R5 V5
+ * proposal.css · supplementary components for the 提案編デッキ (16枚)
+ * route: custom (inherited welfare-teal from sibling company-analysis) · macrostructure: Narrative Workflow
+ *   章0 イントロ → 章1 課金モデル提案 → 章2 収益SIM → 章3 サイトマップ → 章4 まとめ
+ * Per-slide composition varies: 二面性関係図 / 60日ループ循環図 / 4階層SaaS表 / JカーブSVG /
+ *   収益構成バー / サイトマップ階層ツリー / フローチャート.
+ * paper oklch(97% 0.006 85) · accent oklch(52% 0.095 178) welfare-teal · display Zen Kaku Gothic New · body Noto Sans JP · num Geist Mono
+ * axes: light / geometric-sans / chromatic-other (teal ~178) · studied: no · context: explicit (社内ドラフト・未公開)
+ * gates: contrast pass · mobile pass (縦積み/表ラッパー横スクロール/タップ44px) · honest pass (【予想】明示・創作なし) · tokens pass
+ * All colours/fonts reference tokens.css by name. SVG-only fills reuse the same token vars already used in deck.css.
+ */
+
+/* ============ 章1-3 二面性 関係図 (hybrid platform map) ============ */
+.hybrid { display: grid; grid-template-columns: minmax(0, 1.05fr) minmax(0, 1fr); gap: var(--space-md); flex: 1; min-height: 0; align-items: center; }
+.hb { width: 100%; height: auto; max-height: 100%; display: block; }
+.hb .node { fill: var(--color-paper-2); stroke: var(--color-rule); stroke-width: 1.4; }
+.hb .node--c { fill: var(--color-accent-soft); stroke: var(--color-accent); stroke-width: 1.6; }
+.hb .node--b { fill: var(--color-gold-soft); stroke: var(--color-gold); stroke-width: 1.6; }
+.hb .hub { fill: var(--color-accent); stroke: var(--color-accent-dk); stroke-width: 1.6; }
+.hb .lbl { fill: var(--color-ink); font-family: var(--font-display); font-weight: 700; font-size: 13px; }
+.hb .lbl--c { fill: var(--color-accent-dk); }
+.hb .lbl--b { fill: var(--color-gold); }
+.hb .sub { fill: var(--color-muted); font-family: var(--font-num); font-size: 9px; }
+.hb .hubt { fill: var(--color-accent-ink); font-family: var(--font-display); font-weight: 700; font-size: 12px; }
+.hb .hubs { fill: var(--color-accent-ink); font-family: var(--font-num); font-size: 8.5px; opacity: 0.9; }
+.hb .flow { fill: none; stroke: var(--color-accent); stroke-width: 1.8; marker-end: url(#hbar); }
+.hb .flow--b { stroke: var(--color-gold); marker-end: url(#hbarg); }
+.hb .flow--muted { stroke: var(--color-rule); stroke-dasharray: 4 3; marker-end: url(#hbarm); }
+.hb .ftext { fill: var(--color-ink-2); font-family: var(--font-num); font-size: 8.5px; }
+.hb .money { fill: var(--color-gold); font-family: var(--font-num); font-weight: 600; font-size: 9px; }
+.hbside { display: flex; flex-direction: column; gap: var(--space-2xs); }
+
+/* ============ 章1-4 60日ループ 循環図 (loop) ============ */
+.loopwrap { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 0.92fr); gap: var(--space-md); flex: 1; min-height: 0; align-items: center; }
+.lp { width: 100%; height: auto; max-height: 100%; display: block; }
+.lp .ring { fill: none; stroke: var(--color-accent); stroke-width: 2; stroke-dasharray: 6 5; }
+.lp .arr { fill: none; stroke: var(--color-accent); stroke-width: 2; marker-end: url(#lparr); }
+.lp .node { fill: var(--color-paper-2); stroke: var(--color-accent); stroke-width: 1.5; }
+.lp .node--act { fill: var(--color-accent-soft); stroke: var(--color-accent); stroke-width: 2; }
+.lp .node--wall { fill: var(--color-clay-soft); stroke: var(--color-clay); stroke-width: 1.6; }
+.lp .n { fill: var(--color-ink); font-family: var(--font-display); font-weight: 700; font-size: 11px; }
+.lp .ns { fill: var(--color-muted); font-family: var(--font-num); font-size: 8px; }
+.lp .step { fill: var(--color-accent); font-family: var(--font-num); font-weight: 700; font-size: 10px; }
+.lp .step--wall { fill: var(--color-clay); }
+.lp .center { fill: var(--color-deep); }
+.lp .ct { fill: var(--color-accent); font-family: var(--font-display); font-weight: 700; font-size: 12px; }
+.lp .cs { fill: var(--color-paper); font-family: var(--font-num); font-size: 8px; }
+
+/* ============ flow-chart generic (vertical/branching steps) ============ */
+.fchart { display: flex; flex-direction: column; gap: var(--space-2xs); flex: 1; min-height: 0; }
+.fstep { display: grid; grid-template-columns: 40px 1fr; gap: 12px; align-items: stretch; }
+.fstep__rail { display: flex; flex-direction: column; align-items: center; }
+.fstep__dot { width: 30px; height: 30px; border-radius: 50%; flex: 0 0 auto; display: grid; place-items: center; font-family: var(--font-num); font-weight: 700; font-size: 0.86rem; background: var(--color-accent); color: var(--color-accent-ink); }
+.fstep__dot--wall { background: var(--color-clay); }
+.fstep__dot--out { background: var(--color-gold); }
+.fstep__line { flex: 1 1 auto; width: 2px; background: var(--color-rule); margin: 2px 0; }
+.fstep:last-child .fstep__line { display: none; }
+.fstep__body { border: 1px solid var(--color-rule); border-left: 4px solid var(--color-accent); border-radius: var(--radius-md); background: var(--color-paper-2); padding: var(--space-xs) var(--space-sm); }
+.fstep__body--wall { border-left-color: var(--color-clay); background: var(--color-clay-soft); }
+.fstep__body--out { border-left-color: var(--color-gold); background: var(--color-gold-soft); }
+.fstep__h { font-family: var(--font-display); font-weight: 700; font-size: 0.9rem; line-height: 1.25; }
+.fstep__d { font-size: 0.74rem; color: var(--color-ink-2); line-height: 1.4; margin-top: 1px; }
+.fstep__d .price { font-family: var(--font-num); font-weight: 600; color: var(--color-accent-dk); }
+
+/* 2-up flows side by side */
+.flowduo { display: grid; grid-template-columns: 1fr 1fr; gap: var(--space-md); flex: 1; min-height: 0; align-content: start; }
+.flowcard { border: 1px solid var(--color-rule); border-top: 4px solid var(--color-accent); border-radius: var(--radius-md); background: var(--color-paper); padding: var(--space-sm) var(--space-md); display: flex; flex-direction: column; gap: var(--space-2xs); }
+.flowcard--clay { border-top-color: var(--color-clay); }
+.flowcard--gold { border-top-color: var(--color-gold); }
+.flowcard__lbl { font-family: var(--font-num); font-size: 0.64rem; letter-spacing: 0.06em; text-transform: uppercase; color: var(--color-accent-dk); }
+.flowcard--clay .flowcard__lbl { color: var(--color-clay); }
+.flowcard--gold .flowcard__lbl { color: var(--color-gold); }
+.flowcard__h { font-family: var(--font-display); font-weight: 700; font-size: 0.96rem; line-height: 1.2; margin: 0; }
+/* compact inline flow chips inside a flowcard */
+.fmini { list-style: none; margin: var(--space-2xs) 0 0; padding: 0; display: flex; flex-direction: column; gap: 4px; }
+.fmini li { position: relative; padding-left: 18px; font-size: 0.76rem; color: var(--color-ink-2); line-height: 1.4; }
+.fmini li::before { content: "↓"; position: absolute; left: 2px; top: 0; font-family: var(--font-num); color: var(--color-accent); font-size: 0.7rem; }
+.fmini li:first-child::before { content: "▸"; }
+.fmini li b { color: var(--color-ink); }
+.fmini li em { font-style: normal; color: var(--color-accent-dk); font-family: var(--font-num); font-weight: 600; }
+.flowcard--clay .fmini li::before { color: var(--color-clay); }
+.flowcard--gold .fmini li::before { color: var(--color-gold); }
+
+/* ============ ロードマップ STEP (面取り→ペイン→アップセル) ============ */
+.roadmap { display: grid; grid-template-columns: repeat(3, minmax(0,1fr)); gap: 6px; flex: 1; min-height: 0; align-content: center; align-items: stretch; }
+.rmstep { border: 1px solid var(--color-rule); border-radius: var(--radius-md); background: var(--color-paper-2); padding: var(--space-sm) var(--space-md); display: flex; flex-direction: column; gap: var(--space-2xs); position: relative; }
+.rmstep--1 { border-top: 4px solid var(--color-muted); }
+.rmstep--2 { border-top: 4px solid var(--color-clay); }
+.rmstep--3 { border-top: 4px solid var(--color-accent); background: var(--color-accent-soft); border-color: oklch(80% 0.04 178); }
+.rmstep__n { font-family: var(--font-num); font-size: 0.66rem; letter-spacing: 0.06em; color: var(--color-muted); }
+.rmstep__h { font-family: var(--font-display); font-weight: 700; font-size: 1.02rem; line-height: 1.2; }
+.rmstep--3 .rmstep__h { color: var(--color-accent-dk); }
+.rmstep__d { font-size: 0.78rem; color: var(--color-ink-2); line-height: 1.45; }
+.rmstep__d em { font-style: normal; color: var(--color-accent-dk); font-weight: 600; }
+.rmstep__arrow { position: absolute; right: -16px; top: 50%; transform: translateY(-50%); font-family: var(--font-num); color: var(--color-accent); font-size: 1.3rem; z-index: 2; }
+.rmstep:last-child .rmstep__arrow { display: none; }
+
+/* ============ 専門員ハブ 4機能カード ============ */
+.hubgrid { display: grid; grid-template-columns: repeat(2, minmax(0,1fr)); gap: var(--space-2xs); flex: 1; min-height: 0; align-content: center; }
+.hubcard { border: 1px solid var(--color-rule); border-left: 4px solid var(--color-accent); border-radius: var(--radius-md); background: var(--color-paper-2); padding: var(--space-sm) var(--space-md); display: flex; flex-direction: column; gap: 3px; }
+.hubcard__tag { font-family: var(--font-num); font-size: 0.62rem; letter-spacing: 0.05em; text-transform: uppercase; color: var(--color-accent-dk); }
+.hubcard__h { font-family: var(--font-display); font-weight: 700; font-size: 0.96rem; line-height: 1.2; }
+.hubcard__d { font-size: 0.76rem; color: var(--color-ink-2); line-height: 1.42; }
+.hubcard__d em { font-style: normal; color: var(--color-accent-dk); font-weight: 600; }
+
+/* ============ フェーズ2 成長ループ flywheel (custom) ============ */
+.p2wrap { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 0.95fr); gap: var(--space-md); flex: 1; min-height: 0; align-items: center; }
+
+/* ============ Jカーブ SVG figure ============ */
+.jcurvewrap { display: grid; grid-template-columns: minmax(0, 1.35fr) minmax(0, 1fr); gap: var(--space-md); flex: 1; min-height: 0; align-items: stretch; }
+.jcfig { border: 1px solid var(--color-rule); border-radius: var(--radius-md); background: var(--color-paper-2); padding: var(--space-sm); display: flex; flex-direction: column; gap: var(--space-2xs); min-height: 0; }
+.jc { width: 100%; height: auto; display: block; }
+.jc .axis { stroke: var(--color-rule); stroke-width: 1; }
+.jc .zero { stroke: var(--color-ink-2); stroke-width: 1.2; stroke-dasharray: 5 4; }
+.jc .grid { stroke: var(--color-rule-2); stroke-width: 0.8; }
+.jc .gtick { fill: var(--color-muted); font-family: var(--font-num); font-size: 9px; }
+.jc .line-std { fill: none; stroke: var(--color-accent); stroke-width: 2.4; }
+.jc .line-con { fill: none; stroke: var(--color-clay); stroke-width: 2; stroke-dasharray: 5 3; }
+.jc .dot-std { fill: var(--color-accent); }
+.jc .dot-con { fill: var(--color-clay); }
+.jc .area-std { fill: var(--color-accent); opacity: 0.08; }
+.jc .crosslbl { font-family: var(--font-num); font-size: 9px; font-weight: 600; }
+.jc .crosslbl-std { fill: var(--color-accent-dk); }
+.jc .crosslbl-con { fill: var(--color-clay); }
+.jc .endlbl { font-family: var(--font-num); font-weight: 700; font-size: 11px; }
+.jc .endlbl-std { fill: var(--color-accent-dk); }
+.jc .endlbl-con { fill: var(--color-clay); }
+.jc .zlbl { fill: var(--color-ink-2); font-family: var(--font-num); font-size: 8.5px; }
+.jclegend { display: flex; flex-wrap: wrap; gap: var(--space-xs); }
+.jcleg { display: inline-flex; align-items: center; gap: 6px; font-family: var(--font-num); font-size: 0.66rem; color: var(--color-ink-2); }
+.jcleg__sw { width: 16px; height: 3px; border-radius: 2px; }
+.jcleg__sw--std { background: var(--color-accent); }
+.jcleg__sw--con { background: var(--color-clay); }
+.jcside { display: flex; flex-direction: column; gap: var(--space-2xs); min-height: 0; }
+
+/* ============ サイトマップ 階層ツリー ============ */
+.smaptop { display: flex; flex-wrap: wrap; gap: var(--space-2xs); margin-bottom: var(--space-2xs); }
+.smaptree { flex: 1; min-height: 0; overflow: auto; display: grid; grid-template-columns: repeat(5, minmax(150px,1fr)); gap: var(--space-2xs); align-content: start; }
+.smcol { display: flex; flex-direction: column; gap: 5px; min-width: 0; }
+.smcol__head { font-family: var(--font-display); font-weight: 700; font-size: 0.82rem; color: var(--color-accent-ink); background: var(--color-accent); border-radius: var(--radius-sm); padding: 5px 9px; text-align: center; line-height: 1.2; }
+.smcol--b .smcol__head { background: var(--color-gold); }
+.smcol--pro .smcol__head { background: var(--color-accent-dk); }
+.smcol--admin .smcol__head { background: var(--color-deep); }
+.smcol--p2 .smcol__head { background: var(--color-clay); }
+.smnode { border: 1px solid var(--color-rule); border-left: 3px solid var(--color-accent); border-radius: var(--radius-sm); background: var(--color-paper-2); padding: 4px 8px; }
+.smcol--b .smnode { border-left-color: var(--color-gold); }
+.smcol--pro .smnode { border-left-color: var(--color-accent-dk); }
+.smcol--admin .smnode { border-left-color: var(--color-deep-3); }
+.smcol--p2 .smnode { border-left-color: var(--color-clay); border-style: dashed; }
+.smnode__h { font-family: var(--font-display); font-weight: 700; font-size: 0.74rem; line-height: 1.2; color: var(--color-ink); }
+.smnode__p { font-family: var(--font-num); font-size: 0.56rem; color: var(--color-muted); }
+.smnode__star { color: var(--color-clay); font-size: 0.62rem; }
+.smnode__sub { list-style: none; margin: 2px 0 0; padding: 0; display: flex; flex-direction: column; gap: 1px; }
+.smnode__sub li { font-size: 0.6rem; color: var(--color-ink-2); line-height: 1.3; padding-left: 9px; position: relative; }
+.smnode__sub li::before { content: "└"; position: absolute; left: 0; color: var(--color-rule); font-family: var(--font-num); }
+
+/* 情報設計の考え方 4原則 */
+.principles { display: grid; grid-template-columns: repeat(4, minmax(0,1fr)); gap: var(--space-2xs); margin-bottom: var(--space-2xs); }
+.prin { border: 1px solid var(--color-rule); border-top: 3px solid var(--color-accent); border-radius: var(--radius-md); background: var(--color-paper-2); padding: var(--space-2xs) var(--space-sm); }
+.prin__n { font-family: var(--font-num); font-size: 0.6rem; font-weight: 700; color: var(--color-accent-dk); }
+.prin__t { font-size: 0.68rem; color: var(--color-ink-2); line-height: 1.35; margin: 1px 0 0; }
+.prin__t b { color: var(--color-accent-dk); }
+
+/* ============ まとめ 次の一手 stepper ============ */
+.nexts { display: grid; grid-template-columns: repeat(3, minmax(0,1fr)); gap: 6px; }
+.nextstep { border: 1px solid var(--color-rule); border-radius: var(--radius-md); background: var(--color-paper-2); padding: var(--space-sm) var(--space-md); display: flex; flex-direction: column; gap: 3px; position: relative; border-top: 4px solid var(--color-accent); }
+.nextstep__n { font-family: var(--font-num); font-size: 0.64rem; letter-spacing: 0.06em; color: var(--color-muted); }
+.nextstep__h { font-family: var(--font-display); font-weight: 700; font-size: 0.95rem; line-height: 1.2; }
+.nextstep__d { font-size: 0.74rem; color: var(--color-ink-2); line-height: 1.4; }
+.nextstep__arrow { position: absolute; right: -14px; top: 50%; transform: translateY(-50%); font-family: var(--font-num); color: var(--color-accent); font-size: 1.2rem; z-index: 2; }
+.nexts .nextstep:last-child .nextstep__arrow { display: none; }
+
+/* ============ responsive (extends deck.css/profile.css) ============ */
+@media (max-width: 60rem) {
+  .hybrid, .loopwrap, .p2wrap, .jcurvewrap { grid-template-columns: 1fr; }
+  .roadmap, .nexts { grid-template-columns: 1fr; }
+  .rmstep__arrow, .nextstep__arrow { display: none; }
+  .roadmap .rmstep, .nexts .nextstep { border-top-width: 4px; }
+  .hubgrid { grid-template-columns: 1fr; }
+  .flowduo { grid-template-columns: 1fr; }
+  .principles { grid-template-columns: repeat(2, minmax(0,1fr)); }
+  .smaptree { grid-template-columns: 1fr; }
+}
+@media (max-width: 48rem) {
+  .principles { grid-template-columns: 1fr; }
+  /* keep the wide sitemap tree usable: horizontal scroll wrapper */
+  .smapscroll { overflow-x: auto; -webkit-overflow-scrolling: touch; }
+  .smapscroll .smaptree { grid-template-columns: repeat(5, minmax(160px,1fr)); min-width: 820px; }
+  .fstep__d, .fstep__h, .hubcard__d, .rmstep__d { font-size: 0.88rem; line-height: 1.5; }
+  .fmini li { font-size: 0.86rem; }
+  .jcside .statcard__cap, .jcside .statcard__note { font-size: 0.82rem; }
+  /* Jカーブ SVG inside a scrollable card on narrow phones if needed */
+  .jc { min-width: 0; }
+}
+@media (max-width: 30rem) {
+  .smapscroll .smaptree { min-width: 760px; }
+}
+
+</style>
+</head>
+<body>
+<button class="edgenav edgenav--l" id="edgePrev" aria-label="前のスライド"></button>
+<button class="edgenav edgenav--r" id="edgeNext" aria-label="次のスライド"></button>
+<div class="hud__bar" id="bar"></div>
+<div class="deck" id="deck">
+
+<!-- ============================================================ -->
+<!-- 1 表紙 -->
+<!-- ============================================================ -->
+<section class="slide cover" data-i="1">
+  <div class="pad">
+    <div class="cover__mark"><span class="cover__dot"></span> 事業提案 · 提案編 · 社内ドラフト（未公開）</div>
+    <div>
+      <h1 class="cover__title">就労継続支援B型<br><span class="em2">特化型 口コミポータル</span> 事業提案</h1>
+      <p class="cover__sub">「転職会議の障害者就労版」。C面（利用者）の圧倒的トラフィックを、B面（事業所）への送客課金と評判管理SaaSで収益化するハイブリッド二面性プラットフォーム。課金モデル・収益試算・情報設計を一括提案する。</p>
+    </div>
+    <div class="cover__flow">
+      <span><em>①</em> 課金モデル提案</span><span class="arrow">›</span>
+      <span><em>②</em> 収益シミュレーション</span><span class="arrow">›</span>
+      <span><em>③</em> サイトマップ（情報設計）</span><span class="arrow">›</span>
+      <span><em>④</em> まとめ</span>
+    </div>
+    <dl class="cover__meta">
+      <div><dt>提出先</dt><dd>ゴールデンゲート 御中</dd></div>
+      <div><dt>提案</dt><dd>合同会社ユプラス</dd></div>
+      <div><dt>総枚数</dt><dd>16枚</dd></div>
+      <div><dt>作成</dt><dd>2026-06</dd></div>
+    </dl>
+  </div>
+</section>
+
+<!-- ============================================================ -->
+<!-- 2 目次 -->
+<!-- ============================================================ -->
+<section class="slide" data-i="2">
+  <div class="pad">
+    <div class="shead">
+      <p class="kick">目次 · Agenda</p>
+      <h2 class="title">課金モデル → 収益試算 → 情報設計 → まとめ の<em>4章構成</em></h2>
+    </div>
+    <div class="toc flex-fill">
+      <div class="toccol">
+        <span class="toccol__stage">章1 / CHAPTER 01</span>
+        <h3 class="toccol__h">課金モデル提案</h3>
+        <p class="toccol__desc">C面の極薄の壁とB面ハイブリッド収益、専門員ハブ、フェーズ2拡張までの全体設計。</p>
+        <ul class="toclist">
+          <li><span class="n">03</span>ハイブリッド二面性 全体像</li>
+          <li><span class="n">04</span>C面戦略・60日UGCループ</li>
+          <li><span class="n">05</span>閲覧専用パス ¥1,980</li>
+          <li><span class="n">06</span>AIモデレーション3段</li>
+          <li><span class="n">07</span>B面① 送客従量課金</li>
+          <li><span class="n">08</span>B面② SaaS 4階層</li>
+          <li><span class="n">09</span>B面 必勝ロードマップ</li>
+          <li><span class="n">10</span>相談支援専門員ハブ</li>
+          <li><span class="n">11</span>フェーズ2 受発注＋成長ループ</li>
+        </ul>
+      </div>
+      <div class="toccol toccol--propose">
+        <span class="toccol__stage">章2 / CHAPTER 02</span>
+        <h3 class="toccol__h">収益シミュレーション</h3>
+        <p class="toccol__desc">24ヶ月の主要指標、Jカーブによる回収構造、収益構成と感応度分析。</p>
+        <ul class="toclist">
+          <li><span class="n">12</span>24ヶ月SIM 主要指標・Jカーブ</li>
+          <li><span class="n">13</span>収益構成＆感応度</li>
+        </ul>
+      </div>
+      <div class="toccol toccol--decide">
+        <span class="toccol__stage">章3-4 / CHAPTER 03–04</span>
+        <h3 class="toccol__h">情報設計・まとめ</h3>
+        <p class="toccol__desc">チラ見せSEOを最上位に据えたサイトマップと主要導線、そして次の一手。</p>
+        <ul class="toclist">
+          <li><span class="n">14</span>情報設計の考え方・サイトマップ全体図</li>
+          <li><span class="n">15</span>主要ユーザー導線 4本</li>
+          <li><span class="n">16</span>まとめ＆次の一手</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================ -->
+<!-- 章1 扉相当（3枚目を全体像＝章ラベル付き） -->
+<!-- 3 ハイブリッド二面性 全体像 -->
+<!-- ============================================================ -->
+<section class="slide" data-i="3">
+  <div class="pad">
+    <div class="flowbar">
+      <span class="flowbar__step is-now"><b>章1</b> 課金モデル</span>
+      <span class="flowbar__sep">›</span>
+      <span class="flowbar__step">章2 収益SIM</span>
+      <span class="flowbar__sep">›</span>
+      <span class="flowbar__step">章3 サイトマップ</span>
+      <span class="flowbar__sep">›</span>
+      <span class="flowbar__step">章4 まとめ</span>
+      <span class="flowbar__sub">03 / 16</span>
+    </div>
+    <div class="shead">
+      <p class="kick">章1 · 事業の全体像</p>
+      <h2 class="title">トラフィックの<em>C面</em>と収益化の<em>B面</em>を、<em>相談支援専門員</em>がハブで繋ぐ二面性プラットフォーム</h2>
+    </div>
+    <div class="hybrid flex-fill">
+      <svg class="hb" viewBox="0 0 560 320" role="img" aria-label="ハイブリッド二面性プラットフォームの関係図">
+        <defs>
+          <marker id="hbar" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 z" fill="var(--color-accent)"/></marker>
+          <marker id="hbarg" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 z" fill="var(--color-gold)"/></marker>
+          <marker id="hbarm" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 z" fill="var(--color-rule)"/></marker>
+        </defs>
+        <!-- C面 left -->
+        <rect class="node node--c" x="14" y="44" width="150" height="62" rx="10"/>
+        <text class="lbl lbl--c" x="89" y="70" text-anchor="middle">C面：利用者・家族</text>
+        <text class="sub" x="89" y="88" text-anchor="middle">基本無料／60日閲覧ループ</text>
+        <!-- ROM専 -->
+        <rect class="node node--c" x="14" y="214" width="150" height="62" rx="10"/>
+        <text class="lbl lbl--c" x="89" y="240" text-anchor="middle">ROM専・同業調査</text>
+        <text class="sub" x="89" y="258" text-anchor="middle">閲覧パス ¥1,980/月</text>
+        <!-- hub center -->
+        <circle class="hub" cx="280" cy="160" r="58"/>
+        <text class="hubt" x="280" y="150" text-anchor="middle">相談支援</text>
+        <text class="hubt" x="280" y="166" text-anchor="middle">専門員ハブ</text>
+        <text class="hubs" x="280" y="184" text-anchor="middle">eKYC認証・無料</text>
+        <!-- B面 right -->
+        <rect class="node node--b" x="396" y="44" width="150" height="62" rx="10"/>
+        <text class="lbl lbl--b" x="471" y="70" text-anchor="middle">B面：事業所</text>
+        <text class="sub" x="471" y="88" text-anchor="middle">送客課金＋評判管理SaaS</text>
+        <!-- 運営 -->
+        <rect class="node" x="396" y="214" width="150" height="62" rx="10"/>
+        <text class="lbl" x="471" y="240" text-anchor="middle">運営（プラットフォーム）</text>
+        <text class="sub" x="471" y="258" text-anchor="middle">AIモデレーション3段</text>
+
+        <!-- flows: C -> hub (UGC) -->
+        <path class="flow" d="M164 78 Q230 100 235 132"/>
+        <text class="ftext" x="196" y="100">UGC投稿</text>
+        <!-- ROM -> hub -->
+        <path class="flow" d="M164 240 Q230 215 233 190"/>
+        <!-- hub -> B (送客リード) -->
+        <path class="flow--b flow" d="M328 132 Q380 100 396 80"/>
+        <text class="money" x="350" y="98">送客リード</text>
+        <!-- B -> 運営 (課金) -->
+        <path class="flow--b flow" d="M471 106 L471 210"/>
+        <text class="money" x="475" y="162">送客課金＋SaaS</text>
+        <!-- 運営 -> hub (信頼性/モデレーション) -->
+        <path class="flow--muted flow" d="M396 244 Q335 210 322 188"/>
+        <!-- hub -> C (情報・回答) -->
+        <path class="flow--muted flow" d="M222 152 Q190 130 164 96"/>
+        <text class="ftext" x="176" y="124">Q&amp;A回答</text>
+      </svg>
+      <div class="hbside">
+        <div class="panel panel--accent">
+          <h3 class="panel__h panel__h--sm">C面：圧倒的トラフィック</h3>
+          <ul class="blist">
+            <li>利用者・家族は完全無料。極限まで下げたアクションで全情報を60日間閲覧可能。</li>
+            <li>投稿したくない層／競合調査BtoB業者には<b>閲覧専用パス（月1,980円）</b>を販売。</li>
+          </ul>
+        </div>
+        <div class="panel panel--gold">
+          <h3 class="panel__h panel__h--sm">B面：ハイブリッド収益化</h3>
+          <ul class="blist blist--gold">
+            <li>定員を埋める<b>送客従量課金</b>と、口コミ管理の<b>月額SaaS</b>の二本柱。</li>
+          </ul>
+        </div>
+        <p class="src">課金モデル提案.md §1（事業の全体像とハイブリッドマネタイズ構造）</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================ -->
+<!-- 4 C面戦略・60日UGCループ -->
+<!-- ============================================================ -->
+<section class="slide" data-i="4">
+  <div class="pad">
+    <div class="flowbar">
+      <span class="flowbar__step is-now"><b>章1</b> 課金モデル</span>
+      <span class="flowbar__sep">›</span><span class="flowbar__step">章2 収益SIM</span>
+      <span class="flowbar__sep">›</span><span class="flowbar__step">章3 サイトマップ</span>
+      <span class="flowbar__sep">›</span><span class="flowbar__step">章4 まとめ</span>
+      <span class="flowbar__sub">04 / 16</span>
+    </div>
+    <div class="shead">
+      <p class="kick">章1 · C面戦略</p>
+      <h2 class="title">極薄の壁＋<em>「60日間UGC獲得ループ」</em>でコールドスタートを最速で抜ける</h2>
+    </div>
+    <div class="loopwrap flex-fill">
+      <svg class="lp" viewBox="0 0 380 320" role="img" aria-label="60日間UGC獲得ループの循環図">
+        <defs>
+          <marker id="lparr" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 z" fill="var(--color-accent)"/></marker>
+        </defs>
+        <!-- center -->
+        <circle class="center" cx="190" cy="160" r="46"/>
+        <text class="ct" x="190" y="152" text-anchor="middle">60日</text>
+        <text class="ct" x="190" y="168" text-anchor="middle">ループ</text>
+        <text class="cs" x="190" y="184" text-anchor="middle">自己強化型</text>
+        <!-- nodes around circle (4 corners) -->
+        <!-- 1 top: チラ見せSEO -->
+        <rect class="node" x="120" y="14" width="140" height="50" rx="10"/>
+        <text class="step" x="130" y="32">①</text>
+        <text class="n" x="190" y="34" text-anchor="middle">チラ見せSEO流入</text>
+        <text class="ns" x="190" y="50" text-anchor="middle">冒頭2行＋最新Q&amp;Aのみ公開</text>
+        <!-- 2 right: ワンタップ投稿 -->
+        <rect class="node node--act" x="262" y="106" width="110" height="56" rx="10"/>
+        <text class="step" x="270" y="124">②</text>
+        <text class="n" x="317" y="126" text-anchor="middle">ワンタップ投稿</text>
+        <text class="ns" x="317" y="140" text-anchor="middle">テンプレ/タグ→</text>
+        <text class="ns" x="317" y="151" text-anchor="middle">AIが下書き生成</text>
+        <!-- 3 bottom: 60日閲覧 -->
+        <rect class="node node--act" x="120" y="256" width="140" height="50" rx="10"/>
+        <text class="step" x="130" y="274">③</text>
+        <text class="n" x="190" y="276" text-anchor="middle">全国全施設 60日見放題</text>
+        <text class="ns" x="190" y="292" text-anchor="middle">1アクションで一括解放</text>
+        <!-- 4 left: 期限切れ→レビュー -->
+        <rect class="node node--wall" x="8" y="106" width="112" height="56" rx="10"/>
+        <text class="step step--wall" x="16" y="124">④</text>
+        <text class="n" x="64" y="126" text-anchor="middle">期限切れ→</text>
+        <text class="n" x="64" y="140" text-anchor="middle">見学後レビュー</text>
+        <text class="ns" x="64" y="153" text-anchor="middle">で再解放</text>
+        <!-- arcs (clockwise) -->
+        <path class="arr" d="M252 56 Q300 78 312 102"/>
+        <path class="arr" d="M312 166 Q300 232 256 262"/>
+        <path class="arr" d="M120 272 Q70 240 66 166"/>
+        <path class="arr" d="M70 104 Q110 56 124 50"/>
+      </svg>
+      <div class="hbside">
+        <div class="panel">
+          <h3 class="panel__h panel__h--sm">情報を引き出す「極薄の壁」</h3>
+          <ul class="blist">
+            <li><b>チラ見せSEO</b>：冒頭2行・最新Q&amp;Aのみ無料開放しSEO流入を最大化。</li>
+            <li><b>超低カロリーなアクション</b>：テンプレ質問選択（ワンタップQ&amp;A）かタグ選択（AIタグレビュー）でAIが下書き生成。</li>
+            <li><b>1アクション＝全国60日見放題</b>。施設探し終盤の60日後に期限切れ。</li>
+          </ul>
+        </div>
+        <div class="panel panel--accent">
+          <h3 class="panel__h panel__h--sm">UGCの無限ループ</h3>
+          <ul class="blist">
+            <li>「続きを見るには見学した施設のレビューを」→ <b>見学前Q&amp;A→見学後レビュー</b>のジャーニーに沿った自然な口コミ回収。</li>
+          </ul>
+        </div>
+        <p class="src">課金モデル提案.md §2（C面戦略・60日間のUGC獲得ループ）</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================ -->
+<!-- 5 閲覧専用パス -->
+<!-- ============================================================ -->
+<section class="slide" data-i="5">
+  <div class="pad">
+    <div class="flowbar">
+      <span class="flowbar__step is-now"><b>章1</b> 課金モデル</span>
+      <span class="flowbar__sep">›</span><span class="flowbar__step">章2 収益SIM</span>
+      <span class="flowbar__sep">›</span><span class="flowbar__step">章3 サイトマップ</span>
+      <span class="flowbar__sep">›</span><span class="flowbar__step">章4 まとめ</span>
+      <span class="flowbar__sub">05 / 16</span>
+    </div>
+    <div class="shead">
+      <p class="kick">章1 · 有料C面</p>
+      <h2 class="title">アクション不要の<em>「閲覧専用パス」（月額1,980円）</em>で取りこぼしを防ぐ</h2>
+    </div>
+    <div class="split flex-fill">
+      <div class="dec__col">
+        <div class="statcard" style="background:var(--color-deep);color:var(--color-paper);border-color:var(--color-rule-dk);">
+          <span class="statbig statbig--xl" style="color:var(--color-accent);">¥1,980<small style="font-family:var(--font-body);font-size:0.9rem;color:var(--color-paper);font-weight:400;"> / 月</small></span>
+          <span class="statcard__cap" style="color:oklch(86% 0.012 200);">投稿なしで全文閲覧できる有料パス</span>
+        </div>
+        <div class="panel panel--accent">
+          <h3 class="panel__h panel__h--sm">価格の根拠</h3>
+          <p style="margin:0;font-size:var(--text-sm);color:var(--color-ink-2);line-height:1.5;">市場で適正と認知されている<b style="color:var(--color-accent-dk);">「1,980円」</b>に設定。一般ユーザーには絶妙なハードルとなりつつ、業者のシステム利用料として確実に取りこぼしを防ぐ。</p>
+        </div>
+      </div>
+      <div class="dec__col">
+        <div class="probcard">
+          <span class="probcard__who">対象 01</span>
+          <h3 class="probcard__h">投稿したくないユーザー</h3>
+          <p>どうしても口コミ投稿をしたくないが全文を読みたい層。60日ループの「壁」を越えない代替導線。</p>
+        </div>
+        <div class="probcard probcard--gold">
+          <span class="probcard__who">対象 02</span>
+          <h3 class="probcard__h">競合調査・評判管理BtoB業者</h3>
+          <p>他社の評判管理を行う業者向け。<b>B面ライトプラン契約者には無料付随</b>（B面と相互送客）。</p>
+        </div>
+      </div>
+    </div>
+    <p class="src" style="margin-top:var(--space-sm);">課金モデル提案.md §2-②（閲覧専用パス）／§4-②ライト（パス無料付随）</p>
+  </div>
+</section>
+
+<!-- ============================================================ -->
+<!-- 6 AIモデレーション3段 -->
+<!-- ============================================================ -->
+<section class="slide" data-i="6">
+  <div class="pad">
+    <div class="flowbar">
+      <span class="flowbar__step is-now"><b>章1</b> 課金モデル</span>
+      <span class="flowbar__sep">›</span><span class="flowbar__step">章2 収益SIM</span>
+      <span class="flowbar__sep">›</span><span class="flowbar__step">章3 サイトマップ</span>
+      <span class="flowbar__sep">›</span><span class="flowbar__step">章4 まとめ</span>
+      <span class="flowbar__sub">06 / 16</span>
+    </div>
+    <div class="shead">
+      <p class="kick">章1 · 安全な即時公開</p>
+      <h2 class="title">福祉領域のセンシティブ情報を守る<em>AIモデレーション3段</em>構え</h2>
+    </div>
+    <div class="fchart flex-fill" style="justify-content:center;">
+      <div class="fstep">
+        <div class="fstep__rail"><div class="fstep__dot">1</div><div class="fstep__line"></div></div>
+        <div class="fstep__body">
+          <div class="fstep__h">第1関門：NGワード辞書</div>
+          <div class="fstep__d">明らかな暴言・差別用語をシステムで瞬時に弾く。</div>
+        </div>
+      </div>
+      <div class="fstep">
+        <div class="fstep__rail"><div class="fstep__dot">2</div><div class="fstep__line"></div></div>
+        <div class="fstep__body">
+          <div class="fstep__h">第2関門：AI文脈審査</div>
+          <div class="fstep__d">個人情報の漏洩や文脈に隠れた悪意をAIが判定。問題なければ<span class="price">即時公開</span>。</div>
+        </div>
+      </div>
+      <div class="fstep">
+        <div class="fstep__rail"><div class="fstep__dot fstep__dot--out">3</div></div>
+        <div class="fstep__body fstep__body--out">
+          <div class="fstep__h">第3関門：伴走型修正アシスト</div>
+          <div class="fstep__d">違反時もシャドウバン（隠蔽）はせず、AIが「ここを伏せ字にすれば安全に公開できますよ」とカドが立たない形で修正を促す。</div>
+        </div>
+      </div>
+    </div>
+    <div class="notestrip notestrip--accent notestrip--tight">
+      <strong>ねらい：</strong>ユーザーの熱量を逃がさず（＝即時公開）、福祉特有のセンシティブ情報を守る両立を、3段の自動審査で実現する。
+    </div>
+    <p class="src" style="margin-top:var(--space-2xs);">課金モデル提案.md §3（AIモデレーション・安全な即時公開システム）</p>
+  </div>
+</section>
+
+<!-- ============================================================ -->
+<!-- 7 B面① 送客従量課金 -->
+<!-- ============================================================ -->
+<section class="slide" data-i="7">
+  <div class="pad">
+    <div class="flowbar">
+      <span class="flowbar__step is-now"><b>章1</b> 課金モデル</span>
+      <span class="flowbar__sep">›</span><span class="flowbar__step">章2 収益SIM</span>
+      <span class="flowbar__sep">›</span><span class="flowbar__step">章3 サイトマップ</span>
+      <span class="flowbar__sep">›</span><span class="flowbar__step">章4 まとめ</span>
+      <span class="flowbar__sub">07 / 16</span>
+    </div>
+    <div class="shead">
+      <p class="kick">章1 · B面戦略①</p>
+      <h2 class="title">主力エンジンは<em>送客従量課金</em>（1件 4,000〜5,000円・成果報酬型）</h2>
+    </div>
+    <div class="split flex-fill">
+      <div class="dec__col">
+        <div class="statcard">
+          <span class="statbig statbig--lg"><em>¥4,000〜5,000</em><small style="font-family:var(--font-body);font-size:0.9rem;color:var(--color-muted);font-weight:400;"> / 件</small></span>
+          <span class="statcard__cap">見学申込・問い合わせが発生したタイミングのみ課金</span>
+          <span class="statcard__note">SIMでは中央値 1件4,500円で計上【予想：単価固定】</span>
+        </div>
+        <div class="panel panel--accent">
+          <h3 class="panel__h panel__h--sm">なぜ主力エンジンか</h3>
+          <ul class="blist">
+            <li><b>導入障壁ゼロ</b>：定員を埋めたい施設が、リスクなく始められる成果報酬型。</li>
+            <li><b>即効性</b>：掲載数の面取り直後から最初に立ち上がる収益。</li>
+          </ul>
+        </div>
+      </div>
+      <div class="dec__col">
+        <div class="fchart" style="gap:var(--space-2xs);">
+          <div class="fstep">
+            <div class="fstep__rail"><div class="fstep__dot">A</div><div class="fstep__line"></div></div>
+            <div class="fstep__body"><div class="fstep__h">利用者・専門員が行動</div><div class="fstep__d">施設詳細から【見学申込】【問い合わせ】を押下。</div></div>
+          </div>
+          <div class="fstep">
+            <div class="fstep__rail"><div class="fstep__dot">B</div><div class="fstep__line"></div></div>
+            <div class="fstep__body"><div class="fstep__h">事業所にリード着信</div><div class="fstep__d">ダッシュボードに送客リードが届く。</div></div>
+          </div>
+          <div class="fstep">
+            <div class="fstep__rail"><div class="fstep__dot fstep__dot--out">¥</div></div>
+            <div class="fstep__body fstep__body--out"><div class="fstep__h">1件ごとに課金が発生</div><div class="fstep__d">成果（リード成立）のタイミングのみ <span class="price">4,000〜5,000円</span>。</div></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <p class="src" style="margin-top:var(--space-sm);">課金モデル提案.md §4-①（送客従量課金）／20-revenue-sim-v2.md §1-1</p>
+  </div>
+</section>
+
+<!-- ============================================================ -->
+<!-- 8 B面② SaaS 4階層 -->
+<!-- ============================================================ -->
+<section class="slide" data-i="8">
+  <div class="pad">
+    <div class="flowbar">
+      <span class="flowbar__step is-now"><b>章1</b> 課金モデル</span>
+      <span class="flowbar__sep">›</span><span class="flowbar__step">章2 収益SIM</span>
+      <span class="flowbar__sep">›</span><span class="flowbar__step">章3 サイトマップ</span>
+      <span class="flowbar__sep">›</span><span class="flowbar__step">章4 まとめ</span>
+      <span class="flowbar__sub">08 / 16</span>
+    </div>
+    <div class="shead">
+      <p class="kick">章1 · B面戦略②</p>
+      <h2 class="title">評判管理SaaS <em>4階層</em>サブスクリプション</h2>
+    </div>
+    <div class="tiers flex-fill" style="grid-template-columns:repeat(4,minmax(0,1fr));">
+      <div class="tier tier--future">
+        <span class="tier__lvl">階層 0</span>
+        <span class="tier__name">フリー</span>
+        <span class="tier__price">¥0<small>掲載のみ</small></span>
+        <ul class="blist" style="margin-top:4px;"><li style="font-size:0.74rem;">定型文返信</li><li style="font-size:0.74rem;">月1件のオリジナル返信</li></ul>
+        <span class="tier__bench">まずは価値を体感（面取り）</span>
+      </div>
+      <div class="tier tier--hero">
+        <span class="tier__badge">アップセルの軸</span>
+        <span class="tier__lvl">階層 1</span>
+        <span class="tier__name">ライト</span>
+        <span class="tier__price">¥5,000<small>/ 月</small></span>
+        <ul class="blist" style="margin-top:4px;"><li style="font-size:0.74rem;">公式返信を<b>無制限</b>に開放</li><li style="font-size:0.74rem;"><b>閲覧パス（¥1,980相当）無料付随</b></li></ul>
+        <span class="tier__bench">クレーム反論＋競合調査ニーズを吸収</span>
+      </div>
+      <div class="tier">
+        <span class="tier__lvl">階層 2</span>
+        <span class="tier__name">スタンダード</span>
+        <span class="tier__price">¥15,000<small>/ 月</small></span>
+        <ul class="blist" style="margin-top:4px;"><li style="font-size:0.74rem;">検索結果での<b>上位表示</b></li><li style="font-size:0.74rem;">B型特化 口コミAI分析ダッシュボード</li></ul>
+        <span class="tier__bench">露出＋意思決定支援</span>
+      </div>
+      <div class="tier">
+        <span class="tier__lvl">階層 3</span>
+        <span class="tier__name">プレミアム</span>
+        <span class="tier__price">¥30,000<small>/ 月</small></span>
+        <ul class="blist" style="margin-top:4px;"><li style="font-size:0.74rem;"><b>トップ枠の固定表示</b></li><li style="font-size:0.74rem;">最上位の露出枠を付与</li></ul>
+        <span class="tier__bench">最大露出の独占枠</span>
+      </div>
+    </div>
+    <div class="notestrip notestrip--accent notestrip--tight">
+      <strong>設計思想：</strong>クレームや競合調査ニーズを逆手に取り、高付加価値の月額モデルへ。ライトの「閲覧パス無料付随」がアップセルの最強フックになる。
+    </div>
+    <p class="src" style="margin-top:var(--space-2xs);">課金モデル提案.md §4-②（評判管理SaaS 4階層）</p>
+  </div>
+</section>
+
+<!-- ============================================================ -->
+<!-- 9 B面 必勝ロードマップ -->
+<!-- ============================================================ -->
+<section class="slide" data-i="9">
+  <div class="pad">
+    <div class="flowbar">
+      <span class="flowbar__step is-now"><b>章1</b> 課金モデル</span>
+      <span class="flowbar__sep">›</span><span class="flowbar__step">章2 収益SIM</span>
+      <span class="flowbar__sep">›</span><span class="flowbar__step">章3 サイトマップ</span>
+      <span class="flowbar__sep">›</span><span class="flowbar__step">章4 まとめ</span>
+      <span class="flowbar__sub">09 / 16</span>
+    </div>
+    <div class="shead">
+      <p class="kick">章1 · B面 必勝ロードマップ</p>
+      <h2 class="title">面を取る（ノーリスク）→ ペイン発生 → <em>ライトへアップセル</em></h2>
+    </div>
+    <div class="roadmap flex-fill">
+      <div class="rmstep rmstep--1">
+        <span class="rmstep__n">STEP 1</span>
+        <h3 class="rmstep__h">面を取る</h3>
+        <p class="rmstep__d">立ち上げ初期は<em>「初期費用・月額0円＋送客課金のみ」</em>の完全ノーリスクをフックに、全国の施設を開拓し掲載数を確保する。</p>
+        <span class="rmstep__arrow">→</span>
+      </div>
+      <div class="rmstep rmstep--2">
+        <span class="rmstep__n">STEP 2</span>
+        <h3 class="rmstep__h">ペインの発生</h3>
+        <p class="rmstep__d">自社へのネガティブ口コミ着弾、あるいは<em>「近隣競合の口コミが見たい」</em>という強烈なリサーチニーズが発生するのを待つ。</p>
+        <span class="rmstep__arrow">→</span>
+      </div>
+      <div class="rmstep rmstep--3">
+        <span class="rmstep__n">STEP 3</span>
+        <h3 class="rmstep__h">最強の武器でアップセル</h3>
+        <p class="rmstep__d">「誠実に反論できる機能がある」と提示。さらに<em>「月5,000円のライトなら競合の口コミが読み放題のパスも付く」</em>とオファーし、一気に有料SaaSへ引き上げる。</p>
+        <span class="rmstep__arrow">→</span>
+      </div>
+    </div>
+    <p class="src" style="margin-top:var(--space-sm);">課金モデル提案.md §5（必勝のロードマップ）</p>
+  </div>
+</section>
+
+<!-- ============================================================ -->
+<!-- 10 相談支援専門員ハブ -->
+<!-- ============================================================ -->
+<section class="slide" data-i="10">
+  <div class="pad">
+    <div class="flowbar">
+      <span class="flowbar__step is-now"><b>章1</b> 課金モデル</span>
+      <span class="flowbar__sep">›</span><span class="flowbar__step">章2 収益SIM</span>
+      <span class="flowbar__sep">›</span><span class="flowbar__step">章3 サイトマップ</span>
+      <span class="flowbar__sep">›</span><span class="flowbar__step">章4 まとめ</span>
+      <span class="flowbar__sub">10 / 16</span>
+    </div>
+    <div class="shead">
+      <p class="kick">章1 · 起爆剤</p>
+      <h2 class="title"><em>相談支援専門員（eKYC認証）</em>がSEO資産と送客リードを自動生成する</h2>
+    </div>
+    <div class="hubgrid flex-fill">
+      <div class="hubcard">
+        <span class="hubcard__tag">信頼性の要</span>
+        <h3 class="hubcard__h">eKYC（本人確認）認証</h3>
+        <p class="hubcard__d">身分証＋セルフィー等で本人確認を必須化した完全無料の専門家アカウント。プロバッジで信頼性を担保する。</p>
+      </div>
+      <div class="hubcard">
+        <span class="hubcard__tag">SEOエンジン</span>
+        <h3 class="hubcard__h">Q&amp;A回答者</h3>
+        <p class="hubcard__d">ユーザーの悩みに専門家として回答させ、<em>良質なテキストを無償で蓄積</em>。SEO流入を太くする。</p>
+      </div>
+      <div class="hubcard">
+        <span class="hubcard__tag">載らないリスク</span>
+        <h3 class="hubcard__h">プロ・レビュアー</h3>
+        <p class="hubcard__d">認証済み専門員による「プロレビュー」を掲載。施設側へ<em>「載らないリスク」</em>を突きつけ、B面掲載・課金を後押し。</p>
+      </div>
+      <div class="hubcard">
+        <span class="hubcard__tag">送客リード量産</span>
+        <h3 class="hubcard__h">一括問い合わせダッシュボード</h3>
+        <p class="hubcard__d">日々の「施設への空き確認業務」をサイト上で一括送信できるツールを無料提供。<em>B面に販売する送客リードを自動・大量に発生</em>させる。</p>
+      </div>
+    </div>
+    <p class="src" style="margin-top:var(--space-sm);">課金モデル提案.md §6（相談支援専門員のフル活用）</p>
+  </div>
+</section>
+
+<!-- ============================================================ -->
+<!-- 11 フェーズ2 受発注＋成長ループ -->
+<!-- ============================================================ -->
+<section class="slide" data-i="11">
+  <div class="pad">
+    <div class="flowbar">
+      <span class="flowbar__step is-now"><b>章1</b> 課金モデル</span>
+      <span class="flowbar__sep">›</span><span class="flowbar__step">章2 収益SIM</span>
+      <span class="flowbar__sep">›</span><span class="flowbar__step">章3 サイトマップ</span>
+      <span class="flowbar__sep">›</span><span class="flowbar__step">章4 まとめ</span>
+      <span class="flowbar__sub">11 / 16</span>
+    </div>
+    <div class="shead">
+      <p class="kick">章1 · フェーズ2 拡張構想</p>
+      <h2 class="title">B型特化の<em>仕事受発注プラットフォーム</em>＋「工賃↑→良い口コミ→見学者↑」の無限成長ループ</h2>
+    </div>
+    <div class="p2wrap flex-fill">
+      <svg class="lp" viewBox="0 0 380 300" role="img" aria-label="工賃から口コミへの無限成長ループ図">
+        <defs>
+          <marker id="lparr2" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 z" fill="var(--color-accent)"/></marker>
+        </defs>
+        <circle class="center" cx="190" cy="150" r="42"/>
+        <text class="ct" x="190" y="146" text-anchor="middle">成長</text>
+        <text class="ct" x="190" y="162" text-anchor="middle">ループ</text>
+        <!-- node1 top -->
+        <rect class="node node--act" x="115" y="8" width="150" height="48" rx="10"/>
+        <text class="n" x="190" y="30" text-anchor="middle">受発注で施設の売上↑</text>
+        <text class="ns" x="190" y="46" text-anchor="middle">業務マッチング（成約手数料）</text>
+        <!-- node2 right -->
+        <rect class="node" x="262" y="116" width="112" height="48" rx="10"/>
+        <text class="n" x="318" y="138" text-anchor="middle">利用者の工賃↑</text>
+        <text class="ns" x="318" y="154" text-anchor="middle">最大の課題を解決</text>
+        <!-- node3 bottom -->
+        <rect class="node node--act" x="115" y="244" width="150" height="48" rx="10"/>
+        <text class="n" x="190" y="266" text-anchor="middle">良い口コミが集まる</text>
+        <text class="ns" x="190" y="282" text-anchor="middle">「工賃が高くやりがい」</text>
+        <!-- node4 left -->
+        <rect class="node" x="6" y="116" width="112" height="48" rx="10"/>
+        <text class="n" x="62" y="138" text-anchor="middle">見学者↑</text>
+        <text class="ns" x="62" y="154" text-anchor="middle">送客課金へ環流</text>
+        <!-- arcs clockwise -->
+        <path class="arr" style="marker-end:url(#lparr2);" d="M258 50 Q305 80 314 112"/>
+        <path class="arr" style="marker-end:url(#lparr2);" d="M316 166 Q300 226 256 250"/>
+        <path class="arr" style="marker-end:url(#lparr2);" d="M115 262 Q66 232 62 168"/>
+        <path class="arr" style="marker-end:url(#lparr2);" d="M64 114 Q105 56 120 46"/>
+      </svg>
+      <div class="hbside">
+        <div class="panel">
+          <h3 class="panel__h panel__h--sm">① 業務マッチング（クラウドワークス/タイミー型）</h3>
+          <ul class="blist"><li>データ入力・軽作業・パッケージング等の案件を受注。<b>クローズド型（初期）→ オープン型（拡大期）</b>へ。</li></ul>
+        </div>
+        <div class="panel">
+          <h3 class="panel__h panel__h--sm">② 口コミデータのスキルシート化</h3>
+          <ul class="blist"><li>フェーズ1のAIタグ・設備情報をそのまま事業所スキルシートに再利用し、高精度に自動マッチング。</li></ul>
+        </div>
+        <div class="panel panel--accent">
+          <h3 class="panel__h panel__h--sm">③ 究極のチャーン防止</h3>
+          <ul class="blist"><li>「見学者送客」に加え「仕事（売上）」まで供給するインフラとなれば、<b>有料SaaSを解約する理由が消滅</b>する。</li></ul>
+        </div>
+      </div>
+    </div>
+    <p class="src" style="margin-top:var(--space-2xs);">課金モデル提案.md §7（フェーズ2 拡張構想）</p>
+  </div>
+</section>
+
+<!-- ============================================================ -->
+<!-- 12 章2 収益SIM 主要指標＋Jカーブ -->
+<!-- ============================================================ -->
+<section class="slide" data-i="12">
+  <div class="pad">
+    <div class="flowbar">
+      <span class="flowbar__step">章1 課金モデル</span>
+      <span class="flowbar__sep">›</span>
+      <span class="flowbar__step is-now"><b>章2</b> 収益SIM</span>
+      <span class="flowbar__sep">›</span><span class="flowbar__step">章3 サイトマップ</span>
+      <span class="flowbar__sep">›</span><span class="flowbar__step">章4 まとめ</span>
+      <span class="flowbar__sub">12 / 16</span>
+    </div>
+    <div class="shead">
+      <p class="kick">章2 · 24ヶ月シミュレーション</p>
+      <h2 class="title">制作費418万を一括計上しても、<em>標準は18ヶ月で投資回収・2年目利益率72.5%</em></h2>
+    </div>
+    <div class="jcurvewrap flex-fill">
+      <div class="jcfig">
+        <svg class="jc" viewBox="0 0 720 360" role="img" aria-label="累計営業利益のJカーブ（標準・保守ケース、24ヶ月）">
+          <!-- grid + zero -->
+          <line class="grid" x1="56" y1="58" x2="704" y2="58"/>
+          <line class="grid" x1="56" y1="129" x2="704" y2="129"/>
+          <line class="zero" x1="56" y1="200.2" x2="704" y2="200.2"/>
+          <line class="grid" x1="56" y1="271.4" x2="704" y2="271.4"/>
+          <line class="axis" x1="56" y1="24" x2="56" y2="318"/>
+          <text class="zlbl" x="60" y="196">損益分岐（累計0）</text>
+          <!-- y ticks -->
+          <text class="gtick" x="50" y="62" text-anchor="end">+800万</text>
+          <text class="gtick" x="50" y="133" text-anchor="end">+400万</text>
+          <text class="gtick" x="50" y="263" text-anchor="end">−400万</text>
+          <!-- x ticks -->
+          <text class="gtick" x="56" y="334" text-anchor="middle">1月</text>
+          <text class="gtick" x="196.9" y="334" text-anchor="middle">6月</text>
+          <text class="gtick" x="365.9" y="334" text-anchor="middle">12月</text>
+          <text class="gtick" x="535" y="334" text-anchor="middle">18月</text>
+          <text class="gtick" x="704" y="334" text-anchor="middle">24月</text>
+          <!-- 標準 area to zero -->
+          <path class="area-std" d="M56.0,277.8 84.2,281.1 112.3,284.2 140.5,287.4 168.7,289.9 196.9,291.6 225.0,292.8 253.2,292.6 281.4,290.6 309.6,286.8 337.7,281.1 365.9,273.6 394.1,265.3 422.3,255.2 450.4,243.2 478.6,229.4 506.8,213.8 535.0,196.3 563.1,177.0 591.3,155.9 619.5,133.0 647.7,108.2 675.8,81.5 704.0,53.1 L704.0,200.2 L56.0,200.2 Z"/>
+          <!-- 保守 line -->
+          <polyline class="line-con" points="56.0,277.8 84.2,281.1 112.3,284.4 140.5,287.9 168.7,291.1 196.9,293.7 225.0,296.4 253.2,297.9 281.4,298.6 309.6,297.6 337.7,295.2 365.9,291.1 394.1,286.5 422.3,280.3 450.4,272.6 478.6,263.2 506.8,252.3 535.0,239.8 563.1,225.7 591.3,210.1 619.5,192.9 647.7,174.1 675.8,153.7 704.0,131.7"/>
+          <!-- 標準 line -->
+          <polyline class="line-std" points="56.0,277.8 84.2,281.1 112.3,284.2 140.5,287.4 168.7,289.9 196.9,291.6 225.0,292.8 253.2,292.6 281.4,290.6 309.6,286.8 337.7,281.1 365.9,273.6 394.1,265.3 422.3,255.2 450.4,243.2 478.6,229.4 506.8,213.8 535.0,196.3 563.1,177.0 591.3,155.9 619.5,133.0 647.7,108.2 675.8,81.5 704.0,53.1"/>
+          <!-- crossing markers -->
+          <circle class="dot-std" cx="535.0" cy="196.3" r="4"/>
+          <text class="crosslbl crosslbl-std" x="535" y="186" text-anchor="middle">18月 回収</text>
+          <circle class="dot-con" cx="619.5" cy="192.9" r="4"/>
+          <text class="crosslbl crosslbl-con" x="619.5" y="208" text-anchor="middle">21月 回収</text>
+          <!-- end labels -->
+          <circle class="dot-std" cx="704" cy="53.1" r="4.5"/>
+          <text class="endlbl endlbl-std" x="700" y="49" text-anchor="end">標準 +828万</text>
+          <circle class="dot-con" cx="704" cy="131.7" r="4"/>
+          <text class="endlbl endlbl-con" x="700" y="126.7" text-anchor="end">保守 +385万</text>
+        </svg>
+        <div class="jclegend">
+          <span class="jcleg"><span class="jcleg__sw jcleg__sw--std"></span>標準ケース 累計営業利益</span>
+          <span class="jcleg"><span class="jcleg__sw jcleg__sw--con"></span>保守ケース 累計営業利益</span>
+        </div>
+      </div>
+      <div class="jcside">
+        <div class="statgrid" style="grid-template-columns:1fr 1fr;">
+          <div class="statcard"><span class="statbig statbig--lg">8<small style="font-size:0.8rem;color:var(--color-muted);font-weight:400;font-family:var(--font-body);"> ヶ月</small></span><span class="statcard__cap">単月黒字化（標準）</span><span class="statcard__note">保守 10ヶ月</span></div>
+          <div class="statcard"><span class="statbig statbig--lg">18<small style="font-size:0.8rem;color:var(--color-muted);font-weight:400;font-family:var(--font-body);"> ヶ月</small></span><span class="statcard__cap">投資回収（累計黒字）</span><span class="statcard__note">保守 21ヶ月</span></div>
+          <div class="statcard"><span class="statbig statbig--lg">+828<small style="font-size:0.8rem;color:var(--color-muted);font-weight:400;font-family:var(--font-body);"> 万円</small></span><span class="statcard__cap">24ヶ月累計営業利益（標準）</span><span class="statcard__note">保守 +385万円</span></div>
+          <div class="statcard"><span class="statbig statbig--lg">72.5<small style="font-size:0.8rem;color:var(--color-muted);font-weight:400;font-family:var(--font-body);"> %</small></span><span class="statcard__cap">2年目営業利益率（標準）</span><span class="statcard__note">保守 66.8%</span></div>
+        </div>
+        <div class="notestrip notestrip--accent notestrip--tight">
+          <strong>前提：</strong>制作費 <span class="num">418万円</span>を初月に一括計上（補助金採否に関わらず計上＝採択時は別建て上振れ）。
+        </div>
+      </div>
+    </div>
+    <p class="src" style="margin-top:var(--space-2xs);">20-revenue-sim-v2.md §2 主要指標／20-revenue-sim-v2.csv 累計利益（標準・保守）</p>
+  </div>
+</section>
+
+<!-- ============================================================ -->
+<!-- 13 収益構成＆感応度 -->
+<!-- ============================================================ -->
+<section class="slide" data-i="13">
+  <div class="pad">
+    <div class="flowbar">
+      <span class="flowbar__step">章1 課金モデル</span>
+      <span class="flowbar__sep">›</span>
+      <span class="flowbar__step is-now"><b>章2</b> 収益SIM</span>
+      <span class="flowbar__sep">›</span><span class="flowbar__step">章3 サイトマップ</span>
+      <span class="flowbar__sep">›</span><span class="flowbar__step">章4 まとめ</span>
+      <span class="flowbar__sub">13 / 16</span>
+    </div>
+    <div class="shead">
+      <p class="kick">章2 · 収益構成＆感応度</p>
+      <h2 class="title">2年目はSaaSが<em>土台（66.7%）</em>、送客が<em>上振れエンジン（26.8%）</em>。利益を最も動かすのは上位SaaS</h2>
+    </div>
+    <div class="split flex-fill">
+      <div class="dec__col">
+        <div class="panel">
+          <h3 class="panel__h panel__h--sm">2年目（13〜24月）売上構成 ── 標準ケース</h3>
+          <div class="hbars" style="margin-top:var(--space-2xs);">
+            <div class="hbar"><div class="hbar__lbl">SaaS スタンダード<small>上位表示+AI分析</small></div><div class="hbar__track"><div class="hbar__fill hbar__fill--a" style="width:40.9%;"></div></div><div class="hbar__v">27.3%</div></div>
+            <div class="hbar"><div class="hbar__lbl">送客従量課金<small>主力・成果報酬</small></div><div class="hbar__track"><div class="hbar__fill hbar__fill--c" style="width:40.1%;"></div></div><div class="hbar__v">26.8%</div></div>
+            <div class="hbar"><div class="hbar__lbl">SaaS プレミアム<small>トップ枠固定</small></div><div class="hbar__track"><div class="hbar__fill hbar__fill--a" style="width:36.2%;"></div></div><div class="hbar__v">24.2%</div></div>
+            <div class="hbar"><div class="hbar__lbl">SaaS ライト<small>返信無制限+パス</small></div><div class="hbar__track"><div class="hbar__fill hbar__fill--a" style="width:22.8%;"></div></div><div class="hbar__v">15.2%</div></div>
+            <div class="hbar"><div class="hbar__lbl">閲覧パス<small>ROM専・業者</small></div><div class="hbar__track"><div class="hbar__fill hbar__fill--g" style="width:9.7%;"></div></div><div class="hbar__v">6.5%</div></div>
+          </div>
+          <p class="src" style="margin-top:var(--space-2xs);">SaaS 3階層 計 66.7%／送客 26.8%／閲覧パス 6.5%（20 §3）</p>
+        </div>
+      </div>
+      <div class="dec__col">
+        <div class="panel panel--accent">
+          <h3 class="panel__h panel__h--sm">感応度：利益を最も動かす2前提</h3>
+          <div class="tblwrap" style="flex:0 0 auto;margin-top:var(--space-2xs);">
+            <table class="tbl tbl--dense">
+              <thead><tr><th>変動要因（±20%）</th><th>−20%</th><th>基準</th><th>+20%</th></tr></thead>
+              <tbody>
+                <tr class="is-hl"><td class="rowname">上位SaaS契約数<br><small>スタンダード+プレミアム</small></td><td class="price">+630万</td><td class="price">+828万</td><td class="price">+1,026万</td></tr>
+                <tr><td class="rowname">送客件数/月</td><td class="price">+737万</td><td class="price">+828万</td><td class="price">+919万</td></tr>
+              </tbody>
+            </table>
+          </div>
+          <ul class="blist" style="margin-top:var(--space-2xs);">
+            <li>累計利益を最も動かすのは<b>上位SaaSのアップセル成否</b>（±20%で約±198万円）、次いで送客件数（約±91万円）。</li>
+          </ul>
+        </div>
+        <div class="notestrip notestrip--tight">
+          <strong>最大リスク＝SaaSアップセル率。</strong>掲載は取れても上位2階層へ引き上がらないと利益率70%は崩れる。フェーズ2受発注は本SIM外＝別建て上振れ（軌道後 年+500〜1,500万円規模）。
+        </div>
+      </div>
+    </div>
+    <p class="src" style="margin-top:var(--space-2xs);">20-revenue-sim-v2.md §3 収益構成／§4 感応度／§6 フェーズ2アップサイド</p>
+  </div>
+</section>
+
+<!-- ============================================================ -->
+<!-- 14 情報設計の考え方＋サイトマップ全体図 -->
+<!-- ============================================================ -->
+<section class="slide" data-i="14">
+  <div class="pad">
+    <div class="flowbar">
+      <span class="flowbar__step">章1 課金モデル</span>
+      <span class="flowbar__sep">›</span><span class="flowbar__step">章2 収益SIM</span>
+      <span class="flowbar__sep">›</span>
+      <span class="flowbar__step is-now"><b>章3</b> サイトマップ</span>
+      <span class="flowbar__sep">›</span><span class="flowbar__step">章4 まとめ</span>
+      <span class="flowbar__sub">14 / 16</span>
+    </div>
+    <div class="shead">
+      <p class="kick">章3 · 情報設計（IA）</p>
+      <h2 class="title">「チラ見せSEO」を最上位原則に置いた<em>サイトマップ全体図</em></h2>
+    </div>
+    <div class="principles">
+      <div class="prin"><div class="prin__n">原則 1</div><p class="prin__t"><b>チラ見せSEO最優先</b>：全ページ「公開／非公開の境界線」を持つ共通テンプレ。</p></div>
+      <div class="prin"><div class="prin__n">原則 2</div><p class="prin__t"><b>導線（壁とループ）を設計</b>：ページ数でなく3つのループのトリガー／受け皿。</p></div>
+      <div class="prin"><div class="prin__n">原則 3</div><p class="prin__t"><b>単一データ・多面ビュー</b>：4ロール別ダッシュボードで見える世界を切替。</p></div>
+      <div class="prin"><div class="prin__n">原則 4</div><p class="prin__t"><b>UGC→スキルシート再利用</b>：フェーズ1のAIタグをフェーズ2の資産前提で設計。</p></div>
+    </div>
+    <div class="smapscroll flex-fill" style="min-height:0;overflow:auto;">
+      <div class="smaptree">
+        <div class="smcol smcol--c">
+          <div class="smcol__head">A. C面（利用者・家族）</div>
+          <div class="smnode"><div class="smnode__h">トップ <span class="smnode__p">/</span></div></div>
+          <div class="smnode"><div class="smnode__h">施設検索 <span class="smnode__p">/search</span></div></div>
+          <div class="smnode"><div class="smnode__h">施設詳細 <span class="smnode__star">★</span><span class="smnode__p">/facility/{id}</span></div><ul class="smnode__sub"><li>公開=冒頭2行+最新1件</li><li>非公開=全文(60日/パス)</li><li>見学申込=送客課金</li></ul></div>
+          <div class="smnode"><div class="smnode__h">口コミ投稿 <span class="smnode__star">★</span><span class="smnode__p">/post</span></div><ul class="smnode__sub"><li>ワンタップQ&amp;A/AIタグ</li><li>60日解放トリガー</li></ul></div>
+          <div class="smnode"><div class="smnode__h">Q&amp;A <span class="smnode__p">/qa</span></div></div>
+          <div class="smnode"><div class="smnode__h">コラム/記事 <span class="smnode__p">/column</span></div></div>
+          <div class="smnode"><div class="smnode__h">ランキング/比較 <span class="smnode__p">/ranking</span></div></div>
+          <div class="smnode"><div class="smnode__h">閲覧パス購入 <span class="smnode__p">/pass</span></div></div>
+          <div class="smnode"><div class="smnode__h">マイページ <span class="smnode__star">★</span><span class="smnode__p">/mypage</span></div><ul class="smnode__sub"><li>残日数・再解放導線</li></ul></div>
+        </div>
+        <div class="smcol smcol--b">
+          <div class="smcol__head">B. B面（事業所）</div>
+          <div class="smnode"><div class="smnode__h">事業者向けLP <span class="smnode__p">/business</span></div></div>
+          <div class="smnode"><div class="smnode__h">事業者登録 <span class="smnode__p">/business/register</span></div><ul class="smnode__sub"><li>面取りの入口・即掲載</li></ul></div>
+          <div class="smnode"><div class="smnode__h">管理ダッシュボード <span class="smnode__p">/business/dashboard</span></div><ul class="smnode__sub"><li>口コミ管理・公式返信</li><li>AI分析(スタンダード)</li><li>上位/トップ枠設定</li></ul></div>
+          <div class="smnode"><div class="smnode__h">送客リード <span class="smnode__p">/business/leads</span></div><ul class="smnode__sub"><li>1件ごと送客課金</li></ul></div>
+          <div class="smnode"><div class="smnode__h">プラン管理・課金 <span class="smnode__p">/business/plan</span></div><ul class="smnode__sub"><li>4階層アップグレード</li></ul></div>
+        </div>
+        <div class="smcol smcol--pro">
+          <div class="smcol__head">C. 相談支援専門員</div>
+          <div class="smnode"><div class="smnode__h">専門員向けLP <span class="smnode__p">/pro</span></div></div>
+          <div class="smnode"><div class="smnode__h">eKYC認証登録 <span class="smnode__star">★</span><span class="smnode__p">/pro/register</span></div><ul class="smnode__sub"><li>本人確認→プロバッジ</li></ul></div>
+          <div class="smnode"><div class="smnode__h">専門員ダッシュボード <span class="smnode__p">/pro/dashboard</span></div><ul class="smnode__sub"><li>一括問い合わせ=リード源</li><li>Q&amp;A回答=SEO供給</li><li>プロレビュー投稿</li></ul></div>
+        </div>
+        <div class="smcol smcol--admin">
+          <div class="smcol__head">D. 運営（管理）</div>
+          <div class="smnode"><div class="smnode__h">管理コンソール <span class="smnode__p">/admin</span></div></div>
+          <div class="smnode"><div class="smnode__h">AIモデレーション3段 <span class="smnode__star">★</span><span class="smnode__p">/admin/moderation</span></div></div>
+          <div class="smnode"><div class="smnode__h">ユーザー/施設/専門員管理 <span class="smnode__p">/admin/*</span></div></div>
+          <div class="smnode"><div class="smnode__h">課金管理 <span class="smnode__p">/admin/billing</span></div></div>
+          <div class="smnode"><div class="smnode__h">レポート <span class="smnode__p">/admin/reports</span></div><ul class="smnode__sub"><li>MRR・60日解放数・CVR</li></ul></div>
+          <div class="smnode"><div class="smnode__h">コンテンツ運用 <span class="smnode__p">/admin/content</span></div></div>
+        </div>
+        <div class="smcol smcol--p2">
+          <div class="smcol__head">E. フェーズ2 受発注</div>
+          <div class="smnode"><div class="smnode__h">受発注PF <span class="smnode__p">/work</span></div></div>
+          <div class="smnode"><div class="smnode__h">案件一覧/詳細 <span class="smnode__p">/work/jobs</span></div><ul class="smnode__sub"><li>クローズド→オープン</li></ul></div>
+          <div class="smnode"><div class="smnode__h">応募・受注 <span class="smnode__p">/work/apply</span></div></div>
+          <div class="smnode"><div class="smnode__h">スキルシート <span class="smnode__star">★</span><span class="smnode__p">/work/skillsheet</span></div><ul class="smnode__sub"><li>口コミタグを再利用</li></ul></div>
+          <div class="smnode"><div class="smnode__h">マッチング/納品決済 <span class="smnode__p">/work/match</span></div></div>
+          <div class="smnode"><div class="smnode__h">発注者向け <span class="smnode__p">/work/client</span></div></div>
+        </div>
+      </div>
+    </div>
+    <p class="src" style="margin-top:var(--space-2xs);">21-sitemap.md（情報設計の考え方／サイトマップ本体 A〜E）</p>
+  </div>
+</section>
+
+<!-- ============================================================ -->
+<!-- 15 主要ユーザー導線 4本 -->
+<!-- ============================================================ -->
+<section class="slide" data-i="15">
+  <div class="pad">
+    <div class="flowbar">
+      <span class="flowbar__step">章1 課金モデル</span>
+      <span class="flowbar__sep">›</span><span class="flowbar__step">章2 収益SIM</span>
+      <span class="flowbar__sep">›</span>
+      <span class="flowbar__step is-now"><b>章3</b> サイトマップ</span>
+      <span class="flowbar__sep">›</span><span class="flowbar__step">章4 まとめ</span>
+      <span class="flowbar__sub">15 / 16</span>
+    </div>
+    <div class="shead">
+      <p class="kick">章3 · 主要ユーザー導線</p>
+      <h2 class="title">サイトの肝は<em>4本のフロー（壁とループ）</em>。どのページがどのループのトリガーか</h2>
+    </div>
+    <div class="flowduo flex-fill">
+      <div class="flowcard">
+        <span class="flowcard__lbl">導線1 · C面メインループ</span>
+        <h3 class="flowcard__h">SEO流入 → チラ見せ → 60日解放 → 見学送客</h3>
+        <ul class="fmini">
+          <li>Google検索「就労継続支援b型 (地域) 評判」</li>
+          <li>施設詳細／ランキング（<b>公開=冒頭2行+最新1件</b>）</li>
+          <li>口コミ投稿（ワンタップQ&amp;A/AIタグ→AI下書き）</li>
+          <li>AIモデレーション3段 → 即時公開</li>
+          <li><b>全国全施設 60日間 閲覧解放</b></li>
+          <li>見学申込/問い合わせ → <em>送客課金 4,000〜5,000円</em></li>
+        </ul>
+      </div>
+      <div class="flowcard">
+        <span class="flowcard__lbl">導線2 · UGC無限ループ</span>
+        <h3 class="flowcard__h">60日後の期限切れ → 見学レビューで再起動</h3>
+        <ul class="fmini">
+          <li>60日経過＝閲覧期限切れ</li>
+          <li>「続きを見るには見学した施設のレビューを」</li>
+          <li>見学後レビュー投稿（ジャーニーに一致）</li>
+          <li>再び60日解放＋良質UGC蓄積</li>
+          <li><b>SEO資産が増える → 導線1の流入が増える</b>（自己強化）</li>
+        </ul>
+      </div>
+      <div class="flowcard flowcard--clay">
+        <span class="flowcard__lbl">導線3 · B面メインループ</span>
+        <h3 class="flowcard__h">クレーム → 公式返信 → 上位SaaSアップセル</h3>
+        <ul class="fmini">
+          <li>ネガ口コミ着弾／競合の口コミを見たい欲求</li>
+          <li>事業所ダッシュボードに通知</li>
+          <li>フリーでは限定返信／競合は読めない（ペイン）</li>
+          <li>「ライト¥5,000で誠実に反論＋競合読み放題」</li>
+          <li><em>ライト→スタンダード→プレミアム</em>へアップセル</li>
+        </ul>
+      </div>
+      <div class="flowcard flowcard--gold">
+        <span class="flowcard__lbl">導線4 · 送客リード量産</span>
+        <h3 class="flowcard__h">専門員ハブが送客リードを量産</h3>
+        <ul class="fmini">
+          <li>専門員 eKYC認証登録</li>
+          <li>一括空き確認/問い合わせ（日常業務を効率化）</li>
+          <li><em>大量の送客リードを自動生成</em>＝送客課金の供給源</li>
+          <li>Q&amp;A回答＝SEO供給／プロレビュー＝載らないリスク</li>
+        </ul>
+      </div>
+    </div>
+    <p class="src" style="margin-top:var(--space-2xs);">21-sitemap.md（主要ユーザー導線 導線1〜4）</p>
+  </div>
+</section>
+
+<!-- ============================================================ -->
+<!-- 16 まとめ＆次の一手 -->
+<!-- ============================================================ -->
+<section class="slide" data-i="16">
+  <div class="pad">
+    <div class="flowbar">
+      <span class="flowbar__step">章1 課金モデル</span>
+      <span class="flowbar__sep">›</span><span class="flowbar__step">章2 収益SIM</span>
+      <span class="flowbar__sep">›</span><span class="flowbar__step">章3 サイトマップ</span>
+      <span class="flowbar__sep">›</span>
+      <span class="flowbar__step is-now"><b>章4</b> まとめ</span>
+      <span class="flowbar__sub">16 / 16</span>
+    </div>
+    <div class="shead">
+      <p class="kick">章4 · まとめ＆次の一手</p>
+      <h2 class="title">透明性を競争優位に。<em>課金モデル確定 → 構築方式決定 → PoC</em></h2>
+    </div>
+    <div class="nexts" style="margin-bottom:var(--space-sm);">
+      <div class="nextstep">
+        <span class="nextstep__n">次の一手 1</span>
+        <h3 class="nextstep__h">課金モデルの確定</h3>
+        <p class="nextstep__d">本提案（送客従量＋SaaS4階層＋閲覧パス＋専門員ハブ）を意思決定。価格・トリガー設計を固める。</p>
+        <span class="nextstep__arrow">→</span>
+      </div>
+      <div class="nextstep">
+        <span class="nextstep__n">次の一手 2</span>
+        <h3 class="nextstep__h">構築方式の決定</h3>
+        <p class="nextstep__d">フルスクラッチ／WordPress のいずれで作るかを比較・決定。チラ見せの公開・非公開境界を実装できる前提で選定。</p>
+        <span class="nextstep__arrow">→</span>
+      </div>
+      <div class="nextstep">
+        <span class="nextstep__n">次の一手 3</span>
+        <h3 class="nextstep__h">PoC（概念実証）</h3>
+        <p class="nextstep__d">自社5〜7拠点の本物口コミ＋60日ループ導線で、SEO流入と送客が立ち上がるかを検証する。</p>
+        <span class="nextstep__arrow">→</span>
+      </div>
+    </div>
+    <div class="split" style="flex:0 0 auto;">
+      <div class="panel panel--accent">
+        <h3 class="panel__h panel__h--sm">透明性を競争優位に</h3>
+        <ul class="blist">
+          <li><b>料率公開</b>と<b>順位と課金の分離</b>を明示し、福祉領域における信頼を競争優位の源泉にする。</li>
+        </ul>
+      </div>
+      <div class="panel panel--deep" style="display:flex;align-items:center;">
+        <p style="margin:0;font-family:var(--font-display);font-weight:700;font-size:clamp(1.05rem,1.4vw+0.6rem,1.5rem);line-height:1.35;color:var(--color-paper);">福岡から福祉の<span style="color:var(--color-accent);">「当たり前」</span>を<br>アップデートする</p>
+      </div>
+    </div>
+    <p class="src" style="margin-top:var(--space-sm);">課金モデル提案.md／20-revenue-sim-v2.md／21-sitemap.md（本提案の統合）</p>
+  </div>
+</section>
+
+</div><!-- /deck -->
+
+<div class="hud">
+  <span class="hud__brand">事業提案 提案編（16枚） · 就労継続支援B型 口コミポータル · ゴールデンゲート御中／合同会社ユプラス · 社内ドラフト（未公開）</span>
+  <div class="navbtns">
+    <button id="prev" aria-label="前のスライド">←</button>
+    <span class="hud__count" id="count">1 / 16</span>
+    <button id="next" aria-label="次のスライド">→</button>
+  </div>
+</div>
+
+<script>
+(function () {
+  var slides = Array.prototype.slice.call(document.querySelectorAll('.slide'));
+  var total = slides.length;
+  var i = 0;
+  var bar = document.getElementById('bar');
+  var count = document.getElementById('count');
+  var prev = document.getElementById('prev');
+  var next = document.getElementById('next');
+
+  function render() {
+    slides.forEach(function (s, n) { s.classList.toggle('is-active', n === i); });
+    bar.style.width = ((i + 1) / total * 100) + '%';
+    count.textContent = (i + 1) + ' / ' + total;
+    prev.disabled = i === 0;
+    next.disabled = i === total - 1;
+    try { history.replaceState(null, '', '#' + (i + 1)); } catch (e) {}
+    if (window.matchMedia && window.matchMedia('(max-width: 48rem)').matches) { window.scrollTo(0, 0); }
+  }
+  function go(n) { i = Math.max(0, Math.min(total - 1, n)); render(); }
+
+  prev.addEventListener('click', function () { go(i - 1); });
+  next.addEventListener('click', function () { go(i + 1); });
+  var edgePrev = document.getElementById('edgePrev');
+  var edgeNext = document.getElementById('edgeNext');
+  if (edgePrev) edgePrev.addEventListener('click', function () { go(i - 1); });
+  if (edgeNext) edgeNext.addEventListener('click', function () { go(i + 1); });
+
+  document.addEventListener('click', function (e) {
+    var a = e.target.closest && e.target.closest('a[href^="#"]');
+    if (!a) return;
+    var n = parseInt(a.getAttribute('href').replace('#', ''), 10);
+    if (n >= 1 && n <= total) { e.preventDefault(); go(n - 1); if (window.scrollTo) window.scrollTo(0,0); }
+  });
+
+  document.addEventListener('keydown', function (e) {
+    if (e.key === 'ArrowRight' || e.key === ' ' || e.key === 'PageDown') { e.preventDefault(); go(i + 1); }
+    else if (e.key === 'ArrowLeft' || e.key === 'PageUp') { e.preventDefault(); go(i - 1); }
+    else if (e.key === 'Home') { go(0); }
+    else if (e.key === 'End') { go(total - 1); }
+  });
+
+  var sx = null, sy = null, ignore = false;
+  document.addEventListener('touchstart', function (e) {
+    var t = e.changedTouches[0];
+    sx = t.clientX; sy = t.clientY;
+    ignore = !!(e.target.closest && e.target.closest('a, button, .tblwrap, .smapscroll'));
+  }, { passive: true });
+  document.addEventListener('touchend', function (e) {
+    if (sx === null || ignore) { sx = sy = null; ignore = false; return; }
+    var dx = e.changedTouches[0].clientX - sx;
+    var dy = e.changedTouches[0].clientY - sy;
+    if (Math.abs(dx) > 55 && Math.abs(dx) > Math.abs(dy) * 1.4) go(dx < 0 ? i + 1 : i - 1);
+    sx = sy = null;
+  }, { passive: true });
+
+  var h = parseInt((location.hash || '').replace('#', ''), 10);
+  if (h >= 1 && h <= total) i = h - 1;
+  render();
+})();
+</script>
+</body>
+</html>
