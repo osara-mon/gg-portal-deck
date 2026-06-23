@@ -1035,19 +1035,21 @@ img { max-width: 100%; }
 </style>
 <style>
 /* proposal.css */
-/* Hallmark · pre-emit critique: P5 H5 E5 S5 R5 V5
+/* Hallmark · redesign(single-page, additive) · pre-emit critique: P5 H4 E5 S5 R5 V5
  * proposal.css · supplementary components for the 提案編デッキ (16枚)
  * route: custom (inherited welfare-teal from sibling company-analysis) · macrostructure: Narrative Workflow
  *   章0 イントロ → 章1 課金モデル提案 → 章2 収益SIM → 章3 サイトマップ → 章4 まとめ
- * Per-slide composition varies: 二面性関係図 / 60日ループ循環図 / 4階層SaaS表 / JカーブSVG /
- *   収益構成バー / サイトマップ階層ツリー / フローチャート.
+ * Per-slide composition varies: 3者関係図 / 60日タイムライン / 3段フロー / 4プラン表 / JカーブSVG /
+ *   収益構成バー / サイトマップ階層ツリー / フローチャート / 専門員ハブ図 / 成長サイクル.
  * paper oklch(97% 0.006 85) · accent oklch(52% 0.095 178) welfare-teal · display Zen Kaku Gothic New · body Noto Sans JP · num Geist Mono
  * axes: light / geometric-sans / chromatic-other (teal ~178) · studied: no · context: explicit (社内ドラフト・未公開)
- * gates: contrast pass · mobile pass (縦積み/表ラッパー横スクロール/タップ44px) · honest pass (【予想】明示・創作なし) · tokens pass
+ * 2026-06 update(章1全面再構築・平易版): 専門用語(C面/B面/UGC/ROM専/eKYC/E-E-A-T)を全廃→ユーザー/施設/相談支援専門員。
+ *   [図解]指示を実図化(3者関係図/60日タイムライン.tl60/3段フロー/4プラン表/専門員ハブ.prohub/成長サイクル)。
+ *   Jカーブ(12)/サイトマップ(14-15)/まとめ(16)は不変。
  * All colours/fonts reference tokens.css by name. SVG-only fills reuse the same token vars already used in deck.css.
  */
 
-/* ============ 章1-3 二面性 関係図 (hybrid platform map) ============ */
+/* ============ 章1-3 3者 関係図 (3-target platform map) ============ */
 .hybrid { display: grid; grid-template-columns: minmax(0, 1.05fr) minmax(0, 1fr); gap: var(--space-md); flex: 1; min-height: 0; align-items: center; }
 .hb { width: 100%; height: auto; max-height: 100%; display: block; }
 .hb .node { fill: var(--color-paper-2); stroke: var(--color-rule); stroke-width: 1.4; }
@@ -1067,8 +1069,41 @@ img { max-width: 100%; }
 .hb .money { fill: var(--color-gold); font-family: var(--font-num); font-weight: 600; font-size: 9px; }
 .hbside { display: flex; flex-direction: column; gap: var(--space-2xs); }
 
-/* ============ 章1-4 60日ループ 循環図 (loop) ============ */
-.loopwrap { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 0.92fr); gap: var(--space-md); flex: 1; min-height: 0; align-items: center; }
+/* ============ 章1-2 60日 タイムライン (60-day timeline) ============ */
+.tl60wrap { display: grid; grid-template-rows: auto 1fr; gap: var(--space-2xs); flex: 1; min-height: 0; }
+.tl60 { width: 100%; height: auto; max-height: 178px; display: block; }
+.tl60 .tlbase { stroke: var(--color-accent); stroke-width: 2.4; }
+.tl60 .tltick { stroke: var(--color-accent-dk); stroke-width: 1.6; }
+.tl60 .tlday { fill: var(--color-muted); font-family: var(--font-num); font-size: 9px; }
+.tl60 .tlnode { fill: var(--color-paper); stroke: var(--color-accent); stroke-width: 2; }
+.tl60 .tlnode--act { fill: var(--color-accent); stroke: var(--color-accent-dk); stroke-width: 2; }
+.tl60 .tlstep { fill: var(--color-accent-ink); font-family: var(--font-num); font-weight: 700; font-size: 11px; }
+.tl60 .tlcard { fill: var(--color-paper-2); stroke: var(--color-rule); stroke-width: 1.2; }
+.tl60 .tlcard--act { fill: var(--color-accent-soft); stroke: var(--color-accent); stroke-width: 1.5; }
+.tl60 .tlh { fill: var(--color-ink); font-family: var(--font-display); font-weight: 700; font-size: 10.5px; }
+.tl60 .tld { fill: var(--color-ink-2); font-family: var(--font-num); font-size: 8px; }
+.tl60 .tlstepl { fill: var(--color-accent-dk); font-family: var(--font-num); font-weight: 600; font-size: 9.5px; letter-spacing: 0.04em; }
+.tl60 .tlloop { fill: none; stroke: var(--color-accent); stroke-width: 1.8; stroke-dasharray: 6 4; marker-end: url(#tlarr); }
+.tl60 .tlloopl { fill: var(--color-accent-dk); font-family: var(--font-num); font-weight: 600; font-size: 9px; }
+.tl60side { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: var(--space-2xs); align-items: stretch; min-height: 0; }
+.tl60side .panel { padding: var(--space-xs) var(--space-sm); }
+.tl60side .panel__h { margin-bottom: 2px; }
+.tl60side .blist { margin-top: 4px; gap: 4px; }
+.tl60side .blist li { font-size: 0.74rem; line-height: 1.4; }
+.tl60side .origin { margin-top: 5px; }
+
+/* ============ 章1-9 相談支援専門員 ハブ図 (pro hub) ============ */
+.prohub { width: 100%; height: auto; max-height: 240px; display: block; }
+.prohub .pr-hub { fill: var(--color-accent); stroke: var(--color-accent-dk); stroke-width: 1.6; }
+.prohub .pr-hubt { fill: var(--color-accent-ink); font-family: var(--font-display); font-weight: 700; font-size: 13px; }
+.prohub .pr-hubs { fill: var(--color-accent-ink); font-family: var(--font-num); font-size: 9px; opacity: 0.9; }
+.prohub .pr-node { fill: var(--color-paper-2); stroke: var(--color-rule); stroke-width: 1.3; }
+.prohub .pr-node--act { fill: var(--color-accent-soft); stroke: var(--color-accent); stroke-width: 1.6; }
+.prohub .pr-n { fill: var(--color-ink); font-family: var(--font-display); font-weight: 700; font-size: 11px; }
+.prohub .pr-ns { fill: var(--color-accent-dk); font-family: var(--font-num); font-size: 8.5px; }
+.prohub .pr-arr { fill: none; stroke: var(--color-accent); stroke-width: 2; marker-end: url(#prarr); }
+
+/* ============ 章1-4 60日ループ 循環図 / 章1-11 成長サイクル (loop) ============ */
 .lp { width: 100%; height: auto; max-height: 100%; display: block; }
 .lp .ring { fill: none; stroke: var(--color-accent); stroke-width: 2; stroke-dasharray: 6 5; }
 .lp .arr { fill: none; stroke: var(--color-accent); stroke-width: 2; marker-end: url(#lparr); }
@@ -1118,7 +1153,7 @@ img { max-width: 100%; }
 .flowcard--clay .fmini li::before { color: var(--color-clay); }
 .flowcard--gold .fmini li::before { color: var(--color-gold); }
 
-/* ============ ロードマップ STEP (面取り→ペイン→アップセル) ============ */
+/* ============ ロードマップ STEP (掲載確保→ペイン→月額) ============ */
 .roadmap { display: grid; grid-template-columns: repeat(3, minmax(0,1fr)); gap: 6px; flex: 1; min-height: 0; align-content: center; align-items: stretch; }
 .rmstep { border: 1px solid var(--color-rule); border-radius: var(--radius-md); background: var(--color-paper-2); padding: var(--space-sm) var(--space-md); display: flex; flex-direction: column; gap: var(--space-2xs); position: relative; }
 .rmstep--1 { border-top: 4px solid var(--color-muted); }
@@ -1132,18 +1167,18 @@ img { max-width: 100%; }
 .rmstep__arrow { position: absolute; right: -16px; top: 50%; transform: translateY(-50%); font-family: var(--font-num); color: var(--color-accent); font-size: 1.3rem; z-index: 2; }
 .rmstep:last-child .rmstep__arrow { display: none; }
 
-/* ============ 専門員ハブ 4機能カード ============ */
+/* ============ 専門員ハブ / フェーズ2 機能カード ============ */
 .hubgrid { display: grid; grid-template-columns: repeat(2, minmax(0,1fr)); gap: var(--space-2xs); flex: 1; min-height: 0; align-content: center; }
 .hubcard { border: 1px solid var(--color-rule); border-left: 4px solid var(--color-accent); border-radius: var(--radius-md); background: var(--color-paper-2); padding: var(--space-sm) var(--space-md); display: flex; flex-direction: column; gap: 3px; }
-.hubcard__tag { font-family: var(--font-num); font-size: 0.62rem; letter-spacing: 0.05em; text-transform: uppercase; color: var(--color-accent-dk); }
+.hubcard__tag { font-family: var(--font-num); font-size: 0.62rem; letter-spacing: 0.05em; color: var(--color-accent-dk); }
 .hubcard__h { font-family: var(--font-display); font-weight: 700; font-size: 0.96rem; line-height: 1.2; }
 .hubcard__d { font-size: 0.76rem; color: var(--color-ink-2); line-height: 1.42; }
 .hubcard__d em { font-style: normal; color: var(--color-accent-dk); font-weight: 600; }
 
-/* ============ フェーズ2 成長ループ flywheel (custom) ============ */
+/* ============ フェーズ2 成長サイクル flywheel (custom) ============ */
 .p2wrap { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 0.95fr); gap: var(--space-md); flex: 1; min-height: 0; align-items: center; }
 
-/* ============ Jカーブ SVG figure ============ */
+/* ============ Jカーブ SVG figure (不変) ============ */
 .jcurvewrap { display: grid; grid-template-columns: minmax(0, 1.35fr) minmax(0, 1fr); gap: var(--space-md); flex: 1; min-height: 0; align-items: stretch; }
 .jcfig { border: 1px solid var(--color-rule); border-radius: var(--radius-md); background: var(--color-paper-2); padding: var(--space-sm); display: flex; flex-direction: column; gap: var(--space-2xs); min-height: 0; }
 .jc { width: 100%; height: auto; display: block; }
@@ -1207,9 +1242,38 @@ img { max-width: 100%; }
 .nextstep__arrow { position: absolute; right: -14px; top: 50%; transform: translateY(-50%); font-family: var(--font-num); color: var(--color-accent); font-size: 1.2rem; z-index: 2; }
 .nexts .nextstep:last-child .nextstep__arrow { display: none; }
 
+/* ============ 根拠ノート (origin chips) ============ */
+/* 各機能・各価格の根拠＝参考にした実在サービス。小さく邪魔にならない注記として配置。創作禁止。 */
+.origin { display: flex; align-items: flex-start; gap: 7px; margin-top: 6px; padding: 5px 9px 5px 8px;
+  border: 1px solid var(--color-rule); border-left: 3px solid var(--color-accent-dk);
+  border-radius: var(--radius-sm); background: var(--color-accent-soft); }
+.origin__tag { flex: 0 0 auto; font-family: var(--font-num); font-size: 0.6rem; font-weight: 600;
+  letter-spacing: 0.03em; color: var(--color-accent-dk); white-space: nowrap; line-height: 1.5; }
+.origin__tag::before { content: "\25B6\FE0E"; margin-right: 3px; }
+.origin__body { font-size: 0.68rem; color: var(--color-ink-2); line-height: 1.4; min-width: 0; }
+.origin__body b { color: var(--color-accent-dk); font-weight: 700; }
+/* gold variant (施設/価格根拠で送客・閲覧パスに使う) */
+.origin--gold { border-left-color: var(--color-gold); background: var(--color-gold-soft); }
+.origin--gold .origin__tag { color: var(--color-gold); }
+.origin--gold .origin__body b { color: var(--color-gold); }
+/* clay variant (守り・対比の根拠) */
+.origin--clay { border-left-color: var(--color-clay); background: var(--color-clay-soft); }
+.origin--clay .origin__tag { color: var(--color-clay); }
+.origin--clay .origin__body b { color: var(--color-clay); }
+/* inline mini chip：blist の項目直下に置く極小注記 */
+.ochip { display: block; margin-top: 3px; font-size: 0.64rem; line-height: 1.35; color: var(--color-muted); }
+.ochip::before { content: "\25B6\FE0E "; color: var(--color-accent-dk); font-family: var(--font-num); font-size: 0.6rem; }
+.ochip b { color: var(--color-accent-dk); font-weight: 700; }
+/* プラン内の極小根拠 */
+.tier__origin { display: block; margin-top: 4px; padding-top: 4px; border-top: 1px dashed var(--color-rule);
+  font-size: 0.58rem; line-height: 1.3; color: var(--color-muted); }
+.tier__origin::before { content: "\25B6\FE0E "; color: var(--color-accent-dk); }
+.tier__origin b { color: var(--color-accent-dk); font-weight: 600; }
+
 /* ============ responsive (extends deck.css/profile.css) ============ */
 @media (max-width: 60rem) {
-  .hybrid, .loopwrap, .p2wrap, .jcurvewrap { grid-template-columns: 1fr; }
+  .hybrid, .p2wrap, .jcurvewrap { grid-template-columns: 1fr; }
+  .tl60side { grid-template-columns: 1fr; }
   .roadmap, .nexts { grid-template-columns: 1fr; }
   .rmstep__arrow, .nextstep__arrow { display: none; }
   .roadmap .rmstep, .nexts .nextstep { border-top-width: 4px; }
@@ -1223,8 +1287,16 @@ img { max-width: 100%; }
   /* keep the wide sitemap tree usable: horizontal scroll wrapper */
   .smapscroll { overflow-x: auto; -webkit-overflow-scrolling: touch; }
   .smapscroll .smaptree { grid-template-columns: repeat(5, minmax(160px,1fr)); min-width: 820px; }
+  /* 60日タイムラインは横長SVG→ラッパー内で横スクロール許容（スライド自体は横スクロールなし） */
+  .tl60wrap { overflow-x: auto; -webkit-overflow-scrolling: touch; }
+  .tl60 { min-width: 560px; }
   .fstep__d, .fstep__h, .hubcard__d, .rmstep__d { font-size: 0.88rem; line-height: 1.5; }
   .fmini li { font-size: 0.86rem; }
+  .tl60side .blist li { font-size: 0.84rem; }
+  .origin__body { font-size: 0.78rem; }
+  .origin__tag { font-size: 0.66rem; }
+  .ochip { font-size: 0.74rem; }
+  .tier__origin { font-size: 0.66rem; }
   .jcside .statcard__cap, .jcside .statcard__note { font-size: 0.82rem; }
   /* Jカーブ SVG inside a scrollable card on narrow phones if needed */
   .jc { min-width: 0; }
@@ -1249,7 +1321,7 @@ img { max-width: 100%; }
     <div class="cover__mark"><span class="cover__dot"></span> 事業提案 · 提案編 · 社内ドラフト（未公開）</div>
     <div>
       <h1 class="cover__title">就労継続支援B型<br><span class="em2">特化型 口コミポータル</span> 事業提案</h1>
-      <p class="cover__sub">「転職会議の障害者就労版」。C面（利用者）の圧倒的トラフィックを、B面（事業所）への送客課金と評判管理SaaSで収益化するハイブリッド二面性プラットフォーム。課金モデル・収益試算・情報設計を一括提案する。</p>
+      <p class="cover__sub">「転職会議の福祉版」。<b>ユーザー（利用者・家族）は完全無料</b>で人を集め、<b>施設（事業所）からは送客課金と月額のハイブリッド</b>で収益化します。<b>相談支援専門員</b>を案内人として巻き込む3者のポータルです。価格・機能には根拠（参考にした実在サービス）を添え、課金モデル・収益試算・サイト設計をまとめて提案します。</p>
     </div>
     <div class="cover__flow">
       <span><em>①</em> 課金モデル提案</span><span class="arrow">›</span>
@@ -1273,23 +1345,23 @@ img { max-width: 100%; }
   <div class="pad">
     <div class="shead">
       <p class="kick">目次 · Agenda</p>
-      <h2 class="title">課金モデル → 収益試算 → 情報設計 → まとめ の<em>4章構成</em></h2>
+      <h2 class="title">課金モデル → 収益試算 → サイト設計 → まとめ の<em>4章構成</em></h2>
     </div>
     <div class="toc flex-fill">
       <div class="toccol">
         <span class="toccol__stage">章1 / CHAPTER 01</span>
         <h3 class="toccol__h">課金モデル提案</h3>
-        <p class="toccol__desc">C面の極薄の壁とB面ハイブリッド収益、専門員ハブ、フェーズ2拡張までの全体設計。</p>
+        <p class="toccol__desc">ユーザーは無料で集め、施設から収益を得る全体像。最大の強み「口コミが自動で集まる60日サイクル」と「施設が思わず課金したくなる仕掛け」を中心に、価格の根拠まで示します。</p>
         <ul class="toclist">
-          <li><span class="n">03</span>ハイブリッド二面性 全体像</li>
-          <li><span class="n">04</span>C面戦略・60日UGCループ</li>
-          <li><span class="n">05</span>閲覧専用パス ¥1,980</li>
-          <li><span class="n">06</span>AIモデレーション3段</li>
-          <li><span class="n">07</span>B面① 送客従量課金</li>
-          <li><span class="n">08</span>B面② SaaS 4階層</li>
-          <li><span class="n">09</span>B面 必勝ロードマップ</li>
-          <li><span class="n">10</span>相談支援専門員ハブ</li>
-          <li><span class="n">11</span>フェーズ2 受発注＋成長ループ</li>
+          <li><span class="n">03</span>事業の全体像「3つのターゲット」</li>
+          <li><span class="n">04</span>口コミが集まる「60日サイクル」</li>
+          <li><span class="n">05</span>AI 3段構えの安全パトロール</li>
+          <li><span class="n">06</span>施設の課金モデル①と価格の裏付け</li>
+          <li><span class="n">07</span>施設の課金モデル② 評判管理プラン</li>
+          <li><span class="n">08</span>必勝の営業ロードマップ</li>
+          <li><span class="n">09</span>相談支援専門員の活用</li>
+          <li><span class="n">10</span>フェーズ2 仕事マッチング</li>
+          <li><span class="n">11</span>フェーズ2 究極の成長サイクル</li>
         </ul>
       </div>
       <div class="toccol toccol--propose">
@@ -1316,8 +1388,7 @@ img { max-width: 100%; }
 </section>
 
 <!-- ============================================================ -->
-<!-- 章1 扉相当（3枚目を全体像＝章ラベル付き） -->
-<!-- 3 ハイブリッド二面性 全体像 -->
+<!-- 章1 ① 3 事業の全体像「3つのターゲット」 -->
 <!-- ============================================================ -->
 <section class="slide" data-i="3">
   <div class="pad">
@@ -1333,76 +1404,82 @@ img { max-width: 100%; }
     </div>
     <div class="shead">
       <p class="kick">章1 · 事業の全体像</p>
-      <h2 class="title">トラフィックの<em>C面</em>と収益化の<em>B面</em>を、<em>相談支援専門員</em>がハブで繋ぐ二面性プラットフォーム</h2>
+      <h2 class="title">「ユーザー」「施設」「相談支援専門員」<em>3者がつながる</em>ポータル</h2>
     </div>
     <div class="hybrid flex-fill">
-      <svg class="hb" viewBox="0 0 560 320" role="img" aria-label="ハイブリッド二面性プラットフォームの関係図">
+      <svg class="hb" viewBox="0 0 560 320" role="img" aria-label="ユーザー・施設・相談支援専門員の3者がつながる関係図">
         <defs>
           <marker id="hbar" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 z" fill="var(--color-accent)"/></marker>
           <marker id="hbarg" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 z" fill="var(--color-gold)"/></marker>
           <marker id="hbarm" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 z" fill="var(--color-rule)"/></marker>
         </defs>
-        <!-- C面 left -->
-        <rect class="node node--c" x="14" y="44" width="150" height="62" rx="10"/>
-        <text class="lbl lbl--c" x="89" y="70" text-anchor="middle">C面：利用者・家族</text>
-        <text class="sub" x="89" y="88" text-anchor="middle">基本無料／60日閲覧ループ</text>
-        <!-- ROM専 -->
-        <rect class="node node--c" x="14" y="214" width="150" height="62" rx="10"/>
-        <text class="lbl lbl--c" x="89" y="240" text-anchor="middle">ROM専・同業調査</text>
-        <text class="sub" x="89" y="258" text-anchor="middle">閲覧パス ¥1,980/月</text>
-        <!-- hub center -->
-        <circle class="hub" cx="280" cy="160" r="58"/>
-        <text class="hubt" x="280" y="150" text-anchor="middle">相談支援</text>
-        <text class="hubt" x="280" y="166" text-anchor="middle">専門員ハブ</text>
-        <text class="hubs" x="280" y="184" text-anchor="middle">eKYC認証・無料</text>
-        <!-- B面 right -->
-        <rect class="node node--b" x="396" y="44" width="150" height="62" rx="10"/>
-        <text class="lbl lbl--b" x="471" y="70" text-anchor="middle">B面：事業所</text>
-        <text class="sub" x="471" y="88" text-anchor="middle">送客課金＋評判管理SaaS</text>
-        <!-- 運営 -->
-        <rect class="node" x="396" y="214" width="150" height="62" rx="10"/>
-        <text class="lbl" x="471" y="240" text-anchor="middle">運営（プラットフォーム）</text>
-        <text class="sub" x="471" y="258" text-anchor="middle">AIモデレーション3段</text>
-
-        <!-- flows: C -> hub (UGC) -->
-        <path class="flow" d="M164 78 Q230 100 235 132"/>
-        <text class="ftext" x="196" y="100">UGC投稿</text>
-        <!-- ROM -> hub -->
-        <path class="flow" d="M164 240 Q230 215 233 190"/>
-        <!-- hub -> B (送客リード) -->
-        <path class="flow--b flow" d="M328 132 Q380 100 396 80"/>
-        <text class="money" x="350" y="98">送客リード</text>
-        <!-- B -> 運営 (課金) -->
-        <path class="flow--b flow" d="M471 106 L471 210"/>
-        <text class="money" x="475" y="162">送客課金＋SaaS</text>
-        <!-- 運営 -> hub (信頼性/モデレーション) -->
-        <path class="flow--muted flow" d="M396 244 Q335 210 322 188"/>
-        <!-- hub -> C (情報・回答) -->
-        <path class="flow--muted flow" d="M222 152 Q190 130 164 96"/>
-        <text class="ftext" x="176" y="124">Q&amp;A回答</text>
+        <!-- ① ユーザー left top -->
+        <rect class="node node--c" x="14" y="40" width="158" height="66" rx="10"/>
+        <text class="lbl lbl--c" x="93" y="64" text-anchor="middle">① ユーザー</text>
+        <text class="sub" x="93" y="80" text-anchor="middle">利用者・ご家族</text>
+        <text class="sub" x="93" y="94" text-anchor="middle">完全無料</text>
+        <!-- 運営 left bottom -->
+        <rect class="node" x="14" y="214" width="158" height="62" rx="10"/>
+        <text class="lbl" x="93" y="240" text-anchor="middle">運営（ポータル）</text>
+        <text class="sub" x="93" y="258" text-anchor="middle">AIで安全を担保</text>
+        <!-- ③ 相談支援専門員 center hub -->
+        <circle class="hub" cx="280" cy="160" r="60"/>
+        <text class="hubt" x="280" y="150" text-anchor="middle">③ 相談支援</text>
+        <text class="hubt" x="280" y="166" text-anchor="middle">専門員</text>
+        <text class="hubs" x="280" y="184" text-anchor="middle">案内人・無料で参加</text>
+        <!-- ② 施設 right top -->
+        <rect class="node node--b" x="388" y="40" width="158" height="66" rx="10"/>
+        <text class="lbl lbl--b" x="467" y="64" text-anchor="middle">② 施設・事業所</text>
+        <text class="sub" x="467" y="80" text-anchor="middle">定員を埋めたい</text>
+        <text class="sub" x="467" y="94" text-anchor="middle">送客課金＋月額</text>
+        <!-- 収益 right bottom -->
+        <rect class="node node--b" x="388" y="214" width="158" height="62" rx="10"/>
+        <text class="lbl lbl--b" x="467" y="240" text-anchor="middle">運営の収益</text>
+        <text class="sub" x="467" y="258" text-anchor="middle">施設からのみ徴収</text>
+        <!-- flows -->
+        <!-- ユーザー -> hub 口コミ・質問 -->
+        <path class="flow" d="M172 80 Q228 110 235 134"/>
+        <text class="ftext" x="186" y="106">口コミ・質問</text>
+        <!-- hub -> ユーザー 情報・回答 -->
+        <path class="flow--muted flow" d="M222 150 Q188 118 172 96"/>
+        <text class="ftext" x="178" y="128">情報・回答</text>
+        <!-- hub -> 施設 見学客を送る -->
+        <path class="flow--b flow" d="M328 134 Q380 108 388 86"/>
+        <text class="money" x="338" y="106">見学客を送る</text>
+        <!-- 施設 -> 収益 課金 -->
+        <path class="flow--b flow" d="M467 106 L467 210"/>
+        <text class="money" x="471" y="162">送客課金＋月額</text>
+        <!-- 運営 -> hub 安全・信頼 -->
+        <path class="flow--muted flow" d="M172 244 Q236 212 232 188"/>
       </svg>
       <div class="hbside">
         <div class="panel panel--accent">
-          <h3 class="panel__h panel__h--sm">C面：圧倒的トラフィック</h3>
+          <h3 class="panel__h panel__h--sm">① ユーザー（利用者・ご家族）＝完全無料</h3>
           <ul class="blist">
-            <li>利用者・家族は完全無料。極限まで下げたアクションで全情報を60日間閲覧可能。</li>
-            <li>投稿したくない層／競合調査BtoB業者には<b>閲覧専用パス（月1,980円）</b>を販売。</li>
+            <li>すべての機能を無料で利用可能。まずは<b>圧倒的な人数</b>を集めることを最優先します。</li>
           </ul>
+          <div class="origin"><span class="origin__tag">なぜ無料か</span><span class="origin__body">巨大サイトの<b>@cosme</b>や福祉最大手の<b>みんなの介護</b>を見ても、一般ユーザーからお金を取るモデルは定着しません。だからユーザーは無料に徹し、人数を集めます。</span></div>
         </div>
         <div class="panel panel--gold">
-          <h3 class="panel__h panel__h--sm">B面：ハイブリッド収益化</h3>
+          <h3 class="panel__h panel__h--sm">② 施設 ＝ 送客課金＋月額のハイブリッド</h3>
           <ul class="blist blist--gold">
-            <li>定員を埋める<b>送客従量課金</b>と、口コミ管理の<b>月額SaaS</b>の二本柱。</li>
+            <li>成果が出た時だけ払う<b>「送客課金」</b>と、便利な管理機能の<b>「月額」</b>の二本柱で収益化します。</li>
           </ul>
         </div>
-        <p class="src">課金モデル提案.md §1（事業の全体像とハイブリッドマネタイズ構造）</p>
+        <div class="panel">
+          <h3 class="panel__h panel__h--sm">③ 相談支援専門員 ＝ 案内人</h3>
+          <ul class="blist">
+            <li>施設の評判を担保し、利用者を施設へ送り込む<b>強力な案内人</b>として無料で巻き込みます。</li>
+          </ul>
+        </div>
+        <p class="src">課金モデル提案.md §1（事業の全体像と3つのターゲット）</p>
       </div>
     </div>
   </div>
 </section>
 
 <!-- ============================================================ -->
-<!-- 4 C面戦略・60日UGCループ -->
+<!-- 章1 ② 4 口コミが集まる「60日サイクル」【最重要】 -->
 <!-- ============================================================ -->
 <section class="slide" data-i="4">
   <div class="pad">
@@ -1414,71 +1491,76 @@ img { max-width: 100%; }
       <span class="flowbar__sub">04 / 16</span>
     </div>
     <div class="shead">
-      <p class="kick">章1 · C面戦略</p>
-      <h2 class="title">極薄の壁＋<em>「60日間UGC獲得ループ」</em>でコールドスタートを最速で抜ける</h2>
+      <p class="kick">章1 · 最重要</p>
+      <h2 class="title">口コミが自動で集まり続ける<em>「60日サイクル」</em></h2>
     </div>
-    <div class="loopwrap flex-fill">
-      <svg class="lp" viewBox="0 0 380 320" role="img" aria-label="60日間UGC獲得ループの循環図">
+    <div class="tl60wrap flex-fill">
+      <!-- 60日タイムライン -->
+      <svg class="tl60" viewBox="0 0 720 168" role="img" aria-label="60日タイムライン：見学前の質問で使わせ、見学後に口コミを回収するサイクル">
         <defs>
-          <marker id="lparr" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 z" fill="var(--color-accent)"/></marker>
+          <marker id="tlarr" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 z" fill="var(--color-accent)"/></marker>
         </defs>
-        <!-- center -->
-        <circle class="center" cx="190" cy="160" r="46"/>
-        <text class="ct" x="190" y="152" text-anchor="middle">60日</text>
-        <text class="ct" x="190" y="168" text-anchor="middle">ループ</text>
-        <text class="cs" x="190" y="184" text-anchor="middle">自己強化型</text>
-        <!-- nodes around circle (4 corners) -->
-        <!-- 1 top: チラ見せSEO -->
-        <rect class="node" x="120" y="14" width="140" height="50" rx="10"/>
-        <text class="step" x="130" y="32">①</text>
-        <text class="n" x="190" y="34" text-anchor="middle">チラ見せSEO流入</text>
-        <text class="ns" x="190" y="50" text-anchor="middle">冒頭2行＋最新Q&amp;Aのみ公開</text>
-        <!-- 2 right: ワンタップ投稿 -->
-        <rect class="node node--act" x="262" y="106" width="110" height="56" rx="10"/>
-        <text class="step" x="270" y="124">②</text>
-        <text class="n" x="317" y="126" text-anchor="middle">ワンタップ投稿</text>
-        <text class="ns" x="317" y="140" text-anchor="middle">テンプレ/タグ→</text>
-        <text class="ns" x="317" y="151" text-anchor="middle">AIが下書き生成</text>
-        <!-- 3 bottom: 60日閲覧 -->
-        <rect class="node node--act" x="120" y="256" width="140" height="50" rx="10"/>
-        <text class="step" x="130" y="274">③</text>
-        <text class="n" x="190" y="276" text-anchor="middle">全国全施設 60日見放題</text>
-        <text class="ns" x="190" y="292" text-anchor="middle">1アクションで一括解放</text>
-        <!-- 4 left: 期限切れ→レビュー -->
-        <rect class="node node--wall" x="8" y="106" width="112" height="56" rx="10"/>
-        <text class="step step--wall" x="16" y="124">④</text>
-        <text class="n" x="64" y="126" text-anchor="middle">期限切れ→</text>
-        <text class="n" x="64" y="140" text-anchor="middle">見学後レビュー</text>
-        <text class="ns" x="64" y="153" text-anchor="middle">で再解放</text>
-        <!-- arcs (clockwise) -->
-        <path class="arr" d="M252 56 Q300 78 312 102"/>
-        <path class="arr" d="M312 166 Q300 232 256 262"/>
-        <path class="arr" d="M120 272 Q70 240 66 166"/>
-        <path class="arr" d="M70 104 Q110 56 124 50"/>
+        <!-- baseline -->
+        <line class="tlbase" x1="40" y1="96" x2="660" y2="96"/>
+        <!-- day ticks -->
+        <line class="tltick" x1="40" y1="90" x2="40" y2="102"/>
+        <text class="tlday" x="40" y="120" text-anchor="middle">0日目</text>
+        <line class="tltick" x1="660" y1="90" x2="660" y2="102"/>
+        <text class="tlday" x="660" y="120" text-anchor="middle">60日目</text>
+        <!-- STEP1 node -->
+        <circle class="tlnode tlnode--act" cx="40" cy="96" r="11"/>
+        <text class="tlstep" x="40" y="100" text-anchor="middle">1</text>
+        <rect class="tlcard tlcard--act" x="8" y="14" width="190" height="56" rx="8"/>
+        <text class="tlh" x="103" y="34" text-anchor="middle">見学前：ワンタップで解放</text>
+        <text class="tld" x="103" y="50" text-anchor="middle">質問1つ／タグ3つを選ぶだけ</text>
+        <text class="tld" x="103" y="62" text-anchor="middle">→ 全国の口コミ60日読み放題</text>
+        <!-- STEP2 mid -->
+        <circle class="tlnode" cx="350" cy="96" r="9"/>
+        <rect class="tlcard" x="252" y="14" width="196" height="56" rx="8"/>
+        <text class="tlh" x="350" y="34" text-anchor="middle">検討期間：60日間</text>
+        <text class="tld" x="350" y="50" text-anchor="middle">じっくり複数施設を比較し</text>
+        <text class="tld" x="350" y="62" text-anchor="middle">実際に「見学」へ行く</text>
+        <!-- STEP3 node -->
+        <circle class="tlnode tlnode--act" cx="660" cy="96" r="11"/>
+        <text class="tlstep" x="660" y="100" text-anchor="middle">3</text>
+        <rect class="tlcard tlcard--act" x="522" y="14" width="190" height="56" rx="8"/>
+        <text class="tlh" x="617" y="34" text-anchor="middle">60日後：口コミを回収</text>
+        <text class="tld" x="617" y="50" text-anchor="middle">期限切れ＝続きを見るには</text>
+        <text class="tld" x="617" y="62" text-anchor="middle">見学先の感想を投稿して</text>
+        <!-- step labels under line -->
+        <text class="tlstepl" x="40" y="140" text-anchor="middle">STEP 1</text>
+        <text class="tlstepl" x="350" y="140" text-anchor="middle">STEP 2</text>
+        <text class="tlstepl" x="660" y="140" text-anchor="middle">STEP 3</text>
+        <!-- loop-back arrow STEP3 -> STEP1 -->
+        <path class="tlloop" d="M660 130 Q660 162 350 162 Q40 162 40 130"/>
+        <text class="tlloopl" x="350" y="158" text-anchor="middle">回収した口コミが次のユーザーを呼ぶ ＝ 自動でくり返す</text>
       </svg>
-      <div class="hbside">
+      <div class="tl60side">
         <div class="panel">
-          <h3 class="panel__h panel__h--sm">情報を引き出す「極薄の壁」</h3>
+          <h3 class="panel__h panel__h--sm">STEP 1 ｜ 見学前のちょっとした質問</h3>
           <ul class="blist">
-            <li><b>チラ見せSEO</b>：冒頭2行・最新Q&amp;Aのみ無料開放しSEO流入を最大化。</li>
-            <li><b>超低カロリーなアクション</b>：テンプレ質問選択（ワンタップQ&amp;A）かタグ選択（AIタグレビュー）でAIが下書き生成。</li>
-            <li><b>1アクション＝全国60日見放題</b>。施設探し終盤の60日後に期限切れ。</li>
+            <li>最初は口コミの<b>冒頭2行</b>しか読めません。</li>
+            <li>続きを読む条件は、<b>気になる質問をワンタップ</b>（例：送迎はありますか？）または<b>タグを3つ選ぶ</b>だけ。文章を書く必要はありません。</li>
+            <li>1回やれば、<b>全国の施設の口コミが60日間すべて読み放題</b>になります。</li>
           </ul>
+        </div>
+        <div class="panel">
+          <h3 class="panel__h panel__h--sm">STEP 2 ｜ 読み放題の60日間で比較・見学</h3>
+          <ul class="blist"><li>施設探しの平均期間（約1〜2ヶ月）に合わせた60日間で、じっくり比較して実際に見学へ。</li></ul>
         </div>
         <div class="panel panel--accent">
-          <h3 class="panel__h panel__h--sm">UGCの無限ループ</h3>
-          <ul class="blist">
-            <li>「続きを見るには見学した施設のレビューを」→ <b>見学前Q&amp;A→見学後レビュー</b>のジャーニーに沿った自然な口コミ回収。</li>
-          </ul>
+          <h3 class="panel__h panel__h--sm">STEP 3 ｜ ちょうど良いタイミングで口コミ回収</h3>
+          <ul class="blist"><li>60日で期限切れ。<b>「続きを見るには、見学に行った施設の感想を教えてください」</b>とお願いします。</li></ul>
+          <div class="origin"><span class="origin__tag">結論</span><span class="origin__body"><b>見学前の質問でまず使わせ、見学後の絶妙なタイミングで本物の口コミを回収</b>。この自然な流れが、口コミが自動で集まり続けるサイクルを生みます。</span></div>
         </div>
-        <p class="src">課金モデル提案.md §2（C面戦略・60日間のUGC獲得ループ）</p>
       </div>
     </div>
+    <p class="src" style="margin-top:var(--space-2xs);">課金モデル提案.md §2（口コミが自動で集まる60日サイクル）</p>
   </div>
 </section>
 
 <!-- ============================================================ -->
-<!-- 5 閲覧専用パス -->
+<!-- 章1 ③ 5 AI 3段構えの安全パトロール -->
 <!-- ============================================================ -->
 <section class="slide" data-i="5">
   <div class="pad">
@@ -1490,39 +1572,41 @@ img { max-width: 100%; }
       <span class="flowbar__sub">05 / 16</span>
     </div>
     <div class="shead">
-      <p class="kick">章1 · 有料C面</p>
-      <h2 class="title">アクション不要の<em>「閲覧専用パス」（月額1,980円）</em>で取りこぼしを防ぐ</h2>
+      <p class="kick">章1 · 安心して使える</p>
+      <h2 class="title">AIによる<em>3段構えの安全パトロール</em></h2>
     </div>
-    <div class="split flex-fill">
-      <div class="dec__col">
-        <div class="statcard" style="background:var(--color-deep);color:var(--color-paper);border-color:var(--color-rule-dk);">
-          <span class="statbig statbig--xl" style="color:var(--color-accent);">¥1,980<small style="font-family:var(--font-body);font-size:0.9rem;color:var(--color-paper);font-weight:400;"> / 月</small></span>
-          <span class="statcard__cap" style="color:oklch(86% 0.012 200);">投稿なしで全文閲覧できる有料パス</span>
-        </div>
-        <div class="panel panel--accent">
-          <h3 class="panel__h panel__h--sm">価格の根拠</h3>
-          <p style="margin:0;font-size:var(--text-sm);color:var(--color-ink-2);line-height:1.5;">市場で適正と認知されている<b style="color:var(--color-accent-dk);">「1,980円」</b>に設定。一般ユーザーには絶妙なハードルとなりつつ、業者のシステム利用料として確実に取りこぼしを防ぐ。</p>
+    <div class="fchart flex-fill" style="justify-content:center;">
+      <div class="fstep">
+        <div class="fstep__rail"><div class="fstep__dot">1</div><div class="fstep__line"></div></div>
+        <div class="fstep__body">
+          <div class="fstep__h">第1関門：NGワードを即弾き</div>
+          <div class="fstep__d">明らかな暴言や差別用語は、システムが一瞬で弾きます。</div>
         </div>
       </div>
-      <div class="dec__col">
-        <div class="probcard">
-          <span class="probcard__who">対象 01</span>
-          <h3 class="probcard__h">投稿したくないユーザー</h3>
-          <p>どうしても口コミ投稿をしたくないが全文を読みたい層。60日ループの「壁」を越えない代替導線。</p>
+      <div class="fstep">
+        <div class="fstep__rail"><div class="fstep__dot">2</div><div class="fstep__line"></div></div>
+        <div class="fstep__body">
+          <div class="fstep__h">第2関門：AIが文脈をチェック</div>
+          <div class="fstep__d">人間関係のトラブルや、個人情報（障害名・薬の名前など）が漏れていないかを、AIが文脈を読んで審査します。</div>
         </div>
-        <div class="probcard probcard--gold">
-          <span class="probcard__who">対象 02</span>
-          <h3 class="probcard__h">競合調査・評判管理BtoB業者</h3>
-          <p>他社の評判管理を行う業者向け。<b>B面ライトプラン契約者には無料付随</b>（B面と相互送客）。</p>
+      </div>
+      <div class="fstep">
+        <div class="fstep__rail"><div class="fstep__dot fstep__dot--out">3</div></div>
+        <div class="fstep__body fstep__body--out">
+          <div class="fstep__h">第3関門：優しい修正アシスト</div>
+          <div class="fstep__d">個人情報があっても、ただ削除（拒絶）するのではなく、AIが「ここを伏せ字にすれば安全に公開できますよ」と<span class="price">優しく修正を提案</span>します。</div>
         </div>
       </div>
     </div>
-    <p class="src" style="margin-top:var(--space-sm);">課金モデル提案.md §2-②（閲覧専用パス）／§4-②ライト（パス無料付随）</p>
+    <div class="notestrip notestrip--accent notestrip--tight">
+      <strong>メリット：</strong>ユーザーに嫌な思いをさせず、施設への<b>正当な不満（工賃が安い 等）</b>を安全にサイトへ蓄積できます。
+    </div>
+    <p class="src" style="margin-top:var(--space-2xs);">課金モデル提案.md §3（AIによる3段構えの安全パトロール）</p>
   </div>
 </section>
 
 <!-- ============================================================ -->
-<!-- 6 AIモデレーション3段 -->
+<!-- 章1 ④-1 6 施設の課金モデル①＋価格の裏付け（成果報酬・閲覧パス） -->
 <!-- ============================================================ -->
 <section class="slide" data-i="6">
   <div class="pad">
@@ -1534,41 +1618,52 @@ img { max-width: 100%; }
       <span class="flowbar__sub">06 / 16</span>
     </div>
     <div class="shead">
-      <p class="kick">章1 · 安全な即時公開</p>
-      <h2 class="title">福祉領域のセンシティブ情報を守る<em>AIモデレーション3段</em>構え</h2>
+      <p class="kick">章1 · 施設の課金モデル ①</p>
+      <h2 class="title">主力は<em>成果報酬（見学申込1件 4,000〜5,000円）</em>。初期・月額0円</h2>
     </div>
-    <div class="fchart flex-fill" style="justify-content:center;">
-      <div class="fstep">
-        <div class="fstep__rail"><div class="fstep__dot">1</div><div class="fstep__line"></div></div>
-        <div class="fstep__body">
-          <div class="fstep__h">第1関門：NGワード辞書</div>
-          <div class="fstep__d">明らかな暴言・差別用語をシステムで瞬時に弾く。</div>
+    <div class="split flex-fill">
+      <div class="dec__col">
+        <div class="statcard">
+          <span class="statbig statbig--lg"><em>¥4,000〜5,000</em><small style="font-family:var(--font-body);font-size:0.9rem;color:var(--color-muted);font-weight:400;"> / 件</small></span>
+          <span class="statcard__cap">サイト経由で「見学申込」「問い合わせ」があった時だけ費用が発生（初期費用・月額は0円）</span>
+          <span class="statcard__note">収益試算は中央値 1件4,500円で計上【予想：単価固定】</span>
+        </div>
+        <div class="panel panel--accent">
+          <h3 class="panel__h panel__h--sm">なぜこの形か</h3>
+          <ul class="blist">
+            <li><b>損しないから始めやすい</b>：見学者が来た時だけ払う成果報酬。定員を埋めたい施設がリスクなく導入できます。</li>
+          </ul>
+          <div class="origin origin--gold"><span class="origin__tag">価格の根拠</span><span class="origin__body"><b>塾ナビ</b>の資料請求1件 約4,000円を参考に設定。<b>みんなの介護</b>型の10万円超の成約課金は、公費で運営されるB型施設には重すぎる、を対比で明示。</span></div>
         </div>
       </div>
-      <div class="fstep">
-        <div class="fstep__rail"><div class="fstep__dot">2</div><div class="fstep__line"></div></div>
-        <div class="fstep__body">
-          <div class="fstep__h">第2関門：AI文脈審査</div>
-          <div class="fstep__d">個人情報の漏洩や文脈に隠れた悪意をAIが判定。問題なければ<span class="price">即時公開</span>。</div>
+      <div class="dec__col">
+        <div class="fchart" style="gap:var(--space-2xs);">
+          <div class="fstep">
+            <div class="fstep__rail"><div class="fstep__dot">A</div><div class="fstep__line"></div></div>
+            <div class="fstep__body"><div class="fstep__h">ユーザー・専門員が行動</div><div class="fstep__d">施設ページから【見学申込】【問い合わせ】を押す。</div></div>
+          </div>
+          <div class="fstep">
+            <div class="fstep__rail"><div class="fstep__dot">B</div><div class="fstep__line"></div></div>
+            <div class="fstep__body"><div class="fstep__h">施設に申込が届く</div><div class="fstep__d">施設の管理画面に見学申込（リード）が届く。</div></div>
+          </div>
+          <div class="fstep">
+            <div class="fstep__rail"><div class="fstep__dot fstep__dot--out">¥</div></div>
+            <div class="fstep__body fstep__body--out"><div class="fstep__h">1件ごとに課金が発生</div><div class="fstep__d">成果が出たタイミングのみ <span class="price">4,000〜5,000円</span>。</div></div>
+          </div>
         </div>
-      </div>
-      <div class="fstep">
-        <div class="fstep__rail"><div class="fstep__dot fstep__dot--out">3</div></div>
-        <div class="fstep__body fstep__body--out">
-          <div class="fstep__h">第3関門：伴走型修正アシスト</div>
-          <div class="fstep__d">違反時もシャドウバン（隠蔽）はせず、AIが「ここを伏せ字にすれば安全に公開できますよ」とカドが立たない形で修正を促す。</div>
+        <div class="probcard probcard--gold" style="margin-top:var(--space-2xs);">
+          <span class="probcard__who">③ 閲覧専用パス（月額 1,980円）</span>
+          <h3 class="probcard__h">同業他社・業者向けの「読むだけ」パス</h3>
+          <p>口コミや質問を投稿せず、すべての情報を読みたい同業・業者向け。<b>OpenWork等で「情報の価値」として認知されている約2,000円帯</b>に設定し、業者からの利用料を取りはぐれないようにします。</p>
         </div>
       </div>
     </div>
-    <div class="notestrip notestrip--accent notestrip--tight">
-      <strong>ねらい：</strong>ユーザーの熱量を逃がさず（＝即時公開）、福祉特有のセンシティブ情報を守る両立を、3段の自動審査で実現する。
-    </div>
-    <p class="src" style="margin-top:var(--space-2xs);">課金モデル提案.md §3（AIモデレーション・安全な即時公開システム）</p>
+    <p class="src" style="margin-top:var(--space-2xs);">課金モデル提案.md §4-①（成果報酬）／§4-③（閲覧専用パス）／20-revenue-sim-v2.md §1-1</p>
   </div>
 </section>
 
 <!-- ============================================================ -->
-<!-- 7 B面① 送客従量課金 -->
+<!-- 章1 ④-2 7 施設の課金モデル② 評判管理プラン（料金表） -->
 <!-- ============================================================ -->
 <section class="slide" data-i="7">
   <div class="pad">
@@ -1580,47 +1675,51 @@ img { max-width: 100%; }
       <span class="flowbar__sub">07 / 16</span>
     </div>
     <div class="shead">
-      <p class="kick">章1 · B面戦略①</p>
-      <h2 class="title">主力エンジンは<em>送客従量課金</em>（1件 4,000〜5,000円・成果報酬型）</h2>
+      <p class="kick">章1 · 施設の課金モデル ②</p>
+      <h2 class="title">評判管理（月額）<em>4プラン</em>。安定収益の土台</h2>
     </div>
-    <div class="split flex-fill">
-      <div class="dec__col">
-        <div class="statcard">
-          <span class="statbig statbig--lg"><em>¥4,000〜5,000</em><small style="font-family:var(--font-body);font-size:0.9rem;color:var(--color-muted);font-weight:400;"> / 件</small></span>
-          <span class="statcard__cap">見学申込・問い合わせが発生したタイミングのみ課金</span>
-          <span class="statcard__note">SIMでは中央値 1件4,500円で計上【予想：単価固定】</span>
-        </div>
-        <div class="panel panel--accent">
-          <h3 class="panel__h panel__h--sm">なぜ主力エンジンか</h3>
-          <ul class="blist">
-            <li><b>導入障壁ゼロ</b>：定員を埋めたい施設が、リスクなく始められる成果報酬型。</li>
-            <li><b>即効性</b>：掲載数の面取り直後から最初に立ち上がる収益。</li>
-          </ul>
-        </div>
+    <div class="tiers flex-fill" style="grid-template-columns:repeat(4,minmax(0,1fr));">
+      <div class="tier tier--future">
+        <span class="tier__lvl">プラン 0</span>
+        <span class="tier__name">無料</span>
+        <span class="tier__price">¥0<small>掲載のみ</small></span>
+        <ul class="blist" style="margin-top:4px;"><li style="font-size:0.74rem;">基本的な掲載</li><li style="font-size:0.74rem;">月1件まで返信をお試し</li></ul>
+        <span class="tier__bench">まずは無料で価値を体感</span>
       </div>
-      <div class="dec__col">
-        <div class="fchart" style="gap:var(--space-2xs);">
-          <div class="fstep">
-            <div class="fstep__rail"><div class="fstep__dot">A</div><div class="fstep__line"></div></div>
-            <div class="fstep__body"><div class="fstep__h">利用者・専門員が行動</div><div class="fstep__d">施設詳細から【見学申込】【問い合わせ】を押下。</div></div>
-          </div>
-          <div class="fstep">
-            <div class="fstep__rail"><div class="fstep__dot">B</div><div class="fstep__line"></div></div>
-            <div class="fstep__body"><div class="fstep__h">事業所にリード着信</div><div class="fstep__d">ダッシュボードに送客リードが届く。</div></div>
-          </div>
-          <div class="fstep">
-            <div class="fstep__rail"><div class="fstep__dot fstep__dot--out">¥</div></div>
-            <div class="fstep__body fstep__body--out"><div class="fstep__h">1件ごとに課金が発生</div><div class="fstep__d">成果（リード成立）のタイミングのみ <span class="price">4,000〜5,000円</span>。</div></div>
-          </div>
-        </div>
+      <div class="tier tier--hero">
+        <span class="tier__badge">最重要プラン</span>
+        <span class="tier__lvl">プラン 1</span>
+        <span class="tier__name">★ライト</span>
+        <span class="tier__price">¥5,000<small>/ 月</small></span>
+        <ul class="blist" style="margin-top:4px;"><li style="font-size:0.74rem;">口コミへの返信が<b>無制限</b></li><li style="font-size:0.74rem;"><b>競合の口コミが全部読める閲覧パス（1,980円相当）が無料で付属</b></li></ul>
+        <span class="tier__bench">競合の評判を知りたい強いニーズを満たす</span>
+        <span class="tier__origin">根拠：<b>エキテン</b>と同等の低単価帯（月5,000円）。閲覧パス無料付属が契約を後押し。</span>
+      </div>
+      <div class="tier">
+        <span class="tier__lvl">プラン 2</span>
+        <span class="tier__name">スタンダード</span>
+        <span class="tier__price">¥15,000<small>/ 月</small></span>
+        <ul class="blist" style="margin-top:4px;"><li style="font-size:0.74rem;">検索結果での<b>上位表示</b></li><li style="font-size:0.74rem;">B型特化の口コミ<b>AI分析</b></li></ul>
+        <span class="tier__bench">露出を増やし、意思決定を支援</span>
+      </div>
+      <div class="tier">
+        <span class="tier__lvl">プラン 3</span>
+        <span class="tier__name">プレミアム</span>
+        <span class="tier__price">¥30,000<small>/ 月</small></span>
+        <ul class="blist" style="margin-top:4px;"><li style="font-size:0.74rem;">トップ画面への<b>固定表示</b></li><li style="font-size:0.74rem;">露出を最大化する最上位枠</li></ul>
+        <span class="tier__bench">露出を最大化する独占枠</span>
+        <span class="tier__origin">根拠：<b>弁護士ドットコム</b>の有料掲載を踏襲。</span>
       </div>
     </div>
-    <p class="src" style="margin-top:var(--space-sm);">課金モデル提案.md §4-①（送客従量課金）／20-revenue-sim-v2.md §1-1</p>
+    <div class="notestrip notestrip--accent notestrip--tight">
+      <strong>ねらい：</strong>施設は「近くの競合がどんな不満を持たれているか」を強く知りたがります。<b>ライトの「競合口コミ読み放題」付属</b>が、月額5,000円契約への最強のフックになります。
+    </div>
+    <p class="src" style="margin-top:var(--space-2xs);">課金モデル提案.md §4-②（評判管理 月額4プラン）</p>
   </div>
 </section>
 
 <!-- ============================================================ -->
-<!-- 8 B面② SaaS 4階層 -->
+<!-- 章1 ⑤ 8 必勝の営業ロードマップ -->
 <!-- ============================================================ -->
 <section class="slide" data-i="8">
   <div class="pad">
@@ -1632,49 +1731,38 @@ img { max-width: 100%; }
       <span class="flowbar__sub">08 / 16</span>
     </div>
     <div class="shead">
-      <p class="kick">章1 · B面戦略②</p>
-      <h2 class="title">評判管理SaaS <em>4階層</em>サブスクリプション</h2>
+      <p class="kick">章1 · 確実に売上を作る</p>
+      <h2 class="title">必勝の営業ロードマップ ── <em>掲載確保 → 待つ → 月額へ引き上げ</em></h2>
     </div>
-    <div class="tiers flex-fill" style="grid-template-columns:repeat(4,minmax(0,1fr));">
-      <div class="tier tier--future">
-        <span class="tier__lvl">階層 0</span>
-        <span class="tier__name">フリー</span>
-        <span class="tier__price">¥0<small>掲載のみ</small></span>
-        <ul class="blist" style="margin-top:4px;"><li style="font-size:0.74rem;">定型文返信</li><li style="font-size:0.74rem;">月1件のオリジナル返信</li></ul>
-        <span class="tier__bench">まずは価値を体感（面取り）</span>
+    <div class="roadmap flex-fill">
+      <div class="rmstep rmstep--1">
+        <span class="rmstep__n">STEP 1</span>
+        <h3 class="rmstep__h">まずは「場所」を確保</h3>
+        <p class="rmstep__d"><em>「初期費用も月額も0円。見学者が来た時だけ払ってください」</em>という絶対に損しない提案で、まずは全国の施設をサイトに掲載しまくる。</p>
+        <span class="rmstep__arrow">→</span>
       </div>
-      <div class="tier tier--hero">
-        <span class="tier__badge">アップセルの軸</span>
-        <span class="tier__lvl">階層 1</span>
-        <span class="tier__name">ライト</span>
-        <span class="tier__price">¥5,000<small>/ 月</small></span>
-        <ul class="blist" style="margin-top:4px;"><li style="font-size:0.74rem;">公式返信を<b>無制限</b>に開放</li><li style="font-size:0.74rem;"><b>閲覧パス（¥1,980相当）無料付随</b></li></ul>
-        <span class="tier__bench">クレーム反論＋競合調査ニーズを吸収</span>
+      <div class="rmstep rmstep--2">
+        <span class="rmstep__n">STEP 2</span>
+        <h3 class="rmstep__h">使いたくなるのを待つ</h3>
+        <p class="rmstep__d">施設に<em>「見学希望者からの質問（Q&amp;A）」</em>が届く、あるいは<em>「自社へのネガティブな口コミ」</em>が書き込まれるのを待つ。</p>
+        <span class="rmstep__arrow">→</span>
       </div>
-      <div class="tier">
-        <span class="tier__lvl">階層 2</span>
-        <span class="tier__name">スタンダード</span>
-        <span class="tier__price">¥15,000<small>/ 月</small></span>
-        <ul class="blist" style="margin-top:4px;"><li style="font-size:0.74rem;">検索結果での<b>上位表示</b></li><li style="font-size:0.74rem;">B型特化 口コミAI分析ダッシュボード</li></ul>
-        <span class="tier__bench">露出＋意思決定支援</span>
-      </div>
-      <div class="tier">
-        <span class="tier__lvl">階層 3</span>
-        <span class="tier__name">プレミアム</span>
-        <span class="tier__price">¥30,000<small>/ 月</small></span>
-        <ul class="blist" style="margin-top:4px;"><li style="font-size:0.74rem;"><b>トップ枠の固定表示</b></li><li style="font-size:0.74rem;">最上位の露出枠を付与</li></ul>
-        <span class="tier__bench">最大露出の独占枠</span>
+      <div class="rmstep rmstep--3">
+        <span class="rmstep__n">STEP 3</span>
+        <h3 class="rmstep__h">月額プランへ引き上げ</h3>
+        <p class="rmstep__d">「誠実に返信して見学者を獲得しませんか？ さらに<em>月5,000円のプランなら、競合の口コミも読み放題</em>になりますよ」と提案し、一気に有料の月額へアップグレード。</p>
+        <span class="rmstep__arrow">→</span>
       </div>
     </div>
-    <div class="notestrip notestrip--accent notestrip--tight">
-      <strong>設計思想：</strong>クレームや競合調査ニーズを逆手に取り、高付加価値の月額モデルへ。ライトの「閲覧パス無料付随」がアップセルの最強フックになる。
+    <div class="notestrip notestrip--tight">
+      <strong>カギ：</strong>質問やクレームという「施設のペイン」が発生したまさにその瞬間に、解決策（月額プラン）を差し出すから契約が決まります。
     </div>
-    <p class="src" style="margin-top:var(--space-2xs);">課金モデル提案.md §4-②（評判管理SaaS 4階層）</p>
+    <p class="src" style="margin-top:var(--space-2xs);">課金モデル提案.md §5（必勝の営業ロードマップ）</p>
   </div>
 </section>
 
 <!-- ============================================================ -->
-<!-- 9 B面 必勝ロードマップ -->
+<!-- 章1 ⑥ 9 相談支援専門員の活用 -->
 <!-- ============================================================ -->
 <section class="slide" data-i="9">
   <div class="pad">
@@ -1686,35 +1774,53 @@ img { max-width: 100%; }
       <span class="flowbar__sub">09 / 16</span>
     </div>
     <div class="shead">
-      <p class="kick">章1 · B面 必勝ロードマップ</p>
-      <h2 class="title">面を取る（ノーリスク）→ ペイン発生 → <em>ライトへアップセル</em></h2>
+      <p class="kick">章1 · 起爆剤</p>
+      <h2 class="title">施設選びのプロ<em>「相談支援専門員」</em>を巻き込む</h2>
     </div>
-    <div class="roadmap flex-fill">
-      <div class="rmstep rmstep--1">
-        <span class="rmstep__n">STEP 1</span>
-        <h3 class="rmstep__h">面を取る</h3>
-        <p class="rmstep__d">立ち上げ初期は<em>「初期費用・月額0円＋送客課金のみ」</em>の完全ノーリスクをフックに、全国の施設を開拓し掲載数を確保する。</p>
-        <span class="rmstep__arrow">→</span>
+    <div class="split flex-fill">
+      <div class="dec__col">
+        <div class="hubcard">
+          <span class="hubcard__tag">① Q&amp;Aの回答者として</span>
+          <h3 class="hubcard__h">プロの回答が、検索に強い優良コンテンツに</h3>
+          <p class="hubcard__d">ユーザーの不安（質問）に専門家として回答してもらう。<em>自身の相談所への集客（名刺代わり）</em>になるため、無料で良質な回答を書き込んでくれる。これがそのまま<b>Google検索に強い優良コンテンツ</b>になります。</p>
+        </div>
+        <div class="hubcard">
+          <span class="hubcard__tag">② 一括空き確認ツール</span>
+          <h3 class="hubcard__h">無料提供 → 見学リードが自動で大量発生</h3>
+          <p class="hubcard__d">専門員が日々電話でしている「施設への空き確認」を、サイト上で<b>一括送信</b>できるツールを無料提供。これにより、施設へ販売する<em>見学リード（見込み客）がサイト内で大量・自動的に発生</em>します。</p>
+        </div>
       </div>
-      <div class="rmstep rmstep--2">
-        <span class="rmstep__n">STEP 2</span>
-        <h3 class="rmstep__h">ペインの発生</h3>
-        <p class="rmstep__d">自社へのネガティブ口コミ着弾、あるいは<em>「近隣競合の口コミが見たい」</em>という強烈なリサーチニーズが発生するのを待つ。</p>
-        <span class="rmstep__arrow">→</span>
-      </div>
-      <div class="rmstep rmstep--3">
-        <span class="rmstep__n">STEP 3</span>
-        <h3 class="rmstep__h">最強の武器でアップセル</h3>
-        <p class="rmstep__d">「誠実に反論できる機能がある」と提示。さらに<em>「月5,000円のライトなら競合の口コミが読み放題のパスも付く」</em>とオファーし、一気に有料SaaSへ引き上げる。</p>
-        <span class="rmstep__arrow">→</span>
+      <div class="dec__col">
+        <!-- 専門員ハブの効果フロー -->
+        <svg class="prohub" viewBox="0 0 300 300" role="img" aria-label="相談支援専門員が優良コンテンツと見学リードを生む流れ">
+          <defs>
+            <marker id="prarr" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 z" fill="var(--color-accent)"/></marker>
+          </defs>
+          <!-- center 専門員 -->
+          <circle class="pr-hub" cx="150" cy="150" r="50"/>
+          <text class="pr-hubt" x="150" y="145" text-anchor="middle">相談支援</text>
+          <text class="pr-hubt" x="150" y="161" text-anchor="middle">専門員</text>
+          <text class="pr-hubs" x="150" y="178" text-anchor="middle">無料で参加</text>
+          <!-- top: Q&A回答 -->
+          <rect class="pr-node" x="60" y="14" width="180" height="44" rx="9"/>
+          <text class="pr-n" x="150" y="33" text-anchor="middle">Q&amp;Aにプロ回答</text>
+          <text class="pr-ns" x="150" y="48" text-anchor="middle">→ 検索に強い優良コンテンツ</text>
+          <path class="pr-arr" d="M150 62 L150 96"/>
+          <!-- bottom: 一括空き確認 -->
+          <rect class="pr-node pr-node--act" x="60" y="242" width="180" height="46" rx="9"/>
+          <text class="pr-n" x="150" y="262" text-anchor="middle">一括空き確認ツール</text>
+          <text class="pr-ns" x="150" y="277" text-anchor="middle">→ 見学リードが自動で大量発生</text>
+          <path class="pr-arr" d="M150 204 L150 238"/>
+        </svg>
+        <div class="origin"><span class="origin__tag">この発想の参考</span><span class="origin__body"><b>引越し侍</b>などの一括見積もり：専門員の業務効率化と、施設へ売る見学リードの大量発生を同時に実現します。</span></div>
       </div>
     </div>
-    <p class="src" style="margin-top:var(--space-sm);">課金モデル提案.md §5（必勝のロードマップ）</p>
+    <p class="src" style="margin-top:var(--space-2xs);">課金モデル提案.md §6（相談支援専門員の活用）</p>
   </div>
 </section>
 
 <!-- ============================================================ -->
-<!-- 10 相談支援専門員ハブ -->
+<!-- 章1 ⑦-1 10 フェーズ2 仕事マッチング -->
 <!-- ============================================================ -->
 <section class="slide" data-i="10">
   <div class="pad">
@@ -1726,37 +1832,51 @@ img { max-width: 100%; }
       <span class="flowbar__sub">10 / 16</span>
     </div>
     <div class="shead">
-      <p class="kick">章1 · 起爆剤</p>
-      <h2 class="title"><em>相談支援専門員（eKYC認証）</em>がSEO資産と送客リードを自動生成する</h2>
+      <p class="kick">章1 · フェーズ2 未来構想</p>
+      <h2 class="title">次の一手 ── B型施設向けの<em>「仕事マッチング」</em></h2>
     </div>
-    <div class="hubgrid flex-fill">
-      <div class="hubcard">
-        <span class="hubcard__tag">信頼性の要</span>
-        <h3 class="hubcard__h">eKYC（本人確認）認証</h3>
-        <p class="hubcard__d">身分証＋セルフィー等で本人確認を必須化した完全無料の専門家アカウント。プロバッジで信頼性を担保する。</p>
+    <div class="split flex-fill">
+      <div class="dec__col">
+        <div class="panel panel--accent">
+          <h3 class="panel__h panel__h--sm">解決する課題</h3>
+          <ul class="blist">
+            <li>B型事業所の最大の悩みは、<b>利用者に払う工賃（給料）を上げるための仕事（案件）が取れないこと</b>。サイトが軌道に乗った後の次の一手として、これを解決します。</li>
+          </ul>
+        </div>
+        <div class="panel">
+          <h3 class="panel__h panel__h--sm">① 業務発注システムを併設</h3>
+          <ul class="blist"><li>クラウドワークスのような仕組みで、一般企業からの案件（データ入力・軽作業など）をB型事業所が受注できるようにします。</li></ul>
+        </div>
+        <div class="panel">
+          <h3 class="panel__h panel__h--sm">② 口コミが「スキルシート」に変わる</h3>
+          <ul class="blist"><li>フェーズ1で集めた口コミ（PC作業がメイン・手芸が得意 等）のデータを使い、発注企業と事業所を高精度にマッチングします。</li></ul>
+        </div>
       </div>
-      <div class="hubcard">
-        <span class="hubcard__tag">SEOエンジン</span>
-        <h3 class="hubcard__h">Q&amp;A回答者</h3>
-        <p class="hubcard__d">ユーザーの悩みに専門家として回答させ、<em>良質なテキストを無償で蓄積</em>。SEO流入を太くする。</p>
-      </div>
-      <div class="hubcard">
-        <span class="hubcard__tag">載らないリスク</span>
-        <h3 class="hubcard__h">プロ・レビュアー</h3>
-        <p class="hubcard__d">認証済み専門員による「プロレビュー」を掲載。施設側へ<em>「載らないリスク」</em>を突きつけ、B面掲載・課金を後押し。</p>
-      </div>
-      <div class="hubcard">
-        <span class="hubcard__tag">送客リード量産</span>
-        <h3 class="hubcard__h">一括問い合わせダッシュボード</h3>
-        <p class="hubcard__d">日々の「施設への空き確認業務」をサイト上で一括送信できるツールを無料提供。<em>B面に販売する送客リードを自動・大量に発生</em>させる。</p>
+      <div class="dec__col">
+        <!-- マッチングの3段フロー -->
+        <div class="fchart" style="gap:var(--space-2xs);">
+          <div class="fstep">
+            <div class="fstep__rail"><div class="fstep__dot">1</div><div class="fstep__line"></div></div>
+            <div class="fstep__body"><div class="fstep__h">一般企業が案件を出す</div><div class="fstep__d">データ入力・軽作業・パッケージング等を発注。</div></div>
+          </div>
+          <div class="fstep">
+            <div class="fstep__rail"><div class="fstep__dot">2</div><div class="fstep__line"></div></div>
+            <div class="fstep__body"><div class="fstep__h">口コミ＝スキルシートで自動マッチ</div><div class="fstep__d">フェーズ1の口コミ・タグデータを使い、得意分野で高精度にマッチング。</div></div>
+          </div>
+          <div class="fstep">
+            <div class="fstep__rail"><div class="fstep__dot fstep__dot--out">¥</div></div>
+            <div class="fstep__body fstep__body--out"><div class="fstep__h">B型事業所が受注 → 売上に</div><div class="fstep__d">受注した案件が施設の<span class="price">売上</span>になり、工賃アップの原資に。</div></div>
+          </div>
+        </div>
+        <div class="origin"><span class="origin__tag">この発想の参考</span><span class="origin__body"><b>クラウドワークス</b>：企業の案件を柔軟にマッチングする仕組みを、B型事業所向けに応用します。</span></div>
       </div>
     </div>
-    <p class="src" style="margin-top:var(--space-sm);">課金モデル提案.md §6（相談支援専門員のフル活用）</p>
+    <p class="src" style="margin-top:var(--space-2xs);">課金モデル提案.md §7（フェーズ2 仕事マッチング）</p>
   </div>
 </section>
 
 <!-- ============================================================ -->
-<!-- 11 フェーズ2 受発注＋成長ループ -->
+<!-- 章1 ⑦-2 11 フェーズ2 究極の成長サイクル -->
 <!-- ============================================================ -->
 <section class="slide" data-i="11">
   <div class="pad">
@@ -1768,24 +1888,24 @@ img { max-width: 100%; }
       <span class="flowbar__sub">11 / 16</span>
     </div>
     <div class="shead">
-      <p class="kick">章1 · フェーズ2 拡張構想</p>
-      <h2 class="title">B型特化の<em>仕事受発注プラットフォーム</em>＋「工賃↑→良い口コミ→見学者↑」の無限成長ループ</h2>
+      <p class="kick">章1 · フェーズ2 未来構想</p>
+      <h2 class="title">究極の解約防止＝<em>「売上↑ → 工賃↑ → 良い口コミ → 見学者↑」</em>の成長サイクル</h2>
     </div>
     <div class="p2wrap flex-fill">
-      <svg class="lp" viewBox="0 0 380 300" role="img" aria-label="工賃から口コミへの無限成長ループ図">
+      <svg class="lp" viewBox="0 0 380 300" role="img" aria-label="売上から工賃・良い口コミ・見学者へつながる成長サイクル図">
         <defs>
           <marker id="lparr2" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 z" fill="var(--color-accent)"/></marker>
         </defs>
         <circle class="center" cx="190" cy="150" r="42"/>
         <text class="ct" x="190" y="146" text-anchor="middle">成長</text>
-        <text class="ct" x="190" y="162" text-anchor="middle">ループ</text>
+        <text class="ct" x="190" y="162" text-anchor="middle">サイクル</text>
         <!-- node1 top -->
         <rect class="node node--act" x="115" y="8" width="150" height="48" rx="10"/>
-        <text class="n" x="190" y="30" text-anchor="middle">受発注で施設の売上↑</text>
-        <text class="ns" x="190" y="46" text-anchor="middle">業務マッチング（成約手数料）</text>
+        <text class="n" x="190" y="30" text-anchor="middle">施設の売上が上がる</text>
+        <text class="ns" x="190" y="46" text-anchor="middle">仕事マッチングで受注</text>
         <!-- node2 right -->
         <rect class="node" x="262" y="116" width="112" height="48" rx="10"/>
-        <text class="n" x="318" y="138" text-anchor="middle">利用者の工賃↑</text>
+        <text class="n" x="318" y="138" text-anchor="middle">工賃が上がる</text>
         <text class="ns" x="318" y="154" text-anchor="middle">最大の課題を解決</text>
         <!-- node3 bottom -->
         <rect class="node node--act" x="115" y="244" width="150" height="48" rx="10"/>
@@ -1793,8 +1913,8 @@ img { max-width: 100%; }
         <text class="ns" x="190" y="282" text-anchor="middle">「工賃が高くやりがい」</text>
         <!-- node4 left -->
         <rect class="node" x="6" y="116" width="112" height="48" rx="10"/>
-        <text class="n" x="62" y="138" text-anchor="middle">見学者↑</text>
-        <text class="ns" x="62" y="154" text-anchor="middle">送客課金へ環流</text>
+        <text class="n" x="62" y="138" text-anchor="middle">見学者が増える</text>
+        <text class="ns" x="62" y="154" text-anchor="middle">送客課金に戻る</text>
         <!-- arcs clockwise -->
         <path class="arr" style="marker-end:url(#lparr2);" d="M258 50 Q305 80 314 112"/>
         <path class="arr" style="marker-end:url(#lparr2);" d="M316 166 Q300 226 256 250"/>
@@ -1802,21 +1922,21 @@ img { max-width: 100%; }
         <path class="arr" style="marker-end:url(#lparr2);" d="M64 114 Q105 56 120 46"/>
       </svg>
       <div class="hbside">
-        <div class="panel">
-          <h3 class="panel__h panel__h--sm">① 業務マッチング（クラウドワークス/タイミー型）</h3>
-          <ul class="blist"><li>データ入力・軽作業・パッケージング等の案件を受注。<b>クローズド型（初期）→ オープン型（拡大期）</b>へ。</li></ul>
-        </div>
-        <div class="panel">
-          <h3 class="panel__h panel__h--sm">② 口コミデータのスキルシート化</h3>
-          <ul class="blist"><li>フェーズ1のAIタグ・設備情報をそのまま事業所スキルシートに再利用し、高精度に自動マッチング。</li></ul>
-        </div>
         <div class="panel panel--accent">
-          <h3 class="panel__h panel__h--sm">③ 究極のチャーン防止</h3>
-          <ul class="blist"><li>「見学者送客」に加え「仕事（売上）」まで供給するインフラとなれば、<b>有料SaaSを解約する理由が消滅</b>する。</li></ul>
+          <h3 class="panel__h panel__h--sm">究極の解約防止策</h3>
+          <ul class="blist">
+            <li>「見学者を送ってくれる」だけでなく<b>「仕事（売上）まで振ってくれる」</b>サイトになれば、施設が月額プランを解約する理由は<b>100%なくなります</b>。</li>
+          </ul>
         </div>
+        <div class="panel panel--gold">
+          <h3 class="panel__h panel__h--sm">最強の成長サイクルが完成</h3>
+          <ul class="blist blist--gold">
+            <li><b>売上が上がる → 工賃が上がる → 良い口コミが集まる → さらに見学者が来る</b>。回り続けるほど、施設も利用者もポータルも強くなります。</li>
+          </ul>
+        </div>
+        <p class="src">課金モデル提案.md §7（究極の解約防止＆成長サイクル）</p>
       </div>
     </div>
-    <p class="src" style="margin-top:var(--space-2xs);">課金モデル提案.md §7（フェーズ2 拡張構想）</p>
   </div>
 </section>
 
