@@ -1069,6 +1069,19 @@ img { max-width: 100%; }
 .hb .money { fill: var(--color-gold); font-family: var(--font-num); font-weight: 600; font-size: 9px; }
 .hbside { display: flex; flex-direction: column; gap: var(--space-2xs); }
 
+/* --- 2026-06 章1更新: 関係図の中心を「施設・事業所」に。専門員はサポート(脇役) --- */
+/* 中心ハブ＝施設(gold)。プラットフォームの中心として最も目立たせる */
+.hb .hub--b { fill: var(--color-gold-soft); stroke: var(--color-gold); stroke-width: 2.4; }
+.hb .hubt--b { fill: var(--color-gold); }
+.hb .hubs--b { fill: var(--color-ink-2); opacity: 0.95; }
+/* ③相談支援専門員＝サポート役(必須でない)。点線枠・控えめ */
+.hb .node--support { fill: var(--color-paper); stroke: var(--color-rule); stroke-width: 1.2; stroke-dasharray: 4 3; }
+.hb .lblsup { fill: var(--color-muted); font-family: var(--font-display); font-weight: 700; font-size: 10.5px; }
+.hb .subsup { fill: var(--color-muted); font-family: var(--font-num); font-size: 8px; }
+/* サポートの補助線＝後押し。点線・細め・控えめ */
+.hb .flow--support { stroke: var(--color-rule); stroke-width: 1.3; stroke-dasharray: 2 3; marker-end: url(#hbarm); opacity: 0.85; }
+.hb .suptext { fill: var(--color-muted); font-family: var(--font-num); font-size: 8px; }
+
 /* ============ 章1-2 60日 タイムライン (60-day timeline) ============ */
 .tl60wrap { display: grid; grid-template-rows: auto 1fr; gap: var(--space-2xs); flex: 1; min-height: 0; }
 .tl60 { width: 100%; height: auto; max-height: 178px; display: block; }
@@ -1347,6 +1360,31 @@ img { max-width: 100%; }
   .wamflow__arr { transform: rotate(90deg); align-self: center; }
 }
 
+/* ============ 2026-06 章1(slide data-i=3): 見切れ(オーバーフロー)対策 ============ */
+/* このスライドは情報量が多い。中央寄せをやめ上寄せ＋右カラム内スクロールで全内容を保証。
+   まずビューポート内に収める方向で密度最適化し、収まらない端末では右カラムを縦スクロール。 */
+.slide[data-i="3"] .hybrid { align-items: start; }
+.slide[data-i="3"] .hbside {
+  min-height: 0;
+  max-height: 100%;
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
+  padding-right: 2px;
+}
+/* 右カラムの密度を最適化（文言・数値は不変、余白とフォントのみ調整） */
+.slide[data-i="3"] .hbside .panel { padding: var(--space-xs) var(--space-sm); }
+.slide[data-i="3"] .hbside .panel__h--sm { font-size: 0.9rem; }
+.slide[data-i="3"] .hbside .blist { margin-top: 4px; gap: 3px; }
+.slide[data-i="3"] .hbside .blist li { font-size: 0.76rem; line-height: 1.42; }
+.slide[data-i="3"] .hbside .origin { margin-top: 4px; padding: 4px 8px; }
+.slide[data-i="3"] .hbside .wamflow { margin-top: 4px; }
+.slide[data-i="3"] .hbside .src { margin-top: 2px; }
+
+/* スマホ等: スライドが縦に伸びる版では右カラムの内部スクロールを解除し自然な縦積みに */
+@media (max-width: 60rem) {
+  .slide[data-i="3"] .hbside { max-height: none; overflow-y: visible; }
+}
+
 </style>
 </head>
 <body>
@@ -1449,50 +1487,56 @@ img { max-width: 100%; }
       <h2 class="title">「ユーザー」「施設」「相談支援専門員」<em>3者がつながる</em>ポータル</h2>
     </div>
     <div class="hybrid flex-fill">
-      <svg class="hb" viewBox="0 0 560 320" role="img" aria-label="ユーザー・施設・相談支援専門員の3者がつながる関係図">
+      <svg class="hb" viewBox="0 0 560 320" role="img" aria-label="施設・事業所を中心に、ユーザーと相談支援専門員（サポート）がつながる関係図">
         <defs>
           <marker id="hbar" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 z" fill="var(--color-accent)"/></marker>
           <marker id="hbarg" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 z" fill="var(--color-gold)"/></marker>
           <marker id="hbarm" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 z" fill="var(--color-rule)"/></marker>
         </defs>
-        <!-- ① ユーザー left top -->
-        <rect class="node node--c" x="14" y="40" width="158" height="66" rx="10"/>
-        <text class="lbl lbl--c" x="93" y="64" text-anchor="middle">① ユーザー</text>
-        <text class="sub" x="93" y="80" text-anchor="middle">利用者・ご家族</text>
-        <text class="sub" x="93" y="94" text-anchor="middle">完全無料</text>
+        <!-- ② 施設・事業所 = CENTER HUB (プラットフォームの中心) -->
+        <rect class="hub hub--b" x="198" y="106" width="164" height="92" rx="14"/>
+        <text class="hubt hubt--b" x="280" y="138" text-anchor="middle">② 施設・事業所</text>
+        <text class="hubt hubt--b" x="280" y="156" text-anchor="middle">＝ 中心</text>
+        <text class="hubs hubs--b" x="280" y="174" text-anchor="middle">初日から全件自動掲載</text>
+        <text class="hubs hubs--b" x="280" y="186" text-anchor="middle">登録→送客課金＋月額</text>
+        <!-- ① ユーザー left center -->
+        <rect class="node node--c" x="14" y="116" width="150" height="72" rx="10"/>
+        <text class="lbl lbl--c" x="89" y="142" text-anchor="middle">① ユーザー</text>
+        <text class="sub" x="89" y="158" text-anchor="middle">利用者・ご家族</text>
+        <text class="sub" x="89" y="172" text-anchor="middle">完全無料</text>
         <!-- 運営 left bottom -->
-        <rect class="node" x="14" y="214" width="158" height="62" rx="10"/>
-        <text class="lbl" x="93" y="240" text-anchor="middle">運営（ポータル）</text>
-        <text class="sub" x="93" y="258" text-anchor="middle">AIで安全を担保</text>
-        <!-- ③ 相談支援専門員 center hub -->
-        <circle class="hub" cx="280" cy="160" r="60"/>
-        <text class="hubt" x="280" y="150" text-anchor="middle">③ 相談支援</text>
-        <text class="hubt" x="280" y="166" text-anchor="middle">専門員</text>
-        <text class="hubs" x="280" y="184" text-anchor="middle">案内人・無料で参加</text>
-        <!-- ② 施設 right top -->
-        <rect class="node node--b" x="388" y="40" width="158" height="66" rx="10"/>
-        <text class="lbl lbl--b" x="467" y="64" text-anchor="middle">② 施設・事業所</text>
-        <text class="sub" x="467" y="80" text-anchor="middle">初日から全件自動掲載</text>
-        <text class="sub" x="467" y="94" text-anchor="middle">登録→送客課金＋月額</text>
-        <!-- 収益 right bottom -->
-        <rect class="node node--b" x="388" y="214" width="158" height="62" rx="10"/>
-        <text class="lbl lbl--b" x="467" y="240" text-anchor="middle">運営の収益</text>
-        <text class="sub" x="467" y="258" text-anchor="middle">施設からのみ徴収</text>
-        <!-- flows -->
-        <!-- ユーザー -> hub 口コミ・質問 -->
-        <path class="flow" d="M172 80 Q228 110 235 134"/>
-        <text class="ftext" x="186" y="106">口コミ・質問</text>
-        <!-- hub -> ユーザー 情報・回答 -->
-        <path class="flow--muted flow" d="M222 150 Q188 118 172 96"/>
-        <text class="ftext" x="178" y="128">情報・回答</text>
-        <!-- hub -> 施設 見学客を送る -->
-        <path class="flow--b flow" d="M328 134 Q380 108 388 86"/>
-        <text class="money" x="338" y="106">見学客を送る</text>
-        <!-- 施設 -> 収益 課金 -->
-        <path class="flow--b flow" d="M467 106 L467 210"/>
-        <text class="money" x="471" y="162">送客課金＋月額</text>
-        <!-- 運営 -> hub 安全・信頼 -->
-        <path class="flow--muted flow" d="M172 244 Q236 212 232 188"/>
+        <rect class="node" x="14" y="240" width="150" height="60" rx="10"/>
+        <text class="lbl" x="89" y="266" text-anchor="middle">運営（ポータル）</text>
+        <text class="sub" x="89" y="284" text-anchor="middle">AIで安全を担保</text>
+        <!-- ③ 相談支援専門員 = SUPPORT (脇役・必須ではない) right top, dashed -->
+        <rect class="node node--support" x="406" y="20" width="140" height="62" rx="10"/>
+        <text class="lblsup" x="476" y="42" text-anchor="middle">③ 相談支援専門員</text>
+        <text class="subsup" x="476" y="57" text-anchor="middle">サポート役（案内人）</text>
+        <text class="subsup" x="476" y="70" text-anchor="middle">必須ではない</text>
+        <!-- 運営の収益 right bottom -->
+        <rect class="node node--b" x="406" y="222" width="140" height="62" rx="10"/>
+        <text class="lbl lbl--b" x="476" y="248" text-anchor="middle">運営の収益</text>
+        <text class="sub" x="476" y="266" text-anchor="middle">施設からのみ徴収</text>
+        <!-- ===== MAIN FLOWS (ユーザー ←→ 施設) ===== -->
+        <!-- 施設 -> ユーザー：口コミ閲覧（上段・accent） -->
+        <path class="flow" d="M198 132 L164 132"/>
+        <text class="ftext" x="170" y="125">口コミ閲覧</text>
+        <!-- ユーザー -> 施設：見学申込・送客（下段・accent） -->
+        <path class="flow" d="M164 168 L198 168"/>
+        <text class="ftext" x="167" y="183">見学申込・送客</text>
+        <!-- 施設 -> 収益：課金（gold・維持） -->
+        <path class="flow--b flow" d="M362 178 Q420 200 440 218"/>
+        <text class="money" x="396" y="204">送客課金＋月額</text>
+        <!-- 運営 -> 施設：安全・信頼を担保（muted） -->
+        <path class="flow--muted flow" d="M164 262 Q250 236 230 200"/>
+        <text class="ftext" x="172" y="244">安全・信頼を担保</text>
+        <!-- ===== SUPPORT FLOWS (③専門員＝補助線・後押し・点線) ===== -->
+        <!-- 専門員 -> 施設：後押し（dotted） -->
+        <path class="flow--support flow" d="M462 82 Q420 96 372 110"/>
+        <text class="suptext" x="404" y="98">後押し</text>
+        <!-- 専門員 -> ユーザー：案内（dotted・大きく回り込む） -->
+        <path class="flow--support flow" d="M406 56 Q160 50 92 110"/>
+        <text class="suptext" x="232" y="44">利用者を案内</text>
       </svg>
       <div class="hbside">
         <div class="panel panel--accent">
