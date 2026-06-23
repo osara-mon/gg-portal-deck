@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>企業分析編（13社・約46枚） — 就労継続支援B型 口コミポータル案件</title>
+<title>企業分析編（13社・68枚） — 就労継続支援B型 口コミポータル案件</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Zen+Kaku+Gothic+New:wght@500;700&family=Noto+Sans+JP:wght@400;500;700&family=Geist+Mono:wght@400;500;600&display=swap" rel="stylesheet">
@@ -938,6 +938,100 @@ img { max-width: 100%; }
   .disc__quote { font-size: 1.05rem; line-height: 1.55; }
 }
 
+/* ===================================================================== */
+/* 機能一覧 統合早見表 (全13社 × 主要機能) — 新規スライド               */
+/* welfare-teal 継承。セル色: 無料=teal / 有料=clay / なし・未確認=muted  */
+/* 横に広いので .tblwrap で横スクロール可（モバイルで文字が潰れない）     */
+/* ===================================================================== */
+.ovmx { width: 100%; border-collapse: collapse; font-size: 0.72rem; min-width: 880px; }
+.ovmx caption { caption-side: bottom; text-align: left; font-size: var(--text-xs); color: var(--color-muted); margin-top: 8px; line-height: 1.45; padding: 0 4px; }
+.ovmx th, .ovmx td { padding: 6px 8px; border-bottom: 1px solid var(--color-rule); border-right: 1px solid var(--color-rule-2); text-align: center; line-height: 1.25; white-space: nowrap; vertical-align: middle; }
+.ovmx td:last-child, .ovmx th:last-child { border-right: none; }
+.ovmx thead th { position: sticky; top: 0; z-index: 2; background: var(--color-deep); color: var(--color-paper); font-family: var(--font-num); font-size: 0.6rem; letter-spacing: 0.02em; text-transform: uppercase; font-weight: 600; border-right-color: var(--color-deep-3); }
+.ovmx thead th:first-child { z-index: 3; }
+.ovmx tbody tr:last-child td { border-bottom: none; }
+.ovmx .ovco { position: sticky; left: 0; z-index: 1; text-align: left; font-family: var(--font-display); font-weight: 700; font-size: 0.78rem; color: var(--color-ink); background: var(--color-paper-2); border-right: 1.5px solid var(--color-rule); white-space: nowrap; }
+.ovmx tbody tr:nth-child(even) .ovco { background: oklch(93% 0.007 85); }
+.ovmx .ref .ovco { color: var(--color-muted); font-weight: 500; }
+.ovmx .cell { font-family: var(--font-num); font-weight: 600; font-size: 0.66rem; }
+.ovmx .cell small { display: block; font-size: 0.56rem; font-weight: 400; color: var(--color-muted); letter-spacing: 0; margin-top: 1px; }
+.ovmx .c-free { color: var(--color-accent-dk); background: var(--color-accent-soft); }
+.ovmx .c-paid { color: oklch(46% 0.105 48); background: var(--color-clay-soft); }
+.ovmx .c-part { color: var(--color-gold); background: var(--color-gold-soft); }
+.ovmx .c-none { color: var(--color-muted); background: var(--color-paper-3); }
+.ovmx .c-na   { color: var(--color-muted); background: transparent; font-weight: 400; }
+.ovlegend { display: flex; flex-wrap: wrap; gap: var(--space-2xs) var(--space-md); align-items: center; margin: 0 0 var(--space-2xs); }
+.ovlegend__i { display: inline-flex; align-items: center; gap: 6px; font-size: 0.7rem; color: var(--color-ink-2); font-family: var(--font-num); }
+.ovlegend__sw { width: 22px; height: 13px; border-radius: 4px; border: 1px solid var(--color-rule-2); display: inline-block; }
+.ovlegend__sw--free { background: var(--color-accent-soft); border-color: var(--color-accent); }
+.ovlegend__sw--paid { background: var(--color-clay-soft); border-color: var(--color-clay); }
+.ovlegend__sw--part { background: var(--color-gold-soft); border-color: var(--color-gold); }
+.ovlegend__sw--none { background: var(--color-paper-3); }
+/* 読み筋 5点 */
+.ovreads { display: grid; grid-template-columns: repeat(5, minmax(0,1fr)); gap: var(--space-2xs); margin-top: var(--space-sm); }
+.ovread { border: 1px solid var(--color-rule); border-top: 4px solid var(--color-accent); border-radius: var(--radius-md); background: var(--color-paper-2); padding: var(--space-xs) var(--space-sm); display: flex; flex-direction: column; gap: 4px; }
+.ovread__n { font-family: var(--font-num); font-size: 0.62rem; font-weight: 700; color: var(--color-accent-dk); letter-spacing: 0.04em; }
+.ovread__t { font-size: 0.74rem; color: var(--color-ink); line-height: 1.42; margin: 0; }
+.ovread__t strong { color: var(--color-accent-dk); font-weight: 700; }
+.ovread em { font-style: normal; color: var(--color-clay); font-weight: 700; }
+
+@media (max-width: 60rem) { .ovreads { grid-template-columns: repeat(2, minmax(0,1fr)); } }
+@media (max-width: 48rem) {
+  .ovreads { grid-template-columns: 1fr; }
+  .ovmx { font-size: 0.74rem; }
+  .ovmx th, .ovmx td { padding: 7px 8px; }
+  .ovread__t { font-size: 0.85rem; }
+}
+
+/* ===================================================================== */
+/* 各社 機能一覧スライド（無料／有料）— 左=無料 / 右=有料プラン           */
+/* welfare-teal 継承。各社⑤の後に1枚挿入。                               */
+/* ===================================================================== */
+.fnx { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1.12fr); gap: var(--space-md); flex: 1; min-height: 0; align-items: stretch; }
+.fncol { display: flex; flex-direction: column; gap: var(--space-2xs); min-height: 0; }
+.fnpanel { border: 1px solid var(--color-rule); border-radius: var(--radius-md); background: var(--color-paper-2); padding: var(--space-sm) var(--space-md); display: flex; flex-direction: column; gap: var(--space-2xs); }
+.fnpanel--free { border-top: 4px solid var(--color-accent); }
+.fnpanel--paid { border-top: 4px solid var(--color-clay); }
+.fnpanel__lbl { font-family: var(--font-num); font-size: 0.66rem; letter-spacing: 0.06em; text-transform: uppercase; font-weight: 600; }
+.fnpanel--free .fnpanel__lbl { color: var(--color-accent-dk); }
+.fnpanel--paid .fnpanel__lbl { color: var(--color-clay); }
+.fnpanel__h { font-family: var(--font-display); font-weight: 700; font-size: 1.02rem; line-height: 1.2; margin: 0 0 2px; }
+.fngrp { display: flex; flex-direction: column; gap: 3px; }
+.fngrp__cap { font-family: var(--font-num); font-size: 0.6rem; letter-spacing: 0.05em; text-transform: uppercase; color: var(--color-muted); margin-top: 4px; }
+/* 価格行：3機能の有料/無料を明示する key rows */
+.fnkeys { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 2px; }
+.fnkey { font-family: var(--font-num); font-size: 0.62rem; font-weight: 700; padding: 2px 9px; border-radius: 999px; letter-spacing: 0.01em; border: 1px solid transparent; white-space: nowrap; }
+.fnkey small { font-weight: 400; opacity: 0.8; }
+.fnkey--free { color: var(--color-accent-dk); background: var(--color-accent-soft); border-color: var(--color-accent); }
+.fnkey--paid { color: oklch(46% 0.105 48); background: var(--color-clay-soft); border-color: var(--color-clay); }
+.fnkey--none { color: var(--color-muted); background: var(--color-paper-3); border-color: var(--color-rule-2); }
+/* 有料プラン カード */
+.fnplan { border: 1px solid var(--color-rule); border-left: 4px solid var(--color-clay); border-radius: var(--radius-sm); background: var(--color-paper); padding: var(--space-2xs) var(--space-sm); }
+.fnplan__top { display: flex; align-items: baseline; justify-content: space-between; gap: 8px; flex-wrap: wrap; }
+.fnplan__name { font-family: var(--font-display); font-weight: 700; font-size: 0.86rem; color: var(--color-ink); }
+.fnplan__price { font-family: var(--font-num); font-feature-settings: "tnum"; font-weight: 700; font-size: 0.82rem; color: var(--color-clay); white-space: nowrap; }
+.fnplan__price.is-unk { color: var(--color-muted); font-weight: 500; }
+.fnplan__d { font-size: 0.74rem; color: var(--color-ink-2); line-height: 1.42; margin: 3px 0 0; }
+.fnplan--free { border-left-color: var(--color-accent); }
+.fnplan--free .fnplan__price { color: var(--color-accent-dk); }
+.fnplans { display: flex; flex-direction: column; gap: 6px; }
+.fnhint { border: 1px solid var(--color-rule); border-left: 4px solid var(--color-accent); background: var(--color-paper); border-radius: var(--radius-md); padding: var(--space-2xs) var(--space-md); margin-top: var(--space-2xs); }
+.fnhint__lbl { font-family: var(--font-num); font-size: 0.62rem; letter-spacing: 0.06em; text-transform: uppercase; color: var(--color-accent-dk); font-weight: 600; margin-bottom: 2px; }
+.fnhint p { margin: 0; font-size: 0.78rem; color: var(--color-ink); line-height: 1.45; }
+.fnhint em { font-style: normal; font-weight: 700; color: var(--color-accent-dk); }
+.unconf { color: var(--color-muted); }
+
+@media (max-width: 60rem) {
+  .fnx { grid-template-columns: 1fr; }
+}
+@media (max-width: 48rem) {
+  .fnpanel__h { font-size: 1.05rem; }
+  .blist li { font-size: 0.88rem; }
+  .fnplan__d { font-size: 0.85rem; }
+  .fnhint p { font-size: 0.88rem; }
+  .fnkey { font-size: 0.72rem; padding: 3px 10px; }
+}
+
 </style>
 </head>
 <body>
@@ -961,11 +1055,12 @@ img { max-width: 100%; }
       <span><em>②</em> ユーザー像・使い方</span><span class="arrow">›</span>
       <span><em>③</em> 沿革</span><span class="arrow">›</span>
       <span><em>④</em> 獲得・SEO</span><span class="arrow">›</span>
-      <span><em>⑤</em> 課金・収益・SWOT・示唆</span>
+      <span><em>⑤</em> 課金・収益・SWOT・示唆</span><span class="arrow">›</span>
+      <span><em>＋</em> 機能一覧（無料／有料）</span>
     </div>
     <dl class="cover__meta">
-      <div><dt>収録</dt><dd>13社（5枚×6社／3枚×7社）＋表紙＋目次＋戦略発見</dd></div>
-      <div><dt>総枚数</dt><dd>46枚</dd></div>
+      <div><dt>収録</dt><dd>13社（6枚×6社／4枚×7社）＋表紙＋目次＋戦略発見＋機能統合早見表</dd></div>
+      <div><dt>総枚数</dt><dd>68枚</dd></div>
       <div><dt>SEO順位</dt><dd>転職会議＝実測／他12社＝【推定】</dd></div>
       <div><dt>作成</dt><dd>サイト構築部 · 2026-06-22</dd></div>
     </dl>
@@ -979,24 +1074,24 @@ img { max-width: 100%; }
   <div class="pad">
     <div class="shead">
       <p class="kick">目次 · 収録13社一覧</p>
-      <h2 class="title">重要6社は<em>5枚</em>、圧縮7社は<em>3枚</em> ＋ <em>戦略発見1枚</em> ── 合計46枚</h2>
+      <h2 class="title">重要6社は<em>6枚</em>、圧縮7社は<em>4枚</em> ＋ <em>戦略発見</em>＋<em>機能統合早見表</em> ── 合計68枚</h2>
     </div>
     <div class="coindex flex-fill">
-      <a class="coidx coidx--5" href="#4"><div class="coidx__top"><span class="coidx__n">01</span><span class="coidx__pages">5枚</span></div><div class="coidx__h">転職会議</div><div class="coidx__d">一般転職×口コミ／give-to-get</div></a>
-      <a class="coidx coidx--5" href="#9"><div class="coidx__top"><span class="coidx__n">02</span><span class="coidx__pages">5枚</span></div><div class="coidx__h">OpenWork</div><div class="coidx__d">8軸スコア／成功報酬採用</div></a>
-      <a class="coidx coidx--5" href="#14"><div class="coidx__top"><span class="coidx__n">03</span><span class="coidx__pages">5枚</span></div><div class="coidx__h">リタリコ仕事ナビ</div><div class="coidx__d">障害者就労×事業所情報（隣接）</div></a>
-      <a class="coidx coidx--5" href="#19"><div class="coidx__top"><span class="coidx__n">04</span><span class="coidx__pages">5枚</span></div><div class="coidx__h">みんなの介護</div><div class="coidx__d">介護施設×成約課金</div></a>
-      <a class="coidx coidx--5" href="#24"><div class="coidx__top"><span class="coidx__n">05</span><span class="coidx__pages">5枚</span></div><div class="coidx__h">弁護士ドットコム</div><div class="coidx__d">法律Q&A×自己増殖SEO</div></a>
-      <a class="coidx coidx--5" href="#29"><div class="coidx__top"><span class="coidx__n">06</span><span class="coidx__pages">5枚</span></div><div class="coidx__h">食べログ</div><div class="coidx__d">飲食×口コミ二面課金の完成形</div></a>
-      <a class="coidx" href="#34"><div class="coidx__top"><span class="coidx__n">07</span><span class="coidx__pages">3枚</span></div><div class="coidx__h">塾ナビ</div><div class="coidx__d">学習塾×資料請求課金</div></a>
-      <a class="coidx" href="#37"><div class="coidx__top"><span class="coidx__n">08</span><span class="coidx__pages">3枚</span></div><div class="coidx__h">@cosme</div><div class="coidx__d">化粧品口コミ×収益多角化</div></a>
-      <a class="coidx" href="#40"><div class="coidx__top"><span class="coidx__n">09</span><span class="coidx__pages">3枚</span></div><div class="coidx__h">エキテン</div><div class="coidx__d">ローカル口コミ×衰退（反面教師）</div></a>
-      <a class="coidx" href="#43"><div class="coidx__top"><span class="coidx__n">10</span><span class="coidx__pages">3枚</span></div><div class="coidx__h">引越し侍</div><div class="coidx__d">引越し×見積もり送客課金</div></a>
-      <a class="coidx" href="#46"><div class="coidx__top"><span class="coidx__n">11</span><span class="coidx__pages">3枚</span></div><div class="coidx__h">iPhone修理ポータル</div><div class="coidx__d">最安修理.com／地域比較</div></a>
-      <a class="coidx" href="#49"><div class="coidx__top"><span class="coidx__n">12</span><span class="coidx__pages">3枚</span></div><div class="coidx__h">口コミコム</div><div class="coidx__d">評判管理SaaS（BtoB側の手本）</div></a>
-      <a class="coidx" href="#52"><div class="coidx__top"><span class="coidx__n">13</span><span class="coidx__pages">3枚</span></div><div class="coidx__h">Googleビジネスプロフィール</div><div class="coidx__d">無料インフラ＝最大の前提</div></a>
+      <a class="coidx coidx--5" href="#5"><div class="coidx__top"><span class="coidx__n">01</span><span class="coidx__pages">6枚</span></div><div class="coidx__h">転職会議</div><div class="coidx__d">一般転職×口コミ／give-to-get</div></a>
+      <a class="coidx coidx--5" href="#11"><div class="coidx__top"><span class="coidx__n">02</span><span class="coidx__pages">6枚</span></div><div class="coidx__h">OpenWork</div><div class="coidx__d">8軸スコア／成功報酬採用</div></a>
+      <a class="coidx coidx--5" href="#17"><div class="coidx__top"><span class="coidx__n">03</span><span class="coidx__pages">6枚</span></div><div class="coidx__h">リタリコ仕事ナビ</div><div class="coidx__d">障害者就労×事業所情報（隣接）</div></a>
+      <a class="coidx coidx--5" href="#23"><div class="coidx__top"><span class="coidx__n">04</span><span class="coidx__pages">6枚</span></div><div class="coidx__h">みんなの介護</div><div class="coidx__d">介護施設×成約課金</div></a>
+      <a class="coidx coidx--5" href="#29"><div class="coidx__top"><span class="coidx__n">05</span><span class="coidx__pages">6枚</span></div><div class="coidx__h">弁護士ドットコム</div><div class="coidx__d">法律Q&A×自己増殖SEO</div></a>
+      <a class="coidx coidx--5" href="#35"><div class="coidx__top"><span class="coidx__n">06</span><span class="coidx__pages">6枚</span></div><div class="coidx__h">食べログ</div><div class="coidx__d">飲食×口コミ二面課金の完成形</div></a>
+      <a class="coidx" href="#41"><div class="coidx__top"><span class="coidx__n">07</span><span class="coidx__pages">4枚</span></div><div class="coidx__h">塾ナビ</div><div class="coidx__d">学習塾×資料請求課金</div></a>
+      <a class="coidx" href="#45"><div class="coidx__top"><span class="coidx__n">08</span><span class="coidx__pages">4枚</span></div><div class="coidx__h">@cosme</div><div class="coidx__d">化粧品口コミ×収益多角化</div></a>
+      <a class="coidx" href="#49"><div class="coidx__top"><span class="coidx__n">09</span><span class="coidx__pages">4枚</span></div><div class="coidx__h">エキテン</div><div class="coidx__d">ローカル口コミ×衰退（反面教師）</div></a>
+      <a class="coidx" href="#53"><div class="coidx__top"><span class="coidx__n">10</span><span class="coidx__pages">4枚</span></div><div class="coidx__h">引越し侍</div><div class="coidx__d">引越し×見積もり送客課金</div></a>
+      <a class="coidx" href="#57"><div class="coidx__top"><span class="coidx__n">11</span><span class="coidx__pages">4枚</span></div><div class="coidx__h">iPhone修理ポータル</div><div class="coidx__d">最安修理.com／地域比較</div></a>
+      <a class="coidx" href="#61"><div class="coidx__top"><span class="coidx__n">12</span><span class="coidx__pages">4枚</span></div><div class="coidx__h">口コミコム</div><div class="coidx__d">評判管理SaaS（BtoB側の手本）</div></a>
+      <a class="coidx" href="#65"><div class="coidx__top"><span class="coidx__n">13</span><span class="coidx__pages">4枚</span></div><div class="coidx__h">Googleビジネスプロフィール</div><div class="coidx__d">無料インフラ＝最大の前提</div></a>
     </div>
-    <p class="src" style="margin-top:var(--space-2xs);">データの正：10-deep-profiles-1〜4.md／09-company-cards.md／11-seo-ranks.md。SEO順位は転職会議のみ実測、他は【推定】。</p>
+    <p class="src" style="margin-top:var(--space-2xs);">データの正：10-deep-profiles-1〜4.md／09-company-cards.md／11-seo-ranks.md。機能一覧は12-feature-matrix-1〜3.md／15-feature-overview.md（2026-06-22）。SEO順位は転職会議のみ実測、他は【推定】。</p>
   </div>
 </section>
 <!-- ============================================================ -->
@@ -1037,12 +1132,71 @@ img { max-width: 100%; }
     <div class="notestrip notestrip--accent notestrip--tight">💡 周辺KW（b型作業所・b型事業所）はリタリコが1位を取れている一方、<strong>最大需要の本命KW「就労継続支援b型」(月4.95万)だけが15位＝1ページ目に専門ポータルが存在しない空白</strong>。みんなの介護が介護で取った1位を、B型の本命KWで我々が取りに行く ── これが最大の勝ち筋。</div>
   </div>
 </section>
+<!-- ============================================================ -->
+<!-- 機能一覧 統合早見表（全13社）新規・戦略発見スライドの後 -->
+<!-- ============================================================ -->
+<section class="slide" data-i="4">
+  <div class="pad">
+    <div class="shead">
+      <p class="kick">★ 分析セクション冒頭 · 全13社を1枚で俯瞰</p>
+      <h2 class="title">機能一覧 統合早見表 ── <em>全13社 × 主要8機能</em>の有料/無料マップ</h2>
+    </div>
+    <div class="ovlegend">
+      <span class="ovlegend__i"><span class="ovlegend__sw ovlegend__sw--free"></span>無料</span>
+      <span class="ovlegend__i"><span class="ovlegend__sw ovlegend__sw--paid"></span>有料</span>
+      <span class="ovlegend__i"><span class="ovlegend__sw ovlegend__sw--part"></span>一部（一部無料・拡張有料）</span>
+      <span class="ovlegend__i"><span class="ovlegend__sw ovlegend__sw--none"></span>なし／未確認</span>
+    </div>
+    <div class="tblwrap flex-fill">
+      <table class="ovmx">
+        <thead>
+          <tr>
+            <th>サイト</th>
+            <th>口コミ閲覧</th>
+            <th>公式返信</th>
+            <th>上位表示</th>
+            <th>予約・問合せ送客</th>
+            <th>クーポン</th>
+            <th>分析レポート</th>
+            <th>無料掲載</th>
+            <th>BtoC有料課金</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td class="ovco">転職会議</td><td class="cell c-paid">壁<small>投稿/有料</small></td><td class="cell c-free">無料<small>MIRROR</small></td><td class="cell c-na">未確認</td><td class="cell c-none">なし<small>求人応募</small></td><td class="cell c-none">なし</td><td class="cell c-paid">有料<small>MIRROR</small></td><td class="cell c-free">あり</td><td class="cell c-paid">あり<small>パス1,078円</small></td></tr>
+          <tr><td class="ovco">OpenWork</td><td class="cell c-paid">壁<small>投稿/有料</small></td><td class="cell c-none">なし/一部</td><td class="cell c-none">なし<small>中立</small></td><td class="cell c-none">なし<small>求人応募</small></td><td class="cell c-none">なし</td><td class="cell c-paid">有料<small>データ販売</small></td><td class="cell c-free">あり</td><td class="cell c-paid">あり<small>月1,980円</small></td></tr>
+          <tr><td class="ovco">リタリコ仕事ナビ</td><td class="cell c-free">無料</td><td class="cell c-na">弱/未確認</td><td class="cell c-na">有料の可能性<small>【推測】</small></td><td class="cell c-free">無料<small>見学・問合せ</small></td><td class="cell c-none">なし</td><td class="cell c-na">未確認</td><td class="cell c-free">あり</td><td class="cell c-none">なし</td></tr>
+          <tr><td class="ovco">みんなの介護</td><td class="cell c-free">無料</td><td class="cell c-na">未確認</td><td class="cell c-na">なし<small>【推測】</small></td><td class="cell c-free">無料<small>見学・資料/成約課金</small></td><td class="cell c-none">なし</td><td class="cell c-na">未確認</td><td class="cell c-free">あり</td><td class="cell c-none">なし</td></tr>
+          <tr><td class="ovco">食べログ</td><td class="cell c-free">無料</td><td class="cell c-free">無料</td><td class="cell c-paid">有料<small>2.5万〜</small></td><td class="cell c-paid">有料<small>月額+予約従量</small></td><td class="cell c-free">無料<small>3枠</small></td><td class="cell c-part">一部有料</td><td class="cell c-free">あり</td><td class="cell c-none">なし</td></tr>
+          <tr><td class="ovco">エキテン</td><td class="cell c-free">無料</td><td class="cell c-free">無料</td><td class="cell c-paid">有料<small>5,500〜</small></td><td class="cell c-paid">有料<small>有料会員のみ</small></td><td class="cell c-free">無料<small>増枠有料</small></td><td class="cell c-part">一部有料</td><td class="cell c-free">あり</td><td class="cell c-none">なし</td></tr>
+          <tr><td class="ovco">@cosme</td><td class="cell c-free">無料</td><td class="cell c-na">有料施策内/未確認</td><td class="cell c-paid">有料<small>広告</small></td><td class="cell c-none">なし<small>EC</small></td><td class="cell c-part">一部プレミアム</td><td class="cell c-paid">有料<small>ブランド</small></td><td class="cell c-part">一部</td><td class="cell c-paid">あり<small>月367/509円</small></td></tr>
+          <tr><td class="ovco">塾ナビ</td><td class="cell c-free">無料</td><td class="cell c-na">未確認</td><td class="cell c-na">有料<small>成果報酬内【推測】</small></td><td class="cell c-paid">有料<small>資料請求 約4,000円/件</small></td><td class="cell c-none">なし</td><td class="cell c-na">未確認</td><td class="cell c-none">なし<small>全件有料</small></td><td class="cell c-none">なし</td></tr>
+          <tr><td class="ovco">弁護士ドットコム</td><td class="cell c-free">無料<small>Q&amp;A</small></td><td class="cell c-free">無料<small>Q&amp;A回答</small></td><td class="cell c-paid">有料<small>月2万〜</small></td><td class="cell c-paid">有料<small>掲載</small></td><td class="cell c-none">なし</td><td class="cell c-na">弁護士向け</td><td class="cell c-free">あり<small>簡易</small></td><td class="cell c-paid">あり<small>月550円</small></td></tr>
+          <tr><td class="ovco">引越し侍</td><td class="cell c-free">無料</td><td class="cell c-na">未確認</td><td class="cell c-na">未確認</td><td class="cell c-paid">有料<small>送客課金=根幹</small></td><td class="cell c-none">なし</td><td class="cell c-na">業者向け</td><td class="cell c-free">あり<small>反響課金</small></td><td class="cell c-none">なし</td></tr>
+          <tr><td class="ovco">最安修理.com</td><td class="cell c-free">無料</td><td class="cell c-free">無料</td><td class="cell c-paid">有料<small>PR枠</small></td><td class="cell c-free">無料<small>掲載で受付</small></td><td class="cell c-na">未確認</td><td class="cell c-na">管理画面</td><td class="cell c-free">あり<small>月0円</small></td><td class="cell c-none">なし</td></tr>
+          <tr class="ref"><td class="ovco">口コミコム<small>参考/SaaS</small></td><td class="cell c-na">─</td><td class="cell c-paid">有料<small>中核</small></td><td class="cell c-na">MEO支援</td><td class="cell c-na">─</td><td class="cell c-paid">有料</td><td class="cell c-paid">有料<small>主力</small></td><td class="cell c-none">なし<small>全有料</small></td><td class="cell c-na">─</td></tr>
+          <tr class="ref"><td class="ovco">GBP<small>参考/基盤</small></td><td class="cell c-free">無料</td><td class="cell c-free">無料</td><td class="cell c-none">買えない</td><td class="cell c-free">無料</td><td class="cell c-free">無料</td><td class="cell c-free">無料</td><td class="cell c-free">あり<small>無料</small></td><td class="cell c-none">なし</td></tr>
+        </tbody>
+        <caption>凡例：無料＝teal／有料＝clay／一部＝gold／なし・未確認＝muted。口コミコム・GBPは参考（SaaS/基盤）。出典：15-feature-overview.md・12-feature-matrix-1〜3.md（2026-06-22）。推測は【推測】、非開示は未確認。</caption>
+      </table>
+    </div>
+    <p class="kick" style="margin-top:var(--space-sm);">読み筋 ── このスライドの結論</p>
+    <div class="ovreads">
+      <div class="ovread"><span class="ovread__n">01</span><p class="ovread__t">閲覧に<em>「壁」</em>を作るのは企業口コミ系2社（転職会議/OpenWork）だけ。消費者・福祉・送客系は<strong>全て無料閲覧</strong>。</p></div>
+      <div class="ovread"><span class="ovread__n">02</span><p class="ovread__t"><strong>公式返信は無料が標準</strong>。我々のL1は"返信単体"でなく評判管理一式（返信＋分析＋監視＋福祉特化）で売る。</p></div>
+      <div class="ovread"><span class="ovread__n">03</span><p class="ovread__t"><strong>上位表示は数少ない"純有料"機能</strong>。ただし<em>GBPでは買えない</em>＝Googleと争わずGoogle上に乗るSEOが筋。</p></div>
+      <div class="ovread"><span class="ovread__n">04</span><p class="ovread__t">送客課金の手本＝塾ナビ(資料請求4,000円/件)・引越し侍(反響課金)・みんなの介護(成約課金)。B型は<strong>見学/問合せ1件 数千円</strong>が現実的上限。</p></div>
+      <div class="ovread"><span class="ovread__n">05</span><p class="ovread__t">BtoC有料課金がある社は中身が"還元/クーポン/専門情報"。<strong>B型は還元原資なし＝利用者課金は不向き</strong>。</p></div>
+    </div>
+  </div>
+</section>
+
 
 
 <!-- ############################################################ -->
 <!-- 01 転職会議 (5枚 · slides 3-7) -->
 <!-- ############################################################ -->
-<section class="slide" data-i="4">
+<section class="slide" data-i="5">
   <div class="pad">
     <div class="flowbar">
       <span class="flowbar__step is-now"><b>① 概要</b></span><span class="flowbar__sep">›</span>
@@ -1111,7 +1265,7 @@ img { max-width: 100%; }
   </div>
 </section>
 
-<section class="slide" data-i="5">
+<section class="slide" data-i="6">
   <div class="pad">
     <div class="flowbar">
       <span class="flowbar__step">① 概要</span><span class="flowbar__sep">›</span>
@@ -1164,7 +1318,7 @@ img { max-width: 100%; }
   </div>
 </section>
 
-<section class="slide" data-i="6">
+<section class="slide" data-i="7">
   <div class="pad">
     <div class="flowbar">
       <span class="flowbar__step">① 概要</span><span class="flowbar__sep">›</span>
@@ -1194,7 +1348,7 @@ img { max-width: 100%; }
   </div>
 </section>
 
-<section class="slide" data-i="7">
+<section class="slide" data-i="8">
   <div class="pad">
     <div class="flowbar">
       <span class="flowbar__step">① 概要</span><span class="flowbar__sep">›</span>
@@ -1257,7 +1411,7 @@ img { max-width: 100%; }
   </div>
 </section>
 
-<section class="slide" data-i="8">
+<section class="slide" data-i="9">
   <div class="pad">
     <div class="flowbar">
       <span class="flowbar__step">① 概要</span><span class="flowbar__sep">›</span>
@@ -1314,11 +1468,77 @@ img { max-width: 100%; }
     <div class="featmini"><div class="featmini__cap">主要機能の有料/無料 早見 ｜ 転職会議（MIRROR）</div><table class="fmtbl"><tbody><tr><td class="fmf">口コミ閲覧（チラ見せ）</td><td class="fmv fmv--free">無料</td></tr><tr><td class="fmf">口コミ全文閲覧</td><td class="fmv fmv--paid">有料/条件付（パス1,078円 等）</td></tr><tr><td class="fmf">口コミ投稿</td><td class="fmv fmv--free">無料</td></tr><tr><td class="fmf">公式返信</td><td class="fmv fmv--free">無料（MIRROR・現行）</td></tr><tr><td class="fmf">上位固定（ピックアップ口コミ3件）</td><td class="fmv fmv--free">無料</td></tr><tr><td class="fmf">予約・問い合わせ送客</td><td class="fmv fmv--none">なし（求人応募はあり）</td></tr><tr><td class="fmf">分析レポート（口コミ検索/監視）</td><td class="fmv fmv--free">無料</td></tr></tbody></table></div><p class="src" style="margin-top:var(--space-3xs);">12-feature-matrix-1.md（取得 2026-06-22／公式機能・料金ページ）</p><p class="src" style="margin-top:var(--space-2xs);">10-deep-profiles-1.md F.課金モデルと収益内訳／E.示唆。<span class="unconf">構成比%・収益内訳はセグメント内非開示のため【予想】。実数値は未確認。</span></p>
   </div>
 </section>
+<!-- 01 転職会議 ─ 機能一覧（無料／有料）追加スライド -->
+<section class="slide" data-i="10">
+  <div class="pad">
+    <div class="flowbar">
+      <span class="flowbar__step">① 概要</span><span class="flowbar__sep">›</span>
+      <span class="flowbar__step">② ユーザー</span><span class="flowbar__sep">›</span>
+      <span class="flowbar__step">③ 沿革</span><span class="flowbar__sep">›</span>
+      <span class="flowbar__step">④ 獲得・SEO</span><span class="flowbar__sep">›</span>
+      <span class="flowbar__step">⑤ 課金・収益</span><span class="flowbar__sep">›</span>
+      <span class="flowbar__step is-now"><b>＋ 機能一覧</b></span>
+      <span class="flowbar__sub">01 転職会議 ＋機能</span>
+    </div>
+    <div class="shead">
+      <p class="kick">機能一覧（無料／有料）· 転職会議（MIRROR）</p>
+      <h2 class="title">転職会議 ─ 機能一覧（<em>無料</em>／<span style="color:var(--color-clay)">有料</span>）</h2>
+    </div>
+    <div class="fnx">
+      <div class="fncol">
+        <div class="fnpanel fnpanel--free">
+          <span class="fnpanel__lbl">無料でできること</span>
+          <h3 class="fnpanel__h">読む入口は無料・事業者機能も現状ほぼ無料</h3>
+          <span class="fngrp__cap">ユーザー側</span>
+          <ul class="blist">
+            <li>会員登録、口コミ冒頭チラ見せ（先頭2行程度）の閲覧</li>
+            <li>口コミ投稿、求人検索・応募、転職会議スカウト登録</li>
+            <li>全文を読む裏ルート：在籍企業の口コミを1件投稿／スカウト登録</li>
+          </ul>
+          <span class="fngrp__cap">事業者側（MIRROR・現状無料）</span>
+          <ul class="blist">
+            <li>口コミへの<strong>公式返信＝無料</strong>（審査後公開）</li>
+            <li>ピックアップ口コミ3件を企業ページ<strong>上位固定＝無料</strong></li>
+            <li>企業概要編集・写真掲載・採用情報（求人）掲載</li>
+            <li>口コミ閲覧・検索（評点/フリーワード）</li>
+          </ul>
+          <div class="fnkeys">
+            <span class="fnkey fnkey--free">公式返信：無料</span>
+            <span class="fnkey fnkey--none">上位表示：未確認</span>
+            <span class="fnkey fnkey--none">予約・問合せ送客：なし<small>（求人応募はあり）</small></span>
+          </div>
+        </div>
+      </div>
+      <div class="fncol">
+        <div class="fnpanel fnpanel--paid">
+          <span class="fnpanel__lbl">有料機能（プラン名・価格・解放される機能）</span>
+          <h3 class="fnpanel__h">課金の壁はユーザー側の"閲覧パス"が中心</h3>
+          <div class="fnplans">
+            <div class="fnplan">
+              <div class="fnplan__top"><span class="fnplan__name">口コミパス（ユーザー課金）</span><span class="fnplan__price">1,078円<small>税込/39日 ※</small></span></div>
+              <p class="fnplan__d">口コミ全文・面接体験談・年収情報の全表示、詳細検索・条件絞り込み、広告非表示。※情報源間でブレ（990円/30日との記載も）。</p>
+            </div>
+            <div class="fnplan">
+              <div class="fnplan__top"><span class="fnplan__name">MIRROR（事業者）</span><span class="fnplan__price is-unk">非公開/未確認</span></div>
+              <p class="fnplan__d">過去（2022年β版）は月額50,000円（税抜）。現在は「無料」記載が複数だが一次の料金表が確認できず、別建ての有料オプション有無は未確認。</p>
+            </div>
+          </div>
+        </div>
+        <div class="fnhint">
+          <div class="fnhint__lbl">特徴的な機能・当案件のヒント</div>
+          <p>公式返信・上位固定・写真・求人掲載が<em>無料開放</em>＝「公式返信を有料の柱」にする設計は単独では弱い。課金は送客・上位表示・分析へ寄せる。閲覧の壁はB型の読み手（支払い余力低）には転用慎重。</p>
+        </div>
+      </div>
+    </div>
+    <p class="src" style="margin-top:var(--space-2xs);">12-feature-matrix-1.md（取得 2026-06-22）。<span class="unconf">口コミパス価格は1,078円/39日 vs 990円/30日で情報源間に矛盾。MIRROR現行料金は一次未確認。</span></p>
+  </div>
+</section>
+
 
 <!-- ############################################################ -->
 <!-- 02 OpenWork (5枚 · slides 8-12) -->
 <!-- ############################################################ -->
-<section class="slide" data-i="9">
+<section class="slide" data-i="11">
   <div class="pad">
     <div class="flowbar">
       <span class="flowbar__step is-now"><b>① 概要</b></span><span class="flowbar__sep">›</span>
@@ -1385,7 +1605,7 @@ img { max-width: 100%; }
   </div>
 </section>
 
-<section class="slide" data-i="10">
+<section class="slide" data-i="12">
   <div class="pad">
     <div class="flowbar">
       <span class="flowbar__step">① 概要</span><span class="flowbar__sep">›</span>
@@ -1438,7 +1658,7 @@ img { max-width: 100%; }
   </div>
 </section>
 
-<section class="slide" data-i="11">
+<section class="slide" data-i="13">
   <div class="pad">
     <div class="flowbar">
       <span class="flowbar__step">① 概要</span><span class="flowbar__sep">›</span>
@@ -1464,7 +1684,7 @@ img { max-width: 100%; }
   </div>
 </section>
 
-<section class="slide" data-i="12">
+<section class="slide" data-i="14">
   <div class="pad">
     <div class="flowbar">
       <span class="flowbar__step">① 概要</span><span class="flowbar__sep">›</span>
@@ -1527,7 +1747,7 @@ img { max-width: 100%; }
   </div>
 </section>
 
-<section class="slide" data-i="13">
+<section class="slide" data-i="15">
   <div class="pad">
     <div class="flowbar">
       <span class="flowbar__step">① 概要</span><span class="flowbar__sep">›</span>
@@ -1583,11 +1803,79 @@ img { max-width: 100%; }
     <div class="featmini"><div class="featmini__cap">主要機能の有料/無料 早見 ｜ OpenWork</div><table class="fmtbl"><tbody><tr><td class="fmf">口コミ閲覧（プレビュー）</td><td class="fmv fmv--free">無料</td></tr><tr><td class="fmf">口コミ全文閲覧</td><td class="fmv fmv--paid">有料/条件付（月1,980円 等）</td></tr><tr><td class="fmf">口コミ投稿</td><td class="fmv fmv--free">無料</td></tr><tr><td class="fmf">公式返信</td><td class="fmv fmv--none">なし（中立性重視・返信機能なし）</td></tr><tr><td class="fmf">上位表示</td><td class="fmv fmv--none">なし（口コミは中立）</td></tr><tr><td class="fmf">採用送客</td><td class="fmv fmv--paid">有料（成功報酬）</td></tr><tr><td class="fmf">競合比較データ（分析）</td><td class="fmv fmv--paid">有料（オルタナデータ）</td></tr></tbody></table></div><p class="src" style="margin-top:var(--space-3xs);">12-feature-matrix-1.md（取得 2026-06-22／公式機能・料金ページ）</p><p class="src" style="margin-top:var(--space-2xs);">10-deep-profiles-1.md F.課金モデルと収益内訳（セグメント実数）／E.示唆。<span class="unconf">セグメント%はEDINET/決算説明資料の実数換算。個人課金内の内訳は未開示。</span></p>
   </div>
 </section>
+<!-- 02 OpenWork ─ 機能一覧（無料／有料）追加スライド -->
+<section class="slide" data-i="16">
+  <div class="pad">
+    <div class="flowbar">
+      <span class="flowbar__step">① 概要</span><span class="flowbar__sep">›</span>
+      <span class="flowbar__step">② ユーザー</span><span class="flowbar__sep">›</span>
+      <span class="flowbar__step">③ 沿革</span><span class="flowbar__sep">›</span>
+      <span class="flowbar__step">④ 獲得・SEO</span><span class="flowbar__sep">›</span>
+      <span class="flowbar__step">⑤ 課金・収益</span><span class="flowbar__sep">›</span>
+      <span class="flowbar__step is-now"><b>＋ 機能一覧</b></span>
+      <span class="flowbar__sub">02 OpenWork ＋機能</span>
+    </div>
+    <div class="shead">
+      <p class="kick">機能一覧（無料／有料）· OpenWork</p>
+      <h2 class="title">OpenWork ─ 機能一覧（<em>無料</em>／<span style="color:var(--color-clay)">有料</span>）</h2>
+    </div>
+    <div class="fnx">
+      <div class="fncol">
+        <div class="fnpanel fnpanel--free">
+          <span class="fnpanel__lbl">無料でできること</span>
+          <h3 class="fnpanel__h">"投稿 or 個人情報"で全口コミを解放</h3>
+          <span class="fngrp__cap">ユーザー側</span>
+          <ul class="blist">
+            <li>会員登録、口コミの一部プレビュー閲覧、企業検索・基本閲覧</li>
+            <li>求人検索、スカウト受信、アプリ（iOS/Android）</li>
+            <li>全口コミ解放の裏ルート：会社評価レポート回答（投稿）／Web履歴書入力で180日／転職サービス登録で30日</li>
+            <li>8軸スコア・残業/有給・年収・競合比較グラフ（解放後に無料閲覧）</li>
+          </ul>
+          <span class="fngrp__cap">事業者側</span>
+          <ul class="blist">
+            <li>口コミへの<strong>公式返信機能は無し</strong>（中立性重視）</li>
+          </ul>
+          <div class="fnkeys">
+            <span class="fnkey fnkey--none">公式返信：なし<small>（中立性）</small></span>
+            <span class="fnkey fnkey--none">上位表示：なし<small>（中立）</small></span>
+            <span class="fnkey fnkey--none">予約・問合せ送客：なし<small>（求人応募はあり）</small></span>
+          </div>
+        </div>
+      </div>
+      <div class="fncol">
+        <div class="fnpanel fnpanel--paid">
+          <span class="fnpanel__lbl">有料機能（プラン名・価格・解放される機能）</span>
+          <h3 class="fnpanel__h">BtoCはサブスク／BtoBは採用成功報酬＋データ販売</h3>
+          <div class="fnplans">
+            <div class="fnplan">
+              <div class="fnplan__top"><span class="fnplan__name">有料プログラム（個人）</span><span class="fnplan__price">月1,980円<small>税込</small></span></div>
+              <p class="fnplan__d">決済当日から1ヶ月、全社員クチコミ閲覧・年収/給与データ・キーワード検索。投稿/履歴書入力なしで即フル解放。自動更新。</p>
+            </div>
+            <div class="fnplan">
+              <div class="fnplan__top"><span class="fnplan__name">OpenWorkリクルーティング（法人）</span><span class="fnplan__price is-unk">採用成功報酬/未確認</span></div>
+              <p class="fnplan__d">採用成功報酬型。金額は別ページ・プラン制で本調査では未取得。</p>
+            </div>
+            <div class="fnplan">
+              <div class="fnplan__top"><span class="fnplan__name">オルタナティブデータ</span><span class="fnplan__price is-unk">有料/個別</span></div>
+              <p class="fnplan__d">企業データ/レポートの有料販売・競合比較データ。</p>
+            </div>
+          </div>
+        </div>
+        <div class="fnhint">
+          <div class="fnhint__lbl">特徴的な機能・当案件のヒント</div>
+          <p>企業からの返信を許さない<em>中立性をブランド化</em>。本案件は「返信あり＝評判管理課金（転職会議型）」と「返信なし＝第三者性（OpenWork型）」のどちらに寄せるかが設計の分岐点。多軸スコアはB型の工賃・支援・通所・人間関係に転用価値大。</p>
+        </div>
+      </div>
+    </div>
+    <p class="src" style="margin-top:var(--space-2xs);">12-feature-matrix-1.md（取得 2026-06-22）。<span class="unconf">リクルーティング料金は未取得。</span></p>
+  </div>
+</section>
+
 
 <!-- ############################################################ -->
 <!-- 03 リタリコ仕事ナビ (5枚 · slides 13-17) -->
 <!-- ############################################################ -->
-<section class="slide" data-i="14">
+<section class="slide" data-i="17">
   <div class="pad">
     <div class="flowbar">
       <span class="flowbar__step is-now"><b>① 概要</b></span><span class="flowbar__sep">›</span>
@@ -1656,7 +1944,7 @@ img { max-width: 100%; }
   </div>
 </section>
 
-<section class="slide" data-i="15">
+<section class="slide" data-i="18">
   <div class="pad">
     <div class="flowbar">
       <span class="flowbar__step">① 概要</span><span class="flowbar__sep">›</span>
@@ -1709,7 +1997,7 @@ img { max-width: 100%; }
   </div>
 </section>
 
-<section class="slide" data-i="16">
+<section class="slide" data-i="19">
   <div class="pad">
     <div class="flowbar">
       <span class="flowbar__step">① 概要</span><span class="flowbar__sep">›</span>
@@ -1734,7 +2022,7 @@ img { max-width: 100%; }
   </div>
 </section>
 
-<section class="slide" data-i="17">
+<section class="slide" data-i="20">
   <div class="pad">
     <div class="flowbar">
       <span class="flowbar__step">① 概要</span><span class="flowbar__sep">›</span>
@@ -1774,7 +2062,7 @@ img { max-width: 100%; }
   </div>
 </section>
 
-<section class="slide" data-i="18">
+<section class="slide" data-i="21">
   <div class="pad">
     <div class="flowbar">
       <span class="flowbar__step">① 概要</span><span class="flowbar__sep">›</span>
@@ -1830,11 +2118,75 @@ img { max-width: 100%; }
     <div class="featmini"><div class="featmini__cap">主要機能の有料/無料 早見 ｜ LITALICO仕事ナビ</div><table class="fmtbl"><tbody><tr><td class="fmf">口コミ閲覧</td><td class="fmv fmv--free">無料</td></tr><tr><td class="fmf">検索・絞り込み</td><td class="fmv fmv--free">無料</td></tr><tr><td class="fmf">見学・体験申込</td><td class="fmv fmv--free">無料</td></tr><tr><td class="fmf">問い合わせ・資料請求送客</td><td class="fmv fmv--free">無料（成約まで0円型）</td></tr><tr><td class="fmf">上位表示</td><td class="fmv fmv--unk">あり/有料の可能性【推測】</td></tr><tr><td class="fmf">求人採用（障害者雇用）</td><td class="fmv fmv--paid">有料（成功報酬・年収10%）</td></tr><tr><td class="fmf">利用者募集（B型）</td><td class="fmv fmv--unk">非公開＝未確認</td></tr></tbody></table></div><p class="src" style="margin-top:var(--space-3xs);">12-feature-matrix-1.md（取得 2026-06-22／公式機能・料金ページ）</p><p class="src" style="margin-top:var(--space-2xs);">10-deep-profiles-1.md F.課金モデルと収益内訳／E.示唆。<span class="unconf">仕事ナビ単体売上・利用者募集の実額は未確認。構成比%は【予想】。</span></p>
   </div>
 </section>
+<!-- 03 リタリコ仕事ナビ ─ 機能一覧（無料／有料）追加スライド -->
+<section class="slide" data-i="22">
+  <div class="pad">
+    <div class="flowbar">
+      <span class="flowbar__step">① 概要</span><span class="flowbar__sep">›</span>
+      <span class="flowbar__step">② ユーザー</span><span class="flowbar__sep">›</span>
+      <span class="flowbar__step">③ 沿革</span><span class="flowbar__sep">›</span>
+      <span class="flowbar__step">④ 獲得・SEO</span><span class="flowbar__sep">›</span>
+      <span class="flowbar__step">⑤ 課金・収益</span><span class="flowbar__sep">›</span>
+      <span class="flowbar__step is-now"><b>＋ 機能一覧</b></span>
+      <span class="flowbar__sub">03 リタリコ仕事ナビ ＋機能</span>
+    </div>
+    <div class="shead">
+      <p class="kick">機能一覧（無料／有料）· リタリコ仕事ナビ（snabi.jp）</p>
+      <h2 class="title">リタリコ仕事ナビ ─ 機能一覧（<em>無料</em>／<span style="color:var(--color-clay)">有料</span>）</h2>
+    </div>
+    <div class="fnx">
+      <div class="fncol">
+        <div class="fnpanel fnpanel--free">
+          <span class="fnpanel__lbl">無料でできること</span>
+          <h3 class="fnpanel__h">送客導線が無料で実装済み（＝本案件の正面競合）</h3>
+          <span class="fngrp__cap">ユーザー側（当事者・家族・支援者）</span>
+          <ul class="blist">
+            <li>障害者向け求人検索・応募、就労支援事業所（B型/A型/移行）の検索・絞り込み</li>
+            <li>事業所情報閲覧、<strong>見学・体験申込＝無料</strong></li>
+            <li><strong>問い合わせ・資料請求＝無料</strong>、比較検討</li>
+          </ul>
+          <span class="fngrp__cap">事業者側</span>
+          <ul class="blist">
+            <li>無料掲載枠あり（最短7日で事業所ページ公開）</li>
+            <li>利用者募集ガイド・チラシテンプレ等の無料ツール</li>
+          </ul>
+          <div class="fnkeys">
+            <span class="fnkey fnkey--none">公式返信：弱/未確認</span>
+            <span class="fnkey fnkey--none">上位表示：有料の可能性<small>【推測】</small></span>
+            <span class="fnkey fnkey--free">予約・問合せ送客：無料<small>（見学・資料請求）</small></span>
+          </div>
+        </div>
+      </div>
+      <div class="fncol">
+        <div class="fnpanel fnpanel--paid">
+          <span class="fnpanel__lbl">有料機能（プラン名・価格・解放される機能）</span>
+          <h3 class="fnpanel__h">料金は2系統あり混同注意（求人広告 vs 利用者募集）</h3>
+          <div class="fnplans">
+            <div class="fnplan">
+              <div class="fnplan__top"><span class="fnplan__name">(A) 障害者求人広告掲載</span><span class="fnplan__price">採用時 年収10%</span></div>
+              <p class="fnplan__d">企業の障害者"雇用"の料率（完全成功報酬／2025年10月開始）。掲載・資料請求・見学では課金なし。返戻金あり（3日以内退職100%等）。<strong>B型の利用者募集とは別系統</strong>。</p>
+            </div>
+            <div class="fnplan">
+              <div class="fnplan__top"><span class="fnplan__name">(B) 事業所の利用者募集</span><span class="fnplan__price is-unk">非公開/未確認</span></div>
+              <p class="fnplan__d">無料掲載に加え有料プランが存在する模様（写真強化・分析レポート・上位表示等）だが、プラン名・価格は公式非公開＝未確認【推測】。</p>
+            </div>
+          </div>
+        </div>
+        <div class="fnhint">
+          <div class="fnhint__lbl">特徴的な機能・当案件のヒント</div>
+          <p>送客導線が既に無料実装済み＝「導線があること」自体は差別化にならない。<em>差別化余地は「中立で独立した口コミ・評点」</em>。リタリコは事業者でもあり利益相反＝口コミの第三者性が弱い。ゴールデンゲートの自社拠点による本物口コミ供給＋独立媒体が核。</p>
+        </div>
+      </div>
+    </div>
+    <p class="src" style="margin-top:var(--space-2xs);">12-feature-matrix-1.md（取得 2026-06-22）。<span class="unconf">利用者募集(B型)の有料プラン名・価格は非公開＝未確認。求人広告10%とは別系統。</span></p>
+  </div>
+</section>
+
 
 <!-- ############################################################ -->
 <!-- 04 みんなの介護 (5枚 · slides 18-22) -->
 <!-- ############################################################ -->
-<section class="slide" data-i="19">
+<section class="slide" data-i="23">
   <div class="pad">
     <div class="flowbar">
       <span class="flowbar__step is-now"><b>① 概要</b></span><span class="flowbar__sep">›</span>
@@ -1902,7 +2254,7 @@ img { max-width: 100%; }
   </div>
 </section>
 
-<section class="slide" data-i="20">
+<section class="slide" data-i="24">
   <div class="pad">
     <div class="flowbar">
       <span class="flowbar__step">① 概要</span><span class="flowbar__sep">›</span>
@@ -1955,7 +2307,7 @@ img { max-width: 100%; }
   </div>
 </section>
 
-<section class="slide" data-i="21">
+<section class="slide" data-i="25">
   <div class="pad">
     <div class="flowbar">
       <span class="flowbar__step">① 概要</span><span class="flowbar__sep">›</span>
@@ -1980,7 +2332,7 @@ img { max-width: 100%; }
   </div>
 </section>
 
-<section class="slide" data-i="22">
+<section class="slide" data-i="26">
   <div class="pad">
     <div class="flowbar">
       <span class="flowbar__step">① 概要</span><span class="flowbar__sep">›</span>
@@ -2020,7 +2372,7 @@ img { max-width: 100%; }
   </div>
 </section>
 
-<section class="slide" data-i="23">
+<section class="slide" data-i="27">
   <div class="pad">
     <div class="flowbar">
       <span class="flowbar__step">① 概要</span><span class="flowbar__sep">›</span>
@@ -2074,11 +2426,79 @@ img { max-width: 100%; }
     <div class="featmini"><div class="featmini__cap">主要機能の有料/無料 早見 ｜ みんなの介護</div><table class="fmtbl"><tbody><tr><td class="fmf">口コミ閲覧</td><td class="fmv fmv--free">無料</td></tr><tr><td class="fmf">検索・絞り込み・比較</td><td class="fmv fmv--free">無料</td></tr><tr><td class="fmf">資料請求・見学予約</td><td class="fmv fmv--free">無料</td></tr><tr><td class="fmf">掲載（事業者）</td><td class="fmv fmv--free">無料（成約まで0円）</td></tr><tr><td class="fmf">問い合わせ/予約の受付</td><td class="fmv fmv--free">無料（受付）</td></tr><tr><td class="fmf">入居成約送客</td><td class="fmv fmv--paid">有料（成功報酬10万円〜/件）</td></tr><tr><td class="fmf">公式返信/分析</td><td class="fmv fmv--unk">非公開＝未確認</td></tr></tbody></table></div><p class="src" style="margin-top:var(--space-3xs);">12-feature-matrix-1.md（取得 2026-06-22／公式機能・料金ページ）</p><p class="src" style="margin-top:var(--space-2xs);">10-deep-profiles-2.md F.課金モデルと収益内訳／E.示唆。<span class="unconf">収益・1成約単価は二次情報。構成比%は【予想】。年商は一次未確認。</span></p>
   </div>
 </section>
+<!-- 04 みんなの介護 ─ 機能一覧（無料／有料）追加スライド -->
+<section class="slide" data-i="28">
+  <div class="pad">
+    <div class="flowbar">
+      <span class="flowbar__step">① 概要</span><span class="flowbar__sep">›</span>
+      <span class="flowbar__step">② ユーザー</span><span class="flowbar__sep">›</span>
+      <span class="flowbar__step">③ 沿革</span><span class="flowbar__sep">›</span>
+      <span class="flowbar__step">④ 獲得・SEO</span><span class="flowbar__sep">›</span>
+      <span class="flowbar__step">⑤ 課金・収益</span><span class="flowbar__sep">›</span>
+      <span class="flowbar__step is-now"><b>＋ 機能一覧</b></span>
+      <span class="flowbar__sub">04 みんなの介護 ＋機能</span>
+    </div>
+    <div class="shead">
+      <p class="kick">機能一覧（無料／有料）· みんなの介護</p>
+      <h2 class="title">みんなの介護 ─ 機能一覧（<em>無料</em>／<span style="color:var(--color-clay)">有料</span>）</h2>
+    </div>
+    <div class="fnx">
+      <div class="fncol">
+        <div class="fnpanel fnpanel--free">
+          <span class="fnpanel__lbl">無料でできること</span>
+          <h3 class="fnpanel__h">成約まで完全無料（導入障壁が極小）</h3>
+          <span class="fngrp__cap">ユーザー側（すべて無料）</span>
+          <ul class="blist">
+            <li>老人ホーム・高齢者住宅の検索・絞り込み、費用相場・口コミ閲覧</li>
+            <li><strong>資料請求・見学予約＝無料</strong></li>
+          </ul>
+          <span class="fngrp__cap">事業者側（初期0円・月額0円）</span>
+          <ul class="blist">
+            <li>施設情報を掲載（スタッフが3ステップで作成・公開）</li>
+            <li><strong>問い合わせ・資料請求・見学予約の受付＝無料</strong></li>
+            <li>＝成約までは一切無料</li>
+          </ul>
+          <div class="fnkeys">
+            <span class="fnkey fnkey--none">公式返信：未確認</span>
+            <span class="fnkey fnkey--none">上位表示：なし<small>【推測】</small></span>
+            <span class="fnkey fnkey--free">予約・問合せ送客：無料<small>（成約時のみ課金）</small></span>
+          </div>
+        </div>
+      </div>
+      <div class="fncol">
+        <div class="fnpanel fnpanel--paid">
+          <span class="fnpanel__lbl">有料機能（プラン名・価格・解放される機能）</span>
+          <h3 class="fnpanel__h">完全成功報酬（入居課金型）</h3>
+          <div class="fnplans">
+            <div class="fnplan">
+              <div class="fnplan__top"><span class="fnplan__name">入居課金（成功報酬）</span><span class="fnplan__price">10万円以上/件</span></div>
+              <p class="fnplan__d">入居成約時のみ課金。資料請求・見学では課金されず、入居決定段階で報酬発生。料金表は原則非公開（問い合わせベース）。</p>
+            </div>
+            <div class="fnplan">
+              <div class="fnplan__top"><span class="fnplan__name">求人サービス「みんジョブ」</span><span class="fnplan__price">数万〜10万円程度</span></div>
+              <p class="fnplan__d">介護職採用の成功報酬型（採用課金）。</p>
+            </div>
+            <div class="fnplan">
+              <div class="fnplan__top"><span class="fnplan__name">写真/分析/口コミ返信</span><span class="fnplan__price is-unk">未確認</span></div>
+              <p class="fnplan__d">細目は公式フォームに記載なし＝未確認。</p>
+            </div>
+          </div>
+        </div>
+        <div class="fnhint">
+          <div class="fnhint__lbl">特徴的な機能・当案件のヒント</div>
+          <p>「成約まで完全無料・成果時のみ課金」は<em>BtoB導入障壁を下げる王道</em>。B型では見学/体験/利用契約の成立を成果点に設定可能。福祉×成果報酬は規制・倫理に敏感（囲い込み批判）＝手数料を透明開示するのが対抗軸。BtoC完全無料はB型ユーザー層と相性良。</p>
+        </div>
+      </div>
+    </div>
+    <p class="src" style="margin-top:var(--space-2xs);">12-feature-matrix-1.md（取得 2026-06-22）。<span class="unconf">成果報酬の実額・写真/分析/返信機能は非公開＝未確認。</span></p>
+  </div>
+</section>
+
 
 <!-- ############################################################ -->
 <!-- 05 弁護士ドットコム (5枚 · slides 23-27) -->
 <!-- ############################################################ -->
-<section class="slide" data-i="24">
+<section class="slide" data-i="29">
   <div class="pad">
     <div class="flowbar">
       <span class="flowbar__step is-now"><b>① 概要</b></span><span class="flowbar__sep">›</span>
@@ -2146,7 +2566,7 @@ img { max-width: 100%; }
   </div>
 </section>
 
-<section class="slide" data-i="25">
+<section class="slide" data-i="30">
   <div class="pad">
     <div class="flowbar">
       <span class="flowbar__step">① 概要</span><span class="flowbar__sep">›</span>
@@ -2199,7 +2619,7 @@ img { max-width: 100%; }
   </div>
 </section>
 
-<section class="slide" data-i="26">
+<section class="slide" data-i="31">
   <div class="pad">
     <div class="flowbar">
       <span class="flowbar__step">① 概要</span><span class="flowbar__sep">›</span>
@@ -2227,7 +2647,7 @@ img { max-width: 100%; }
   </div>
 </section>
 
-<section class="slide" data-i="27">
+<section class="slide" data-i="32">
   <div class="pad">
     <div class="flowbar">
       <span class="flowbar__step">① 概要</span><span class="flowbar__sep">›</span>
@@ -2267,7 +2687,7 @@ img { max-width: 100%; }
   </div>
 </section>
 
-<section class="slide" data-i="28">
+<section class="slide" data-i="33">
   <div class="pad">
     <div class="flowbar">
       <span class="flowbar__step">① 概要</span><span class="flowbar__sep">›</span>
@@ -2322,11 +2742,76 @@ img { max-width: 100%; }
     <div class="featmini"><div class="featmini__cap">主要機能の有料/無料 早見 ｜ 弁護士ドットコム</div><table class="fmtbl"><tbody><tr><td class="fmf">Q&A閲覧（自分の相談）</td><td class="fmv fmv--free">無料</td></tr><tr><td class="fmf">他人の相談への回答 全文閲覧</td><td class="fmv fmv--paid">有料（プレミアム550円/月）</td></tr><tr><td class="fmf">Q&A投稿/弁護士検索</td><td class="fmv fmv--free">無料</td></tr><tr><td class="fmf">一括見積り依頼</td><td class="fmv fmv--free">無料</td></tr><tr><td class="fmf">上位表示（注力分野登録）</td><td class="fmv fmv--paid">有料（月2万円〜）</td></tr><tr><td class="fmf">問い合わせ（反響）受付</td><td class="fmv fmv--paid">有料（弁護士向け掲載）</td></tr><tr><td class="fmf">解決事例・料金表掲載</td><td class="fmv fmv--paid">有料</td></tr></tbody></table></div><p class="src" style="margin-top:var(--space-3xs);">12-feature-matrix-3.md（取得 2026-06-22）</p><p class="src" style="margin-top:var(--space-2xs);">10-deep-profiles-4.md F.課金モデルと収益内訳（セグメント実数）／E.示唆。<span class="unconf">プロ支援事業内の内訳（掲載/会員/その他）は未開示のため【予想】。</span></p>
   </div>
 </section>
+<!-- 05 弁護士ドットコム ─ 機能一覧（無料／有料）追加スライド -->
+<section class="slide" data-i="34">
+  <div class="pad">
+    <div class="flowbar">
+      <span class="flowbar__step">① 概要</span><span class="flowbar__sep">›</span>
+      <span class="flowbar__step">② ユーザー</span><span class="flowbar__sep">›</span>
+      <span class="flowbar__step">③ 沿革</span><span class="flowbar__sep">›</span>
+      <span class="flowbar__step">④ 獲得・SEO</span><span class="flowbar__sep">›</span>
+      <span class="flowbar__step">⑤ 課金・収益</span><span class="flowbar__sep">›</span>
+      <span class="flowbar__step is-now"><b>＋ 機能一覧</b></span>
+      <span class="flowbar__sub">05 弁護士ドットコム ＋機能</span>
+    </div>
+    <div class="shead">
+      <p class="kick">機能一覧（無料／有料）· 弁護士ドットコム</p>
+      <h2 class="title">弁護士ドットコム ─ 機能一覧（<em>無料</em>／<span style="color:var(--color-clay)">有料</span>）</h2>
+    </div>
+    <div class="fnx">
+      <div class="fncol">
+        <div class="fnpanel fnpanel--free">
+          <span class="fnpanel__lbl">無料でできること</span>
+          <h3 class="fnpanel__h">Q&amp;AがそのままSEOコンテンツ化（自己増殖）</h3>
+          <span class="fngrp__cap">ユーザー側（非会員/無料会員）</span>
+          <ul class="blist">
+            <li>みんなの法律相談Q&amp;Aの閲覧（149万件超）</li>
+            <li>自分で相談を投稿し、自分の相談への弁護士回答を閲覧</li>
+            <li>弁護士検索（地域・分野・解決事例）、費用の一括見積り依頼</li>
+            <li>※他人の相談への回答閲覧は無料では不可＝課金の壁</li>
+          </ul>
+          <span class="fngrp__cap">事業者側（弁護士・無料登録）</span>
+          <ul class="blist">
+            <li>無料の弁護士プロフィール掲載（基本情報のみ）</li>
+            <li>みんなの法律相談の<strong>回答＝弁護士が無料で実施</strong></li>
+          </ul>
+          <div class="fnkeys">
+            <span class="fnkey fnkey--free">公式返信（Q&amp;A回答）：無料</span>
+            <span class="fnkey fnkey--paid">上位表示：有料<small>（月2万〜）</small></span>
+            <span class="fnkey fnkey--paid">予約・問合せ送客：有料<small>（掲載）</small></span>
+          </div>
+        </div>
+      </div>
+      <div class="fncol">
+        <div class="fnpanel fnpanel--paid">
+          <span class="fnpanel__lbl">有料機能（プラン名・価格・解放される機能）</span>
+          <h3 class="fnpanel__h">収益主力はBtoB掲載、一般課金550円は補助</h3>
+          <div class="fnplans">
+            <div class="fnplan">
+              <div class="fnplan__top"><span class="fnplan__name">プレミアム（一般有料会員）</span><span class="fnplan__price">月550円<small>税込</small></span></div>
+              <p class="fnplan__d">他人が投稿した相談への弁護士回答の閲覧（最大の価値）、ギフトURL発行、解説動画600件以上。2024/10に330→550円改定。</p>
+            </div>
+            <div class="fnplan">
+              <div class="fnplan__top"><span class="fnplan__name">弁護士向け有料掲載</span><span class="fnplan__price">月2万〜5万円</span></div>
+              <p class="fnplan__d">注力分野の登録＝検索<strong>上位表示</strong>、料金表掲載、解決事例・感謝の声掲載、問い合わせ（反響）獲得。契約初月に事務手数料50,000円。</p>
+            </div>
+          </div>
+        </div>
+        <div class="fnhint">
+          <div class="fnhint__lbl">特徴的な機能・当案件のヒント</div>
+          <p>ユーザー投稿の相談＋専門家の無料回答が<em>自己増殖SEOエンジン</em>＝相談支援専門員ハブと同型。収益はBtoB掲載に寄せ、BtoCは集客装置（懸念4と整合）。上位表示は"注力分野の登録(有料)"で買う＝広告プラスと同発想。</p>
+        </div>
+      </div>
+    </div>
+    <p class="src" style="margin-top:var(--space-2xs);">12-feature-matrix-3.md（取得 2026-06-22）。<span class="unconf">本体403のため公式FAQスニペット＋二次で確認。弁護士向けプラン名・上位表示の正式名称は未確認。</span></p>
+  </div>
+</section>
+
 
 <!-- ############################################################ -->
 <!-- 06 食べログ (5枚 · slides 28-32) -->
 <!-- ############################################################ -->
-<section class="slide" data-i="29">
+<section class="slide" data-i="35">
   <div class="pad">
     <div class="flowbar">
       <span class="flowbar__step is-now"><b>① 概要</b></span><span class="flowbar__sep">›</span>
@@ -2394,7 +2879,7 @@ img { max-width: 100%; }
   </div>
 </section>
 
-<section class="slide" data-i="30">
+<section class="slide" data-i="36">
   <div class="pad">
     <div class="flowbar">
       <span class="flowbar__step">① 概要</span><span class="flowbar__sep">›</span>
@@ -2447,7 +2932,7 @@ img { max-width: 100%; }
   </div>
 </section>
 
-<section class="slide" data-i="31">
+<section class="slide" data-i="37">
   <div class="pad">
     <div class="flowbar">
       <span class="flowbar__step">① 概要</span><span class="flowbar__sep">›</span>
@@ -2473,7 +2958,7 @@ img { max-width: 100%; }
   </div>
 </section>
 
-<section class="slide" data-i="32">
+<section class="slide" data-i="38">
   <div class="pad">
     <div class="flowbar">
       <span class="flowbar__step">① 概要</span><span class="flowbar__sep">›</span>
@@ -2512,7 +2997,7 @@ img { max-width: 100%; }
   </div>
 </section>
 
-<section class="slide" data-i="33">
+<section class="slide" data-i="39">
   <div class="pad">
     <div class="flowbar">
       <span class="flowbar__step">① 概要</span><span class="flowbar__sep">›</span>
@@ -2569,11 +3054,72 @@ img { max-width: 100%; }
     <div class="featmini"><div class="featmini__cap">主要機能の有料/無料 早見 ｜ 食べログ</div><table class="fmtbl"><tbody><tr><td class="fmf">口コミ閲覧</td><td class="fmv fmv--free">無料</td></tr><tr><td class="fmf">口コミ投稿</td><td class="fmv fmv--free">無料</td></tr><tr><td class="fmf">公式返信</td><td class="fmv fmv--free">無料</td></tr><tr><td class="fmf">クーポン発行（最大3枠）</td><td class="fmv fmv--free">無料</td></tr><tr><td class="fmf">上位表示</td><td class="fmv fmv--paid">有料（ベーシック25,000円〜）</td></tr><tr><td class="fmf">ネット予約受付（送客）</td><td class="fmv fmv--paid">有料（月額＋従量 昼110/夜220円）</td></tr><tr><td class="fmf">詳細アクセス分析</td><td class="fmv fmv--paid">有料（無料は100位まで）</td></tr></tbody></table></div><p class="src" style="margin-top:var(--space-3xs);">12-feature-matrix-2.md（取得 2026-06-22）</p><p class="src" style="margin-top:var(--space-2xs);">10-deep-profiles-3.md F.課金モデルと収益内訳／E.示唆。<span class="unconf">事業内の内訳%（掲載/予約/広告）は一次開示なし＝【予想】。確実なのは売上402億・利益率55.1%・年間予約1億人。</span></p>
   </div>
 </section>
+<!-- 06 食べログ ─ 機能一覧（無料／有料）追加スライド -->
+<section class="slide" data-i="40">
+  <div class="pad">
+    <div class="flowbar">
+      <span class="flowbar__step">① 概要</span><span class="flowbar__sep">›</span>
+      <span class="flowbar__step">② ユーザー</span><span class="flowbar__sep">›</span>
+      <span class="flowbar__step">③ 沿革</span><span class="flowbar__sep">›</span>
+      <span class="flowbar__step">④ 獲得・SEO</span><span class="flowbar__sep">›</span>
+      <span class="flowbar__step">⑤ 課金・収益</span><span class="flowbar__sep">›</span>
+      <span class="flowbar__step is-now"><b>＋ 機能一覧</b></span>
+      <span class="flowbar__sub">06 食べログ ＋機能</span>
+    </div>
+    <div class="shead">
+      <p class="kick">機能一覧（無料／有料）· 食べログ</p>
+      <h2 class="title">食べログ ─ 機能一覧（<em>無料</em>／<span style="color:var(--color-clay)">有料</span>）</h2>
+    </div>
+    <div class="fnx">
+      <div class="fncol">
+        <div class="fnpanel fnpanel--free">
+          <span class="fnpanel__lbl">無料でできること</span>
+          <h3 class="fnpanel__h">公式返信・クーポン3枠・簡易解析まで無料</h3>
+          <span class="fngrp__cap">ユーザー側（すべて無料・壁なし）</span>
+          <ul class="blist">
+            <li>口コミ閲覧（会員登録不要）、評点・ランキング・特集閲覧</li>
+            <li>検索・絞り込み・一覧比較、ネット予約の利用（費用は店舗が従量負担）</li>
+            <li>口コミ投稿（無料会員）、クーポン取得、アプリ</li>
+          </ul>
+          <span class="fngrp__cap">事業者側（無料店舗会員）</span>
+          <ul class="blist">
+            <li>基本掲載、<strong>口コミへの公式返信＝無料</strong>（事前チェック有）</li>
+            <li><strong>クーポン掲載＝無料（最大3枠）</strong></li>
+            <li>簡易アクセス解析（月間閲覧数 上位100位まで）</li>
+          </ul>
+          <div class="fnkeys">
+            <span class="fnkey fnkey--free">公式返信：無料</span>
+            <span class="fnkey fnkey--paid">上位表示：有料<small>（2.5万〜）</small></span>
+            <span class="fnkey fnkey--paid">予約・問合せ送客：有料<small>（月額+従量）</small></span>
+          </div>
+        </div>
+      </div>
+      <div class="fncol">
+        <div class="fnpanel fnpanel--paid">
+          <span class="fnpanel__lbl">有料機能（プラン名・価格・解放される機能）</span>
+          <h3 class="fnpanel__h">月額固定（税抜）＋ネット予約従量</h3>
+          <div class="fnplans">
+            <div class="fnplan"><div class="fnplan__top"><span class="fnplan__name">ライト</span><span class="fnplan__price">月1万円<small>税抜</small></span></div><p class="fnplan__d">表現力アップ（訴求強化）。上位表示は付かない。</p></div>
+            <div class="fnplan"><div class="fnplan__top"><span class="fnplan__name">ベーシック</span><span class="fnplan__price">月2.5万円<small>税抜</small></span></div><p class="fnplan__d"><strong>検索結果の上位表示</strong>・アクセスアップ・「近くの店」バナー。</p></div>
+            <div class="fnplan"><div class="fnplan__top"><span class="fnplan__name">プレミアム5/10</span><span class="fnplan__price">月5万/10万円<small>税抜</small></span></div><p class="fnplan__d">トップバナー・ゴールデンタイム強化（週7/14枠）・最上位露出・サポート。</p></div>
+            <div class="fnplan"><div class="fnplan__top"><span class="fnplan__name">ネット予約受付（従量）</span><span class="fnplan__price">110/220円/名<small>昼/夜・税込</small></span></div><p class="fnplan__d">店舗が負担。有料プラン契約が前提。</p></div>
+          </div>
+        </div>
+        <div class="fnhint">
+          <div class="fnhint__lbl">特徴的な機能・当案件のヒント</div>
+          <p>公式返信が無料＝評判管理の入口は無料が標準。<em>予約従量（送客1件課金）が収益の柱</em>（事業の約3割と推計）＝B型の「見学予約・問い合わせ送客1件課金」に置換可能（塾ナビ型）。解析の段階化（無料100位/詳細有料）も参考。</p>
+        </div>
+      </div>
+    </div>
+    <p class="src" style="margin-top:var(--space-2xs);">12-feature-matrix-2.md（取得 2026-06-22）。<span class="unconf">写真/動画の枚数上限は未確認。予約従量シェアは推計。</span></p>
+  </div>
+</section>
+
 
 <!-- ############################################################ -->
 <!-- 07 塾ナビ (3枚 · slides 33-35) -->
 <!-- ############################################################ -->
-<section class="slide" data-i="34">
+<section class="slide" data-i="41">
   <div class="pad">
     <div class="flowbar">
       <span class="flowbar__step is-now"><b>① 概要＋使い方</b></span><span class="flowbar__sep">›</span>
@@ -2625,7 +3171,7 @@ img { max-width: 100%; }
   </div>
 </section>
 
-<section class="slide" data-i="35">
+<section class="slide" data-i="42">
   <div class="pad">
     <div class="flowbar">
       <span class="flowbar__step">① 概要＋使い方</span><span class="flowbar__sep">›</span>
@@ -2664,7 +3210,7 @@ img { max-width: 100%; }
   </div>
 </section>
 
-<section class="slide" data-i="36">
+<section class="slide" data-i="43">
   <div class="pad">
     <div class="flowbar">
       <span class="flowbar__step">① 概要＋使い方</span><span class="flowbar__sep">›</span>
@@ -2716,11 +3262,68 @@ img { max-width: 100%; }
     <div class="featmini"><div class="featmini__cap">主要機能の有料/無料 早見 ｜ 塾ナビ</div><table class="fmtbl"><tbody><tr><td class="fmf">口コミ閲覧・比較</td><td class="fmv fmv--free">無料</td></tr><tr><td class="fmf">資料請求・問い合わせ（ユーザー）</td><td class="fmv fmv--free">無料</td></tr><tr><td class="fmf">口コミ投稿</td><td class="fmv fmv--free">無料（入塾後・謝礼あり/審査）</td></tr><tr><td class="fmf">無料掲載（事業者）</td><td class="fmv fmv--none">なし＝全件有料</td></tr><tr><td class="fmf">上位表示・露出強化</td><td class="fmv fmv--paid">有料（成果報酬モデル内）</td></tr><tr><td class="fmf">資料請求・問い合わせ送客</td><td class="fmv fmv--paid">有料（1件 約4,000〜5,000円）</td></tr><tr><td class="fmf">公式返信/レポート</td><td class="fmv fmv--unk">可否未確認</td></tr></tbody></table></div><p class="src" style="margin-top:var(--space-3xs);">12-feature-matrix-2.md（取得 2026-06-22）</p><p class="src" style="margin-top:var(--space-2xs);">10-deep-profiles-2.md F.課金モデルと収益内訳／E.示唆。<span class="unconf">資料請求単価・月額プランは公式非公表。塾ナビ単体構成比は一次未確認＝【予想】。</span></p>
   </div>
 </section>
+<!-- 07 塾ナビ ─ 機能一覧（無料／有料）追加スライド -->
+<section class="slide" data-i="44">
+  <div class="pad">
+    <div class="flowbar">
+      <span class="flowbar__step">① 概要＋使い方</span><span class="flowbar__sep">›</span>
+      <span class="flowbar__step">② 沿革＆獲得/SEO</span><span class="flowbar__sep">›</span>
+      <span class="flowbar__step">③ 課金・収益・SWOT</span><span class="flowbar__sep">›</span>
+      <span class="flowbar__step is-now"><b>＋ 機能一覧</b></span>
+      <span class="flowbar__sub">07 塾ナビ ＋機能</span>
+    </div>
+    <div class="shead">
+      <p class="kick">機能一覧（無料／有料）· 塾ナビ</p>
+      <h2 class="title">塾ナビ ─ 機能一覧（<em>無料</em>／<span style="color:var(--color-clay)">有料</span>）</h2>
+    </div>
+    <div class="fnx">
+      <div class="fncol">
+        <div class="fnpanel fnpanel--free">
+          <span class="fnpanel__lbl">無料でできること</span>
+          <h3 class="fnpanel__h">ユーザーは無料／事業者は無料掲載なし＝全件有料</h3>
+          <span class="fngrp__cap">ユーザー側（保護者・生徒・すべて無料）</span>
+          <ul class="blist">
+            <li>口コミ閲覧（壁なし）、5段階評価・ランキング閲覧</li>
+            <li>地域・駅・塾名・指導形式での詳細検索、統一フォーマット比較</li>
+            <li><strong>資料請求・電話問い合わせ＝無料</strong>（＝事業者課金のトリガー）</li>
+            <li>口コミ投稿（実通塾者対象・審査／入塾後の任意投稿に謝礼「学習支援金」）</li>
+          </ul>
+          <span class="fngrp__cap">事業者側</span>
+          <ul class="blist">
+            <li><strong>無料の範囲＝なし</strong>（無料掲載に非対応／掲載＝有料契約が前提）</li>
+          </ul>
+          <div class="fnkeys">
+            <span class="fnkey fnkey--none">公式返信：未確認</span>
+            <span class="fnkey fnkey--none">上位表示：成果報酬内<small>【推測】</small></span>
+            <span class="fnkey fnkey--paid">予約・問合せ送客：有料<small>（資料請求 約4,000円/件）</small></span>
+          </div>
+        </div>
+      </div>
+      <div class="fncol">
+        <div class="fnpanel fnpanel--paid">
+          <span class="fnpanel__lbl">有料機能（プラン名・価格・解放される機能）</span>
+          <h3 class="fnpanel__h">料金は公式非公開／成果報酬型（送客従量）の手本</h3>
+          <div class="fnplans">
+            <div class="fnplan"><div class="fnplan__top"><span class="fnplan__name">初期費用</span><span class="fnplan__price is-unk">20万円(税抜)/有無は未確認</span></div><p class="fnplan__d">基礎記事の代筆込みとの情報。一方「初期/月額無料の成果報酬型」と説明する媒体もあり、プランにより異なる模様＝正確な体系は未確認。</p></div>
+            <div class="fnplan"><div class="fnplan__top"><span class="fnplan__name">成果報酬</span><span class="fnplan__price">1件 約4,000〜5,000円</span></div><p class="fnplan__d">資料請求・体験授業の問い合わせ1件ごとに課金（二次情報）。</p></div>
+            <div class="fnplan"><div class="fnplan__top"><span class="fnplan__name">有料掲載でできること</span><span class="fnplan__price is-unk">掲載内</span></div><p class="fnplan__d">店舗ページ掲載（写真・PR・強みPOINT3つ・合格実績）、口コミ管理。公式返信の可否・上位表示プラン名・レポートは未確認。</p></div>
+          </div>
+        </div>
+        <div class="fnhint">
+          <div class="fnhint__lbl">特徴的な機能・当案件のヒント</div>
+          <p><em>成果報酬（資料請求/問い合わせ1件＝4,000〜5,000円）＝B型「見学・問い合わせ送客従量」のドンピシャの手本</em>。月額固定に頼らず"成果が出たときだけ払う"＝定員充足ニーズに刺さる。謝礼投稿は景表法レビュー必須。</p>
+        </div>
+      </div>
+    </div>
+    <p class="src" style="margin-top:var(--space-2xs);">12-feature-matrix-2.md（取得 2026-06-22）。<span class="unconf">料金は公式非公開＝二次情報の推計。公式返信可否・レポート・アプリは未確認。</span></p>
+  </div>
+</section>
+
 
 <!-- ############################################################ -->
 <!-- 08 @cosme (3枚 · slides 36-38) -->
 <!-- ############################################################ -->
-<section class="slide" data-i="37">
+<section class="slide" data-i="45">
   <div class="pad">
     <div class="flowbar">
       <span class="flowbar__step is-now"><b>① 概要＋使い方</b></span><span class="flowbar__sep">›</span>
@@ -2772,7 +3375,7 @@ img { max-width: 100%; }
   </div>
 </section>
 
-<section class="slide" data-i="38">
+<section class="slide" data-i="46">
   <div class="pad">
     <div class="flowbar">
       <span class="flowbar__step">① 概要＋使い方</span><span class="flowbar__sep">›</span>
@@ -2814,7 +3417,7 @@ img { max-width: 100%; }
   </div>
 </section>
 
-<section class="slide" data-i="39">
+<section class="slide" data-i="47">
   <div class="pad">
     <div class="flowbar">
       <span class="flowbar__step">① 概要＋使い方</span><span class="flowbar__sep">›</span>
@@ -2869,11 +3472,68 @@ img { max-width: 100%; }
     <div class="featmini"><div class="featmini__cap">主要機能の有料/無料 早見 ｜ @cosme</div><table class="fmtbl"><tbody><tr><td class="fmf">口コミ閲覧</td><td class="fmv fmv--free">無料</td></tr><tr><td class="fmf">口コミ投稿（要無料会員）</td><td class="fmv fmv--free">無料</td></tr><tr><td class="fmf">絞り込み/人気順ランキング</td><td class="fmv fmv--paid">一部有料（プレミアム367/509円）</td></tr><tr><td class="fmf">ブランドページ掲載</td><td class="fmv fmv--paid">有料</td></tr><tr><td class="fmf">上位表示・広告露出</td><td class="fmv fmv--paid">有料</td></tr><tr><td class="fmf">口コミデータ分析（B面）</td><td class="fmv fmv--paid">有料（月50万円/年契約）</td></tr><tr><td class="fmf">予約・問い合わせ送客</td><td class="fmv fmv--none">なし（ECは別）</td></tr></tbody></table></div><p class="src" style="margin-top:var(--space-3xs);">12-feature-matrix-2.md（取得 2026-06-22）</p><p class="src" style="margin-top:var(--space-2xs);">10-deep-profiles-3.md F.課金モデルと収益内訳／E.示唆。<span class="unconf">売上構成比%は会社目標値からの【予想】。</span></p>
   </div>
 </section>
+<!-- 08 @cosme ─ 機能一覧（無料／有料）追加スライド -->
+<section class="slide" data-i="48">
+  <div class="pad">
+    <div class="flowbar">
+      <span class="flowbar__step">① 概要＋使い方</span><span class="flowbar__sep">›</span>
+      <span class="flowbar__step">② 沿革＆獲得/SEO</span><span class="flowbar__sep">›</span>
+      <span class="flowbar__step">③ 課金・収益・SWOT</span><span class="flowbar__sep">›</span>
+      <span class="flowbar__step is-now"><b>＋ 機能一覧</b></span>
+      <span class="flowbar__sub">08 @cosme ＋機能</span>
+    </div>
+    <div class="shead">
+      <p class="kick">機能一覧（無料／有料）· @cosme（アットコスメ）</p>
+      <h2 class="title">@cosme ─ 機能一覧（<em>無料</em>／<span style="color:var(--color-clay)">有料</span>）</h2>
+    </div>
+    <div class="fnx">
+      <div class="fncol">
+        <div class="fnpanel fnpanel--free">
+          <span class="fnpanel__lbl">無料でできること</span>
+          <h3 class="fnpanel__h">閲覧は無料／絞り込みの一部はプレミアム</h3>
+          <span class="fngrp__cap">ユーザー側（無料会員）</span>
+          <ul class="blist">
+            <li>口コミ閲覧（壁なし）、ベスコス・ランキング、商品比較、クチコミAI要約</li>
+            <li>口コミ投稿（無料メンバー登録が必要）</li>
+            <li>商品検索（正確な商品名なら可。人気順・肌質/年代の絞り込みはプレミアム）</li>
+            <li>EC購入（@cosme SHOPPING）、アプリ</li>
+          </ul>
+          <span class="fngrp__cap">事業者側</span>
+          <ul class="blist">
+            <li>口コミ掲載は無料発生／ブランド支援・データ活用は有料</li>
+          </ul>
+          <div class="fnkeys">
+            <span class="fnkey fnkey--none">公式返信：有料施策内/未確認</span>
+            <span class="fnkey fnkey--paid">上位表示：有料<small>（広告）</small></span>
+            <span class="fnkey fnkey--none">予約・問合せ送客：なし<small>（EC）</small></span>
+          </div>
+        </div>
+      </div>
+      <div class="fncol">
+        <div class="fnpanel fnpanel--paid">
+          <span class="fnpanel__lbl">有料機能（プラン名・価格・解放される機能）</span>
+          <h3 class="fnpanel__h">唯一のBtoC有料会員＋ブランド向けデータ課金</h3>
+          <div class="fnplans">
+            <div class="fnplan fnplan--free" style="border-left-color:var(--color-clay);"><div class="fnplan__top"><span class="fnplan__name">@cosmeコース（BtoC）</span><span class="fnplan__price">月367円<small>税込</small></span></div><p class="fnplan__d">ポイント2%、人気順閲覧、おすすめ度/件数/年代/肌質での絞り込みランキング、限定クーポン、限定コラム。</p></div>
+            <div class="fnplan"><div class="fnplan__top"><span class="fnplan__name">お買い物コース（BtoC）</span><span class="fnplan__price">月509円<small>税込</small></span></div><p class="fnplan__d">付与率3%＋上記特典（EC購入が多い人向け）。</p></div>
+            <div class="fnplan"><div class="fnplan__top"><span class="fnplan__name">ブランドオフィシャル（BtoB）</span><span class="fnplan__price">月50万円<small>年契・二次</small></span></div><p class="fnplan__d">口コミデータ分析ダッシュボード。＋広告（DSP/リスティング）・ベスコスロゴ・サンプリング・タイアップ・棚（個別課金）。</p></div>
+          </div>
+        </div>
+        <div class="fnhint">
+          <div class="fnhint__lbl">特徴的な機能・当案件のヒント</div>
+          <p>BtoC有料は"閲覧課金"でなく<em>検索強化＋限定クーポン＋還元</em>のパッケージ。B型は還元原資なし＝月額成立は要検証。<em>口コミをデータ資産化しB面に月50万円で売る</em>のが最大換金モデル＝B型でも「声を運営改善/採用データとして法人課金」が太い方向。</p>
+        </div>
+      </div>
+    </div>
+    <p class="src" style="margin-top:var(--space-2xs);">12-feature-matrix-2.md（取得 2026-06-22）。<span class="unconf">ブランド向け個別単価・公式返信可否は未確認。月50万円は二次情報。</span></p>
+  </div>
+</section>
+
 
 <!-- ############################################################ -->
 <!-- 09 エキテン (3枚 · slides 39-41) · 反面教師 -->
 <!-- ############################################################ -->
-<section class="slide" data-i="40">
+<section class="slide" data-i="49">
   <div class="pad">
     <div class="flowbar">
       <span class="flowbar__step is-now"><b>① 概要＋使い方</b></span><span class="flowbar__sep">›</span>
@@ -2925,7 +3585,7 @@ img { max-width: 100%; }
   </div>
 </section>
 
-<section class="slide" data-i="41">
+<section class="slide" data-i="50">
   <div class="pad">
     <div class="flowbar">
       <span class="flowbar__step">① 概要＋使い方</span><span class="flowbar__sep">›</span>
@@ -2965,7 +3625,7 @@ img { max-width: 100%; }
   </div>
 </section>
 
-<section class="slide" data-i="42">
+<section class="slide" data-i="51">
   <div class="pad">
     <div class="flowbar">
       <span class="flowbar__step">① 概要＋使い方</span><span class="flowbar__sep">›</span>
@@ -3018,11 +3678,69 @@ img { max-width: 100%; }
     <div class="featmini"><div class="featmini__cap">主要機能の有料/無料 早見 ｜ エキテン</div><table class="fmtbl"><tbody><tr><td class="fmf">口コミ閲覧</td><td class="fmv fmv--free">無料</td></tr><tr><td class="fmf">口コミ投稿</td><td class="fmv fmv--free">無料</td></tr><tr><td class="fmf">公式返信</td><td class="fmv fmv--free">無料</td></tr><tr><td class="fmf">クーポン発行</td><td class="fmv fmv--free">無料（増枠は有料）</td></tr><tr><td class="fmf">上位表示</td><td class="fmv fmv--paid">有料（月5,500円〜）</td></tr><tr><td class="fmf">ネット予約受付（送客）</td><td class="fmv fmv--paid">有料（有料会員のみ）</td></tr><tr><td class="fmf">動画掲載・詳細分析</td><td class="fmv fmv--paid">有料</td></tr></tbody></table></div><p class="src" style="margin-top:var(--space-3xs);">12-feature-matrix-2.md（取得 2026-06-22）</p><p class="src" style="margin-top:var(--space-2xs);">10-deep-profiles-3.md F.課金モデルと収益内訳／E.示唆。<span class="unconf">セグメントは旧6048連結の確報（百万円）。有料店舗数×月額の推計は【推測】。</span></p>
   </div>
 </section>
+<!-- 09 エキテン ─ 機能一覧（無料／有料）追加スライド -->
+<section class="slide" data-i="52">
+  <div class="pad">
+    <div class="flowbar">
+      <span class="flowbar__step">① 概要＋使い方</span><span class="flowbar__sep">›</span>
+      <span class="flowbar__step">② 沿革＆獲得/SEO</span><span class="flowbar__sep">›</span>
+      <span class="flowbar__step">③ 課金・収益・SWOT</span><span class="flowbar__sep">›</span>
+      <span class="flowbar__step is-now"><b>＋ 機能一覧</b></span>
+      <span class="flowbar__sub">09 エキテン ＋機能</span>
+    </div>
+    <div class="shead">
+      <p class="kick">機能一覧（無料／有料）· エキテン byGMO</p>
+      <h2 class="title">エキテン ─ 機能一覧（<em>無料</em>／<span style="color:var(--color-clay)">有料</span>）</h2>
+    </div>
+    <div class="fnx">
+      <div class="fncol">
+        <div class="fnpanel fnpanel--free">
+          <span class="fnpanel__lbl">無料でできること</span>
+          <h3 class="fnpanel__h">無料掲載で公式返信・クーポンまで可（フリーミアム）</h3>
+          <span class="fngrp__cap">ユーザー側（すべて無料・壁なし）</span>
+          <ul class="blist">
+            <li>口コミ閲覧・ランキング、業種×エリア検索・絞り込み・比較</li>
+            <li>口コミ投稿（会員・審査）、クーポン取得、アプリ</li>
+            <li>ネット予約の利用（受付している＝有料店舗のみ）</li>
+          </ul>
+          <span class="fngrp__cap">事業者側（無料掲載・初期/月額/成果報酬すべて0円）</span>
+          <ul class="blist">
+            <li>店舗情報・メニュー・紹介文・写真・記事、スタッフ紹介1名まで</li>
+            <li><strong>口コミへの公式返信＝無料</strong>、<strong>クーポン発行＝無料</strong>（増枠は有料）</li>
+            <li>簡易アクセス解析、無料掲載中でも電話サポート無料</li>
+          </ul>
+          <div class="fnkeys">
+            <span class="fnkey fnkey--free">公式返信：無料</span>
+            <span class="fnkey fnkey--paid">上位表示：有料<small>（5,500〜）</small></span>
+            <span class="fnkey fnkey--paid">予約・問合せ送客：有料<small>（有料会員のみ受付）</small></span>
+          </div>
+        </div>
+      </div>
+      <div class="fncol">
+        <div class="fnpanel fnpanel--paid">
+          <span class="fnpanel__lbl">有料機能（プラン名・価格・解放される機能）</span>
+          <h3 class="fnpanel__h">低単価サブスクで集客直結機能を解放</h3>
+          <div class="fnplans">
+            <div class="fnplan"><div class="fnplan__top"><span class="fnplan__name">有料会員</span><span class="fnplan__price">月5,500円〜<small>税込</small></span></div><p class="fnplan__d">従量課金なしでフル機能。最上位プラチナで月3万円帯との二次情報もあるが正確なプラン構成・名称は未確認。</p></div>
+            <div class="fnplan"><div class="fnplan__top"><span class="fnplan__name">解放される機能</span><span class="fnplan__price is-unk">有料内</span></div><p class="fnplan__d"><strong>検索結果一覧での上位表示</strong>（＋予約空き表示）、<strong>ネット予約受付</strong>、詳細アクセス解析、動画掲載、スタッフ複数名、クーポン増枠、他店広告非表示、ページ制作代行。</p></div>
+            <div class="fnplan"><div class="fnplan__top"><span class="fnplan__name">エリアマッチ広告</span><span class="fnplan__price is-unk">オプション</span></div><p class="fnplan__d">PC/スマホ/ダブルの追加広告枠。</p></div>
+          </div>
+        </div>
+        <div class="fnhint">
+          <div class="fnhint__lbl">特徴的な機能・当案件のヒント</div>
+          <p>無料掲載で面を取り月5,500円で上位表示＝福祉ポータルに転用可能な<em>低単価サブスクの参考価格</em>。ただし<em>衰退・赤字転落＝反面教師</em>：上位表示の月額単独では弱く、送客従量・運営支援で客単価を上げる必要。公式返信もクーポンも無料。</p>
+        </div>
+      </div>
+    </div>
+    <p class="src" style="margin-top:var(--space-2xs);">12-feature-matrix-2.md（取得 2026-06-22）。<span class="unconf">上位プラン名・写真/動画の枚数上限は未確認。</span></p>
+  </div>
+</section>
+
 
 <!-- ############################################################ -->
 <!-- 10 引越し侍 (3枚 · slides 42-44) -->
 <!-- ############################################################ -->
-<section class="slide" data-i="43">
+<section class="slide" data-i="53">
   <div class="pad">
     <div class="flowbar">
       <span class="flowbar__step is-now"><b>① 概要＋使い方</b></span><span class="flowbar__sep">›</span>
@@ -3074,7 +3792,7 @@ img { max-width: 100%; }
   </div>
 </section>
 
-<section class="slide" data-i="44">
+<section class="slide" data-i="54">
   <div class="pad">
     <div class="flowbar">
       <span class="flowbar__step">① 概要＋使い方</span><span class="flowbar__sep">›</span>
@@ -3116,7 +3834,7 @@ img { max-width: 100%; }
   </div>
 </section>
 
-<section class="slide" data-i="45">
+<section class="slide" data-i="55">
   <div class="pad">
     <div class="flowbar">
       <span class="flowbar__step">① 概要＋使い方</span><span class="flowbar__sep">›</span>
@@ -3168,11 +3886,67 @@ img { max-width: 100%; }
     <div class="featmini"><div class="featmini__cap">主要機能の有料/無料 早見 ｜ 引越し侍</div><table class="fmtbl"><tbody><tr><td class="fmf">口コミ閲覧・比較</td><td class="fmv fmv--free">無料</td></tr><tr><td class="fmf">一括見積り依頼</td><td class="fmv fmv--free">無料</td></tr><tr><td class="fmf">ネット予約（ユーザー）</td><td class="fmv fmv--free">無料</td></tr><tr><td class="fmf">提携登録（事業者）</td><td class="fmv fmv--unk">課金は反響発生時</td></tr><tr><td class="fmf">上位表示・露出枠</td><td class="fmv fmv--unk">未確認</td></tr><tr><td class="fmf">見積り送客（反響課金）</td><td class="fmv fmv--paid">有料（1依頼→複数社・成果報酬）</td></tr><tr><td class="fmf">公式返信</td><td class="fmv fmv--unk">未確認</td></tr></tbody></table></div><p class="src" style="margin-top:var(--space-3xs);">12-feature-matrix-3.md（取得 2026-06-22）</p><p class="src" style="margin-top:var(--space-2xs);">10-deep-profiles-2.md F.課金モデルと収益内訳／E.示唆。<span class="unconf">単体売上・送客単価は非開示。構成比%は【予想】。累計利用者数は要一次確認。</span></p>
   </div>
 </section>
+<!-- 10 引越し侍 ─ 機能一覧（無料／有料）追加スライド -->
+<section class="slide" data-i="56">
+  <div class="pad">
+    <div class="flowbar">
+      <span class="flowbar__step">① 概要＋使い方</span><span class="flowbar__sep">›</span>
+      <span class="flowbar__step">② 沿革＆獲得/SEO</span><span class="flowbar__sep">›</span>
+      <span class="flowbar__step">③ 課金・収益・SWOT</span><span class="flowbar__sep">›</span>
+      <span class="flowbar__step is-now"><b>＋ 機能一覧</b></span>
+      <span class="flowbar__sub">10 引越し侍 ＋機能</span>
+    </div>
+    <div class="shead">
+      <p class="kick">機能一覧（無料／有料）· 引越し侍</p>
+      <h2 class="title">引越し侍 ─ 機能一覧（<em>無料</em>／<span style="color:var(--color-clay)">有料</span>）</h2>
+    </div>
+    <div class="fnx">
+      <div class="fncol">
+        <div class="fnpanel fnpanel--free">
+          <span class="fnpanel__lbl">無料でできること</span>
+          <h3 class="fnpanel__h">ユーザー完全無料、収益は事業者の成果課金</h3>
+          <span class="fngrp__cap">ユーザー側（すべて無料）</span>
+          <ul class="blist">
+            <li>一括見積もり依頼（1回の入力で最大10社へ／提携 約290〜400社）</li>
+            <li>ネット比較＆予約（電話番号なしで平均金額確認→そのまま予約）</li>
+            <li>口コミ・評判の閲覧（約9.6万件）と業者比較、料金シミュレーション</li>
+          </ul>
+          <span class="fngrp__cap">事業者側</span>
+          <ul class="blist">
+            <li>提携業者登録（課金は反響＝見積もり依頼が発生したとき）</li>
+          </ul>
+          <div class="fnkeys">
+            <span class="fnkey fnkey--none">公式返信：未確認</span>
+            <span class="fnkey fnkey--none">上位表示：未確認</span>
+            <span class="fnkey fnkey--paid">予約・問合せ送客：有料<small>（送客課金=根幹）</small></span>
+          </div>
+        </div>
+      </div>
+      <div class="fncol">
+        <div class="fnpanel fnpanel--paid">
+          <span class="fnpanel__lbl">有料機能（プラン名・価格・解放される機能）</span>
+          <h3 class="fnpanel__h">成果報酬型の送客が事業そのもの</h3>
+          <div class="fnplans">
+            <div class="fnplan"><div class="fnplan__top"><span class="fnplan__name">一括見積り＝反響課金</span><span class="fnplan__price is-unk">1件ごと/単価非公開</span></div><p class="fnplan__d">見積もり依頼が発生するたび、提携業者が1件ごとに紹介料（送客報酬）を支払う成果報酬型。単価は未確認。</p></div>
+            <div class="fnplan"><div class="fnplan__top"><span class="fnplan__name">ネット予約＝予約成立課金</span><span class="fnplan__price is-unk">予約成立/未確認</span></div><p class="fnplan__d">一括見積りと課金トリガーが異なる予約成立ベース【推測】。単価は未確認。</p></div>
+            <div class="fnplan"><div class="fnplan__top"><span class="fnplan__name">月額固定の有無</span><span class="fnplan__price is-unk">未確認</span></div><p class="fnplan__d">登録自体の月額固定の有無は公式info 403のため未確認。</p></div>
+          </div>
+        </div>
+        <div class="fnhint">
+          <div class="fnhint__lbl">特徴的な機能・当案件のヒント</div>
+          <p><em>リード機能が事業そのもの＝成果課金の代表例</em>。B型は見学/体験/利用契約の成立を成果点に。2モード（反響課金/予約成立課金）併設＝「見学リード（軽）」と「利用契約（重）」で課金を分ける設計が参考。弱点「しつこい電話」＝福祉では送客の節度（同意設計）が必須。</p>
+        </div>
+      </div>
+    </div>
+    <p class="src" style="margin-top:var(--space-2xs);">12-feature-matrix-3.md（取得 2026-06-22）。<span class="unconf">公式info 403のため事業者課金の単価・月額固定の有無・公式返信機能は全面未確認。成果報酬型は二次で一致。</span></p>
+  </div>
+</section>
+
 
 <!-- ############################################################ -->
 <!-- 11 iPhone修理ポータル / 最安修理.com (3枚 · slides 45-47) -->
 <!-- ############################################################ -->
-<section class="slide" data-i="46">
+<section class="slide" data-i="57">
   <div class="pad">
     <div class="flowbar">
       <span class="flowbar__step is-now"><b>① 概要＋使い方</b></span><span class="flowbar__sep">›</span>
@@ -3224,7 +3998,7 @@ img { max-width: 100%; }
   </div>
 </section>
 
-<section class="slide" data-i="47">
+<section class="slide" data-i="58">
   <div class="pad">
     <div class="flowbar">
       <span class="flowbar__step">① 概要＋使い方</span><span class="flowbar__sep">›</span>
@@ -3263,7 +4037,7 @@ img { max-width: 100%; }
   </div>
 </section>
 
-<section class="slide" data-i="48">
+<section class="slide" data-i="59">
   <div class="pad">
     <div class="flowbar">
       <span class="flowbar__step">① 概要＋使い方</span><span class="flowbar__sep">›</span>
@@ -3317,11 +4091,68 @@ img { max-width: 100%; }
     <div class="featmini"><div class="featmini__cap">主要機能の有料/無料 早見 ｜ 最安修理.com</div><table class="fmtbl"><tbody><tr><td class="fmf">口コミ閲覧・比較・投稿</td><td class="fmv fmv--free">無料</td></tr><tr><td class="fmf">店舗ページ掲載（基本）</td><td class="fmv fmv--free">無料（月額0円）</td></tr><tr><td class="fmf">機種別 料金掲載</td><td class="fmv fmv--free">無料</td></tr><tr><td class="fmf">公式返信</td><td class="fmv fmv--free">無料</td></tr><tr><td class="fmf">問い合わせ受付</td><td class="fmv fmv--free">無料（基本掲載でも可）</td></tr><tr><td class="fmf">上位表示（PR枠）</td><td class="fmv fmv--paid">有料（要問い合わせ）</td></tr><tr><td class="fmf">記事広告</td><td class="fmv fmv--paid">有料（要問い合わせ）</td></tr></tbody></table></div><p class="src" style="margin-top:var(--space-3xs);">12-feature-matrix-3.md（取得 2026-06-22）</p><p class="src" style="margin-top:var(--space-2xs);">10-deep-profiles-4.md F.課金モデルと収益内訳／E.示唆。<span class="unconf">料金・収益構成は非公開で全面【予想】。単体トータル収益は未確認。</span></p>
   </div>
 </section>
+<!-- 11 iPhone修理ポータル（最安修理.com）─ 機能一覧（無料／有料）追加スライド -->
+<section class="slide" data-i="60">
+  <div class="pad">
+    <div class="flowbar">
+      <span class="flowbar__step">① 概要＋使い方</span><span class="flowbar__sep">›</span>
+      <span class="flowbar__step">② 沿革＆獲得/SEO</span><span class="flowbar__sep">›</span>
+      <span class="flowbar__step">③ 課金・収益・SWOT</span><span class="flowbar__sep">›</span>
+      <span class="flowbar__step is-now"><b>＋ 機能一覧</b></span>
+      <span class="flowbar__sub">11 iPhone修理ポータル ＋機能</span>
+    </div>
+    <div class="shead">
+      <p class="kick">機能一覧（無料／有料）· iPhone修理ポータル（最安修理.com）</p>
+      <h2 class="title">iPhone修理ポータル ─ 機能一覧（<em>無料</em>／<span style="color:var(--color-clay)">有料</span>）</h2>
+    </div>
+    <div class="fnx">
+      <div class="fncol">
+        <div class="fnpanel fnpanel--free">
+          <span class="fnpanel__lbl">無料でできること</span>
+          <h3 class="fnpanel__h">月額0円フリーミアム・問い合わせ受付も無料</h3>
+          <span class="fngrp__cap">ユーザー側（すべて無料）</span>
+          <ul class="blist">
+            <li>地域×機種×修理方法（持込/郵送/出張/正規）×症状での絞り込み検索</li>
+            <li>同一修理の店舗間料金比較、店舗ページ閲覧（料金・評価・口コミ）</li>
+            <li>口コミの閲覧/投稿（11万件超）、店舗への問い合わせ</li>
+          </ul>
+          <span class="fngrp__cap">事業者側（修理店・無料掲載）</span>
+          <ul class="blist">
+            <li><strong>月額固定0円</strong>で店舗ページ作成、機種・項目ごとの修理価格掲載</li>
+            <li><strong>口コミの掲載と公式返信＝無料</strong>（管理画面）</li>
+            <li>管理画面で情報更新、<strong>掲載で問い合わせ受付＝無料</strong></li>
+          </ul>
+          <div class="fnkeys">
+            <span class="fnkey fnkey--free">公式返信：無料</span>
+            <span class="fnkey fnkey--paid">上位表示：有料<small>（PR枠）</small></span>
+            <span class="fnkey fnkey--free">予約・問合せ送客：無料<small>（掲載で受付）</small></span>
+          </div>
+        </div>
+      </div>
+      <div class="fncol">
+        <div class="fnpanel fnpanel--paid">
+          <span class="fnpanel__lbl">有料機能（プラン名・価格・解放される機能）</span>
+          <h3 class="fnpanel__h">課金は"上位露出"だけ（価格は非公開）</h3>
+          <div class="fnplans">
+            <div class="fnplan"><div class="fnplan__top"><span class="fnplan__name">PR枠掲載</span><span class="fnplan__price is-unk">非公開/要問合せ</span></div><p class="fnplan__d">検索結果上部に表示＝上位表示（有料）。価格は非公開。</p></div>
+            <div class="fnplan"><div class="fnplan__top"><span class="fnplan__name">記事広告</span><span class="fnplan__price is-unk">非公開/要問合せ</span></div><p class="fnplan__d">サポート記事内でのサービス掲載。価格は非公開。</p></div>
+          </div>
+        </div>
+        <div class="fnhint">
+          <div class="fnhint__lbl">特徴的な機能・当案件のヒント</div>
+          <p>「地域×属性で比較」UXは<em>B型にほぼ直移植可能</em>（「iPhone修理 (地域)」＝「就労継続支援B型 (地域)」）。無料掲載で問い合わせ受付・口コミ返信まで可、課金は上位露出だけ＝フリー¥0／上位固定¥30,000と同型。返信を有料化するなら"評判管理一式"で価値を上乗せ。</p>
+        </div>
+      </div>
+    </div>
+    <p class="src" style="margin-top:var(--space-2xs);">12-feature-matrix-3.md（取得 2026-06-22）。<span class="unconf">クーポンは未確認。有料枠（PR/記事広告）の価格は非公開。</span></p>
+  </div>
+</section>
+
 
 <!-- ############################################################ -->
 <!-- 12 口コミコム (3枚 · slides 48-50) -->
 <!-- ############################################################ -->
-<section class="slide" data-i="49">
+<section class="slide" data-i="61">
   <div class="pad">
     <div class="flowbar">
       <span class="flowbar__step is-now"><b>① 概要＋使い方</b></span><span class="flowbar__sep">›</span>
@@ -3373,7 +4204,7 @@ img { max-width: 100%; }
   </div>
 </section>
 
-<section class="slide" data-i="50">
+<section class="slide" data-i="62">
   <div class="pad">
     <div class="flowbar">
       <span class="flowbar__step">① 概要＋使い方</span><span class="flowbar__sep">›</span>
@@ -3413,7 +4244,7 @@ img { max-width: 100%; }
   </div>
 </section>
 
-<section class="slide" data-i="51">
+<section class="slide" data-i="63">
   <div class="pad">
     <div class="flowbar">
       <span class="flowbar__step">① 概要＋使い方</span><span class="flowbar__sep">›</span>
@@ -3465,11 +4296,61 @@ img { max-width: 100%; }
     <div class="featmini"><div class="featmini__cap">主要機能の有料/無料 早見 ｜ 口コミコム（評判管理SaaS）</div><table class="fmtbl"><tbody><tr><td class="fmf">口コミ閲覧（エンドユーザー）</td><td class="fmv fmv--none">機能なし（BtoB SaaS）</td></tr><tr><td class="fmf">公式返信（一括/自動）</td><td class="fmv fmv--paid">有料（SaaSの中核）</td></tr><tr><td class="fmf">口コミAI分析・スコアリング</td><td class="fmv fmv--paid">有料</td></tr><tr><td class="fmf">上位表示（MEO支援）</td><td class="fmv fmv--paid">有料</td></tr><tr><td class="fmf">31サイト一元管理</td><td class="fmv fmv--paid">有料</td></tr><tr><td class="fmf">クーポン/SNS一括配信</td><td class="fmv fmv--paid">有料</td></tr><tr><td class="fmf">無料利用</td><td class="fmv fmv--none">資料請求・デモのみ</td></tr></tbody></table></div><p class="src" style="margin-top:var(--space-3xs);">12-feature-matrix-3.md（取得 2026-06-22）</p><p class="src" style="margin-top:var(--space-2xs);">10-deep-profiles-4.md F.課金モデルと収益内訳／E.示唆。<span class="unconf">価格・収益は完全非公開＝全面【予想】。トータル収益は未確認（非上場）。</span></p>
   </div>
 </section>
+<!-- 12 口コミコム ─ 機能一覧（無料／有料）追加スライド -->
+<section class="slide" data-i="64">
+  <div class="pad">
+    <div class="flowbar">
+      <span class="flowbar__step">① 概要＋使い方</span><span class="flowbar__sep">›</span>
+      <span class="flowbar__step">② 沿革＆獲得/SEO</span><span class="flowbar__sep">›</span>
+      <span class="flowbar__step">③ 課金・収益・SWOT</span><span class="flowbar__sep">›</span>
+      <span class="flowbar__step is-now"><b>＋ 機能一覧</b></span>
+      <span class="flowbar__sub">12 口コミコム ＋機能</span>
+    </div>
+    <div class="shead">
+      <p class="kick">機能一覧（無料／有料）· 口コミコム（評判管理SaaS／株式会社mov）</p>
+      <h2 class="title">口コミコム ─ 機能一覧（<em>無料</em>／<span style="color:var(--color-clay)">有料</span>）</h2>
+    </div>
+    <div class="fnx">
+      <div class="fncol">
+        <div class="fnpanel fnpanel--free">
+          <span class="fnpanel__lbl">無料でできること</span>
+          <h3 class="fnpanel__h">原則なし＝全機能が有料SaaS（無料は資料請求のみ）</h3>
+          <span class="fngrp__cap">提供範囲</span>
+          <ul class="blist">
+            <li>プロダクト機能は有料SaaS。無料でできるのは<strong>資料請求・問い合わせ・デモ依頼のみ</strong></li>
+            <li>無料トライアルの有無は未確認（公式機能ページに記載なし）</li>
+            <li>エンドユーザー（BtoC）向け機能はなし＝店舗・チェーンが顧客</li>
+          </ul>
+          <div class="fnkeys">
+            <span class="fnkey fnkey--paid">公式返信：有料<small>（SaaS中核）</small></span>
+            <span class="fnkey fnkey--none">上位表示：MEO支援<small>（順位直接操作はしない）</small></span>
+            <span class="fnkey fnkey--none">予約・問合せ送客：該当なし<small>（送客ポータルではない）</small></span>
+          </div>
+        </div>
+      </div>
+      <div class="fncol">
+        <div class="fnpanel fnpanel--paid">
+          <span class="fnpanel__lbl">有料機能（プラン名・価格・解放される機能）</span>
+          <h3 class="fnpanel__h">価格は完全非公開（個別見積／店舗数課金型と推測）</h3>
+          <div class="fnplans">
+            <div class="fnplan"><div class="fnplan__top"><span class="fnplan__name">口コミコム（有料SaaS）</span><span class="fnplan__price is-unk">完全非公開/個別見積</span></div><p class="fnplan__d">国内外31サイトの店舗情報を一括管理・更新、<strong>口コミの一括管理・公式返信</strong>、口コミAI分析・スコアリング、自動返信・アラート、顧客アンケート、競合/市場分析、セール・チラシ配信／SNS一括投稿、MEO対策・効果計測。導入5万店舗超。</p></div>
+          </div>
+        </div>
+        <div class="fnhint">
+          <div class="fnhint__lbl">特徴的な機能・当案件のヒント</div>
+          <p>本案件<em>プレミアム¥15,000（口コミ公式返信＝評判管理RM）は口コミコムの縮小版</em>。「返信＋分析＋監視＋改善」をパッケージ化すれば単なる返信より高価格を正当化できる。ただし価値源泉は"複数サイト横断管理"＝自社単一媒体の本案件はB型特化分析・相談員連携の縦の専門性で差別化。価格は明朗・低単価で。</p>
+        </div>
+      </div>
+    </div>
+    <p class="src" style="margin-top:var(--space-2xs);">12-feature-matrix-3.md（取得 2026-06-22）。<span class="unconf">価格は完全非公開＝個別見積。自動返信・一括返信は二次情報補完。</span></p>
+  </div>
+</section>
+
 
 <!-- ############################################################ -->
 <!-- 13 Googleビジネスプロフィール (3枚 · slides 51-53) -->
 <!-- ############################################################ -->
-<section class="slide" data-i="52">
+<section class="slide" data-i="65">
   <div class="pad">
     <div class="flowbar">
       <span class="flowbar__step is-now"><b>① 概要＋使い方</b></span><span class="flowbar__sep">›</span>
@@ -3521,7 +4402,7 @@ img { max-width: 100%; }
   </div>
 </section>
 
-<section class="slide" data-i="53">
+<section class="slide" data-i="66">
   <div class="pad">
     <div class="flowbar">
       <span class="flowbar__step">① 概要＋使い方</span><span class="flowbar__sep">›</span>
@@ -3559,7 +4440,7 @@ img { max-width: 100%; }
   </div>
 </section>
 
-<section class="slide" data-i="54">
+<section class="slide" data-i="67">
   <div class="pad">
     <div class="flowbar">
       <span class="flowbar__step">① 概要＋使い方</span><span class="flowbar__sep">›</span>
@@ -3607,14 +4488,72 @@ img { max-width: 100%; }
     <div class="featmini"><div class="featmini__cap">主要機能の有料/無料 早見 ｜ Googleビジネスプロフィール</div><table class="fmtbl"><tbody><tr><td class="fmf">口コミ閲覧・投稿（ユーザー）</td><td class="fmv fmv--free">無料</td></tr><tr><td class="fmf">情報編集・写真/動画</td><td class="fmv fmv--free">無料</td></tr><tr><td class="fmf">公式返信</td><td class="fmv fmv--free">無料</td></tr><tr><td class="fmf">予約・問い合わせ導線</td><td class="fmv fmv--free">無料</td></tr><tr><td class="fmf">上位表示</td><td class="fmv fmv--none">買えない（金銭で順位操作不可）</td></tr><tr><td class="fmf">インサイト/分析</td><td class="fmv fmv--free">無料</td></tr><tr><td class="fmf">有料プラン</td><td class="fmv fmv--none">存在しない（本体無料）</td></tr></tbody></table></div><p class="src" style="margin-top:var(--space-3xs);">12-feature-matrix-3.md（取得 2026-06-22）</p><p class="src" style="margin-top:var(--space-2xs);">10-deep-profiles-4.md F.課金モデルと収益／E.示唆。<span class="unconf">GBP単体収益は無料インフラ＝0／Alphabet内非開示。来店統計は二次のMEO記事で原典の調査年・条件は未確認。</span></p>
   </div>
 </section>
+<!-- 13 GBP ─ 機能一覧（無料／有料）追加スライド -->
+<section class="slide" data-i="68">
+  <div class="pad">
+    <div class="flowbar">
+      <span class="flowbar__step">① 概要＋使い方</span><span class="flowbar__sep">›</span>
+      <span class="flowbar__step">② 沿革＆獲得/SEO</span><span class="flowbar__sep">›</span>
+      <span class="flowbar__step">③ 課金・収益・SWOT</span><span class="flowbar__sep">›</span>
+      <span class="flowbar__step is-now"><b>＋ 機能一覧</b></span>
+      <span class="flowbar__sub">13 Googleビジネスプロフィール ＋機能</span>
+    </div>
+    <div class="shead">
+      <p class="kick">機能一覧（無料／有料）· Googleビジネスプロフィール（GBP）</p>
+      <h2 class="title">Googleビジネスプロフィール ─ 機能一覧（<em>無料</em>／<span style="color:var(--color-clay)">有料</span>）</h2>
+    </div>
+    <div class="fnx">
+      <div class="fncol">
+        <div class="fnpanel fnpanel--free">
+          <span class="fnpanel__lbl">無料でできること</span>
+          <h3 class="fnpanel__h">ほぼ全機能が無料（有料プランは存在しない）</h3>
+          <span class="fngrp__cap">ユーザー側</span>
+          <ul class="blist">
+            <li>検索・マップでの施設の発見、経路・電話</li>
+            <li>口コミ閲覧／投稿、予約導線</li>
+          </ul>
+          <span class="fngrp__cap">事業者側（すべて無料）</span>
+          <ul class="blist">
+            <li>ビジネス情報の編集（名称・住所・電話・営業時間・サイトリンク）、写真・動画の投稿</li>
+            <li><strong>口コミへの公式返信＝無料</strong>、最新情報/投稿（お知らせ・特典・クーポン的告知）</li>
+            <li>商品・サービス掲載、メッセージ、<strong>予約・問い合わせ導線＝無料</strong></li>
+            <li>インサイト/パフォーマンス分析（表示回数・検索ワード・行動）＝無料</li>
+          </ul>
+          <div class="fnkeys">
+            <span class="fnkey fnkey--free">公式返信：無料</span>
+            <span class="fnkey fnkey--none">上位表示：買えない<small>（金銭で順位操作不可）</small></span>
+            <span class="fnkey fnkey--free">予約・問合せ送客：無料</span>
+          </div>
+        </div>
+      </div>
+      <div class="fncol">
+        <div class="fnpanel fnpanel--paid">
+          <span class="fnpanel__lbl">有料機能（プラン名・価格・解放される機能）</span>
+          <h3 class="fnpanel__h">GBP本体に有料プランは存在しない</h3>
+          <div class="fnplans">
+            <div class="fnplan"><div class="fnplan__top"><span class="fnplan__name">GBP本体</span><span class="fnplan__price is-unk">有料プランなし</span></div><p class="fnplan__d">登録・編集・写真/動画・公式返信・投稿・インサイトすべて無料。有料の余地なし。</p></div>
+            <div class="fnplan"><div class="fnplan__top"><span class="fnplan__name">上位表示</span><span class="fnplan__price is-unk">買えない</span></div><p class="fnplan__d">「Googleは順位を上げるための金銭の受け取りに一切応じない」と明記。順位は購入不可。</p></div>
+            <div class="fnplan"><div class="fnplan__top"><span class="fnplan__name">Google広告（GBP外）</span><span class="fnplan__price">運用型課金<small>クリック等</small></span></div><p class="fnplan__d">マネタイズはGBPの外＝検索/マップのスポンサー枠。"上位表示を買う"のではなく"別枠の広告表示"。GBP単体は無料インフラ。</p></div>
+          </div>
+        </div>
+        <div class="fnhint">
+          <div class="fnhint__lbl">特徴的な機能・当案件のヒント</div>
+          <p>公式返信も予約導線も<em>無料が当然</em>のインフラ＝単なる掲載枠では無料GBPに勝てない。課金根拠は「Googleでは出せないB型特化の構造化情報・本物の口コミ・相談員連携」に置く。</p>
+        </div>
+      </div>
+    </div>
+    <p class="src" style="margin-top:var(--space-2xs);">12-feature-matrix-3.md（取得 2026-06-22）。<span class="unconf">上位表示は金銭で順位操作不可＝公式明記。広告単価は運用型で変動。</span></p>
+  </div>
+</section>
+
 
 </div>
 
 <div class="hud">
-  <span class="hud__brand">企業分析編（13社・46枚） · 就労継続支援B型 口コミポータル案件 · 社内ドラフト（未公開）</span>
+  <span class="hud__brand">企業分析編（13社・68枚） · 就労継続支援B型 口コミポータル案件 · 社内ドラフト（未公開）</span>
   <div class="navbtns">
     <button id="prev" aria-label="前のスライド">←</button>
-    <span class="hud__count" id="count">1 / 54</span>
+    <span class="hud__count" id="count">1 / 68</span>
     <button id="next" aria-label="次のスライド">→</button>
   </div>
 </div>
