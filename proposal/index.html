@@ -1305,6 +1305,48 @@ img { max-width: 100%; }
   .smapscroll .smaptree { min-width: 760px; }
 }
 
+/* ============ 2026-06 章1更新: 自動掲載→オーナー登録→課金 導線 / 送客トリガー図 ============ */
+/* WAM自動掲載フロー (slide3 施設パネル内・横並びチップ) */
+.wamflow { display: flex; flex-wrap: wrap; align-items: stretch; gap: 5px; margin-top: var(--space-2xs); }
+.wamflow__box { flex: 1 1 0; min-width: 0; display: flex; flex-direction: column; justify-content: center;
+  padding: 6px 7px; border-radius: 8px; border: 1.4px solid var(--color-rule); background: var(--color-paper-2);
+  font-family: var(--font-display); font-weight: 700; font-size: 0.74rem; line-height: 1.2; color: var(--color-ink); text-align: center; }
+.wamflow__box small { display: block; margin-top: 2px; font-family: var(--font-num); font-weight: 400; font-size: 0.6rem; color: var(--color-muted); }
+.wamflow__box--auto { border-color: var(--color-accent); background: var(--color-accent-soft); }
+.wamflow__box--reg { border-color: var(--color-accent-dk); background: var(--color-accent-soft); }
+.wamflow__box--reg small { color: var(--color-accent-dk); }
+.wamflow__box--pay { border-color: var(--color-gold); background: var(--color-gold-soft); color: var(--color-gold); }
+.wamflow__box--pay small { color: var(--color-gold); }
+.wamflow__arr { align-self: center; flex: 0 0 auto; color: var(--color-accent-dk); font-weight: 700; font-size: 0.9rem; }
+
+/* 送客課金トリガー図 (slide6) — 自動掲載状態 → オーナー登録 → 予約開放→課金 */
+.trigfig { display: grid; grid-template-columns: 1fr auto 1fr; align-items: stretch; gap: var(--space-2xs); margin-top: var(--space-2xs); }
+.trigstate { display: flex; flex-direction: column; gap: 4px; padding: 9px 10px; border-radius: 10px; border: 1.4px solid var(--color-rule); background: var(--color-paper-2); }
+.trigstate--locked { }
+.trigstate--open { border-color: var(--color-accent); background: var(--color-accent-soft); }
+.trigstate__cap { font-family: var(--font-num); font-size: 0.62rem; letter-spacing: .04em; text-transform: uppercase; color: var(--color-muted); }
+.trigstate--open .trigstate__cap { color: var(--color-accent-dk); }
+.trigstate__h { font-family: var(--font-display); font-weight: 700; font-size: 0.84rem; line-height: 1.3; color: var(--color-ink); }
+.trigstate__btn { display: inline-block; margin-top: 2px; padding: 4px 8px; border-radius: 6px; font-family: var(--font-display); font-weight: 700; font-size: 0.72rem; text-align: center; }
+.trigstate__btn--ghost { border: 1.2px dashed var(--color-rule); color: var(--color-muted); background: transparent; }
+.trigstate__btn--live { border: 1.2px solid var(--color-accent); background: var(--color-accent); color: var(--color-accent-ink); }
+.trigstate__note { font-family: var(--font-num); font-size: 0.6rem; color: var(--color-muted); line-height: 1.35; }
+.trigmid { display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 3px; }
+.trigmid__arr { color: var(--color-accent-dk); font-weight: 700; font-size: 1.1rem; }
+.trigmid__lbl { writing-mode: vertical-rl; font-family: var(--font-display); font-weight: 700; font-size: 0.66rem; color: var(--color-accent-dk); white-space: nowrap; }
+
+@media (max-width: 60rem) {
+  .trigfig { grid-template-columns: 1fr; }
+  .trigmid { flex-direction: row; gap: 6px; }
+  .trigmid__lbl { writing-mode: horizontal-tb; }
+  .trigmid__arr { transform: rotate(90deg); }
+}
+@media (max-width: 48rem) {
+  .wamflow { flex-direction: column; }
+  .wamflow__box { flex: 1 1 auto; }
+  .wamflow__arr { transform: rotate(90deg); align-self: center; }
+}
+
 </style>
 </head>
 <body>
@@ -1351,7 +1393,7 @@ img { max-width: 100%; }
       <div class="toccol">
         <span class="toccol__stage">章1 / CHAPTER 01</span>
         <h3 class="toccol__h">課金モデル提案</h3>
-        <p class="toccol__desc">ユーザーは無料で集め、施設から収益を得る全体像。最大の強み「口コミが自動で集まる60日サイクル」と「施設が思わず課金したくなる仕掛け」を中心に、価格の根拠まで示します。</p>
+        <p class="toccol__desc">ユーザーは無料で集め、施設から収益を得る全体像。国のDBで初日から全件自動掲載し、施設が思わず課金したくなる仕掛けと「口コミが自動で集まる60日サイクル」を、価格の根拠まで示します。</p>
         <ul class="toclist">
           <li><span class="n">03</span>事業の全体像「3つのターゲット」</li>
           <li><span class="n">04</span>口コミが集まる「60日サイクル」</li>
@@ -1430,8 +1472,8 @@ img { max-width: 100%; }
         <!-- ② 施設 right top -->
         <rect class="node node--b" x="388" y="40" width="158" height="66" rx="10"/>
         <text class="lbl lbl--b" x="467" y="64" text-anchor="middle">② 施設・事業所</text>
-        <text class="sub" x="467" y="80" text-anchor="middle">定員を埋めたい</text>
-        <text class="sub" x="467" y="94" text-anchor="middle">送客課金＋月額</text>
+        <text class="sub" x="467" y="80" text-anchor="middle">初日から全件自動掲載</text>
+        <text class="sub" x="467" y="94" text-anchor="middle">登録→送客課金＋月額</text>
         <!-- 収益 right bottom -->
         <rect class="node node--b" x="388" y="214" width="158" height="62" rx="10"/>
         <text class="lbl lbl--b" x="467" y="240" text-anchor="middle">運営の収益</text>
@@ -1458,13 +1500,23 @@ img { max-width: 100%; }
           <ul class="blist">
             <li>すべての機能を無料で利用可能。まずは<b>圧倒的な人数</b>を集めることを最優先します。</li>
           </ul>
-          <div class="origin"><span class="origin__tag">なぜ無料か</span><span class="origin__body">巨大サイトの<b>@cosme</b>や福祉最大手の<b>みんなの介護</b>を見ても、一般ユーザーからお金を取るモデルは定着しません。だからユーザーは無料に徹し、人数を集めます。</span></div>
+          <div class="origin"><span class="origin__tag">なぜ無料か</span><span class="origin__body">福祉最大手の<b>みんなの介護</b>を見ても、一般ユーザーからお金を取るモデルは定着しません。だからユーザーは無料に徹し、まずは人数を集めます。</span></div>
         </div>
         <div class="panel panel--gold">
-          <h3 class="panel__h panel__h--sm">② 施設 ＝ 送客課金＋月額のハイブリッド</h3>
+          <h3 class="panel__h panel__h--sm">② 施設 ＝ 初日から全件自動掲載 → 課金</h3>
           <ul class="blist blist--gold">
-            <li>成果が出た時だけ払う<b>「送客課金」</b>と、便利な管理機能の<b>「月額」</b>の二本柱で収益化します。</li>
+            <li><b>初日から全件を自動で網羅</b>：国のデータベース（WAM NET 等の障害福祉サービス情報公表システム）の公開情報を使い、システムが全国の事業所を自動で登録（掲載）します。</li>
+            <li><b>課金の入口</b>：自動掲載された施設が「情報を編集したい」「ネットで見学予約を受けたい」と思った時に<b>【無料オーナー登録】</b>→そこから送客課金や月額へ。</li>
           </ul>
+          <div class="wamflow">
+            <span class="wamflow__box">国のDB<small>WAM NET 等</small></span>
+            <span class="wamflow__arr">→</span>
+            <span class="wamflow__box wamflow__box--auto">自動で全件掲載<small>電話番号のみ表示</small></span>
+            <span class="wamflow__arr">→</span>
+            <span class="wamflow__box wamflow__box--reg">無料オーナー登録<small>編集・予約が可能に</small></span>
+            <span class="wamflow__arr">→</span>
+            <span class="wamflow__box wamflow__box--pay">送客課金／月額<small>ここで収益化</small></span>
+          </div>
         </div>
         <div class="panel">
           <h3 class="panel__h panel__h--sm">③ 相談支援専門員 ＝ 案内人</h3>
@@ -1629,10 +1681,26 @@ img { max-width: 100%; }
           <span class="statcard__note">収益試算は中央値 1件4,500円で計上【予想：単価固定】</span>
         </div>
         <div class="panel panel--accent">
-          <h3 class="panel__h panel__h--sm">なぜこの形か</h3>
-          <ul class="blist">
-            <li><b>損しないから始めやすい</b>：見学者が来た時だけ払う成果報酬。定員を埋めたい施設がリスクなく導入できます。</li>
-          </ul>
+          <h3 class="panel__h panel__h--sm">送客課金が発生する「トリガー」</h3>
+          <div class="trigfig">
+            <div class="trigstate trigstate--locked">
+              <span class="trigstate__cap">自動掲載のまま</span>
+              <span class="trigstate__h">電話番号のみ表示</span>
+              <span class="trigstate__btn trigstate__btn--ghost">予約ボタン なし</span>
+              <span class="trigstate__note">国のDBから自動掲載されただけの状態。課金は一切発生しない。</span>
+            </div>
+            <div class="trigmid">
+              <span class="trigmid__lbl">無料オーナー登録</span>
+              <span class="trigmid__arr">→</span>
+            </div>
+            <div class="trigstate trigstate--open">
+              <span class="trigstate__cap">登録すると開放</span>
+              <span class="trigstate__h">見学予約ボタンが開く</span>
+              <span class="trigstate__btn trigstate__btn--live">見学予約を受ける</span>
+              <span class="trigstate__note">予約・問い合わせが入った時にだけ送客課金が発生する。</span>
+            </div>
+          </div>
+          <div class="origin"><span class="origin__tag">この発想の参考</span><span class="origin__body"><b>なっぷ</b>や<b>iPhone修理ポータル</b>と同じ：登録して初めて予約・問い合わせボタンが開放され、送客で課金される仕組みです。</span></div>
           <div class="origin origin--gold"><span class="origin__tag">価格の根拠</span><span class="origin__body"><b>塾ナビ</b>の資料請求1件 約4,000円を参考に設定。<b>みんなの介護</b>型の10万円超の成約課金は、公費で運営されるB型施設には重すぎる、を対比で明示。</span></div>
         </div>
       </div>
@@ -1640,10 +1708,14 @@ img { max-width: 100%; }
         <div class="fchart" style="gap:var(--space-2xs);">
           <div class="fstep">
             <div class="fstep__rail"><div class="fstep__dot">A</div><div class="fstep__line"></div></div>
-            <div class="fstep__body"><div class="fstep__h">ユーザー・専門員が行動</div><div class="fstep__d">施設ページから【見学申込】【問い合わせ】を押す。</div></div>
+            <div class="fstep__body"><div class="fstep__h">施設が無料オーナー登録</div><div class="fstep__d">自動掲載された施設が登録 → 見学予約の受付ボタンが開放される。</div></div>
           </div>
           <div class="fstep">
             <div class="fstep__rail"><div class="fstep__dot">B</div><div class="fstep__line"></div></div>
+            <div class="fstep__body"><div class="fstep__h">ユーザー・専門員が行動</div><div class="fstep__d">施設ページから【見学申込】【問い合わせ】を押す。</div></div>
+          </div>
+          <div class="fstep">
+            <div class="fstep__rail"><div class="fstep__dot">C</div><div class="fstep__line"></div></div>
             <div class="fstep__body"><div class="fstep__h">施設に申込が届く</div><div class="fstep__d">施設の管理画面に見学申込（リード）が届く。</div></div>
           </div>
           <div class="fstep">
@@ -1658,7 +1730,7 @@ img { max-width: 100%; }
         </div>
       </div>
     </div>
-    <p class="src" style="margin-top:var(--space-2xs);">課金モデル提案.md §4-①（成果報酬）／§4-③（閲覧専用パス）／20-revenue-sim-v2.md §1-1</p>
+    <p class="src" style="margin-top:var(--space-2xs);">課金モデル提案.md §4-①（成果報酬・送客トリガー）／§4-③（閲覧専用パス）／20-revenue-sim-v2.md §1-1</p>
   </div>
 </section>
 
@@ -1682,8 +1754,8 @@ img { max-width: 100%; }
       <div class="tier tier--future">
         <span class="tier__lvl">プラン 0</span>
         <span class="tier__name">無料</span>
-        <span class="tier__price">¥0<small>掲載のみ</small></span>
-        <ul class="blist" style="margin-top:4px;"><li style="font-size:0.74rem;">基本的な掲載</li><li style="font-size:0.74rem;">月1件まで返信をお試し</li></ul>
+        <span class="tier__price">¥0<small>登録のみ</small></span>
+        <ul class="blist" style="margin-top:4px;"><li style="font-size:0.74rem;">オーナー登録のみ</li><li style="font-size:0.74rem;">自社情報の編集</li><li style="font-size:0.74rem;">月1件まで返信をお試し</li></ul>
         <span class="tier__bench">まずは無料で価値を体感</span>
       </div>
       <div class="tier tier--hero">
@@ -1732,25 +1804,25 @@ img { max-width: 100%; }
     </div>
     <div class="shead">
       <p class="kick">章1 · 確実に売上を作る</p>
-      <h2 class="title">必勝の営業ロードマップ ── <em>掲載確保 → 待つ → 月額へ引き上げ</em></h2>
+      <h2 class="title">必勝の営業ロードマップ ── <em>全件自動掲載 → 無料登録 → 月額へ引き上げ</em></h2>
     </div>
     <div class="roadmap flex-fill">
       <div class="rmstep rmstep--1">
         <span class="rmstep__n">STEP 1</span>
-        <h3 class="rmstep__h">まずは「場所」を確保</h3>
-        <p class="rmstep__d"><em>「初期費用も月額も0円。見学者が来た時だけ払ってください」</em>という絶対に損しない提案で、まずは全国の施設をサイトに掲載しまくる。</p>
+        <h3 class="rmstep__h">国のDBで初日から全件自動掲載</h3>
+        <p class="rmstep__d">国の公的データベース（WAM NET 等）を使い、全国のB型事業所を<em>システム側で自動一括掲載</em>。立ち上げ初日から<b>圧倒的なSEO網羅性</b>を確保する。</p>
         <span class="rmstep__arrow">→</span>
       </div>
       <div class="rmstep rmstep--2">
         <span class="rmstep__n">STEP 2</span>
-        <h3 class="rmstep__h">使いたくなるのを待つ</h3>
-        <p class="rmstep__d">施設に<em>「見学希望者からの質問（Q&amp;A）」</em>が届く、あるいは<em>「自社へのネガティブな口コミ」</em>が書き込まれるのを待つ。</p>
+        <h3 class="rmstep__h">案内メールで「無料オーナー登録」を促す</h3>
+        <p class="rmstep__d">「あなたの施設が掲載されました。<em>無料登録すれば情報編集やネット見学申込が受けられます</em>」と案内。<b>登録＝成果報酬プランの開始</b>へ導く。</p>
         <span class="rmstep__arrow">→</span>
       </div>
       <div class="rmstep rmstep--3">
         <span class="rmstep__n">STEP 3</span>
-        <h3 class="rmstep__h">月額プランへ引き上げ</h3>
-        <p class="rmstep__d">「誠実に返信して見学者を獲得しませんか？ さらに<em>月5,000円のプランなら、競合の口コミも読み放題</em>になりますよ」と提案し、一気に有料の月額へアップグレード。</p>
+        <h3 class="rmstep__h">Q&amp;A・クレームを待って月額へ</h3>
+        <p class="rmstep__d">見学希望者の質問（Q&amp;A）やネガティブな口コミが届くのを待ち、「<em>月5,000円で誠実に返信＋競合の口コミも読み放題</em>」と提案して月額5,000円へ引き上げる。</p>
         <span class="rmstep__arrow">→</span>
       </div>
     </div>
@@ -1780,37 +1852,49 @@ img { max-width: 100%; }
     <div class="split flex-fill">
       <div class="dec__col">
         <div class="hubcard">
-          <span class="hubcard__tag">① Q&amp;Aの回答者として</span>
+          <span class="hubcard__tag">① 壁なし・永久無料で見放題</span>
+          <h3 class="hubcard__h">eKYC本人確認で認証した専門員は全部読める</h3>
+          <p class="hubcard__d">オンライン本人確認（eKYC）で専門員の資格を認証できたアカウントには、口コミやQ&amp;Aを<b>アクションなしで永久無料で見放題</b>に。<em>日々の情報収集ツールとして完全に定着</em>させます。</p>
+        </div>
+        <div class="hubcard">
+          <span class="hubcard__tag">② Q&amp;Aの回答者として</span>
           <h3 class="hubcard__h">プロの回答が、検索に強い優良コンテンツに</h3>
           <p class="hubcard__d">ユーザーの不安（質問）に専門家として回答してもらう。<em>自身の相談所への集客（名刺代わり）</em>になるため、無料で良質な回答を書き込んでくれる。これがそのまま<b>Google検索に強い優良コンテンツ</b>になります。</p>
         </div>
         <div class="hubcard">
-          <span class="hubcard__tag">② 一括空き確認ツール</span>
+          <span class="hubcard__tag">③ 一括空き確認ツール</span>
           <h3 class="hubcard__h">無料提供 → 見学リードが自動で大量発生</h3>
           <p class="hubcard__d">専門員が日々電話でしている「施設への空き確認」を、サイト上で<b>一括送信</b>できるツールを無料提供。これにより、施設へ販売する<em>見学リード（見込み客）がサイト内で大量・自動的に発生</em>します。</p>
         </div>
       </div>
       <div class="dec__col">
         <!-- 専門員ハブの効果フロー -->
-        <svg class="prohub" viewBox="0 0 300 300" role="img" aria-label="相談支援専門員が優良コンテンツと見学リードを生む流れ">
+        <svg class="prohub" viewBox="0 0 300 340" role="img" aria-label="相談支援専門員が永久無料見放題で定着し、優良コンテンツと見学リードを生む流れ">
           <defs>
             <marker id="prarr" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 z" fill="var(--color-accent)"/></marker>
           </defs>
           <!-- center 専門員 -->
-          <circle class="pr-hub" cx="150" cy="150" r="50"/>
-          <text class="pr-hubt" x="150" y="145" text-anchor="middle">相談支援</text>
-          <text class="pr-hubt" x="150" y="161" text-anchor="middle">専門員</text>
-          <text class="pr-hubs" x="150" y="178" text-anchor="middle">無料で参加</text>
-          <!-- top: Q&A回答 -->
-          <rect class="pr-node" x="60" y="14" width="180" height="44" rx="9"/>
-          <text class="pr-n" x="150" y="33" text-anchor="middle">Q&amp;Aにプロ回答</text>
-          <text class="pr-ns" x="150" y="48" text-anchor="middle">→ 検索に強い優良コンテンツ</text>
-          <path class="pr-arr" d="M150 62 L150 96"/>
-          <!-- bottom: 一括空き確認 -->
-          <rect class="pr-node pr-node--act" x="60" y="242" width="180" height="46" rx="9"/>
-          <text class="pr-n" x="150" y="262" text-anchor="middle">一括空き確認ツール</text>
-          <text class="pr-ns" x="150" y="277" text-anchor="middle">→ 見学リードが自動で大量発生</text>
-          <path class="pr-arr" d="M150 204 L150 238"/>
+          <circle class="pr-hub" cx="150" cy="170" r="50"/>
+          <text class="pr-hubt" x="150" y="160" text-anchor="middle">相談支援</text>
+          <text class="pr-hubt" x="150" y="176" text-anchor="middle">専門員</text>
+          <text class="pr-hubs" x="150" y="193" text-anchor="middle">永久無料で定着</text>
+          <!-- top: 永久無料見放題 -->
+          <rect class="pr-node pr-node--act" x="50" y="10" width="200" height="46" rx="9"/>
+          <text class="pr-n" x="150" y="30" text-anchor="middle">eKYC認証→永久無料で見放題</text>
+          <text class="pr-ns" x="150" y="45" text-anchor="middle">→ 日々の情報収集ツールに定着</text>
+          <path class="pr-arr" d="M150 60 L150 116"/>
+          <!-- bottom-left: Q&A回答 -->
+          <rect class="pr-node" x="6" y="278" width="138" height="52" rx="9"/>
+          <text class="pr-n" x="75" y="300" text-anchor="middle">Q&amp;Aにプロ回答</text>
+          <text class="pr-ns" x="75" y="315" text-anchor="middle">→ 検索に強い優良</text>
+          <text class="pr-ns" x="75" y="326" text-anchor="middle">コンテンツ</text>
+          <path class="pr-arr" d="M122 208 Q90 248 80 274"/>
+          <!-- bottom-right: 一括空き確認 -->
+          <rect class="pr-node pr-node--act" x="156" y="278" width="138" height="52" rx="9"/>
+          <text class="pr-n" x="225" y="300" text-anchor="middle">一括空き確認</text>
+          <text class="pr-ns" x="225" y="315" text-anchor="middle">→ 見学リードが</text>
+          <text class="pr-ns" x="225" y="326" text-anchor="middle">自動で大量発生</text>
+          <path class="pr-arr" d="M178 208 Q210 248 220 274"/>
         </svg>
         <div class="origin"><span class="origin__tag">この発想の参考</span><span class="origin__body"><b>引越し侍</b>などの一括見積もり：専門員の業務効率化と、施設へ売る見学リードの大量発生を同時に実現します。</span></div>
       </div>
