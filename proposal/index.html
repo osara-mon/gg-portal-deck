@@ -1329,9 +1329,11 @@ img { max-width: 100%; }
   /* keep the wide sitemap tree usable: horizontal scroll wrapper */
   .smapscroll { overflow-x: auto; -webkit-overflow-scrolling: touch; }
   .smapscroll .smaptree { grid-template-columns: repeat(5, minmax(160px,1fr)); min-width: 820px; }
-  /* 60日タイムラインは横長SVG→ラッパー内で横スクロール許容（スライド自体は横スクロールなし） */
-  .tl60wrap { overflow-x: auto; -webkit-overflow-scrolling: touch; }
+  /* 60日タイムラインは横長SVG。ラッパーをブロック流しにして説明パネル(.tl60side)は
+     ビューポート幅で普通に折り返す（横スクロール不要）。横スクロールは横長SVG部分のみ。 */
+  .tl60wrap { display: block; overflow-x: auto; -webkit-overflow-scrolling: touch; }
   .tl60 { min-width: 560px; }
+  .tl60side { min-width: 0; margin-top: var(--space-2xs); }
   .fstep__d, .fstep__h, .hubcard__d, .rmstep__d { font-size: 0.88rem; line-height: 1.5; }
   .fmini li { font-size: 0.86rem; }
   .tl60side .blist li { font-size: 0.84rem; }
@@ -1583,9 +1585,16 @@ img { max-width: 100%; }
   .phone { max-width: 320px; }
 }
 @media (max-width: 48rem) {
-  /* KPI積み上げ表は横長→ラッパー内で横スクロール */
-  .milewrap { overflow-x: auto; -webkit-overflow-scrolling: touch; }
+  /* KPI積み上げ表は横長→ラッパー内で横スクロール（スライド自体は横に伸ばさない）。
+     パネル内にネストしたラッパーが min-width 子（表）に押し広げられ、
+     スライドごと横にはみ出す→body の overflow-x:clip で右端が切れて読めなくなるのを防ぐ。
+     ラッパーを親幅に固定し、その内部だけを横スクロールさせる。 */
+  .milewrap { overflow-x: auto; -webkit-overflow-scrolling: touch; width: 100%; max-width: 100%; min-width: 0; }
   .milewrap .tbl--miles { min-width: 620px; }
+  /* flex の連鎖（dec__col → panel → ラッパー）に min-width:0 を効かせ、
+     ラッパーが内部表の最小幅で膨らまないようにする（slide16 マイルストーン表の見切れ修正） */
+  .dec__col, .panel { min-width: 0; }
+  .panel > .tblwrap, .panel > .milewrap { width: 100%; max-width: 100%; min-width: 0; }
   .whycard__h { font-size: 0.9rem; }
   .qchip, .tpick { font-size: 0.7rem; }
 }
