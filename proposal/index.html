@@ -354,6 +354,34 @@ h1, h2, h3 {
 .tbl .free { color: var(--color-accent-dk); font-weight: 600; }
 .tbl .colwall { background: var(--color-clay-soft) !important; }
 
+/* ============ pricing feature matrix (slide 7 課金②) ============ */
+.tbl--matrix { table-layout: fixed; }
+.tbl--matrix th, .tbl--matrix td { padding: 2.5px 9px; line-height: 1.25; }
+.tbl--matrix .feat small { font-size: 0.8em; }
+.tbl--matrix .feat { width: 28%; min-width: 210px; font-family: var(--font-display); font-weight: 600; color: var(--color-ink); white-space: normal; line-height: 1.3; }
+.tbl--matrix .feat small { display: block; color: var(--color-muted); font-weight: 400; font-size: 0.84em; line-height: 1.3; }
+.tbl--matrix thead th:not(:first-child),
+.tbl--matrix td:not(.feat) { text-align: center; }
+.tbl--matrix thead th { vertical-align: bottom; }
+.tbl--matrix .ph { line-height: 1.22; }
+.tbl--matrix .ph b { display: block; font-size: 0.86rem; color: var(--color-ink); text-transform: none; letter-spacing: 0; font-family: var(--font-display); }
+.tbl--matrix .ph .pp { display: block; font-family: var(--font-num); font-feature-settings: "tnum"; font-weight: 600; color: var(--color-accent-dk); margin-top: 2px; }
+.tbl--matrix .ph small { display: block; color: var(--color-muted); font-weight: 400; font-size: 0.9em; text-transform: none; letter-spacing: 0; }
+.tbl--matrix .colhero { background: var(--color-accent-soft) !important; }
+.tbl--matrix thead th.colhero { border-bottom-color: var(--color-accent); }
+.tbl--matrix thead th.colhero b { color: var(--color-accent-dk); }
+.mc { font-family: var(--font-num); font-weight: 600; }
+.mc-y { color: var(--color-accent-dk); }
+.mc-x { color: var(--color-muted); }
+.mc-1 { color: var(--color-clay); font-weight: 700; }
+.mc-u { color: var(--color-accent-dk); font-weight: 700; }
+.mc-t { color: var(--color-ink-2); font-size: 0.8em; font-weight: 500; }
+.tbl--matrix tr.is-hl td { background: var(--color-accent-soft) !important; }
+.tbl--matrix tr.is-hl .feat { color: var(--color-accent-dk); }
+.tbl--matrix tr.is-hl td.colhero { background: oklch(90% 0.05 178) !important; }
+.matrix-cap { display: flex; flex-wrap: wrap; gap: 2px 14px; font-size: 0.66rem; color: var(--color-muted); margin-top: 4px; }
+.matrix-cap span b { color: var(--color-ink-2); font-weight: 600; }
+
 /* ============ archetype matrix (章1 早見表) ============ */
 .amat { display: grid; grid-template-columns: repeat(3, minmax(0,1fr)); gap: var(--space-2xs); flex: 1; min-height: 0; align-content: center; }
 .acard { border: 1px solid var(--color-rule); border-radius: var(--radius-md); background: var(--color-paper-2); padding: var(--space-sm) var(--space-xs); display: flex; flex-direction: column; gap: 3px; }
@@ -633,6 +661,7 @@ img { max-width: 100%; }
   /* tables: horizontal scroll so cells never crush */
   .tblwrap { -webkit-overflow-scrolling: touch; overflow-x: auto; }
   .tbl { min-width: 560px; }
+  .tbl--matrix { min-width: 680px; }
 
   /* HUD pinned to bottom so swipe + buttons work while scrolling a tall slide */
   .hud { position: fixed; left: 0; right: 0; bottom: 0; }
@@ -1437,7 +1466,7 @@ img { max-width: 100%; }
           <li><span class="n">04</span>口コミが集まる「60日サイクル」</li>
           <li><span class="n">05</span>AI 3段構えの安全パトロール</li>
           <li><span class="n">06</span>施設の課金モデル①と価格の裏付け</li>
-          <li><span class="n">07</span>施設の課金モデル② 評判管理プラン</li>
+          <li><span class="n">07</span>施設の課金モデル② SaaS4階層（機能×プラン）</li>
           <li><span class="n">08</span>必勝の営業ロードマップ</li>
           <li><span class="n">09</span>相談支援専門員の活用</li>
           <li><span class="n">10</span>フェーズ2 仕事マッチング</li>
@@ -1723,7 +1752,7 @@ img { max-width: 100%; }
       <div class="dec__col">
         <div class="statcard">
           <span class="statbig statbig--lg"><em>¥4,000〜5,000</em><small style="font-family:var(--font-body);font-size:0.9rem;color:var(--color-muted);font-weight:400;"> / 件</small></span>
-          <span class="statcard__cap">サイト経由で「見学申込」「問い合わせ」があった時だけ費用が発生（初期費用・月額は0円）</span>
+          <span class="statcard__cap">サイト経由で「見学申込」「お問合せ（チャット）」があった時だけ費用が発生（初期費用・月額は0円）</span>
           <span class="statcard__note">収益試算は中央値 1件4,500円で計上【予想：単価固定】</span>
         </div>
         <div class="panel panel--accent">
@@ -1741,12 +1770,12 @@ img { max-width: 100%; }
             </div>
             <div class="trigstate trigstate--open">
               <span class="trigstate__cap">登録すると開放</span>
-              <span class="trigstate__h">見学予約ボタンが開く</span>
-              <span class="trigstate__btn trigstate__btn--live">見学予約を受ける</span>
-              <span class="trigstate__note">予約・問い合わせが入った時にだけ送客課金が発生する。</span>
+              <span class="trigstate__h">見学申込・お問合せチャットが開く</span>
+              <span class="trigstate__btn trigstate__btn--live">見学申込・チャットで問合せ</span>
+              <span class="trigstate__note">お問合せはフォームでなく<b>チャット画面（メッセージUI）</b>。見学申込／チャット問合せが入った時にだけ送客課金が発生する。</span>
             </div>
           </div>
-          <div class="origin"><span class="origin__tag">この発想の参考</span><span class="origin__body"><b>なっぷ</b>や<b>iPhone修理ポータル</b>と同じ：登録して初めて予約・問い合わせボタンが開放され、送客で課金される仕組みです。</span></div>
+          <div class="origin"><span class="origin__tag">この発想の参考</span><span class="origin__body"><b>なっぷ</b>や<b>iPhone修理ポータル</b>と同じ：<b>無料オーナー登録</b>をして初めて見学申込・<b>お問合せチャット（メッセージUI）</b>が開放され、送客で課金される仕組みです。</span></div>
           <div class="origin origin--gold"><span class="origin__tag">価格の根拠</span><span class="origin__body"><b>塾ナビ</b>の資料請求1件 約4,000円を参考に設定。<b>みんなの介護</b>型の10万円超の成約課金は、公費で運営されるB型施設には重すぎる、を対比で明示。</span></div>
         </div>
       </div>
@@ -1758,7 +1787,7 @@ img { max-width: 100%; }
           </div>
           <div class="fstep">
             <div class="fstep__rail"><div class="fstep__dot">B</div><div class="fstep__line"></div></div>
-            <div class="fstep__body"><div class="fstep__h">ユーザー・専門員が行動</div><div class="fstep__d">施設ページから【見学申込】【問い合わせ】を押す。</div></div>
+            <div class="fstep__body"><div class="fstep__h">ユーザー・専門員が行動</div><div class="fstep__d">施設ページから【見学申込】【お問合せチャット】（メッセージUI）で連絡。</div></div>
           </div>
           <div class="fstep">
             <div class="fstep__rail"><div class="fstep__dot">C</div><div class="fstep__line"></div></div>
@@ -1781,7 +1810,7 @@ img { max-width: 100%; }
 </section>
 
 <!-- ============================================================ -->
-<!-- 章1 ④-2 7 施設の課金モデル② 評判管理プラン（料金表） -->
+<!-- 章1 ④-2 7 施設の課金モデル② SaaS4階層（機能×プラン 確定マトリクス） -->
 <!-- ============================================================ -->
 <section class="slide" data-i="7">
   <div class="pad">
@@ -1794,45 +1823,131 @@ img { max-width: 100%; }
     </div>
     <div class="shead">
       <p class="kick">章1 · 施設の課金モデル ②</p>
-      <h2 class="title">評判管理（月額）<em>4プラン</em>。安定収益の土台</h2>
+      <h2 class="title" style="font-size:clamp(1.05rem,1.5vw+0.6rem,1.5rem);margin-bottom:2px;">SaaS <em>4階層</em>＝無料登録を入口に、ページ作り込みと露出で引き上げる</h2>
     </div>
-    <div class="tiers flex-fill" style="grid-template-columns:repeat(4,minmax(0,1fr));">
-      <div class="tier tier--future">
-        <span class="tier__lvl">プラン 0</span>
-        <span class="tier__name">無料</span>
-        <span class="tier__price">¥0<small>登録のみ</small></span>
-        <ul class="blist" style="margin-top:4px;"><li style="font-size:0.74rem;">オーナー登録のみ</li><li style="font-size:0.74rem;">自社情報の編集</li><li style="font-size:0.74rem;">月1件まで返信をお試し</li></ul>
-        <span class="tier__bench">まずは無料で価値を体感</span>
-      </div>
-      <div class="tier tier--hero">
-        <span class="tier__badge">最重要プラン</span>
-        <span class="tier__lvl">プラン 1</span>
-        <span class="tier__name">★ライト</span>
-        <span class="tier__price">¥5,000<small>/ 月</small></span>
-        <ul class="blist" style="margin-top:4px;"><li style="font-size:0.74rem;">口コミへの返信が<b>無制限</b></li><li style="font-size:0.74rem;"><b>競合の口コミが全部読める閲覧パス（1,980円相当）が無料で付属</b></li></ul>
-        <span class="tier__bench">競合の評判を知りたい強いニーズを満たす</span>
-        <span class="tier__origin">根拠：<b>エキテン</b>と同等の低単価帯（月5,000円）。閲覧パス無料付属が契約を後押し。</span>
-      </div>
-      <div class="tier">
-        <span class="tier__lvl">プラン 2</span>
-        <span class="tier__name">スタンダード</span>
-        <span class="tier__price">¥15,000<small>/ 月</small></span>
-        <ul class="blist" style="margin-top:4px;"><li style="font-size:0.74rem;">検索結果での<b>上位表示</b></li><li style="font-size:0.74rem;">B型特化の口コミ<b>AI分析</b></li></ul>
-        <span class="tier__bench">露出を増やし、意思決定を支援</span>
-      </div>
-      <div class="tier">
-        <span class="tier__lvl">プラン 3</span>
-        <span class="tier__name">プレミアム</span>
-        <span class="tier__price">¥30,000<small>/ 月</small></span>
-        <ul class="blist" style="margin-top:4px;"><li style="font-size:0.74rem;">トップ画面への<b>固定表示</b></li><li style="font-size:0.74rem;">露出を最大化する最上位枠</li></ul>
-        <span class="tier__bench">露出を最大化する独占枠</span>
-        <span class="tier__origin">根拠：<b>弁護士ドットコム</b>の有料掲載を踏襲。</span>
-      </div>
+    <div class="tblwrap flex-fill" style="margin-top:var(--space-2xs);">
+      <table class="tbl tbl--dense tbl--matrix">
+        <thead>
+          <tr>
+            <th class="feat">機能 ＼ プラン</th>
+            <th><span class="ph"><b>自動掲載</b><small>未登録</small></span></th>
+            <th><span class="ph"><b>無料登録</b><span class="pp">¥0</span></span></th>
+            <th class="colhero"><span class="ph"><b>★ライト</b><span class="pp">¥5,000</span><small>/月</small></span></th>
+            <th><span class="ph"><b>スタンダード</b><span class="pp">¥15,000</span><small>/月</small></span></th>
+            <th><span class="ph"><b>プレミアム</b><span class="pp">¥30,000</span><small>/月</small></span></th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td class="feat">国DB自動掲載</td>
+            <td><span class="mc mc-y">◯</span><span class="mc mc-t">（電話のみ）</span></td>
+            <td><span class="mc mc-y">◯</span></td>
+            <td class="colhero"><span class="mc mc-y">◯</span></td>
+            <td><span class="mc mc-y">◯</span></td>
+            <td><span class="mc mc-y">◯</span></td>
+          </tr>
+          <tr class="is-hl">
+            <td class="feat">基本情報の編集<small>※自動掲載は電話のみ／登録で開放</small></td>
+            <td><span class="mc mc-x">✕</span></td>
+            <td><span class="mc mc-y">◯</span></td>
+            <td class="colhero"><span class="mc mc-y">◯</span></td>
+            <td><span class="mc mc-y">◯</span></td>
+            <td><span class="mc mc-y">◯</span></td>
+          </tr>
+          <tr class="is-hl">
+            <td class="feat">見学申込・お問合せ受付<small>＝お問合せチャット（メッセージUI）</small></td>
+            <td><span class="mc mc-x">✕</span></td>
+            <td><span class="mc mc-y">◯</span></td>
+            <td class="colhero"><span class="mc mc-y">◯</span></td>
+            <td><span class="mc mc-y">◯</span></td>
+            <td><span class="mc mc-y">◯</span></td>
+          </tr>
+          <tr>
+            <td class="feat">口コミ／Q&amp;Aへの返信<small>アップセルの入口</small></td>
+            <td><span class="mc mc-x">✕</span></td>
+            <td><span class="mc mc-1">1回のみ</span></td>
+            <td class="colhero"><span class="mc mc-u">無制限</span></td>
+            <td><span class="mc mc-u">無制限</span></td>
+            <td><span class="mc mc-u">無制限</span></td>
+          </tr>
+          <tr>
+            <td class="feat">ページ作り込み<small>写真追加／レイアウト／作業詳細・工賃実績／1日の流れ</small></td>
+            <td><span class="mc mc-x">✕</span></td>
+            <td><span class="mc mc-t">基本のみ</span></td>
+            <td class="colhero"><span class="mc mc-y">◯</span></td>
+            <td><span class="mc mc-y">◯</span></td>
+            <td><span class="mc mc-y">◯</span></td>
+          </tr>
+          <tr>
+            <td class="feat">自社URL（HP・採用）掲載</td>
+            <td><span class="mc mc-x">✕</span></td>
+            <td><span class="mc mc-x">✕</span></td>
+            <td class="colhero"><span class="mc mc-y">◯</span></td>
+            <td><span class="mc mc-y">◯</span></td>
+            <td><span class="mc mc-y">◯</span></td>
+          </tr>
+          <tr>
+            <td class="feat">競合の口コミ閲覧パス付随<small>1,980円相当</small></td>
+            <td><span class="mc mc-x">✕</span></td>
+            <td><span class="mc mc-x">✕</span></td>
+            <td class="colhero"><span class="mc mc-y">◯</span></td>
+            <td><span class="mc mc-y">◯</span></td>
+            <td><span class="mc mc-y">◯</span></td>
+          </tr>
+          <tr>
+            <td class="feat">ピックアップ口コミ固定<small>良い口コミを上位に</small></td>
+            <td><span class="mc mc-x">✕</span></td>
+            <td><span class="mc mc-x">✕</span></td>
+            <td class="colhero"><span class="mc mc-x">✕</span></td>
+            <td><span class="mc mc-y">◯</span></td>
+            <td><span class="mc mc-y">◯</span></td>
+          </tr>
+          <tr>
+            <td class="feat">検索上位表示</td>
+            <td><span class="mc mc-x">✕</span></td>
+            <td><span class="mc mc-x">✕</span></td>
+            <td class="colhero"><span class="mc mc-x">✕</span></td>
+            <td><span class="mc mc-y">◯</span></td>
+            <td><span class="mc mc-y">◯</span></td>
+          </tr>
+          <tr>
+            <td class="feat">B型特化 口コミAI分析</td>
+            <td><span class="mc mc-x">✕</span></td>
+            <td><span class="mc mc-x">✕</span></td>
+            <td class="colhero"><span class="mc mc-x">✕</span></td>
+            <td><span class="mc mc-y">◯</span></td>
+            <td><span class="mc mc-y">◯</span></td>
+          </tr>
+          <tr>
+            <td class="feat">トップ枠固定表示</td>
+            <td><span class="mc mc-x">✕</span></td>
+            <td><span class="mc mc-x">✕</span></td>
+            <td class="colhero"><span class="mc mc-x">✕</span></td>
+            <td><span class="mc mc-x">✕</span></td>
+            <td><span class="mc mc-y">◯</span></td>
+          </tr>
+          <tr>
+            <td class="feat">送客課金<small>見学／問合せ 1件 4,000〜5,000円</small></td>
+            <td><span class="mc mc-x">✕</span></td>
+            <td><span class="mc mc-y">◯</span><span class="mc mc-t">（課金対象）</span></td>
+            <td class="colhero"><span class="mc mc-y">◯</span></td>
+            <td><span class="mc mc-y">◯</span></td>
+            <td><span class="mc mc-y">◯</span></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="matrix-cap">
+      <span><b class="mc mc-y">◯</b> あり</span>
+      <span><b class="mc mc-x">✕</b> なし</span>
+      <span><b class="mc mc-1">1回のみ</b> 無料の返信は1回だけ</span>
+      <span><b class="mc mc-u">無制限</b> 有料で開放</span>
+      <span><b class="mc mc-t">基本のみ／（電話のみ）</b> 制限あり</span>
     </div>
     <div class="notestrip notestrip--accent notestrip--tight">
-      <strong>ねらい：</strong>施設は「近くの競合がどんな不満を持たれているか」を強く知りたがります。<b>ライトの「競合口コミ読み放題」付属</b>が、月額5,000円契約への最強のフックになります。
+      <strong>勝ち筋：</strong><b>無料オーナー登録が必須の入口</b>（自動掲載は電話のみ→登録で編集・見学申込・<b>お問合せチャット</b>開放）。<b>返信は無料1回→無制限は有料</b>＝アップセルの入口。目玉は<b>ページ作り込み＋ピックアップ口コミ固定＋上位表示＋AI分析＋トップ枠固定</b>。｜<strong>中立性こそ武器：</strong>Google口コミの<b>非表示・削除・削除申請代行はやりません＝金で口コミは消さない</b>。本物の良い口コミ供給・ピックアップ固定・誠実な公式返信で評判を高めます。
     </div>
-    <p class="src" style="margin-top:var(--space-2xs);">課金モデル提案.md §4-②（評判管理 月額4プラン）</p>
+    <p class="src" style="margin-top:var(--space-2xs);">22-pricing-feature-final.md（機能×プラン 確定マトリクス 2026-06-24）／課金モデル提案.md §4-②</p>
   </div>
 </section>
 
@@ -2233,6 +2348,7 @@ img { max-width: 100%; }
           <div class="smnode"><div class="smnode__h">施設詳細 <span class="smnode__star">★</span><span class="smnode__p">/facility/{id}</span></div><ul class="smnode__sub"><li>公開=冒頭2行+最新1件</li><li>非公開=全文(60日/パス)</li><li>見学申込=送客課金</li></ul></div>
           <div class="smnode"><div class="smnode__h">口コミ投稿 <span class="smnode__star">★</span><span class="smnode__p">/post</span></div><ul class="smnode__sub"><li>ワンタップQ&amp;A/AIタグ</li><li>60日解放トリガー</li></ul></div>
           <div class="smnode"><div class="smnode__h">Q&amp;A <span class="smnode__p">/qa</span></div></div>
+          <div class="smnode"><div class="smnode__h">お問合せチャット <span class="smnode__p">/chat</span></div><ul class="smnode__sub"><li>フォームでなくメッセージUI</li><li>見学申込・問合せ=送客課金</li></ul></div>
           <div class="smnode"><div class="smnode__h">コラム/記事 <span class="smnode__p">/column</span></div></div>
           <div class="smnode"><div class="smnode__h">ランキング/比較 <span class="smnode__p">/ranking</span></div></div>
           <div class="smnode"><div class="smnode__h">閲覧パス購入 <span class="smnode__p">/pass</span></div></div>
@@ -2242,7 +2358,8 @@ img { max-width: 100%; }
           <div class="smcol__head">B. B面（事業所）</div>
           <div class="smnode"><div class="smnode__h">事業者向けLP <span class="smnode__p">/business</span></div></div>
           <div class="smnode"><div class="smnode__h">事業者登録 <span class="smnode__p">/business/register</span></div><ul class="smnode__sub"><li>面取りの入口・即掲載</li></ul></div>
-          <div class="smnode"><div class="smnode__h">管理ダッシュボード <span class="smnode__p">/business/dashboard</span></div><ul class="smnode__sub"><li>口コミ管理・公式返信</li><li>AI分析(スタンダード)</li><li>上位/トップ枠設定</li></ul></div>
+          <div class="smnode"><div class="smnode__h">管理ダッシュボード <span class="smnode__p">/business/dashboard</span></div><ul class="smnode__sub"><li>口コミ/Q&amp;A返信(無料1回→有料無制限)</li><li>ページ作り込み・自社URL</li><li>ピックアップ口コミ固定(有料)</li><li>AI分析/上位/トップ枠(有料)</li></ul></div>
+          <div class="smnode"><div class="smnode__h">お問合せチャット <span class="smnode__p">/business/chat</span></div><ul class="smnode__sub"><li>見学申込・問合せに返信(メッセージUI)</li></ul></div>
           <div class="smnode"><div class="smnode__h">送客リード <span class="smnode__p">/business/leads</span></div><ul class="smnode__sub"><li>1件ごと送客課金</li></ul></div>
           <div class="smnode"><div class="smnode__h">プラン管理・課金 <span class="smnode__p">/business/plan</span></div><ul class="smnode__sub"><li>4階層アップグレード</li></ul></div>
         </div>
@@ -2319,13 +2436,13 @@ img { max-width: 100%; }
       </div>
       <div class="flowcard flowcard--clay">
         <span class="flowcard__lbl">導線3 · B面メインループ</span>
-        <h3 class="flowcard__h">クレーム → 公式返信 → 上位SaaSアップセル</h3>
+        <h3 class="flowcard__h">無料登録 → 返信1回で実感 → 有料アップセル</h3>
         <ul class="fmini">
           <li>ネガ口コミ着弾／競合の口コミを見たい欲求</li>
           <li>事業所ダッシュボードに通知</li>
-          <li>フリーでは限定返信／競合は読めない（ペイン）</li>
-          <li>「ライト¥5,000で誠実に反論＋競合読み放題」</li>
-          <li><em>ライト→スタンダード→プレミアム</em>へアップセル</li>
+          <li>無料は<b>返信1回のみ</b>／競合は読めない（ペイン）</li>
+          <li>「ライト¥5,000で<b>返信無制限＋ページ作り込み＋競合読み放題</b>」</li>
+          <li><em>スタンダードでピックアップ口コミ固定・上位表示・AI分析</em>へアップセル</li>
         </ul>
       </div>
       <div class="flowcard flowcard--gold">
